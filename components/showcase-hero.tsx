@@ -6,7 +6,7 @@ export function ShowcaseHero({
   highlight = "op maat",
   line3 = "voor jouw bedrijf",
   description = "Wij bouwen overzichtelijke webshops en apps die passen bij hoe jullie werken. Strak ontwerp, heldere prijzen, korte lijnen.",
-  primaryHref = "/contact",
+  primaryHref = "/offerte",
   primaryLabel = "Offerte aanvragen",
   secondaryHref,
   secondaryLabel,
@@ -61,14 +61,14 @@ export function ShowcaseHero({
           <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               href={primaryHref}
-              className="inline-flex h-[52px] items-center justify-center rounded-[10px] bg-foreground px-7 text-base font-medium text-background transition-colors hover:bg-neutral-800"
+              className="inline-flex h-[52px] items-center justify-center rounded-2xl bg-foreground px-7 text-base font-medium text-background transition-colors hover:bg-neutral-800"
             >
               {primaryLabel}
             </Link>
             {secondaryHref && secondaryLabel ? (
               <Link
                 href={secondaryHref}
-                className="inline-flex h-[52px] items-center justify-center rounded-[10px] border border-black/10 bg-white px-7 text-base font-medium transition-colors hover:bg-neutral-50"
+                className="inline-flex h-[52px] items-center justify-center rounded-2xl border border-black/10 bg-white px-7 text-base font-medium transition-colors hover:bg-neutral-50"
               >
                 {secondaryLabel}
               </Link>

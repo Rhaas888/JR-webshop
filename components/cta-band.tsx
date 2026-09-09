@@ -16,8 +16,8 @@ export function CtaBand({
         </h2>
         <p className="mt-4 max-w-xl text-base leading-7 text-white/70">{text}</p>
         <Link
-          href="/contact"
-          className="mt-8 inline-flex h-11 items-center justify-center rounded-lg bg-white px-5 text-sm font-medium text-foreground transition-colors hover:bg-neutral-100"
+          href="/offerte"
+          className="mt-8 inline-flex h-11 items-center justify-center rounded-2xl bg-white px-5 text-sm font-medium text-foreground transition-colors hover:bg-neutral-100"
         >
           Offerte aanvragen
         </Link>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ConvexClientProvider } from "@/components/convex-client-provider";
+import { JsonLd } from "@/components/json-ld";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { company } from "@/lib/content";
@@ -41,6 +42,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="flex min-h-full flex-col bg-background font-sans text-foreground">
         <ConvexClientProvider>
+          <JsonLd />
           <SiteHeader />
           <main className="flex-1">{children}</main>
           <SiteFooter />

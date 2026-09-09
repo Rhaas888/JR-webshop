@@ -14,13 +14,14 @@ export default function PrivacyPage() {
       <div className="mt-10 max-w-2xl space-y-5 text-lg font-medium leading-8 text-foreground">
         <p>
           {company.name} verwerkt persoonsgegevens alleen om te reageren op je
-          aanvraag. Dat gaat om naam, e-mailadres, en optioneel telefoonnummer,
-          bedrijfsnaam en het bericht dat je achterlaat.
+          aanvraag of review. Dat gaat om naam, e-mailadres, en optioneel
+          telefoonnummer, bedrijfsnaam, budget, planning en het bericht dat je
+          achterlaat.
         </p>
         <p>
-          We bewaren aanvragen zolang dat nodig is om het gesprek te voeren,
-          daarna verwijderen we ze of bewaren we ze alleen als daar een
-          overeenkomst uit volgt.
+          Offerte- en contactaanvragen bewaren we zolang dat nodig is om het
+          gesprek te voeren. Reviews die je instuurt, plaatsen we pas na een
+          check. Afgewezen of ongeplaatste reviews verwijderen we.
         </p>
         <p>
           We verkopen je gegevens niet. Ze worden opgeslagen in onze
@@ -32,8 +33,11 @@ export default function PrivacyPage() {
           .
         </p>
         <p>
-          Deze pagina is een beknopte verklaring voor de eerste versie van de
-          site. Heb je een vraag over privacy, mail ons.
+          Reviews op deze site komen uit ons eigen systeem. Het zijn geen
+          officiële Google-reviews.
+        </p>
+        <p>
+          Heb je een vraag over privacy, mail ons.
         </p>
       </div>
     </Section>

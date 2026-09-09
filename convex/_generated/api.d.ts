@@ -10,6 +10,8 @@
 
 import type { ApiFromModules, FilterApi, FunctionReference } from "convex/server";
 import type * as leads from "../leads.js";
+import type * as reviewData from "../reviewData.js";
+import type * as reviews from "../reviews.js";
 
 /**
  * A utility for referencing Convex functions in your app's API.
@@ -21,6 +23,8 @@ import type * as leads from "../leads.js";
  */
 declare const fullApi: ApiFromModules<{
   leads: typeof leads;
+  reviewData: typeof reviewData;
+  reviews: typeof reviews;
 }>;
 export declare const api: FilterApi<
   typeof fullApi,

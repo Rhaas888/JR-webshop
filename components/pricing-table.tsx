@@ -30,7 +30,14 @@ export function PricingTable({
           href="/app-laten-maken"
         />
       </div>
-      <div className="mt-8 rounded-2xl border border-black/8 bg-white p-6 sm:p-8">
+      <p className="mt-6 text-sm font-medium text-foreground">
+        Bouwprijs is eenmalig.{" "}
+        <Link href="/onderhoud" className="text-forest underline underline-offset-4">
+          Maandelijks onderhoud
+        </Link>{" "}
+        is optioneel, vanaf €49.
+      </p>
+      <div className="mt-8 rounded-3xl border border-black/8 bg-white p-6 sm:p-8">
         <h3 className="text-lg font-semibold tracking-tight">Niet inbegrepen</h3>
         <p className="mt-2 text-base font-medium text-foreground">
           Extra werk nemen we op in de offerte. Denk aan:
@@ -62,21 +69,21 @@ function PriceCard({
   href: string;
 }) {
   return (
-    <article className="flex flex-col rounded-2xl border border-black/8 bg-white p-8">
+    <article className="flex flex-col rounded-3xl border border-black/8 bg-white p-8">
       <p className="text-lg font-semibold text-foreground">{title}</p>
       <p className="mt-3 text-3xl font-semibold tracking-tight">{price}</p>
       <p className="mt-3 text-base font-medium leading-7 text-foreground">{summary}</p>
       <ul className="mt-8 flex-1 space-y-3 text-base font-medium text-foreground">
         {items.map((item) => (
           <li key={item} className="flex gap-3">
-            <span className="mt-2 size-1.5 shrink-0 rounded-full bg-foreground" />
+            <span className="mt-2 size-1.5 shrink-0 rounded-full bg-forest" />
             <span>{item}</span>
           </li>
         ))}
       </ul>
       <Link
         href={href}
-        className="mt-8 inline-flex h-11 items-center justify-center rounded-lg border border-black/10 text-sm font-medium transition-colors hover:bg-neutral-50"
+        className="mt-8 inline-flex h-11 items-center justify-center rounded-2xl border border-black/10 text-sm font-medium transition-colors hover:bg-neutral-50"
       >
         Meer over {title.toLowerCase()}
       </Link>

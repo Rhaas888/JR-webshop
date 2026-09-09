@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { RevealHeading } from "@/components/reveal-heading";
 import { cn } from "@/lib/utils";
 
 export function Container({
@@ -49,13 +50,15 @@ export function SectionHeading({
   return (
     <div className="max-w-2xl">
       {kicker ? (
-        <p className="text-base font-semibold tracking-wide text-foreground">
+        <p className="text-sm font-semibold tracking-wide text-forest">
           {kicker}
         </p>
       ) : null}
-      <h2 className="mt-2 text-3xl font-semibold tracking-tight text-pretty sm:text-4xl">
-        {title}
-      </h2>
+      <RevealHeading>
+        <h2 className="mt-2 text-3xl font-semibold tracking-tight text-pretty sm:text-4xl">
+          {title}
+        </h2>
+      </RevealHeading>
       {description ? (
         <p className="mt-4 text-lg font-medium leading-8 text-foreground">
           {description}

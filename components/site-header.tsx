@@ -12,7 +12,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { company, navLinks } from "@/lib/content";
+import { company, extraNavLinks, navLinks } from "@/lib/content";
 import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
@@ -89,7 +89,7 @@ export function SiteHeader() {
 
         <div className="flex items-center justify-end gap-2">
           <Link
-            href="/contact"
+            href="/offerte"
             className={cn(
               "hidden h-10 items-center rounded-lg px-4 text-sm font-medium transition-colors sm:inline-flex",
               scrolled
@@ -137,9 +137,20 @@ export function SiteHeader() {
                     {link.label}
                   </button>
                 ))}
+                <div className="my-3 h-px bg-black/8" />
+                {extraNavLinks.map((link) => (
+                  <button
+                    key={link.href}
+                    type="button"
+                    onClick={() => go(link.href)}
+                    className="rounded-lg px-2 py-3 text-left text-base text-neutral-800 hover:bg-muted"
+                  >
+                    {link.label}
+                  </button>
+                ))}
                 <button
                   type="button"
-                  onClick={() => go("/contact")}
+                  onClick={() => go("/offerte")}
                   className="mt-4 inline-flex h-11 items-center justify-center rounded-lg bg-foreground px-4 text-sm font-medium text-background"
                 >
                   Offerte aanvragen

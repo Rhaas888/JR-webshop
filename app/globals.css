@@ -40,6 +40,8 @@
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
   --color-surface: var(--surface);
+  --color-forest: var(--forest);
+  --color-forest-soft: var(--forest-soft);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -69,6 +71,8 @@
   --input: #e5e5e5;
   --ring: #a3a3a3;
   --surface: #f7f7f7;
+  --forest: #1b3d2f;
+  --forest-soft: #e7eee9;
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
@@ -97,5 +101,32 @@
 
   body {
     @apply bg-background text-foreground antialiased;
+  }
+}
+
+@keyframes jr-ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.jr-ticker-track {
+  animation: jr-ticker 42s linear infinite;
+}
+
+.jr-ticker-track:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .jr-ticker-track {
+    animation: none;
   }
 }

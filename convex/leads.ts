@@ -6,6 +6,7 @@ const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const interestValidator = v.union(
   v.literal("webshop"),
   v.literal("app"),
+  v.literal("onderhoud"),
   v.literal("anders"),
 );
 
@@ -17,6 +18,8 @@ export const submit = mutation({
     company: v.optional(v.string()),
     interest: interestValidator,
     message: v.string(),
+    budget: v.optional(v.string()),
+    timeline: v.optional(v.string()),
     website: v.optional(v.string()),
   },
   returns: v.object({ ok: v.literal(true) }),
@@ -30,6 +33,8 @@ export const submit = mutation({
     const message = args.message.trim();
     const phone = args.phone?.trim();
     const companyName = args.company?.trim();
+    const budget = args.budget?.trim();
+    const timeline = args.timeline?.trim();
 
     if (name.length < 2 || name.length > 80) {
       throw new Error("Vul een geldige naam in (2 tot 80 tekens).");
@@ -51,6 +56,14 @@ export const submit = mutation({
       throw new Error("Bedrijfsnaam is te lang.");
     }
 
+    if (budget && budget.length > 40) {
+      throw new Error("Budget is ongeldig.");
+    }
+
+    if (timeline && timeline.length > 40) {
+      throw new Error("Planning is ongeldig.");
+    }
+
     await ctx.db.insert("leads", {
       name,
       email,
@@ -58,6 +71,8 @@ export const submit = mutation({
       company: companyName && companyName.length > 0 ? companyName : undefined,
       interest: args.interest,
       message,
+      budget: budget && budget.length > 0 ? budget : undefined,
+      timeline: timeline && timeline.length > 0 ? timeline : undefined,
       createdAt: Date.now(),
     });
 
