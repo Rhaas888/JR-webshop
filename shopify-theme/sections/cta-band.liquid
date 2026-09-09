@@ -1,0 +1,24 @@
+<section class="jr-section jr-section--muted">
+  <div class="jr-container">
+    <div class="jr-cta">
+      <h2>{{ section.settings.title }}</h2>
+      <p>{{ section.settings.text }}</p>
+      <a class="jr-btn jr-btn--light" href="/pages/contact">Offerte aanvragen</a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CTA",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Titel", "default": "Klaar om te starten?" },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Tekst",
+      "default": "Vertel kort wat je wilt bouwen. We reageren binnen één werkdag met een voorstel of een paar scherpe vragen."
+    }
+  ]
+}
+{% endschema %}

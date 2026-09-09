@@ -1,0 +1,18 @@
+{% layout none %}
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cadeaubon | {{ shop.name }}</title>
+    {{ 'jr.css' | asset_url | stylesheet_tag }}
+  </head>
+  <body class="jr-body">
+    <section class="jr-section">
+      <div class="jr-container">
+        <h1 class="jr-title">Cadeaubon</h1>
+        <p class="jr-lede">{{ gift_card.balance | money }} — {{ gift_card.code | format_code }}</p>
+      </div>
+    </section>
+  </body>
+</html>

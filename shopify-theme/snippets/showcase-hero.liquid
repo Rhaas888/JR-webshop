@@ -1,0 +1,30 @@
+<section class="jr-showcase">
+  <div class="jr-showcase__media" aria-hidden="true">
+    <img class="jr-showcase__collage" src="{{ 'hero-collage.png' | asset_url }}" alt="" width="1920" height="1080">
+  </div>
+
+  <div class="jr-container jr-showcase__inner">
+    <div class="jr-showcase__copy">
+      <h1>
+        {{ line1 }}<br>
+        <span class="jr-scribble">{{ highlight }}{% render 'scribble' %}</span>
+        {%- if line3 != blank -%}
+          <br>{{ line3 }}
+        {%- endif -%}
+      </h1>
+
+      <p class="jr-showcase__lede">{{ description }}</p>
+
+      <div class="jr-showcase__actions">
+        <a class="jr-btn jr-btn--primary jr-btn--lg" href="{{ primary_link }}">{{ primary_label }}</a>
+        {%- if secondary_label != blank -%}
+          <a class="jr-btn jr-btn--ghost jr-btn--lg" href="{{ secondary_link }}">{{ secondary_label }}</a>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="jr-showcase__devices">
+      <img src="{{ 'hero-devices.png' | asset_url }}" alt="Webshop en app op laptop en telefoon" width="1920" height="1080">
+    </div>
+  </div>
+</section>

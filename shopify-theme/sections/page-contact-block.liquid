@@ -1,0 +1,39 @@
+<section class="jr-section jr-section--muted">
+  <div class="jr-container">
+    <div class="jr-contact-grid">
+      {% render 'section-heading',
+        kicker: section.settings.kicker,
+        title: section.settings.title,
+        description: section.settings.description
+      %}
+      {% render 'contact-form', default_interest: section.settings.interest %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contactblok",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Contact" },
+    { "type": "text", "id": "title", "label": "Titel", "default": "Vertel wat je wilt laten bouwen" },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Tekst",
+      "default": "Geen lang intake-document. Een paar zinnen is genoeg. We reageren binnen 1 werkdag."
+    },
+    {
+      "type": "select",
+      "id": "interest",
+      "label": "Standaard interesse",
+      "options": [
+        { "value": "webshop", "label": "Webshop" },
+        { "value": "app", "label": "App" },
+        { "value": "anders", "label": "Anders" }
+      ],
+      "default": "webshop"
+    }
+  ]
+}
+{% endschema %}

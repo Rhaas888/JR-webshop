@@ -1,0 +1,68 @@
+<header class="jr-header" data-header>
+  <div class="jr-container jr-header__inner">
+    <a href="/" class="jr-logo">
+      <img
+        class="jr-logo__img jr-logo__img--light"
+        src="{{ 'logo-jr.png' | asset_url }}"
+        alt="JR Intelligence"
+        width="146"
+        height="73"
+      >
+      <img
+        class="jr-logo__img jr-logo__img--dark"
+        src="{{ 'logo-jr-black.png' | asset_url }}"
+        alt=""
+        width="146"
+        height="73"
+      >
+    </a>
+
+    <nav class="jr-nav" aria-label="Hoofdmenu">
+      <a href="/pages/webshop-laten-bouwen">Webshop</a>
+      <a href="/pages/app-laten-maken">App</a>
+      <a href="/pages/prijzen">Prijzen</a>
+      <a href="/pages/over-ons">Over ons</a>
+      <a href="/pages/contact">Contact</a>
+    </nav>
+
+    <div class="jr-header__actions">
+      <a class="jr-btn jr-btn--primary jr-header__cta" href="/pages/contact">Offerte aanvragen</a>
+      <button
+        type="button"
+        class="jr-menu-btn"
+        data-menu-toggle
+        aria-expanded="false"
+        aria-controls="MobileMenu"
+        aria-label="Menu openen"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="jr-drawer" id="MobileMenu" data-menu>
+  <div class="jr-drawer__backdrop" data-menu-close></div>
+  <div class="jr-drawer__panel">
+    <p class="jr-drawer__title">
+      <img src="{{ 'logo-jr-black.png' | asset_url }}" alt="JR Intelligence" width="146" height="73">
+    </p>
+    <nav aria-label="Mobiel menu">
+      <a href="/pages/webshop-laten-bouwen" data-menu-close>Webshop</a>
+      <a href="/pages/app-laten-maken" data-menu-close>App</a>
+      <a href="/pages/prijzen" data-menu-close>Prijzen</a>
+      <a href="/pages/over-ons" data-menu-close>Over ons</a>
+      <a href="/pages/contact" data-menu-close>Contact</a>
+      <a class="jr-btn jr-btn--primary" href="/pages/contact">Offerte aanvragen</a>
+    </nav>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": []
+}
+{% endschema %}

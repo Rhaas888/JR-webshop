@@ -1,0 +1,57 @@
+{%- assign interest_default = default_interest | default: 'webshop' -%}
+
+<div data-contact-form>
+{% form 'contact', class: 'jr-form' %}
+  {%- if form.posted_successfully? -%}
+    <div class="jr-success">
+      <h3>Bericht ontvangen</h3>
+      <p>Bedankt. We reageren binnen 1 werkdag op het opgegeven e-mailadres.</p>
+    </div>
+  {%- else -%}
+    {%- if form.errors -%}
+      <div class="jr-errors" role="alert">
+        {{ form.errors | default_errors }}
+      </div>
+    {%- endif -%}
+
+    <div class="jr-form-grid">
+      <div class="jr-field">
+        <label for="ContactName">Naam</label>
+        <input id="ContactName" type="text" name="contact[name]" autocomplete="name" required value="{{ form.name }}">
+      </div>
+      <div class="jr-field">
+        <label for="ContactEmail">E-mail</label>
+        <input id="ContactEmail" type="email" name="contact[email]" autocomplete="email" required value="{{ form.email }}">
+      </div>
+      <div class="jr-field">
+        <label for="ContactPhone">Telefoon <span>(optioneel)</span></label>
+        <input id="ContactPhone" type="tel" name="contact[phone]" autocomplete="tel" value="{{ form.phone }}">
+      </div>
+      <div class="jr-field">
+        <label for="ContactCompany">Bedrijf <span>(optioneel)</span></label>
+        <input id="ContactCompany" type="text" name="contact[bedrijf]" autocomplete="organization">
+      </div>
+    </div>
+
+    <div class="jr-field jr-field--full">
+      <label for="ContactInterest">Interesse</label>
+      <select id="ContactInterest" name="contact[interesse]">
+        <option value="webshop"{% if interest_default == 'webshop' %} selected{% endif %}>Webshop laten bouwen</option>
+        <option value="app"{% if interest_default == 'app' %} selected{% endif %}>App laten maken</option>
+        <option value="anders"{% if interest_default == 'anders' %} selected{% endif %}>Iets anders</option>
+      </select>
+    </div>
+
+    <div class="jr-field jr-field--full">
+      <label for="ContactBody">Bericht</label>
+      <textarea id="ContactBody" name="contact[body]" rows="6" minlength="10" required placeholder="Wat wil je laten bouwen?">{{ form.body }}</textarea>
+    </div>
+
+    <button type="submit" class="jr-btn jr-btn--primary jr-btn--full">Versturen</button>
+    <p class="jr-form-note">
+      We gebruiken je gegevens alleen om te reageren. Zie onze
+      <a href="/pages/privacy">privacyverklaring</a>.
+    </p>
+  {%- endif -%}
+{% endform %}
+</div>

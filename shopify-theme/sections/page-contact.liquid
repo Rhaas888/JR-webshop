@@ -1,0 +1,30 @@
+<section class="jr-section">
+  <div class="jr-container">
+    <div class="jr-contact-grid">
+      <div>
+        {% render 'section-heading',
+          kicker: 'Contact',
+          title: 'Vertel wat je wilt laten bouwen',
+          description: 'Geen lang intake-document. Een paar zinnen is genoeg. We reageren binnen 1 werkdag.'
+        %}
+        <dl class="jr-dl">
+          <div>
+            <dt>E-mail</dt>
+            <dd><a href="mailto:info@jr-intelligence.com">info@jr-intelligence.com</a></dd>
+          </div>
+          <div>
+            <dt>Reactietijd</dt>
+            <dd>Binnen 1 werkdag</dd>
+          </div>
+        </dl>
+      </div>
+      {% render 'contact-form', default_interest: 'webshop' %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Pagina contact"
+}
+{% endschema %}

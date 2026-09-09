@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "pricing": {
+      "type": "pricing",
+      "settings": { "muted": false }
+    },
+    "faq": { "type": "faq", "settings": {} },
+    "cta": {
+      "type": "cta-band",
+      "settings": { "title": "Wil je een gerichte prijs?" }
+    }
+  },
+  "order": ["pricing", "faq", "cta"]
+}

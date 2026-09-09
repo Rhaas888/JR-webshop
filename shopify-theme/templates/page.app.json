@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": { "type": "page-app", "settings": {} },
+    "process": { "type": "process", "settings": {} },
+    "faq": { "type": "faq", "settings": {} },
+    "contact": {
+      "type": "page-contact-block",
+      "settings": {
+        "kicker": "Contact",
+        "title": "Wil je een app laten maken?",
+        "description": "Vertel welk proces je wilt vereenvoudigen. We reageren binnen 1 werkdag.",
+        "interest": "app"
+      }
+    },
+    "cta": { "type": "cta-band", "settings": {} }
+  },
+  "order": ["main", "process", "faq", "contact", "cta"]
+}

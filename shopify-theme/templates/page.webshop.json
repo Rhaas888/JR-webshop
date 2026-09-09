@@ -1,0 +1,23 @@
+{
+  "sections": {
+    "main": { "type": "page-webshop", "settings": {} },
+    "process": { "type": "process", "settings": {} },
+    "faq": { "type": "faq", "settings": {} },
+    "contact": {
+      "type": "page-contact-block",
+      "settings": {
+        "kicker": "Contact",
+        "title": "Wil je een webshop laten bouwen?",
+        "description": "Beschrijf kort je assortiment en wat je nu mist. We reageren binnen 1 werkdag.",
+        "interest": "webshop"
+      }
+    },
+    "cta": {
+      "type": "cta-band",
+      "settings": {
+        "title": "Liever eerst de prijzen zien?"
+      }
+    }
+  },
+  "order": ["main", "process", "faq", "contact", "cta"]
+}

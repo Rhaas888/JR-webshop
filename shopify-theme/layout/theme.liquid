@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      {{ page_title }}
+      {%- unless page_title contains shop.name %} | {{ shop.name }}{% endunless -%}
+    </title>
+    {%- if page_description -%}
+      <meta name="description" content="{{ page_description | escape }}">
+    {%- endif -%}
+    <link rel="canonical" href="{{ canonical_url }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    {{ content_for_header }}
+    {{ 'jr.css' | asset_url | stylesheet_tag }}
+  </head>
+  <body class="jr-body template-{{ template.name }}">
+    {% section 'header' %}
+    <main id="MainContent" class="jr-main">
+      {{ content_for_layout }}
+    </main>
+    {% section 'footer' %}
+    <script src="{{ 'jr.js' | asset_url }}" defer></script>
+  </body>
+</html>

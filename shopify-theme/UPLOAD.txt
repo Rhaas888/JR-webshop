@@ -1,0 +1,25 @@
+JR Intelligence — Shopify upload
+
+Gebruik ALLEEN dit bestand:
+  Desktop / JR-Intelligence-UPLOAD-DEZE.zip
+
+Niet de oude zip jr-intelligence-shopify-theme.zip.
+
+1. Online Store → Themes → Add theme → Upload zip
+   Bestand: JR-Intelligence-UPLOAD-DEZE.zip
+   Daarna: Publish (of Preview op Startpagina, niet 404)
+
+2. Online Store → Pages — 6 pagina’s met dit thema-template:
+   Titel                         Handle                    Theme template
+   Webshop laten bouwen          webshop-laten-bouwen      page.webshop
+   App laten maken               app-laten-maken           page.app
+   Prijzen                       prijzen                   page.prijzen
+   Over ons                      over-ons                  page.over-ons
+   Contact                       contact                   page.contact
+   Privacy                       privacy                   page.privacy
+
+3. Online Store → Preferences
+   Password protection UIT
+
+4. Settings → Notifications
+   Contactformulieren naar info@jr-intelligence.com
