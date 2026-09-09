@@ -1,0 +1,21 @@
+{
+  "name": "JR Intelligence (Next.js + Convex)",
+  "install": "npm ci",
+  "terminals": [
+    {
+      "name": "convex",
+      "command": "CONVEX_AGENT_MODE=anonymous npx convex dev",
+      "description": "Convex local (anonymous) backend + codegen watcher. Configures an isolated anonymous deployment, writes .env.local with NEXT_PUBLIC_CONVEX_URL, and serves the leads API on port 3210. Anonymous agent mode keeps it from conflicting with any personal Convex deployment."
+    },
+    {
+      "name": "next",
+      "command": "npm run dev",
+      "description": "Next.js 16 dev server (Turbopack) on http://localhost:3000. Reads NEXT_PUBLIC_CONVEX_URL from .env.local so the contact form submits leads to Convex."
+    }
+  ],
+  "ports": [
+    { "name": "next", "port": 3000 },
+    { "name": "convex-api", "port": 3210 },
+    { "name": "convex-site", "port": 3211 }
+  ]
+}
