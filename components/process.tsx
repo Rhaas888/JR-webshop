@@ -129,20 +129,22 @@ export function Process() {
 function CarIcon() {
   return (
     <svg
-      viewBox="0 0 48 72"
-      width="36"
-      height="54"
+      viewBox="0 0 80 40"
+      width="46"
+      height="24"
       aria-hidden="true"
-      className="drop-shadow-[0_6px_10px_rgba(27,61,47,0.28)]"
+      className="origin-center rotate-90 drop-shadow-[0_6px_10px_rgba(27,61,47,0.28)]"
     >
-      <rect x="14" y="8" width="20" height="48" rx="10" fill="#1B3D2F" />
-      <rect x="18" y="14" width="12" height="10" rx="3" fill="#E7EEE9" />
-      <rect x="18" y="28" width="12" height="14" rx="3" fill="#0a0a0a" opacity="0.25" />
-      <circle cx="16" cy="22" r="3" fill="#0a0a0a" />
-      <circle cx="32" cy="22" r="3" fill="#0a0a0a" />
-      <circle cx="16" cy="46" r="3" fill="#0a0a0a" />
-      <circle cx="32" cy="46" r="3" fill="#0a0a0a" />
-      <path d="M20 58h8l2 6h-12z" fill="#1B3D2F" />
+      <path
+        d="M14 26 22 14h22l12 12h10v8H60a7 7 0 0 1-14 0H32a7 7 0 0 1-14 0H10v-8z"
+        fill="#1B3D2F"
+      />
+      <rect x="24" y="16" width="16" height="8" rx="2" fill="#E7EEE9" />
+      <circle cx="25" cy="34" r="5" fill="#0a0a0a" />
+      <circle cx="25" cy="34" r="2" fill="#e7eee9" />
+      <circle cx="53" cy="34" r="5" fill="#0a0a0a" />
+      <circle cx="53" cy="34" r="2" fill="#e7eee9" />
+      <rect x="62" y="22" width="4" height="4" rx="1" fill="#e7eee9" />
     </svg>
   );
 }

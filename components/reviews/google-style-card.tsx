@@ -37,7 +37,7 @@ export function GoogleStyleCard({ review }: { review: ReviewCardData }) {
         </span>
         <div>
           <p className="text-sm font-semibold tracking-tight">{review.name}</p>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-muted-foreground" suppressHydrationWarning>
             {meta ? `${meta} · ` : null}
             {formatNlRelative(review.createdAt)}
           </p>
