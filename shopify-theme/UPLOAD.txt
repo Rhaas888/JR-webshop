@@ -1,28 +1,13 @@
-JR Intelligence — Shopify-thema
+JR-WEBSHOP test — Shopify-thema
 
-Dit is een THEMA voor Online Store, geen Shopify-app.
-
-Bestand: JR-Intelligence-UPLOAD-DEZE.zip
-De zip moet layout/, templates/, assets/ enzovoort DIRECT in de root hebben
-(niet een map shopify-theme eromheen). Dit zip-bestand is al zo gemaakt.
+Bestand: JR-WEBSHOP test.zip
 
 Upload:
   Shopify Admin → Online Store → Themes → Add theme → Upload zip
+  Kies: JR-WEBSHOP test.zip
   Niet uploaden onder Apps.
 
-Daarna:
-  1. Publish dit thema (of Preview, en kijk naar Startpagina — die mag geen 404 zijn)
-  2. Online Store → Pages, maak of hernoem:
-       webshop-laten-bouwen
-       app-laten-maken   (live staat deze nog als app-laten-bouwen — hernoem het handle)
-       prijzen
-       over-ons
-       contact
-       privacy
-       faq
-       onderhoud
-       ervaringen
-       offerte
-     Wijs de juiste templates toe (webshop, app, prijzen, over-ons, contact, …).
-  3. Products → Add product, anders blijft de shop-sectie leeg.
-  4. Settings → Notifications: bestellingen naar info@jr-intelligence.com
+Na upload zie je het thema als "JR-WEBSHOP test". Daarna Publish.
+
+De startpagina hoort eruit te zien als https://jr-intelligence.vercel.app/
+Bestaande pagina's (contact, prijzen, over-ons, webshop, app) krijgen automatisch de juiste inhoud.

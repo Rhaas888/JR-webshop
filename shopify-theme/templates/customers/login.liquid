@@ -1,0 +1,16 @@
+<section class="jr-section">
+  <div class="jr-container" style="max-width: 28rem;">
+    <h1 class="jr-title">Inloggen</h1>
+    {% form 'customer_login', class: 'jr-form' %}
+      <div class="jr-field">
+        <label for="CustomerEmail">E-mail</label>
+        <input id="CustomerEmail" type="email" name="customer[email]" autocomplete="email" required>
+      </div>
+      <div class="jr-field">
+        <label for="CustomerPassword">Wachtwoord</label>
+        <input id="CustomerPassword" type="password" name="customer[password]" autocomplete="current-password" required>
+      </div>
+      <button type="submit" class="jr-btn jr-btn--primary jr-btn--full">Inloggen</button>
+    {% endform %}
+  </div>
+</section>

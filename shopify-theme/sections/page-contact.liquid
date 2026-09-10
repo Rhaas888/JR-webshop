@@ -1,31 +1,4 @@
-<section class="jr-section">
-  <div class="jr-container">
-    <div class="jr-contact-grid">
-      <div>
-        {% render 'section-heading',
-          kicker: 'Contact',
-          title: 'Stel een vraag',
-          description: 'Twijfel je nog, of wil je eerst sparren? Mail of gebruik het formulier. Voor een prijsvoorstel is de offertepagina scherper.'
-        %}
-        <dl class="jr-dl">
-          <div>
-            <dt>E-mail</dt>
-            <dd><a href="mailto:info@jr-intelligence.com">info@jr-intelligence.com</a></dd>
-          </div>
-          <div>
-            <dt>Reactietijd</dt>
-            <dd>Binnen 1 werkdag</dd>
-          </div>
-          <div>
-            <dt>Offerte</dt>
-            <dd><a class="jr-link" href="/pages/offerte">Vraag een gerichte prijs aan</a></dd>
-          </div>
-        </dl>
-      </div>
-      {% render 'contact-form', default_interest: 'webshop', form_variant: 'contact' %}
-    </div>
-  </div>
-</section>
+{% render 'page-contact' %}
 
 {% schema %}
 {

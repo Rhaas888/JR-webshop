@@ -1,16 +1,4 @@
-<section class="jr-section jr-section--muted">
-  <div class="jr-container">
-    <div class="jr-cta">
-      <h2>{{ section.settings.title }}</h2>
-      <p>{{ section.settings.text }}</p>
-      {%- if pages.offerte.title != blank -%}
-        <a class="jr-btn jr-btn--light" href="{{ pages.offerte.url }}">Offerte aanvragen</a>
-      {%- else -%}
-        <a class="jr-btn jr-btn--light" href="/pages/contact">Offerte aanvragen</a>
-      {%- endif -%}
-    </div>
-  </div>
-</section>
+{% render 'cta-band', title: section.settings.title, text: section.settings.text %}
 
 {% schema %}
 {

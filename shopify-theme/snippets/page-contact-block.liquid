@@ -1,0 +1,16 @@
+{%- assign block_kicker = kicker | default: 'Contact' -%}
+{%- assign block_title = title | default: 'Vertel wat je wilt laten bouwen' -%}
+{%- assign block_description = description | default: 'Geen lang intake-document. Een paar zinnen is genoeg. We reageren binnen 1 werkdag.' -%}
+{%- assign block_interest = interest | default: 'webshop' -%}
+<section class="jr-section jr-section--muted">
+  <div class="jr-container">
+    <div class="jr-contact-grid">
+      {% render 'section-heading',
+        kicker: block_kicker,
+        title: block_title,
+        description: block_description
+      %}
+      {% render 'contact-form', default_interest: block_interest %}
+    </div>
+  </div>
+</section>

@@ -1,15 +1,9 @@
-<section class="jr-section jr-section--muted">
-  <div class="jr-container">
-    <div class="jr-contact-grid">
-      {% render 'section-heading',
-        kicker: section.settings.kicker,
-        title: section.settings.title,
-        description: section.settings.description
-      %}
-      {% render 'contact-form', default_interest: section.settings.interest %}
-    </div>
-  </div>
-</section>
+{% render 'page-contact-block',
+  kicker: section.settings.kicker,
+  title: section.settings.title,
+  description: section.settings.description,
+  interest: section.settings.interest
+%}
 
 {% schema %}
 {

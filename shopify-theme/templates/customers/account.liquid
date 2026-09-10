@@ -1,0 +1,16 @@
+<section class="jr-section">
+  <div class="jr-container">
+    <h1 class="jr-title">Account</h1>
+    <p class="jr-lede">{{ customer.name }} · {{ customer.email }}</p>
+    <p><a class="jr-link" href="{{ routes.account_logout_url }}">Uitloggen</a></p>
+    {%- if customer.orders.size > 0 -%}
+      <ul class="jr-list" style="margin-top: 32px;">
+        {%- for order in customer.orders -%}
+          <li><a class="jr-link" href="{{ order.customer_url }}">{{ order.name }} — {{ order.total_price | money }}</a></li>
+        {%- endfor -%}
+      </ul>
+    {%- else -%}
+      <p class="jr-lede">Nog geen bestellingen.</p>
+    {%- endif -%}
+  </div>
+</section>
