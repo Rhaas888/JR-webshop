@@ -16,9 +16,9 @@ export default function HomePage() {
     <>
       <ShowcaseHero
         primaryHref="/webshop-laten-bouwen"
-        primaryLabel="Webshop bouwen"
+        primaryLabel="Webshop"
         secondaryHref="/app-laten-maken"
-        secondaryLabel="App bouwen"
+        secondaryLabel="App"
       />
       <TrustStrip />
       <LogoTicker />
