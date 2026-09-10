@@ -1,9 +1,5 @@
-{%- capture offerte_href -%}{% render 'offerte-url' %}{%- endcapture -%}
-{%- assign offerte_href = offerte_href | strip -%}
-{%- assign banner_link = section.settings.primary_link | default: '/pages/offerte' -%}
-{%- if banner_link == blank or banner_link == '/pages/offerte' -%}
-  {%- assign banner_link = offerte_href -%}
-{%- endif -%}
+{%- capture app_href -%}{% render 'app-url' %}{%- endcapture -%}
+{%- assign app_href = app_href | strip -%}
 
 <section class="jr-showcase">
   <div class="jr-showcase__media" aria-hidden="true">
@@ -32,7 +28,8 @@
       {%- endif -%}
       <p class="jr-showcase__lede">{{ lede }}</p>
       <div class="jr-showcase__actions">
-        <a class="jr-btn jr-btn--primary jr-btn--lg" href="{{ banner_link }}">{{ section.settings.primary_label }}</a>
+        <a class="jr-btn jr-btn--primary jr-btn--lg" href="/pages/webshop-laten-bouwen">Webshop bouwen</a>
+        <a class="jr-btn jr-btn--ghost jr-btn--lg" href="{{ app_href }}">App bouwen</a>
       </div>
     </div>
 
@@ -74,18 +71,6 @@
       "id": "description",
       "label": "Tekst",
       "default": "Wij ontwerpen en bouwen webshops en applicaties die aansluiten op de werkwijze van uw organisatie. Doordacht ontwerp, betrouwbare techniek en een vaste prijs voordat we starten."
-    },
-    {
-      "type": "text",
-      "id": "primary_label",
-      "label": "Knop",
-      "default": "Offerte aanvragen"
-    },
-    {
-      "type": "text",
-      "id": "primary_link",
-      "label": "Knop-link",
-      "default": "/pages/offerte"
     }
   ],
   "presets": [

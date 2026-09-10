@@ -14,7 +14,12 @@ import { about, prices } from "@/lib/content";
 export default function HomePage() {
   return (
     <>
-      <ShowcaseHero />
+      <ShowcaseHero
+        primaryHref="/webshop-laten-bouwen"
+        primaryLabel="Webshop bouwen"
+        secondaryHref="/app-laten-maken"
+        secondaryLabel="App bouwen"
+      />
       <TrustStrip />
       <LogoTicker />
 

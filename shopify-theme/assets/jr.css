@@ -565,12 +565,16 @@ body.menu-open {
 
 .jr-showcase__actions {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 10px;
   margin-top: 28px;
+}
+
+.jr-showcase__actions .jr-btn {
+  min-width: 11.25rem;
 }
 
 .jr-showcase__proof {
@@ -611,10 +615,6 @@ body.menu-open {
 
   .jr-showcase__lede {
     font-size: 18px;
-  }
-
-  .jr-showcase__actions {
-    flex-direction: row;
   }
 }
 
