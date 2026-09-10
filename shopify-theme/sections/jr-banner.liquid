@@ -21,12 +21,10 @@
           <br>{{ section.settings.line3 }}
         {%- endif -%}
       </h1>
-      {%- assign lede = section.settings.description | strip -%}
-      {%- assign lede_old = 'Wij bouwen overzichtelijke webshops en apps die passen bij hoe jullie werken. Strak ontwerp, heldere prijzen, korte lijnen.' -%}
-      {%- if lede == blank or lede == lede_old -%}
-        {%- assign lede = 'Wij ontwerpen en bouwen webshops en applicaties die aansluiten op de werkwijze van uw organisatie. Doordacht ontwerp, betrouwbare techniek en een vaste prijs voordat we starten.' -%}
-      {%- endif -%}
-      <p class="jr-showcase__lede">{{ lede }}</p>
+      <p class="jr-showcase__lede">
+        Jouw bedrijf is uniek. Je webshop mag dat ook zijn.<br>
+        Webshops en apps volledig op maat.
+      </p>
       <div class="jr-showcase__actions">
         <a class="jr-btn jr-btn--primary jr-btn--lg" href="/pages/webshop-laten-bouwen">Webshop</a>
         <a class="jr-btn jr-btn--primary jr-btn--lg" href="{{ app_href }}">App</a>
@@ -70,7 +68,7 @@
       "type": "textarea",
       "id": "description",
       "label": "Tekst",
-      "default": "Wij ontwerpen en bouwen webshops en applicaties die aansluiten op de werkwijze van uw organisatie. Doordacht ontwerp, betrouwbare techniek en een vaste prijs voordat we starten."
+      "default": "Jouw bedrijf is uniek. Je webshop mag dat ook zijn. Webshops en apps volledig op maat."
     }
   ],
   "presets": [

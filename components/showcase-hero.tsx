@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
 
 const filledButtonClass =
   "inline-flex h-[52px] min-w-[8.5rem] items-center justify-center rounded-2xl bg-foreground px-7 text-base font-medium text-background transition-colors hover:bg-neutral-800";
@@ -10,7 +11,13 @@ export function ShowcaseHero({
   line1 = "Webshop of app",
   highlight = "op maat",
   line3 = "voor jouw bedrijf",
-  description = "Wij ontwerpen en bouwen webshops en applicaties die aansluiten op de werkwijze van uw organisatie. Doordacht ontwerp, betrouwbare techniek en een vaste prijs voordat we starten.",
+  description = (
+    <>
+      Jouw bedrijf is uniek. Je webshop mag dat ook zijn.
+      <br />
+      Webshops en apps volledig op maat.
+    </>
+  ),
   primaryHref = "/offerte",
   primaryLabel = "Offerte aanvragen",
   secondaryHref,
@@ -20,7 +27,7 @@ export function ShowcaseHero({
   line1?: string;
   highlight?: string;
   line3?: string;
-  description?: string;
+  description?: ReactNode;
   primaryHref?: string;
   primaryLabel?: string;
   secondaryHref?: string;
