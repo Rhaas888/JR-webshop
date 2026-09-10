@@ -1,0 +1,6 @@
+{
+  "sections": {
+    "main": { "type": "page-offerte", "settings": {} }
+  },
+  "order": ["main"]
+}

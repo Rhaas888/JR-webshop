@@ -57,21 +57,90 @@
     }
   }
 
+  var params = new URLSearchParams(window.location.search);
+  var interestParam = params.get("interesse");
+  var packageParam = params.get("pakket");
+  var interestSelect = document.querySelector("[name='contact[interesse]']");
+  if (interestSelect && interestParam) {
+    var allowed = ["webshop", "app", "onderhoud", "anders"];
+    if (allowed.indexOf(interestParam) !== -1) interestSelect.value = interestParam;
+  }
+
   var formWrap = document.querySelector("[data-contact-form]");
   var form = formWrap && formWrap.querySelector("form");
-  if (!form) return;
+  if (form) {
+    form.addEventListener("submit", function () {
+      var interest = form.querySelector("[name='contact[interesse]']");
+      var company = form.querySelector("[name='contact[bedrijf]']");
+      var budget = form.querySelector("[name='contact[budget]']");
+      var timeline = form.querySelector("[name='contact[planning]']");
+      var message = form.querySelector("[name='contact[body]']");
+      if (!message) return;
 
-  form.addEventListener("submit", function () {
-    var interest = form.querySelector("[name='contact[interesse]']");
-    var company = form.querySelector("[name='contact[bedrijf]']");
-    var message = form.querySelector("[name='contact[body]']");
-    if (!message) return;
+      var extra = [];
+      if (interest && interest.value) extra.push("Interesse: " + interest.value);
+      if (company && company.value) extra.push("Bedrijf: " + company.value);
+      if (budget && budget.value) extra.push("Budget: " + budget.value);
+      if (timeline && timeline.value) extra.push("Planning: " + timeline.value);
+      if (packageParam) extra.push("Pakket: " + packageParam);
+      if (extra.length) {
+        message.value = extra.join("\n") + "\n\n" + message.value;
+      }
+    });
+  }
 
-    var extra = [];
-    if (interest && interest.value) extra.push("Interesse: " + interest.value);
-    if (company && company.value) extra.push("Bedrijf: " + company.value);
-    if (extra.length) {
-      message.value = extra.join("\n") + "\n\n" + message.value;
+  var process = document.querySelector("[data-process]");
+  if (process) {
+    var fill = process.querySelector("[data-process-fill]");
+    var car = process.querySelector("[data-process-car]");
+    var steps = process.querySelectorAll("[data-process-step]");
+    var reduce =
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function updateProcess() {
+      var rect = process.getBoundingClientRect();
+      var viewport = window.innerHeight;
+      var start = viewport * 0.28;
+      var distance = Math.max(rect.height - viewport * 0.36, 1);
+      var raw = (start - rect.top) / distance;
+      var next = reduce ? 1 : Math.min(1, Math.max(0, raw));
+      var active = Math.min(steps.length - 1, Math.floor(next * steps.length + 0.01));
+      if (fill) fill.style.height = "calc(" + next * 100 + "% - 8px)";
+      if (car) car.style.top = "calc(" + next * 100 + "% - 18px)";
+      steps.forEach(function (step, index) {
+        step.classList.toggle("is-active", index <= active);
+      });
     }
+
+    window.addEventListener("scroll", updateProcess, { passive: true });
+    window.addEventListener("resize", updateProcess);
+    if (window.requestAnimationFrame) window.requestAnimationFrame(updateProcess);
+    else updateProcess();
+  }
+
+  document.querySelectorAll("[data-review-grid]").forEach(function (grid) {
+    var limit = Number(grid.getAttribute("data-review-limit") || "0");
+    var cards = Array.prototype.slice.call(grid.querySelectorAll(".jr-review-card"));
+    if (limit > 0) {
+      cards.forEach(function (card, index) {
+        if (index >= limit) card.hidden = true;
+      });
+    }
+
+    var filters = grid.parentElement.querySelector("[data-review-filters]");
+    if (!filters) return;
+    filters.addEventListener("click", function (event) {
+      var button = event.target.closest("[data-review-filter]");
+      if (!button) return;
+      var topic = button.getAttribute("data-review-filter");
+      filters.querySelectorAll("button").forEach(function (item) {
+        item.classList.toggle("is-active", item === button);
+      });
+      cards.forEach(function (card) {
+        var match = topic === "all" || card.getAttribute("data-topic") === topic;
+        card.hidden = !match;
+      });
+    });
   });
 })();

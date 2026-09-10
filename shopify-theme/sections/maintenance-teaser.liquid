@@ -1,0 +1,27 @@
+<section class="jr-section jr-section--muted">
+  <div class="jr-container jr-maintain-teaser">
+    <div class="jr-photo jr-maintain-teaser__photo">
+      <img src="{{ 'studio-green.png' | asset_url }}" alt="Rustige studio met donkergroen en beige" width="800" height="600">
+    </div>
+    <div>
+      {% render 'section-heading',
+        kicker: 'Onderhoud',
+        title: 'Shop live. Daarna houden we hem bij — als je dat wilt.',
+        description: 'Na livegang kun je zelf verder. Wil je dat wij updates, backups en kleine wijzigingen bijhouden, kies dan een vast maandtarief. Niet verplicht — wel rust.'
+      %}
+      <ul class="jr-maintain-list">
+        <li><span>Professional</span><span class="jr-forest">€49<span class="jr-muted">/maand</span></span></li>
+        <li><span>Professional Plus</span><span class="jr-forest">€99<span class="jr-muted">/maand</span></span></li>
+        <li><span>Care</span><span class="jr-forest">€199<span class="jr-muted">/maand</span></span></li>
+      </ul>
+      <a class="jr-btn jr-btn--primary" href="/pages/onderhoud">Bekijk onderhoud</a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Onderhoud teaser",
+  "settings": []
+}
+{% endschema %}

@@ -8,22 +8,34 @@
         "highlight": "op maat",
         "description": "Wij bouwen overzichtelijke webshops en apps die passen bij hoe jullie werken. Strak ontwerp, heldere prijzen, korte lijnen.",
         "primary_label": "Offerte aanvragen",
-        "primary_link": "/pages/contact",
+        "primary_link": "/pages/offerte",
         "proof": ""
       }
     },
+    "trust": {
+      "type": "trust-strip",
+      "settings": {}
+    },
+    "ticker": {
+      "type": "logo-ticker",
+      "settings": {}
+    },
     "services": {
       "type": "services",
+      "settings": {}
+    },
+    "maintenance": {
+      "type": "maintenance-teaser",
       "settings": {}
     },
     "process": {
       "type": "process",
       "settings": {}
     },
-    "pricing": {
-      "type": "pricing",
+    "reviews": {
+      "type": "reviews",
       "settings": {
-        "muted": true
+        "limit": 3
       }
     },
     "about": {
@@ -42,5 +54,16 @@
       }
     }
   },
-  "order": ["hero", "services", "process", "pricing", "about", "faq", "cta"]
+  "order": [
+    "hero",
+    "trust",
+    "ticker",
+    "services",
+    "maintenance",
+    "process",
+    "reviews",
+    "about",
+    "faq",
+    "cta"
+  ]
 }

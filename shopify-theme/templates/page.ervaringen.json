@@ -1,0 +1,8 @@
+{
+  "sections": {
+    "intro": { "type": "page-ervaringen", "settings": {} },
+    "reviews": { "type": "reviews", "settings": { "show_form": true, "limit": 0 } },
+    "cta": { "type": "cta-band", "settings": {} }
+  },
+  "order": ["intro", "reviews", "cta"]
+}

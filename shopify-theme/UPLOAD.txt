@@ -1,25 +1,31 @@
 JR Intelligence — Shopify upload
 
-Gebruik ALLEEN dit bestand:
-  Desktop / JR-Intelligence-UPLOAD-DEZE.zip
+Live shop: https://jr-intelligence.com
+(admin-domein: 80ef9z-cr.myshopify.com)
 
-Niet de oude zip jr-intelligence-shopify-theme.zip.
+Thema pushen (aanbevolen):
+  shopify theme push --store 80ef9z-cr.myshopify.com --theme 205712621905 --path shopify-theme --allow-live
 
-1. Online Store → Themes → Add theme → Upload zip
-   Bestand: JR-Intelligence-UPLOAD-DEZE.zip
-   Daarna: Publish (of Preview op Startpagina, niet 404)
+Of zip:
+  map shopify-theme als zip uploaden via Online Store → Themes → Add theme → Upload zip
+  Daarna: Publish (of Preview op Startpagina, niet 404)
 
-2. Online Store → Pages — 6 pagina’s met dit thema-template:
-   Titel                         Handle                    Theme template
-   Webshop laten bouwen          webshop-laten-bouwen      page.webshop
-   App laten maken               app-laten-maken           page.app
-   Prijzen                       prijzen                   page.prijzen
-   Over ons                      over-ons                  page.over-ons
-   Contact                       contact                   page.contact
-   Privacy                       privacy                   page.privacy
+Online Store → Pages — templates:
 
-3. Online Store → Preferences
-   Password protection UIT
+  Titel                         Handle                    Theme template
+  Webshop laten bouwen          webshop-laten-bouwen      page.webshop
+  App laten maken               app-laten-maken           page.app
+  Prijzen                       prijzen                   page.prijzen
+  Over ons                      over-ons                  page.over-ons
+  Contact                       contact                   page.contact
+  Privacy                       privacy                   page.privacy
+  Offerte                       offerte                   page.offerte
+  Onderhoud                     onderhoud                 page.onderhoud
+  Ervaringen                    ervaringen                page.ervaringen
+  FAQ                           faq                       page.faq
 
-4. Settings → Notifications
-   Contactformulieren naar info@jr-intelligence.com
+Online Store → Preferences
+  Password protection UIT
+
+Settings → Notifications
+  Contactformulieren naar info@jr-intelligence.com

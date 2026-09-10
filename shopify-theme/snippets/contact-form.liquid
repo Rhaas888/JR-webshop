@@ -1,6 +1,7 @@
 {%- assign interest_default = default_interest | default: 'webshop' -%}
+{%- assign variant = form_variant | default: 'contact' -%}
 
-<div data-contact-form>
+<div data-contact-form data-form-variant="{{ variant }}">
 {% form 'contact', class: 'jr-form' %}
   {%- if form.posted_successfully? -%}
     <div class="jr-success">
@@ -38,16 +39,40 @@
       <select id="ContactInterest" name="contact[interesse]">
         <option value="webshop"{% if interest_default == 'webshop' %} selected{% endif %}>Webshop laten bouwen</option>
         <option value="app"{% if interest_default == 'app' %} selected{% endif %}>App laten maken</option>
+        <option value="onderhoud"{% if interest_default == 'onderhoud' %} selected{% endif %}>Onderhoud</option>
         <option value="anders"{% if interest_default == 'anders' %} selected{% endif %}>Iets anders</option>
       </select>
     </div>
 
+    {%- if variant == 'offerte' -%}
+      <div class="jr-form-grid">
+        <div class="jr-field">
+          <label for="ContactBudget">Budget</label>
+          <select id="ContactBudget" name="contact[budget]">
+            <option value="Tot €500">Tot €500</option>
+            <option value="€500 – €1.500">€500 – €1.500</option>
+            <option value="€1.500 – €5.000">€1.500 – €5.000</option>
+            <option value="Nog niet bekend" selected>Nog niet bekend</option>
+          </select>
+        </div>
+        <div class="jr-field">
+          <label for="ContactTimeline">Planning</label>
+          <select id="ContactTimeline" name="contact[planning]">
+            <option value="Zo snel mogelijk">Zo snel mogelijk</option>
+            <option value="Over 1–2 maanden">Over 1–2 maanden</option>
+            <option value="Over 3 maanden of later">Over 3 maanden of later</option>
+            <option value="Nog niet bekend" selected>Nog niet bekend</option>
+          </select>
+        </div>
+      </div>
+    {%- endif -%}
+
     <div class="jr-field jr-field--full">
       <label for="ContactBody">Bericht</label>
-      <textarea id="ContactBody" name="contact[body]" rows="6" minlength="10" required placeholder="Wat wil je laten bouwen?">{{ form.body }}</textarea>
+      <textarea id="ContactBody" name="contact[body]" rows="6" minlength="10" required placeholder="{% if variant == 'offerte' %}Wat wil je laten bouwen, en voor wie?{% else %}Waar kunnen we je mee helpen?{% endif %}">{{ form.body }}</textarea>
     </div>
 
-    <button type="submit" class="jr-btn jr-btn--primary jr-btn--full">Versturen</button>
+    <button type="submit" class="jr-btn jr-btn--primary jr-btn--full">{% if variant == 'offerte' %}Offerte aanvragen{% else %}Versturen{% endif %}</button>
     <p class="jr-form-note">
       We gebruiken je gegevens alleen om te reageren. Zie onze
       <a href="/pages/privacy">privacyverklaring</a>.
