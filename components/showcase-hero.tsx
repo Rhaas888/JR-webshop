@@ -5,7 +5,7 @@ export function ShowcaseHero({
   line1 = "Webshop of app",
   highlight = "op maat",
   line3 = "voor jouw bedrijf",
-  description = "Wij bouwen overzichtelijke webshops en apps die passen bij hoe jullie werken. Strak ontwerp, heldere prijzen, korte lijnen.",
+  description = "Wij ontwerpen en bouwen webshops en applicaties die aansluiten op de werkwijze van uw organisatie. Doordacht ontwerp, betrouwbare techniek en een vaste prijs voordat we starten.",
   primaryHref = "/offerte",
   primaryLabel = "Offerte aanvragen",
   secondaryHref,

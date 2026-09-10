@@ -25,7 +25,12 @@
           <br>{{ section.settings.line3 }}
         {%- endif -%}
       </h1>
-      <p class="jr-showcase__lede">{{ section.settings.description }}</p>
+      {%- assign lede = section.settings.description | strip -%}
+      {%- assign lede_old = 'Wij bouwen overzichtelijke webshops en apps die passen bij hoe jullie werken. Strak ontwerp, heldere prijzen, korte lijnen.' -%}
+      {%- if lede == blank or lede == lede_old -%}
+        {%- assign lede = 'Wij ontwerpen en bouwen webshops en applicaties die aansluiten op de werkwijze van uw organisatie. Doordacht ontwerp, betrouwbare techniek en een vaste prijs voordat we starten.' -%}
+      {%- endif -%}
+      <p class="jr-showcase__lede">{{ lede }}</p>
       <div class="jr-showcase__actions">
         <a class="jr-btn jr-btn--primary jr-btn--lg" href="{{ banner_link }}">{{ section.settings.primary_label }}</a>
       </div>
@@ -68,7 +73,7 @@
       "type": "textarea",
       "id": "description",
       "label": "Tekst",
-      "default": "Wij bouwen overzichtelijke webshops en apps die passen bij hoe jullie werken. Strak ontwerp, heldere prijzen, korte lijnen."
+      "default": "Wij ontwerpen en bouwen webshops en applicaties die aansluiten op de werkwijze van uw organisatie. Doordacht ontwerp, betrouwbare techniek en een vaste prijs voordat we starten."
     },
     {
       "type": "text",
