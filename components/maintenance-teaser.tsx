@@ -22,7 +22,7 @@ export function MaintenanceTeaser() {
           <p className="text-sm font-semibold tracking-wide text-forest">{maintenance.kicker}</p>
           <RevealHeading>
             <h2 className="mt-2 text-3xl font-semibold tracking-tight text-pretty sm:text-4xl">
-              Shop live. Daarna houden we hem bij — als je dat wilt.
+              Shop live. Daarna houden we hem bij, als je dat wilt.
             </h2>
           </RevealHeading>
           <p className="mt-4 text-lg font-medium leading-8 text-foreground">

@@ -10,7 +10,7 @@ export function SiteFooter() {
             <span className="font-semibold">JR</span> Intelligence
           </p>
           <p className="mt-3 max-w-xs text-sm leading-6 text-muted-foreground">
-            Webshops en apps op maat voor Nederlandse bedrijven. Strak, overzichtelijk, zonder ruis.
+            Webshops en apps op maat. Geen ingewikkeld gedoe.
           </p>
         </div>
         {footerGroups.map((group) => (

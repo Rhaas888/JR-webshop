@@ -8,7 +8,7 @@ import { company, offertePage } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Offerte aanvragen",
   description:
-    "Vraag een vaste prijs aan voor een webshop, app of onderhoud. JR Intelligence reageert binnen 1 werkdag.",
+    "Vraag een prijs aan voor een webshop, app of onderhoud. JR Intelligence reageert binnen 1 werkdag.",
 };
 
 export default function OffertePage() {

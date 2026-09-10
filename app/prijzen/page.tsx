@@ -43,7 +43,7 @@ export default function PrijzenPage() {
       </Section>
       <LogoTicker />
       <Faq />
-      <CtaBand title="Wil je een gerichte prijs?" />
+      <CtaBand title="Wil je weten wat het kost?" />
     </>
   );
 }

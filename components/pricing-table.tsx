@@ -11,8 +11,8 @@ export function PricingTable({
     <Section tone={tone}>
       <SectionHeading
         kicker="Prijzen"
-        title="Duidelijke vanaf-prijzen, offerte op maat"
-        description="Geen uurtje-factuurtje. Je krijgt een vaste prijs voordat we beginnen. Onderstaande bedragen zijn het startpunt."
+        title="Je weet vooraf wat het kost"
+        description="Geen uurtje-factuurtje. Je krijgt een vaste prijs voordat we beginnen. Dit zijn de startprijzen."
       />
       <div className="mt-12 grid gap-6 lg:grid-cols-2">
         <PriceCard
@@ -45,7 +45,7 @@ export function PricingTable({
         <ul className="mt-4 grid gap-2 text-base font-medium text-foreground sm:grid-cols-2">
           {included.extra.map((item) => (
             <li key={item} className="flex gap-2">
-              <span aria-hidden="true">—</span>
+              <span className="mt-2 size-1.5 shrink-0 rounded-full bg-forest" aria-hidden="true" />
               <span>{item}</span>
             </li>
           ))}

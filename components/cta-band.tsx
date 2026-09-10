@@ -3,7 +3,7 @@ import { Section } from "@/components/section";
 
 export function CtaBand({
   title = "Klaar om te starten?",
-  text = "Vertel kort wat je wilt bouwen. We reageren binnen één werkdag met een voorstel of een paar scherpe vragen.",
+  text = "Vertel kort wat je wilt bouwen. Binnen 1 werkdag hoor je van ons.",
 }: {
   title?: string;
   text?: string;

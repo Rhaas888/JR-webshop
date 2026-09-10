@@ -56,7 +56,7 @@ export default function OnderhoudPage() {
             <SectionHeading
               kicker="Waarom"
               title="Niet omdat het moet. Omdat het stil moet blijven werken."
-              description="Updates, backups en kleine wijzigingen stapelen. Een vast bedrag is voorspelbaarder dan losse uurtjes — en je kunt elke maand stoppen."
+              description="Updates, backups en kleine wijzigingen stapelen. Een vast bedrag is duidelijker dan losse uurtjes. En je kunt elke maand stoppen."
             />
           </div>
         </div>
@@ -64,7 +64,7 @@ export default function OnderhoudPage() {
 
       <LogoTicker />
       <Faq items={onderhoudFaqs} />
-      <CtaBand title="Onderhoud inplannen?" text="Kies een pakket of beschrijf wat je nodig hebt. We reageren binnen één werkdag." />
+      <CtaBand title="Onderhoud nodig?" text="Kies een pakket of beschrijf wat je nodig hebt. Binnen 1 werkdag hoor je van ons." />
     </>
   );
 }

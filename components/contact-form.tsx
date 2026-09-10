@@ -94,7 +94,7 @@ function MailtoContactForm({
       variant={variant}
       onSend={async (payload) => {
         const subject = encodeURIComponent(
-          `${variant === "offerte" ? "Offerte" : "Contact"} ${payload.interest} — ${payload.name}`,
+          `${variant === "offerte" ? "Offerte" : "Contact"} ${payload.interest}: ${payload.name}`,
         );
         const body = encodeURIComponent(
           [

@@ -160,8 +160,8 @@ export function ReviewsTeaser() {
     <Section>
       <SectionHeading
         kicker="Ervaringen"
-        title="Kort, concreet, van echte trajecten"
-        description="Geen Google-widget. Reviews via JR Intelligence, in een herkenbare kaart. Lees ze allemaal, of schrijf er zelf een."
+        title="Wat klanten zeggen"
+        description="Geen Google-widget. Reviews via ons. Lees ze allemaal, of schrijf er zelf een."
       />
       <div className="mt-10">
         <ReviewsBoard limit={4} />

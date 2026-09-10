@@ -9,7 +9,7 @@ import { about, company } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Over ons",
   description:
-    "JR Intelligence is een compacte studio. We bouwen webshops en apps voor Nederlandse bedrijven die iets eigens willen.",
+    "JR Intelligence is een klein team. We bouwen webshops en apps voor Nederlandse bedrijven. Geen templates.",
 };
 
 export default function OverOnsPage() {
@@ -52,7 +52,7 @@ export default function OverOnsPage() {
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div>
             <p className="text-sm font-semibold tracking-wide text-forest">Hoe we werken</p>
-            <h2 className="mt-2 text-3xl font-semibold tracking-tight">Kort, vast, opleveren</h2>
+            <h2 className="mt-2 text-3xl font-semibold tracking-tight">Zo werken we</h2>
             <div className="mt-8 space-y-6">
               {about.howWeWork.map((item) => (
                 <div key={item.title}>
@@ -78,7 +78,7 @@ export default function OverOnsPage() {
       <Section>
         <p className="text-sm font-semibold tracking-wide text-forest">Wat we niet doen</p>
         <h2 className="mt-2 max-w-xl text-3xl font-semibold tracking-tight">
-          Duidelijkheid voorkomt verkeerde verwachtingen
+          Dit doen we niet
         </h2>
         <ul className="mt-8 grid gap-3 text-base font-medium text-foreground sm:grid-cols-2">
           {about.weDont.map((item) => (

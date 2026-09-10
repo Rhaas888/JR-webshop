@@ -17,7 +17,7 @@ export function Faq({
         <SectionHeading
           kicker="Vragen"
           title="Veelgestelde vragen"
-          description="Kort en concreet. Staat je vraag er niet bij? Stuur een bericht, we reageren binnen één werkdag."
+          description="Kort en duidelijk. Staat je vraag er niet bij? Stuur een bericht. We reageren binnen 1 werkdag."
         />
         <div>
           <div className="border-t border-black/8">

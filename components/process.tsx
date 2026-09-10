@@ -59,7 +59,7 @@ export function Process() {
           </h2>
         </RevealHeading>
         <p className="mt-4 text-lg font-medium leading-8 text-foreground">
-          Scroll mee. De raket gaat langs vijf vaste punten. Je weet steeds wat er gebeurt, wat het kost en wanneer het klaar is.
+          Vijf stappen. Je weet steeds wat er gebeurt, wat het kost en wanneer het klaar is.
         </p>
       </div>
 

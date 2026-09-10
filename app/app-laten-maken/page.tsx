@@ -13,7 +13,7 @@ import { appPage, included, prices } from "@/lib/content";
 export const metadata: Metadata = {
   title: "App laten maken",
   description:
-    "App op maat voor je bedrijf vanaf €999. Web-app of PWA, eerste werkende versie, daarna doorontwikkelen.",
+    "App op maat voor je bedrijf vanaf €999. Eerst een versie die je kunt gebruiken, daarna bouwen we verder.",
 };
 
 export default function AppPage() {
@@ -87,7 +87,7 @@ export default function AppPage() {
           <SectionHeading
             kicker="Offerte"
             title="Wil je een app laten maken?"
-            description="Vertel welk proces je wilt vereenvoudigen. We reageren binnen 1 werkdag."
+            description="Vertel wat de app moet doen. Binnen 1 werkdag hoor je van ons."
           />
           <ContactForm defaultInterest="app" variant="offerte" />
         </div>

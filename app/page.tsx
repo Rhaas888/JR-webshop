@@ -28,13 +28,13 @@ export default function HomePage() {
         <SectionHeading
           kicker="Diensten"
           title="Webshop of app, verder niets"
-          description="We bouwen alleen webshops en apps. Daardoor blijft het ontwerp helder, de prijs duidelijk en de lijnen kort."
+          description="We bouwen webshops en apps. Niks anders. Daardoor blijft de prijs duidelijk en heb je direct contact met ons."
         />
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
           <ServiceCard
             title="Webshop laten bouwen"
             price={prices.webshop.label}
-            text="Een eigen shop die vertrouwen wekt: producten, checkout, beheer en een ontwerp dat bij je merk past."
+            text="Een eigen shop: producten, checkout, beheer en een ontwerp dat bij je merk past."
             href="/webshop-laten-bouwen"
             image="/images/shop-still.png"
             imageAlt="Productstilte voor een rustige webshop"
@@ -42,7 +42,7 @@ export default function HomePage() {
           <ServiceCard
             title="App laten maken"
             price={prices.app.label}
-            text="Software die aansluit op jullie processen. Eerst een werkende versie, daarna verder bouwen waar het waarde heeft."
+            text="Een app die past bij hoe jij werkt. Eerst een versie die je kunt gebruiken, daarna bouwen we verder."
             href="/app-laten-maken"
             image="/images/app-desk.png"
             imageAlt="Tablet met een overzichtelijk dashboard"

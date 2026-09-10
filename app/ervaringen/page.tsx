@@ -9,7 +9,7 @@ import { ervaringenPage } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Ervaringen",
   description:
-    "Reviews via JR Intelligence. Geen Google-widget. Lees wat opdrachtgevers teruggeven over webshop, app en onderhoud.",
+    "Reviews via JR Intelligence. Geen Google-widget. Lees wat klanten zeggen over webshop, app en onderhoud.",
 };
 
 export default function ErvaringenPage() {

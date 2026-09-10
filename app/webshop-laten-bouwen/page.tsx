@@ -13,7 +13,7 @@ import { included, prices, webshopPage } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Webshop laten bouwen",
   description:
-    "Professionele webshop op maat vanaf €499. Ontwerp, checkout, CMS en SEO-basis. Geen templates.",
+    "Webshop op maat vanaf €499. Ontwerp, checkout en beheer. Geen templates.",
 };
 
 export default function WebshopPage() {
@@ -87,7 +87,7 @@ export default function WebshopPage() {
           <SectionHeading
             kicker="Offerte"
             title="Wil je een webshop laten bouwen?"
-            description="Beschrijf kort je assortiment en wat je nu mist. We reageren binnen 1 werkdag."
+    description: 'Beschrijf kort je assortiment en wat je nu mist. Binnen 1 werkdag hoor je van ons.',
           />
           <ContactForm defaultInterest="webshop" variant="offerte" />
         </div>
