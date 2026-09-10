@@ -41,9 +41,9 @@ export function ShowcaseHero({
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.82)_0%,rgba(255,255,255,0.9)_36%,rgba(242,242,242,0.96)_68%,#f2f2f2_100%)]" />
       </div>
 
-      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-4.5rem)] w-full max-w-[1120px] flex-col px-6 pt-14 sm:pt-16 lg:pt-20">
-        <div className="mx-auto max-w-xl text-center">
-          <h1 className="mx-auto max-w-[12em] text-[clamp(2.5rem,5.8vw,4.25rem)] font-bold tracking-[-0.045em] leading-[1.32]">
+      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-4.5rem)] w-full max-w-[1120px] flex-col px-6 pt-16 sm:pt-[5.5rem] lg:pt-[6.5rem]">
+        <div className="mx-auto max-w-[38rem] text-center">
+          <h1 className="mx-auto max-w-[12em] text-[clamp(2.5rem,5.8vw,4.25rem)] font-bold tracking-[-0.03em] leading-[1.45]">
             {line1}
             <br />
             <span className="relative inline-block whitespace-nowrap">
@@ -62,10 +62,10 @@ export function ShowcaseHero({
               </>
             ) : null}
           </h1>
-          <p className="mx-auto mt-6 max-w-lg text-[17px] leading-[1.65] text-muted-foreground sm:text-lg">
+          <p className="mx-auto mt-10 max-w-[34rem] text-base leading-[1.85] tracking-[0.01em] text-muted-foreground sm:text-[17px]">
             {description}
           </p>
-          <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <div className="mt-11 flex flex-col items-center justify-center gap-3.5 sm:flex-row">
             <Link href={primaryHref} className={filledButtonClass}>
               {primaryLabel}
             </Link>
@@ -80,7 +80,7 @@ export function ShowcaseHero({
           </div>
         </div>
 
-        <div className="mt-auto pt-7">
+        <div className="mt-auto pt-12">
           <Image
             src="/images/hero-devices.png"
             alt="Webshop en app op laptop, telefoon en iPad"
