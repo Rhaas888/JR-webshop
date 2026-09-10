@@ -2,6 +2,14 @@
   "general": {
     "meta": {
       "page": "Pagina {{ page }}"
+    },
+    "404": {
+      "title": "Pagina niet gevonden"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "In winkelwagen"
     }
   }
 }

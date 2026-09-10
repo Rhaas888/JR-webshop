@@ -1,10 +1,25 @@
+{%- liquid
+  if pages.offerte.title != blank
+    assign offerte_url = pages.offerte.url
+  else
+    assign offerte_url = '/pages/contact'
+  endif
+
+  if pages['app-laten-maken'].title != blank
+    assign app_url = pages['app-laten-maken'].url
+  elsif pages['app-laten-bouwen'].title != blank
+    assign app_url = pages['app-laten-bouwen'].url
+  else
+    assign app_url = '/pages/app-laten-maken'
+  endif
+-%}
 <header class="jr-header" data-header>
   <div class="jr-container jr-header__inner">
     <a href="{{ routes.root_url }}" class="jr-logo">
       <img
         class="jr-logo__img jr-logo__img--light"
         src="{{ 'logo-jr.png' | asset_url }}"
-        alt="{{ shop.name }}"
+        alt="JR Intelligence"
         width="146"
         height="73"
       >
@@ -18,19 +33,15 @@
     </a>
 
     <nav class="jr-nav" aria-label="Hoofdmenu">
-      <a href="{{ routes.all_products_collection_url }}">Shop</a>
-      <a href="{{ routes.collections_url }}">Collecties</a>
+      <a href="/pages/webshop-laten-bouwen">Webshop</a>
+      <a href="{{ app_url }}">App</a>
+      <a href="/pages/prijzen">Prijzen</a>
       <a href="/pages/over-ons">Over ons</a>
       <a href="/pages/contact">Contact</a>
     </nav>
 
     <div class="jr-header__actions">
-      <a class="jr-cart-link" href="{{ routes.cart_url }}">
-        Winkelwagen
-        {%- if cart.item_count > 0 -%}
-          <span>{{ cart.item_count }}</span>
-        {%- endif -%}
-      </a>
+      <a class="jr-btn jr-btn--primary jr-header__cta" href="{{ offerte_url }}">Offerte aanvragen</a>
       <button
         type="button"
         class="jr-menu-btn"
@@ -51,16 +62,20 @@
   <div class="jr-drawer__backdrop" data-menu-close></div>
   <div class="jr-drawer__panel">
     <p class="jr-drawer__title">
-      <img src="{{ 'logo-jr-black.png' | asset_url }}" alt="{{ shop.name }}" width="146" height="73">
+      <img src="{{ 'logo-jr-black.png' | asset_url }}" alt="JR Intelligence" width="146" height="73">
     </p>
     <nav aria-label="Mobiel menu">
-      <a href="{{ routes.all_products_collection_url }}" data-menu-close>Shop</a>
-      <a href="{{ routes.collections_url }}" data-menu-close>Collecties</a>
-      <a href="{{ routes.cart_url }}" data-menu-close>Winkelwagen ({{ cart.item_count }})</a>
-      <hr class="jr-drawer__rule">
+      <a href="/pages/webshop-laten-bouwen" data-menu-close>Webshop</a>
+      <a href="{{ app_url }}" data-menu-close>App</a>
+      <a href="/pages/prijzen" data-menu-close>Prijzen</a>
       <a href="/pages/over-ons" data-menu-close>Over ons</a>
       <a href="/pages/contact" data-menu-close>Contact</a>
+      <hr class="jr-drawer__rule">
+      <a href="/pages/onderhoud" data-menu-close>Onderhoud</a>
+      <a href="/pages/ervaringen" data-menu-close>Ervaringen</a>
       <a href="/pages/faq" data-menu-close>FAQ</a>
+      <a href="{{ offerte_url }}" data-menu-close>Offerte</a>
+      <a class="jr-btn jr-btn--primary" href="{{ offerte_url }}">Offerte aanvragen</a>
     </nav>
   </div>
 </div>

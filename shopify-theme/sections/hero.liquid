@@ -1,10 +1,16 @@
+{%- liquid
+  assign hero_link = section.settings.primary_link
+  if hero_link == '/pages/offerte' and pages.offerte.title == blank
+    assign hero_link = '/pages/contact'
+  endif
+-%}
 {% render 'showcase-hero',
-  line1: 'Jouw',
+  line1: 'Webshop of app',
   highlight: section.settings.highlight,
-  line3: 'klaar om te verkopen',
+  line3: 'voor jouw bedrijf',
   description: section.settings.description,
   primary_label: section.settings.primary_label,
-  primary_link: section.settings.primary_link
+  primary_link: hero_link
 %}
 
 {% schema %}
@@ -12,16 +18,16 @@
   "name": "Hero",
   "settings": [
     { "type": "text", "id": "kicker", "label": "Kicker", "default": "" },
-    { "type": "text", "id": "title", "label": "Titel", "default": "Een webshop die overzichtelijk aanvoelt" },
-    { "type": "text", "id": "highlight", "label": "Scribble-woord", "default": "webshop" },
+    { "type": "text", "id": "title", "label": "Titel", "default": "Webshop of app op maat voor jouw bedrijf" },
+    { "type": "text", "id": "highlight", "label": "Scribble-woord", "default": "op maat" },
     {
       "type": "textarea",
       "id": "description",
       "label": "Tekst",
-      "default": "Producten, winkelwagen en checkout. Strak ontwerp, heldere prijzen, klaar om te verkopen."
+      "default": "Wij bouwen overzichtelijke webshops en apps die passen bij hoe jullie werken. Strak ontwerp, heldere prijzen, korte lijnen."
     },
-    { "type": "text", "id": "primary_label", "label": "Knop", "default": "Naar de shop" },
-    { "type": "text", "id": "primary_link", "label": "Knop-link", "default": "/collections/all" },
+    { "type": "text", "id": "primary_label", "label": "Knop", "default": "Offerte aanvragen" },
+    { "type": "text", "id": "primary_link", "label": "Knop-link", "default": "/pages/offerte" },
     { "type": "text", "id": "proof", "label": "Regel onder knop", "default": "" },
     { "type": "image_picker", "id": "background_image", "label": "Achtergrond-collage" },
     { "type": "image_picker", "id": "devices_image", "label": "Laptop + telefoon" }

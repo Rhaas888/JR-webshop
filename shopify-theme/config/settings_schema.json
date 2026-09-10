@@ -2,9 +2,18 @@
   {
     "name": "theme_info",
     "theme_name": "JR Intelligence",
-    "theme_version": "1.0.0",
+    "theme_version": "1.1.0",
     "theme_author": "JR Intelligence",
     "theme_documentation_url": "https://jr-intelligence.com",
     "theme_support_url": "mailto:info@jr-intelligence.com"
+  },
+  {
+    "name": "Thema",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "JR Intelligence. Header en homepage komen overeen met jr-intelligence.vercel.app. Product-, collectie- en winkelwagenpagina’s blijven beschikbaar."
+      }
+    ]
   }
 ]

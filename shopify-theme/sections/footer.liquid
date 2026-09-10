@@ -2,21 +2,22 @@
   <div class="jr-container jr-footer__grid">
     <div class="jr-footer__brand">
       <p><strong>JR</strong> Intelligence</p>
-      <p>Een overzichtelijke webshop. Strak, helder, klaar om te verkopen.</p>
+      <p>Webshops en apps op maat voor Nederlandse bedrijven. Strak, overzichtelijk, zonder ruis.</p>
     </div>
     <div>
-      <h3>Shop</h3>
+      <h3>Diensten</h3>
       <ul>
-        <li><a href="{{ routes.all_products_collection_url }}">Alle producten</a></li>
-        <li><a href="{{ routes.collections_url }}">Collecties</a></li>
-        <li><a href="{{ routes.cart_url }}">Winkelwagen</a></li>
-        <li><a href="{{ routes.search_url }}">Zoeken</a></li>
+        <li><a href="/pages/webshop-laten-bouwen">Webshop laten bouwen</a></li>
+        <li><a href="/pages/app-laten-maken">App laten maken</a></li>
+        <li><a href="/pages/onderhoud">Onderhoud</a></li>
+        <li><a href="/pages/prijzen">Prijzen</a></li>
       </ul>
     </div>
     <div>
       <h3>Studio</h3>
       <ul>
         <li><a href="/pages/over-ons">Over ons</a></li>
+        <li><a href="/pages/ervaringen">Ervaringen</a></li>
         <li><a href="/pages/faq">FAQ</a></li>
         <li><a href="/pages/contact">Contact</a></li>
       </ul>
@@ -25,14 +26,15 @@
       <h3>Contact</h3>
       <ul>
         <li><a href="mailto:info@jr-intelligence.com">info@jr-intelligence.com</a></li>
+        <li><a href="/pages/offerte">Offerte aanvragen</a></li>
         <li><a href="/pages/privacy">Privacy</a></li>
       </ul>
     </div>
   </div>
   <div class="jr-footer__bar">
     <div class="jr-container jr-footer__bar-inner">
-      <p>© {{ 'now' | date: '%Y' }} {{ shop.name }}</p>
-      <p>{{ shop.name }}</p>
+      <p>© {{ 'now' | date: '%Y' }} JR Intelligence</p>
+      <p>We reageren binnen 1 werkdag.</p>
     </div>
   </div>
 </footer>
