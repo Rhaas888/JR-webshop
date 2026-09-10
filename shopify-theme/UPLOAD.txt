@@ -24,6 +24,9 @@ Online Store → Pages — templates:
   Ervaringen                    ervaringen                page.ervaringen
   FAQ                           faq                       page.faq
 
+Let op: er staat nu een pagina met handle `app-laten-bouwen`. Hernoem die naar `app-laten-maken`
+(of maak een nieuwe pagina met die handle) zodat het menu niet 404’t.
+
 Online Store → Preferences
   Password protection UIT
 
