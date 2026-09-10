@@ -138,8 +138,8 @@ export const trustItems = [
     text: "Binnen 1 werkdag hoor je van ons.",
   },
   {
-    title: "Vaste prijsafspraak",
-    text: "Offerte vooraf. We starten als de scope klopt.",
+    title: "Eén duidelijke prijs",
+    text: "Vooraf weet je precies waar je aan toe bent.",
   },
   {
     title: "Geen templates",
