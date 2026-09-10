@@ -142,8 +142,8 @@ export const trustItems = [
     text: "Vooraf weet je precies waar je aan toe bent.",
   },
   {
-    title: "Geen templates",
-    text: "Ontwerp en code op maat. Jouw merk.",
+    title: "Volledig op maat",
+    text: "Geen templates. We bouwen het zoals jij het wilt.",
   },
   {
     title: "Alles blijft van jou",
