@@ -5,11 +5,7 @@
     <div class="jr-cta">
       <h2>{{ cta_title }}</h2>
       <p>{{ cta_text }}</p>
-      {%- if pages.offerte.title != blank -%}
-        <a class="jr-btn jr-btn--light" href="{{ pages.offerte.url }}">Offerte aanvragen</a>
-      {%- else -%}
-        <a class="jr-btn jr-btn--light" href="/pages/contact">Offerte aanvragen</a>
-      {%- endif -%}
+      <a class="jr-btn jr-btn--light" href="{% render 'offerte-url' %}">Offerte aanvragen</a>
     </div>
   </div>
 </section>

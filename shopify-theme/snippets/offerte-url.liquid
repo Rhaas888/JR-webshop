@@ -1,0 +1,22 @@
+{%- comment -%}
+  Offerte-URL. Een Shopify-pagina zit niet in het theme-zip, alleen in Admin.
+  Bestaat de pagina Offerte (handle: offerte), gebruik die.
+  Anders: de bestaande Contact-pagina met alternate template page.offerte.json
+  via ?view=offerte — dat toont het offerteformulier, niet het vragenformulier.
+{%- endcomment -%}
+{%- if pages.offerte.title != blank -%}
+  {%- assign offerte_href = pages.offerte.url -%}
+{%- elsif pages.contact.url != blank -%}
+  {%- assign offerte_href = pages.contact.url | append: '?view=offerte' -%}
+{%- else -%}
+  {%- assign offerte_href = '/pages/contact?view=offerte' -%}
+{%- endif -%}
+{%- if query != blank -%}
+  {%- if offerte_href contains '?' -%}
+    {{ offerte_href }}&{{ query }}
+  {%- else -%}
+    {{ offerte_href }}?{{ query }}
+  {%- endif -%}
+{%- else -%}
+  {{ offerte_href }}
+{%- endif -%}

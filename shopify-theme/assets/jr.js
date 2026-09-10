@@ -69,6 +69,15 @@
   var formWrap = document.querySelector("[data-contact-form]");
   var form = formWrap && formWrap.querySelector("form");
   if (form) {
+    if (document.body.classList.contains("template-page-offerte")) {
+      var action = form.getAttribute("action") || window.location.pathname;
+      if (action.indexOf("view=offerte") === -1) {
+        form.setAttribute(
+          "action",
+          action + (action.indexOf("?") === -1 ? "?" : "&") + "view=offerte"
+        );
+      }
+    }
     form.addEventListener("submit", function () {
       var interest = form.querySelector("[name='contact[interesse]']");
       var company = form.querySelector("[name='contact[bedrijf]']");

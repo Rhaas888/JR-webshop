@@ -18,7 +18,7 @@
           <li>SSL en basisbeveiliging</li>
           <li>Eén contactmoment per maand</li>
         </ul>
-        <a class="jr-btn jr-btn--primary" href="/pages/offerte?interesse=onderhoud&amp;pakket=professional">Kies Professional</a>
+        <a class="jr-btn jr-btn--primary" href="{% render 'offerte-url', query: 'interesse=onderhoud&pakket=professional' %}">Kies Professional</a>
       </article>
       <article class="jr-pack jr-pack--featured">
         <p class="jr-pack__badge">Meest gekozen</p>
@@ -32,7 +32,7 @@
           <li>Voorrang op vragen</li>
           <li>Hulp bij content of producten</li>
         </ul>
-        <a class="jr-btn jr-btn--light" href="/pages/offerte?interesse=onderhoud&amp;pakket=plus">Kies Plus</a>
+        <a class="jr-btn jr-btn--light" href="{% render 'offerte-url', query: 'interesse=onderhoud&pakket=plus' %}">Kies Plus</a>
       </article>
       <article class="jr-pack">
         <h3>Care</h3>
@@ -45,13 +45,13 @@
           <li>Kwartaalgesprek over verbeteringen</li>
           <li>Doorontwikkel-slot in de planning</li>
         </ul>
-        <a class="jr-btn jr-btn--primary" href="/pages/offerte?interesse=onderhoud&amp;pakket=care">Kies Care</a>
+        <a class="jr-btn jr-btn--primary" href="{% render 'offerte-url', query: 'interesse=onderhoud&pakket=care' %}">Kies Care</a>
       </article>
     </div>
     <p class="jr-muted" style="margin-top: 32px; max-width: 40rem;">
       De eerste weken na oplevering horen bij de bouw. Onderhoud start pas als je dat wilt.
       Twijfel je? <a class="jr-link" href="/pages/contact">Stel een vraag</a> of vraag meteen een
-      <a class="jr-link" href="/pages/offerte?interesse=onderhoud">onderhoudsofferte</a>.
+      <a class="jr-link" href="{% render 'offerte-url', query: 'interesse=onderhoud' %}">onderhoudsofferte</a>.
     </p>
   </div>
 </section>

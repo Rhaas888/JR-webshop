@@ -1,10 +1,6 @@
+{%- capture offerte_url -%}{% render 'offerte-url' %}{%- endcapture -%}
+{%- assign offerte_url = offerte_url | strip -%}
 {%- liquid
-  if pages.offerte.title != blank
-    assign offerte_url = pages.offerte.url
-  else
-    assign offerte_url = '/pages/contact'
-  endif
-
   if pages['app-laten-maken'].title != blank
     assign app_url = pages['app-laten-maken'].url
   elsif pages['app-laten-bouwen'].title != blank

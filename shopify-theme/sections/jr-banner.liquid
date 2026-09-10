@@ -1,6 +1,8 @@
+{%- capture offerte_href -%}{% render 'offerte-url' %}{%- endcapture -%}
+{%- assign offerte_href = offerte_href | strip -%}
 {%- assign banner_link = section.settings.primary_link | default: '/pages/offerte' -%}
-{%- if banner_link == '/pages/offerte' and pages.offerte.title == blank -%}
-  {%- assign banner_link = '/pages/contact' -%}
+{%- if banner_link == blank or banner_link == '/pages/offerte' -%}
+  {%- assign banner_link = offerte_href -%}
 {%- endif -%}
 
 <section class="jr-showcase">

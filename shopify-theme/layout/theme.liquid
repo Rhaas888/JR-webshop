@@ -4,10 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
-      {{ page_title }}
-      {%- unless page_title contains shop.name %} | {{ shop.name }}{% endunless -%}
+      {%- if template.suffix == 'offerte' -%}
+        Offerte aanvragen | {{ shop.name }}
+      {%- else -%}
+        {{ page_title }}
+        {%- unless page_title contains shop.name %} | {{ shop.name }}{% endunless -%}
+      {%- endif -%}
     </title>
-    {%- if page_description -%}
+    {%- if template.suffix == 'offerte' -%}
+      <meta name="description" content="Vraag een vaste prijs aan voor een webshop, app of onderhoud. JR Intelligence reageert binnen 1 werkdag.">
+    {%- elsif page_description -%}
       <meta name="description" content="{{ page_description | escape }}">
     {%- endif -%}
     <link rel="canonical" href="{{ canonical_url }}">
@@ -20,7 +26,7 @@
     <link rel="apple-touch-icon" href="{{ 'apple-touch-icon.png' | asset_url }}">
     {{ 'jr.css' | asset_url | stylesheet_tag }}
   </head>
-  <body class="jr-body template-{{ template.name }}">
+  <body class="jr-body template-{{ template.name }}{% if template.suffix %} template-{{ template.name }}-{{ template.suffix }}{% endif %}">
     {% section 'header' %}
     <main id="MainContent" class="jr-main">
       {{ content_for_layout }}

@@ -19,8 +19,15 @@
         {%- endif -%}
       </h1>
       <p class="jr-showcase__lede">{{ description }}</p>
+      {%- capture offerte_href -%}{% render 'offerte-url' %}{%- endcapture -%}
+      {%- assign offerte_href = offerte_href | strip -%}
+      {%- if primary_link == blank or primary_link == '/pages/offerte' -%}
+        {%- assign hero_primary_link = offerte_href -%}
+      {%- else -%}
+        {%- assign hero_primary_link = primary_link -%}
+      {%- endif -%}
       <div class="jr-showcase__actions">
-        <a class="jr-btn jr-btn--primary jr-btn--lg" href="{{ primary_link }}">{{ primary_label }}</a>
+        <a class="jr-btn jr-btn--primary jr-btn--lg" href="{{ hero_primary_link }}">{{ primary_label }}</a>
         {%- if secondary_label != blank -%}
           <a class="jr-btn jr-btn--ghost jr-btn--lg" href="{{ secondary_link }}">{{ secondary_label }}</a>
         {%- endif -%}

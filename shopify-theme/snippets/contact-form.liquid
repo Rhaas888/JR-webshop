@@ -15,6 +15,8 @@
       </div>
     {%- endif -%}
 
+    <input type="hidden" name="contact[formulier]" value="{% if variant == 'offerte' %}Offerte{% else %}Vraag{% endif %}">
+
     <div class="jr-form-grid">
       <div class="jr-field">
         <label for="ContactName">Naam</label>

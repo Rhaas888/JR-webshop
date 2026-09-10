@@ -1,13 +1,22 @@
 JR-WEBSHOP test — Shopify-thema
 
-Bestand: JR-WEBSHOP test.zip
+Bestand: JR-WEBSHOP-test.zip
 
 Upload:
   Shopify Admin → Online Store → Themes → Add theme → Upload zip
-  Kies: JR-WEBSHOP test.zip
+  Kies: JR-WEBSHOP-test.zip
   Niet uploaden onder Apps.
 
 Na upload zie je het thema als "JR-WEBSHOP test". Daarna Publish.
 
 De startpagina hoort eruit te zien als https://jr-intelligence.vercel.app/
 Bestaande pagina's (contact, prijzen, over-ons, webshop, app) krijgen automatisch de juiste inhoud.
+
+Offerte aanvragen:
+  Die knop opent een aparte offertepagina (met budget en planning), naast het
+  vragenformulier op Contact. Direct na publiceren werkt dat al.
+  Voor de nette URL /pages/offerte: Online Store → Pages → Add page
+    Titel: Offerte
+    Handle: offerte
+    Inhoud mag leeg blijven — het thema vult de pagina.
+
