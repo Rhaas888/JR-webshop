@@ -146,8 +146,8 @@ export const trustItems = [
     text: "Ontwerp en code op maat. Jouw merk.",
   },
   {
-    title: "Jij houdt de sleutels",
-    text: "Toegang en eigenaarschap blijven van jou.",
+    title: "Alles blijft van jou",
+    text: "Jij houdt de volledige toegang en het eigenaarschap.",
   },
 ] as const;
 
