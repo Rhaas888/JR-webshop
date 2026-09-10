@@ -1,6 +1,12 @@
 <section class="jr-showcase">
   <div class="jr-showcase__media" aria-hidden="true">
-    <img class="jr-showcase__collage" src="{{ 'hero-collage.png' | asset_url }}" alt="" width="1920" height="1080">
+    <img
+      class="jr-showcase__collage"
+      src="{{ 'hero-collage.png' | asset_url }}"
+      alt=""
+      width="1920"
+      height="1080"
+    >
   </div>
 
   <div class="jr-container jr-showcase__inner">
@@ -12,9 +18,7 @@
           <br>{{ line3 }}
         {%- endif -%}
       </h1>
-
       <p class="jr-showcase__lede">{{ description }}</p>
-
       <div class="jr-showcase__actions">
         <a class="jr-btn jr-btn--primary jr-btn--lg" href="{{ primary_link }}">{{ primary_label }}</a>
         {%- if secondary_label != blank -%}
@@ -24,7 +28,12 @@
     </div>
 
     <div class="jr-showcase__devices">
-      <img src="{{ 'hero-devices.png' | asset_url }}" alt="Webshop en app op laptop en telefoon" width="1920" height="1080">
+      <img
+        src="{{ 'hero-devices.png' | asset_url }}"
+        alt="Webshop en app op laptop, telefoon en iPad"
+        width="1920"
+        height="1080"
+      >
     </div>
   </div>
 </section>

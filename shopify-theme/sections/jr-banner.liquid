@@ -1,0 +1,90 @@
+{%- assign banner_link = section.settings.primary_link | default: '/pages/offerte' -%}
+{%- if banner_link == '/pages/offerte' and pages.offerte.title == blank -%}
+  {%- assign banner_link = '/pages/contact' -%}
+{%- endif -%}
+
+<section class="jr-showcase">
+  <div class="jr-showcase__media" aria-hidden="true">
+    <img
+      class="jr-showcase__collage"
+      src="{{ 'hero-collage.png' | asset_url }}"
+      alt=""
+      width="1920"
+      height="1080"
+    >
+  </div>
+
+  <div class="jr-container jr-showcase__inner">
+    <div class="jr-showcase__copy">
+      <h1>
+        {{ section.settings.line1 }}<br>
+        <span class="jr-scribble">{{ section.settings.highlight }}{% render 'scribble' %}</span>
+        {%- if section.settings.line3 != blank -%}
+          <br>{{ section.settings.line3 }}
+        {%- endif -%}
+      </h1>
+      <p class="jr-showcase__lede">{{ section.settings.description }}</p>
+      <div class="jr-showcase__actions">
+        <a class="jr-btn jr-btn--primary jr-btn--lg" href="{{ banner_link }}">{{ section.settings.primary_label }}</a>
+      </div>
+    </div>
+
+    <div class="jr-showcase__devices">
+      <img
+        src="{{ 'hero-devices.png' | asset_url }}"
+        alt="Webshop en app op laptop, telefoon en iPad"
+        width="1920"
+        height="1080"
+      >
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "line1",
+      "label": "Regel 1",
+      "default": "Webshop of app"
+    },
+    {
+      "type": "text",
+      "id": "highlight",
+      "label": "Scribble-woord",
+      "default": "op maat"
+    },
+    {
+      "type": "text",
+      "id": "line3",
+      "label": "Regel 3",
+      "default": "voor jouw bedrijf"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Tekst",
+      "default": "Wij bouwen overzichtelijke webshops en apps die passen bij hoe jullie werken. Strak ontwerp, heldere prijzen, korte lijnen."
+    },
+    {
+      "type": "text",
+      "id": "primary_label",
+      "label": "Knop",
+      "default": "Offerte aanvragen"
+    },
+    {
+      "type": "text",
+      "id": "primary_link",
+      "label": "Knop-link",
+      "default": "/pages/offerte"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner"
+    }
+  ]
+}
+{% endschema %}

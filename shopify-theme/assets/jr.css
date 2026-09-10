@@ -471,7 +471,7 @@ body.menu-open {
   height: 52px;
   padding: 0 28px;
   font-size: 16px;
-  border-radius: 10px;
+  border-radius: 16px;
 }
 
 .jr-hero__text {
@@ -541,7 +541,7 @@ body.menu-open {
 }
 
 .jr-showcase__copy {
-  max-width: 40rem;
+  max-width: 36rem;
   margin: 0 auto;
   text-align: center;
 }
@@ -565,7 +565,9 @@ body.menu-open {
 
 .jr-showcase__actions {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
   gap: 12px;
   margin-top: 28px;
@@ -584,7 +586,7 @@ body.menu-open {
 
 .jr-showcase__devices img {
   display: block;
-  width: min(1080px, 118%);
+  width: min(1200px, 118%);
   max-width: none;
   margin: 0 auto -4%;
   filter: drop-shadow(0 28px 48px rgba(0, 0, 0, 0.16));
@@ -604,11 +606,15 @@ body.menu-open {
   }
 
   .jr-showcase__inner {
-    padding-top: 72px;
+    padding-top: 64px;
   }
 
   .jr-showcase__lede {
     font-size: 18px;
+  }
+
+  .jr-showcase__actions {
+    flex-direction: row;
   }
 }
 
