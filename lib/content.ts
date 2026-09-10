@@ -135,19 +135,19 @@ export const timelineOptions = [
 export const trustItems = [
   {
     title: "Reactie in 1 werkdag",
-    text: "Geen ticketsysteem. Je hoort van de mensen die het bouwen.",
+    text: "Je hoort van de bouwers. Geen ticketsysteem.",
   },
   {
     title: "Vaste prijsafspraak",
-    text: "Offerte vooraf. We beginnen pas als de scope klopt.",
+    text: "Offerte vooraf. We starten als de scope klopt.",
   },
   {
     title: "Geen templates",
-    text: "Ontwerp en code op maat. Jouw merk, niet een herkenbaar thema.",
+    text: "Ontwerp en code op maat. Jouw merk.",
   },
   {
     title: "Jij houdt de sleutels",
-    text: "Toegang, content en eigenaarschap blijven van jou.",
+    text: "Toegang en eigenaarschap blijven van jou.",
   },
 ] as const;
 
