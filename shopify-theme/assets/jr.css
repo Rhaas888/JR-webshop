@@ -2129,13 +2129,12 @@ body.menu-open {
   display: flex;
   gap: 8px;
   overflow-x: auto;
-  padding: 12px 0;
+  padding: 4px 0 12px;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  position: sticky;
-  top: 4.5rem;
-  z-index: 20;
-  background: var(--background);
+  position: relative;
+  z-index: 1;
+  background: transparent;
 }
 
 .jr-section--muted .jr-switcher__tabs {
@@ -2184,6 +2183,7 @@ body.menu-open {
 
 .jr-switcher__intro + .jr-pack-grid {
   margin-top: 40px;
+  scroll-margin-top: 9rem;
 }
 
 .jr-switcher__panel[hidden] {

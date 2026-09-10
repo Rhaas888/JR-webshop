@@ -300,7 +300,7 @@ function ContactFormFields({
             <select
               id="budget"
               name="budget"
-              defaultValue="onbekend"
+              defaultValue="Nog niet bekend"
               className="h-11 w-full rounded-2xl border border-input bg-transparent px-2.5 text-sm outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
             >
               {budgetOptions.map((option) => (
@@ -317,7 +317,7 @@ function ContactFormFields({
             <select
               id="timeline"
               name="timeline"
-              defaultValue="onbekend"
+              defaultValue="Nog niet bekend"
               className="h-11 w-full rounded-2xl border border-input bg-transparent px-2.5 text-sm outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
             >
               {timelineOptions.map((option) => (

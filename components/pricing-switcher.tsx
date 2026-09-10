@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { Suspense, useMemo } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
 import { cn } from "@/lib/utils";
 import {
   compareLabel,
@@ -45,12 +45,20 @@ function PricingSwitcherReady({
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const queryDienst = searchParams.get("dienst");
-  const activeId = isPricingDienst(queryDienst) ? queryDienst : defaultDienst;
+  const [activeId, setActiveId] = useState<PricingDienst>(
+    isPricingDienst(queryDienst) ? queryDienst : defaultDienst,
+  );
+
+  useEffect(() => {
+    setActiveId(isPricingDienst(queryDienst) ? queryDienst : defaultDienst);
+  }, [defaultDienst, queryDienst]);
+
   const catalog = useMemo(() => {
     return pricingDiensten.find((item) => item.id === activeId) ?? pricingDiensten[0]!;
   }, [activeId]);
 
   function selectDienst(id: PricingDienst) {
+    setActiveId(id);
     const params = new URLSearchParams(searchParams.toString());
     params.set("dienst", id);
     params.delete("pakket");
@@ -74,9 +82,8 @@ function PricingSwitcherReady({
 
       <div
         className={cn(
-          "sticky top-[4.5rem] z-20 -mx-2 flex gap-2 overflow-x-auto px-2 py-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
+          "flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
           heading ? "mt-10" : "mt-0",
-          tone === "muted" ? "bg-surface" : "bg-background",
         )}
         role="tablist"
         aria-label="Kies een dienst"
