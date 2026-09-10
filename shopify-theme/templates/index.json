@@ -4,39 +4,24 @@
       "type": "hero",
       "settings": {
         "kicker": "",
-        "title": "Webshop of app op maat voor jouw bedrijf",
-        "highlight": "op maat",
-        "description": "Wij bouwen overzichtelijke webshops en apps die passen bij hoe jullie werken. Strak ontwerp, heldere prijzen, korte lijnen.",
-        "primary_label": "Offerte aanvragen",
-        "primary_link": "/pages/offerte",
+        "title": "Een webshop die overzichtelijk aanvoelt",
+        "highlight": "webshop",
+        "description": "Producten, winkelwagen en checkout. Strak ontwerp, heldere prijzen, klaar om te verkopen.",
+        "primary_label": "Naar de shop",
+        "primary_link": "/collections/all",
         "proof": ""
+      }
+    },
+    "shop": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Onze producten",
+        "description": "Overzichtelijk, strak, klaar om te bestellen."
       }
     },
     "trust": {
       "type": "trust-strip",
       "settings": {}
-    },
-    "ticker": {
-      "type": "logo-ticker",
-      "settings": {}
-    },
-    "services": {
-      "type": "services",
-      "settings": {}
-    },
-    "maintenance": {
-      "type": "maintenance-teaser",
-      "settings": {}
-    },
-    "process": {
-      "type": "process",
-      "settings": {}
-    },
-    "reviews": {
-      "type": "reviews",
-      "settings": {
-        "limit": 3
-      }
     },
     "about": {
       "type": "about-teaser",
@@ -49,21 +34,10 @@
     "cta": {
       "type": "cta-band",
       "settings": {
-        "title": "Klaar om te starten?",
-        "text": "Vertel kort wat je wilt bouwen. We reageren binnen één werkdag met een voorstel of een paar scherpe vragen."
+        "title": "Klaar om te shoppen?",
+        "text": "Bekijk de collectie of neem contact op als je een vraag hebt."
       }
     }
   },
-  "order": [
-    "hero",
-    "trust",
-    "ticker",
-    "services",
-    "maintenance",
-    "process",
-    "reviews",
-    "about",
-    "faq",
-    "cta"
-  ]
+  "order": ["hero", "shop", "trust", "about", "faq", "cta"]
 }

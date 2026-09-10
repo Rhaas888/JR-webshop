@@ -3,7 +3,7 @@
     <div class="jr-cta">
       <h2>{{ section.settings.title }}</h2>
       <p>{{ section.settings.text }}</p>
-      <a class="jr-btn jr-btn--light" href="/pages/offerte">Offerte aanvragen</a>
+      <a class="jr-btn jr-btn--light" href="{{ routes.all_products_collection_url }}">Naar de shop</a>
     </div>
   </div>
 </section>
@@ -12,12 +12,12 @@
 {
   "name": "CTA",
   "settings": [
-    { "type": "text", "id": "title", "label": "Titel", "default": "Klaar om te starten?" },
+    { "type": "text", "id": "title", "label": "Titel", "default": "Klaar om te shoppen?" },
     {
       "type": "textarea",
       "id": "text",
       "label": "Tekst",
-      "default": "Vertel kort wat je wilt bouwen. We reageren binnen één werkdag met een voorstel of een paar scherpe vragen."
+      "default": "Bekijk de collectie of neem contact op als je een vraag hebt."
     }
   ]
 }

@@ -1,34 +1,15 @@
-JR Intelligence — Shopify upload
+JR Intelligence — Shopify webshop-thema
 
-Live shop: https://jr-intelligence.com
-(admin-domein: 80ef9z-cr.myshopify.com)
+Dit is een THEMA voor Online Store (webshop), geen Shopify-app.
 
-Thema pushen (aanbevolen):
-  shopify theme push --store 80ef9z-cr.myshopify.com --theme 205712621905 --path shopify-theme --allow-live
+Upload:
+  Online Store → Themes → Add theme → Upload zip
+  Bestand: JR-Intelligence-UPLOAD-DEZE.zip
+  Daarna Publish (preview op Startpagina, niet 404)
 
-Of zip:
-  map shopify-theme als zip uploaden via Online Store → Themes → Add theme → Upload zip
-  Daarna: Publish (of Preview op Startpagina, niet 404)
+Niet uploaden onder Apps.
 
-Online Store → Pages — templates:
-
-  Titel                         Handle                    Theme template
-  Webshop laten bouwen          webshop-laten-bouwen      page.webshop
-  App laten maken               app-laten-maken           page.app
-  Prijzen                       prijzen                   page.prijzen
-  Over ons                      over-ons                  page.over-ons
-  Contact                       contact                   page.contact
-  Privacy                       privacy                   page.privacy
-  Offerte                       offerte                   page.offerte
-  Onderhoud                     onderhoud                 page.onderhoud
-  Ervaringen                    ervaringen                page.ervaringen
-  FAQ                           faq                       page.faq
-
-Let op: er staat nu een pagina met handle `app-laten-bouwen`. Hernoem die naar `app-laten-maken`
-(of maak een nieuwe pagina met die handle) zodat het menu niet 404’t.
-
-Online Store → Preferences
-  Password protection UIT
-
-Settings → Notifications
-  Contactformulieren naar info@jr-intelligence.com
+Na uploaden:
+  1. Products → Add product (anders blijft de shop leeg)
+  2. Online Store → Pages: Over ons, Contact, Privacy, FAQ
+  3. Settings → Notifications: bestellingen naar info@jr-intelligence.com
