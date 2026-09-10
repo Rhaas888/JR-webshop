@@ -1,6 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
+const filledButtonClass =
+  "inline-flex h-[52px] min-w-[8.5rem] items-center justify-center rounded-2xl bg-foreground px-7 text-base font-medium text-background transition-colors hover:bg-neutral-800";
+const ghostButtonClass =
+  "inline-flex h-[52px] min-w-[8.5rem] items-center justify-center rounded-2xl border border-black/10 bg-white px-7 text-base font-medium transition-colors hover:bg-neutral-50";
+
 export function ShowcaseHero({
   line1 = "Webshop of app",
   highlight = "op maat",
@@ -10,6 +15,7 @@ export function ShowcaseHero({
   primaryLabel = "Offerte aanvragen",
   secondaryHref,
   secondaryLabel,
+  secondaryFilled = false,
 }: {
   line1?: string;
   highlight?: string;
@@ -19,6 +25,7 @@ export function ShowcaseHero({
   primaryLabel?: string;
   secondaryHref?: string;
   secondaryLabel?: string;
+  secondaryFilled?: boolean;
 }) {
   return (
     <section className="relative min-h-[calc(100vh-4.5rem)] overflow-hidden bg-[#f2f2f2]">
@@ -59,16 +66,13 @@ export function ShowcaseHero({
             {description}
           </p>
           <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Link
-              href={primaryHref}
-              className="inline-flex h-[52px] items-center justify-center rounded-2xl bg-foreground px-7 text-base font-medium text-background transition-colors hover:bg-neutral-800"
-            >
+            <Link href={primaryHref} className={filledButtonClass}>
               {primaryLabel}
             </Link>
             {secondaryHref && secondaryLabel ? (
               <Link
                 href={secondaryHref}
-                className="inline-flex h-[52px] items-center justify-center rounded-2xl border border-black/10 bg-white px-7 text-base font-medium transition-colors hover:bg-neutral-50"
+                className={secondaryFilled ? filledButtonClass : ghostButtonClass}
               >
                 {secondaryLabel}
               </Link>

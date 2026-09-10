@@ -19,6 +19,7 @@ export default function HomePage() {
         primaryLabel="Webshop"
         secondaryHref="/app-laten-maken"
         secondaryLabel="App"
+        secondaryFilled
       />
       <TrustStrip />
       <LogoTicker />
