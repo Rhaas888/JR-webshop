@@ -59,7 +59,7 @@ export function Process() {
           </h2>
         </RevealHeading>
         <p className="mt-4 text-lg font-medium leading-8 text-foreground">
-          Scroll mee. De auto rijdt langs vijf vaste punten. Je weet steeds wat er gebeurt, wat het kost en wanneer het klaar is.
+          Scroll mee. De raket gaat langs vijf vaste punten. Je weet steeds wat er gebeurt, wat het kost en wanneer het klaar is.
         </p>
       </div>
 
@@ -72,9 +72,16 @@ export function Process() {
           />
           <div
             className="absolute left-1/2 z-10 -translate-x-1/2 transition-[top] duration-75 ease-linear motion-reduce:transition-none"
-            style={{ top: `calc(${progress * 100}% - 18px)` }}
+            style={{ top: `calc(${progress * 100}% - 40px)` }}
           >
-            <CarIcon />
+            <img
+              src="/images/process-rocket.png"
+              alt=""
+              width={52}
+              height={160}
+              aria-hidden="true"
+              className="h-auto w-7 drop-shadow-[0_6px_10px_rgba(27,61,47,0.28)]"
+            />
           </div>
         </div>
 
@@ -123,28 +130,5 @@ export function Process() {
         </ol>
       </div>
     </Section>
-  );
-}
-
-function CarIcon() {
-  return (
-    <svg
-      viewBox="0 0 80 40"
-      width="46"
-      height="24"
-      aria-hidden="true"
-      className="origin-center rotate-90 drop-shadow-[0_6px_10px_rgba(27,61,47,0.28)]"
-    >
-      <path
-        d="M14 26 22 14h22l12 12h10v8H60a7 7 0 0 1-14 0H32a7 7 0 0 1-14 0H10v-8z"
-        fill="#1B3D2F"
-      />
-      <rect x="24" y="16" width="16" height="8" rx="2" fill="#E7EEE9" />
-      <circle cx="25" cy="34" r="5" fill="#0a0a0a" />
-      <circle cx="25" cy="34" r="2" fill="#e7eee9" />
-      <circle cx="53" cy="34" r="5" fill="#0a0a0a" />
-      <circle cx="53" cy="34" r="2" fill="#e7eee9" />
-      <rect x="62" y="22" width="4" height="4" rx="1" fill="#e7eee9" />
-    </svg>
   );
 }

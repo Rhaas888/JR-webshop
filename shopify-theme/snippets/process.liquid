@@ -3,22 +3,19 @@
     {% render 'section-heading',
       kicker: 'Proces',
       title: 'Van eerste gesprek tot live',
-      description: 'Scroll mee. De auto rijdt langs vijf vaste punten. Je weet steeds wat er gebeurt, wat het kost en wanneer het klaar is.'
+      description: 'Scroll mee. De raket gaat langs vijf vaste punten. Je weet steeds wat er gebeurt, wat het kost en wanneer het klaar is.'
     %}
     <div class="jr-process-track" data-process>
       <div class="jr-process-rail" aria-hidden="true">
         <div class="jr-process-rail__bg"></div>
         <div class="jr-process-rail__fill" data-process-fill></div>
         <div class="jr-process-car" data-process-car>
-          <svg viewBox="0 0 80 40" width="46" height="24">
-            <path d="M14 26 22 14h22l12 12h10v8H60a7 7 0 0 1-14 0H32a7 7 0 0 1-14 0H10v-8z" fill="#1B3D2F"></path>
-            <rect x="24" y="16" width="16" height="8" rx="2" fill="#E7EEE9"></rect>
-            <circle cx="25" cy="34" r="5" fill="#0a0a0a"></circle>
-            <circle cx="25" cy="34" r="2" fill="#e7eee9"></circle>
-            <circle cx="53" cy="34" r="5" fill="#0a0a0a"></circle>
-            <circle cx="53" cy="34" r="2" fill="#e7eee9"></circle>
-            <rect x="62" y="22" width="4" height="4" rx="1" fill="#e7eee9"></rect>
-          </svg>
+          <img
+            src="{{ 'process-rocket.png' | asset_url }}"
+            alt=""
+            width="52"
+            height="160"
+          >
         </div>
       </div>
       <ol class="jr-process-steps">

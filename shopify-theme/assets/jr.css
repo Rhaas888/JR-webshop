@@ -1528,10 +1528,10 @@ body.menu-open {
   filter: drop-shadow(0 6px 10px rgba(27, 61, 47, 0.28));
 }
 
-.jr-process-car svg {
+.jr-process-car img {
   display: block;
-  transform: rotate(90deg);
-  transform-origin: center;
+  width: 28px;
+  height: auto;
 }
 
 .jr-process-steps {

@@ -107,7 +107,7 @@
       var next = reduce ? 1 : Math.min(1, Math.max(0, raw));
       var active = Math.min(steps.length - 1, Math.floor(next * steps.length + 0.01));
       if (fill) fill.style.height = "calc(" + next * 100 + "% - 8px)";
-      if (car) car.style.top = "calc(" + next * 100 + "% - 18px)";
+      if (car) car.style.top = "calc(" + next * 100 + "% - 40px)";
       steps.forEach(function (step, index) {
         step.classList.toggle("is-active", index <= active);
       });
