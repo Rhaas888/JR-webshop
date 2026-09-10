@@ -1,4 +1,6 @@
-{% render 'process' %}
+{%- unless page.handle contains 'offerte' -%}
+  {% render 'process' %}
+{%- endunless -%}
 
 {% schema %}
 {

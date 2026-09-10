@@ -1,15 +1,6 @@
 {
   "sections": {
-    "main": { "type": "page-onderhoud", "settings": {} },
-    "ticker": { "type": "logo-ticker", "settings": {} },
-    "faq": { "type": "faq", "settings": {} },
-    "cta": {
-      "type": "cta-band",
-      "settings": {
-        "title": "Onderhoud inplannen?",
-        "text": "Kies een pakket of beschrijf wat je nodig hebt. We reageren binnen één werkdag."
-      }
-    }
+    "main": { "type": "page-default", "settings": {} }
   },
-  "order": ["main", "ticker", "faq", "cta"]
+  "order": ["main"]
 }

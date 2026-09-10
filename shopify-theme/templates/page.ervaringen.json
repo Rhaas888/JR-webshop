@@ -1,8 +1,6 @@
 {
   "sections": {
-    "intro": { "type": "page-ervaringen", "settings": {} },
-    "reviews": { "type": "reviews", "settings": { "show_form": true, "limit": 0 } },
-    "cta": { "type": "cta-band", "settings": {} }
+    "main": { "type": "page-default", "settings": {} }
   },
-  "order": ["intro", "reviews", "cta"]
+  "order": ["main"]
 }

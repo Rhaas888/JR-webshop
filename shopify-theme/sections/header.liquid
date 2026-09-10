@@ -1,14 +1,7 @@
 {%- capture offerte_url -%}{% render 'offerte-url' %}{%- endcapture -%}
 {%- assign offerte_url = offerte_url | strip -%}
-{%- liquid
-  if pages['app-laten-maken'].title != blank
-    assign app_url = pages['app-laten-maken'].url
-  elsif pages['app-laten-bouwen'].title != blank
-    assign app_url = pages['app-laten-bouwen'].url
-  else
-    assign app_url = '/pages/app-laten-maken'
-  endif
--%}
+{%- capture app_url -%}{% render 'app-url' %}{%- endcapture -%}
+{%- assign app_url = app_url | strip -%}
 <header class="jr-header" data-header>
   <div class="jr-container jr-header__inner">
     <a href="{{ routes.root_url }}" class="jr-logo">

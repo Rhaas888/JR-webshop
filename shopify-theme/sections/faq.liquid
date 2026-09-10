@@ -1,4 +1,6 @@
-{% render 'faq' %}
+{%- unless page.handle contains 'offerte' -%}
+  {% render 'faq' %}
+{%- endunless -%}
 
 {% schema %}
 {

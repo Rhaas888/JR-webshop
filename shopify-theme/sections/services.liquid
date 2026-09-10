@@ -25,13 +25,7 @@
           <h3>App laten maken</h3>
           <p class="jr-card__price">vanaf €999</p>
           <p>Software die aansluit op jullie processen. Eerst een werkende versie, daarna verder bouwen waar het waarde heeft.</p>
-          {%- if pages['app-laten-maken'].title != blank -%}
-            <a class="jr-btn jr-btn--primary" href="{{ pages['app-laten-maken'].url }}">Bekijk deze dienst</a>
-          {%- elsif pages['app-laten-bouwen'].title != blank -%}
-            <a class="jr-btn jr-btn--primary" href="{{ pages['app-laten-bouwen'].url }}">Bekijk deze dienst</a>
-          {%- else -%}
-            <a class="jr-btn jr-btn--primary" href="/pages/app-laten-maken">Bekijk deze dienst</a>
-          {%- endif -%}
+          <a class="jr-btn jr-btn--primary" href="{% render 'app-url' %}">Bekijk deze dienst</a>
         </div>
       </article>
     </div>

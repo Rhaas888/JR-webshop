@@ -1,9 +1,11 @@
-{% render 'page-contact-block',
-  kicker: section.settings.kicker,
-  title: section.settings.title,
-  description: section.settings.description,
-  interest: section.settings.interest
-%}
+{%- unless page.handle contains 'offerte' -%}
+  {% render 'page-contact-block',
+    kicker: section.settings.kicker,
+    title: section.settings.title,
+    description: section.settings.description,
+    interest: section.settings.interest
+  %}
+{%- endunless -%}
 
 {% schema %}
 {

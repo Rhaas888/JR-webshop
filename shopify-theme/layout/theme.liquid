@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
-      {%- if template.suffix == 'offerte' -%}
+      {%- if template.suffix == 'offerte' or page.handle contains 'offerte' -%}
         Offerte aanvragen | {{ shop.name }}
       {%- else -%}
         {{ page_title }}
         {%- unless page_title contains shop.name %} | {{ shop.name }}{% endunless -%}
       {%- endif -%}
     </title>
-    {%- if template.suffix == 'offerte' -%}
+    {%- if template.suffix == 'offerte' or page.handle contains 'offerte' -%}
       <meta name="description" content="Vraag een vaste prijs aan voor een webshop, app of onderhoud. JR Intelligence reageert binnen 1 werkdag.">
     {%- elsif page_description -%}
       <meta name="description" content="{{ page_description | escape }}">
