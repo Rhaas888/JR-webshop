@@ -134,8 +134,8 @@ export const timelineOptions = [
 
 export const trustItems = [
   {
-    title: "Reactie in 1 werkdag",
-    text: "Je hoort van de bouwers. Geen ticketsysteem.",
+    title: "Snel contact",
+    text: "Binnen 1 werkdag hoor je van ons.",
   },
   {
     title: "Vaste prijsafspraak",
