@@ -1,18 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CtaBand } from "@/components/cta-band";
-import { Faq } from "@/components/faq";
-import { LogoTicker } from "@/components/logo-ticker";
-import { MaintenanceCards } from "@/components/maintenance-cards";
+import { PriceFactors, PricingPath } from "@/components/price-factors";
+import { PricingSwitcher } from "@/components/pricing-switcher";
 import { PageIntro } from "@/components/page-intro";
-import { PricingTable } from "@/components/pricing-table";
-import { Section, SectionHeading } from "@/components/section";
-import { maintenance } from "@/lib/content";
+import { Section } from "@/components/section";
 
 export const metadata: Metadata = {
   title: "Prijzen",
   description:
-    "Vanaf-prijzen voor een webshop (€499) of app (€999) op maat. Onderhoud vanaf €49 per maand. Vaste offerte voordat we beginnen.",
+    "Webshop vanaf €499, app vanaf €999, onderhoud vanaf €49 per maand. Kies een pakket, vergelijk wat erin zit, en vraag een vaste prijs aan.",
 };
 
 export default function PrijzenPage() {
@@ -20,29 +17,29 @@ export default function PrijzenPage() {
     <>
       <PageIntro
         kicker="Prijzen"
-        title="Bouwen eenmalig. Onderhoud alleen als je het wilt."
-        description="Webshop vanaf €499, app vanaf €999. Daarna kun je zelf verder, of een maandpakket nemen. Geen verborgen uren."
+        title="Je ziet wat het kost. Daarna kies je een pakket."
+        description="Webshop vanaf €499, app vanaf €999, onderhoud vanaf €49 per maand. Wissel hieronder. Wat extra is, zeggen we vooraf."
       />
-      <PricingTable tone="white" />
+      <Section>
+        <PriceFactors />
+      </Section>
       <Section tone="muted">
-        <SectionHeading
-          kicker={maintenance.kicker}
-          title="Maandelijks onderhoud"
-          description={maintenance.intro}
-        />
-        <div className="mt-12">
-          <MaintenanceCards />
-        </div>
-        <p className="mt-8 text-sm leading-6 text-muted-foreground">
-          {maintenance.note}{" "}
-          <Link href="/onderhoud" className="text-forest underline underline-offset-4">
-            Uitleg per pakket
+        <PricingSwitcher heading tone="muted" />
+      </Section>
+      <Section>
+        <PricingPath />
+        <p className="mt-10 text-base font-medium text-foreground">
+          Klaar om te kiezen?{" "}
+          <Link href="/offerte" className="text-forest underline underline-offset-4">
+            Vraag een offerte
+          </Link>{" "}
+          of ga naar{" "}
+          <Link href="/contact" className="text-forest underline underline-offset-4">
+            contact
           </Link>
           .
         </p>
       </Section>
-      <LogoTicker />
-      <Faq />
       <CtaBand title="Wil je weten wat het kost?" />
     </>
   );

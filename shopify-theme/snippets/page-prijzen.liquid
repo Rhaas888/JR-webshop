@@ -1,0 +1,31 @@
+<div class="jr-container jr-page-intro">
+  <p class="jr-kicker">Prijzen</p>
+  <h1>Je ziet wat het kost. Daarna kies je een pakket.</h1>
+  <p class="jr-lede">Webshop vanaf €499, app vanaf €999, onderhoud vanaf €49 per maand. Wissel hieronder. Wat extra is, zeggen we vooraf.</p>
+</div>
+
+<section class="jr-section">
+  <div class="jr-container">
+    {% render 'price-factors' %}
+  </div>
+</section>
+
+<section class="jr-section jr-section--muted">
+  <div class="jr-container">
+    {% render 'pricing-switcher', default_dienst: 'webshop' %}
+  </div>
+</section>
+
+<section class="jr-section">
+  <div class="jr-container">
+    {% render 'pricing-path' %}
+    <p class="jr-pricing-follow">
+      Klaar om te kiezen?
+      <a class="jr-link" href="{% render 'offerte-url' %}">Vraag een offerte</a>
+      of ga naar
+      <a class="jr-link" href="/pages/contact">contact</a>.
+    </p>
+  </div>
+</section>
+
+{% render 'cta-band', title: 'Wil je weten wat het kost?' %}

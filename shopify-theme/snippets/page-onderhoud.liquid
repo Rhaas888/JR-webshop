@@ -6,52 +6,10 @@
 
 <section class="jr-section">
   <div class="jr-container">
-    <div class="jr-pack-grid">
-      <article class="jr-pack">
-        <h3>Professional</h3>
-        <p class="jr-pack__price">€49 <span>per maand</span></p>
-        <p>Updates, backups en we houden de shop bij.</p>
-        <ul>
-          <li>Updates van platform en plugins</li>
-          <li>Dagelijkse backups</li>
-          <li>We houden in de gaten of de shop online blijft</li>
-          <li>Beveiliging en SSL</li>
-          <li>Eén contactmoment per maand</li>
-        </ul>
-        <a class="jr-btn jr-btn--primary" href="{% render 'offerte-url', query: 'interesse=onderhoud&pakket=professional' %}">Kies Professional</a>
-      </article>
-      <article class="jr-pack jr-pack--featured">
-        <p class="jr-pack__badge">Meest gekozen</p>
-        <h3>Professional Plus</h3>
-        <p class="jr-pack__price">€99 <span>per maand</span></p>
-        <p>Onderhoud plus ruimte voor kleine aanpassingen.</p>
-        <ul>
-          <li>Alles uit Professional</li>
-          <li>2 uur kleine wijzigingen per maand</li>
-          <li>Maandelijks kort rapport</li>
-          <li>Voorrang op vragen</li>
-          <li>Hulp bij content of producten</li>
-        </ul>
-        <a class="jr-btn jr-btn--light" href="{% render 'offerte-url', query: 'interesse=onderhoud&pakket=plus' %}">Kies Plus</a>
-      </article>
-      <article class="jr-pack">
-        <h3>Care</h3>
-        <p class="jr-pack__price">€199 <span>per maand</span></p>
-        <p>Als je vaker wilt bijsturen, zonder elke keer een nieuwe offerte.</p>
-        <ul>
-          <li>Alles uit Professional Plus</li>
-          <li>6 uur per maand inbegrepen</li>
-          <li>Voorrang bij storingen</li>
-          <li>Kwartaalgesprek over wat beter kan</li>
-          <li>Ruimte in de planning om verder te bouwen</li>
-        </ul>
-        <a class="jr-btn jr-btn--primary" href="{% render 'offerte-url', query: 'interesse=onderhoud&pakket=care' %}">Kies Care</a>
-      </article>
-    </div>
+    {% render 'pricing-switcher', default_dienst: 'onderhoud', show_heading: false %}
     <p class="jr-muted" style="margin-top: 32px; max-width: 40rem;">
       De eerste weken na oplevering horen bij de bouw. Onderhoud start pas als je dat wilt.
-      Twijfel je? <a class="jr-link" href="/pages/contact">Stel een vraag</a> of vraag meteen een
-      <a class="jr-link" href="{% render 'offerte-url', query: 'interesse=onderhoud' %}">onderhoudsofferte</a>.
+      Twijfel je? <a class="jr-link" href="/pages/contact">Stel een vraag</a>.
     </p>
   </div>
 </section>

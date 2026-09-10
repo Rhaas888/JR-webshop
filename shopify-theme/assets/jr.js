@@ -60,16 +60,57 @@
   var params = new URLSearchParams(window.location.search);
   var interestParam = params.get("interesse");
   var packageParam = params.get("pakket");
-  var interestSelect = document.querySelector("[name='contact[interesse]']");
-  if (interestSelect && interestParam) {
-    var allowed = ["webshop", "app", "onderhoud", "anders"];
-    if (allowed.indexOf(interestParam) !== -1) interestSelect.value = interestParam;
+  var allowedInterest = ["webshop", "app", "onderhoud", "anders"];
+
+  function parsePackageOptions(wrap) {
+    var node = wrap.querySelector("[data-package-options]");
+    if (!node) return {};
+    try {
+      return JSON.parse(node.textContent || "{}");
+    } catch (error) {
+      return {};
+    }
   }
 
-  var formWrap = document.querySelector("[data-contact-form]");
-  var form = formWrap && formWrap.querySelector("form");
-  if (form) {
-    if (document.body.classList.contains("template-page-offerte")) {
+  function fillPackageSelect(wrap, interest, selectedId) {
+    var field = wrap.querySelector("[data-package-field]");
+    var select = wrap.querySelector("[data-package-select]");
+    if (!field || !select) return;
+    var packs = parsePackageOptions(wrap)[interest] || [];
+    var current = (selectedId || "").toLowerCase();
+    select.innerHTML = "";
+    var empty = document.createElement("option");
+    empty.value = "";
+    empty.textContent = "Nog niet gekozen";
+    select.appendChild(empty);
+    packs.forEach(function (pack) {
+      var option = document.createElement("option");
+      option.value = pack.id;
+      option.textContent = pack.name + " (" + pack.price + ")";
+      if (current && (current === pack.id || current === pack.name.toLowerCase())) {
+        option.selected = true;
+      }
+      select.appendChild(option);
+    });
+    field.hidden = packs.length === 0;
+  }
+
+  document.querySelectorAll("[data-contact-form]").forEach(function (formWrap) {
+    var form = formWrap.querySelector("form");
+    var interestSelect = formWrap.querySelector("[data-interest-select], [name='contact[interesse]']");
+    if (interestSelect && interestParam && allowedInterest.indexOf(interestParam) !== -1) {
+      interestSelect.value = interestParam;
+    }
+    if (formWrap.getAttribute("data-form-variant") === "offerte") {
+      fillPackageSelect(formWrap, interestSelect ? interestSelect.value : "", packageParam);
+      if (interestSelect) {
+        interestSelect.addEventListener("change", function () {
+          fillPackageSelect(formWrap, interestSelect.value, "");
+        });
+      }
+    }
+    if (!form) return;
+    if (formWrap.getAttribute("data-form-variant") === "offerte") {
       var action = form.getAttribute("action") || window.location.pathname;
       if (action.indexOf("view=offerte") === -1) {
         form.setAttribute(
@@ -83,6 +124,7 @@
       var company = form.querySelector("[name='contact[bedrijf]']");
       var budget = form.querySelector("[name='contact[budget]']");
       var timeline = form.querySelector("[name='contact[planning]']");
+      var packageSelect = form.querySelector("[data-package-select]");
       var message = form.querySelector("[name='contact[body]']");
       if (!message) return;
 
@@ -91,12 +133,62 @@
       if (company && company.value) extra.push("Bedrijf: " + company.value);
       if (budget && budget.value) extra.push("Budget: " + budget.value);
       if (timeline && timeline.value) extra.push("Planning: " + timeline.value);
-      if (packageParam) extra.push("Pakket: " + packageParam);
+      if (packageSelect && packageSelect.value) {
+        var chosen = packageSelect.options[packageSelect.selectedIndex];
+        extra.push("Pakket: " + (chosen ? chosen.textContent : packageSelect.value));
+      } else if (packageParam) {
+        extra.push("Pakket: " + packageParam);
+      }
       if (extra.length) {
         message.value = extra.join("\n") + "\n\n" + message.value;
       }
     });
-  }
+  });
+
+  document.querySelectorAll("[data-pricing-switcher]").forEach(function (root) {
+    var tabs = root.querySelectorAll("[data-dienst]");
+    var panels = root.querySelectorAll("[data-panel]");
+    var allowed = ["webshop", "app", "onderhoud"];
+
+    function show(id, updateUrl) {
+      if (allowed.indexOf(id) === -1) return;
+      root.setAttribute("data-active", id);
+      tabs.forEach(function (tab) {
+        var on = tab.getAttribute("data-dienst") === id;
+        tab.classList.toggle("is-active", on);
+        tab.setAttribute("aria-selected", on ? "true" : "false");
+        tab.tabIndex = on ? 0 : -1;
+      });
+      panels.forEach(function (panel) {
+        var on = panel.getAttribute("data-panel") === id;
+        panel.classList.toggle("is-active", on);
+        if (on) panel.removeAttribute("hidden");
+        else panel.setAttribute("hidden", "");
+      });
+      if (updateUrl && window.history && window.history.replaceState) {
+        var url = new URL(window.location.href);
+        url.searchParams.set("dienst", id);
+        history.replaceState({}, "", url.pathname + url.search + url.hash);
+      }
+    }
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        show(tab.getAttribute("data-dienst"), true);
+      });
+      tab.addEventListener("keydown", function (event) {
+        if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
+        event.preventDefault();
+        var list = Array.prototype.slice.call(tabs);
+        var index = list.indexOf(tab);
+        var next = event.key === "ArrowRight" ? index + 1 : index - 1;
+        if (next < 0) next = list.length - 1;
+        if (next >= list.length) next = 0;
+        list[next].focus();
+        show(list[next].getAttribute("data-dienst"), true);
+      });
+    });
+  });
 
   var process = document.querySelector("[data-process]");
   if (process) {

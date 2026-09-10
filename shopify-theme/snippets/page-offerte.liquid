@@ -1,16 +1,45 @@
+{%- assign chosen = request.query_parameters.interesse | default: '' -%}
+{%- capture offerte_webshop -%}{% render 'offerte-url', query: 'interesse=webshop' %}{%- endcapture -%}
+{%- capture offerte_app -%}{% render 'offerte-url', query: 'interesse=app' %}{%- endcapture -%}
+{%- capture offerte_onderhoud -%}{% render 'offerte-url', query: 'interesse=onderhoud' %}{%- endcapture -%}
+
 <div class="jr-container jr-page-intro">
   <p class="jr-kicker">Offerte</p>
   <h1>Vraag een prijs aan</h1>
-  <p class="jr-lede">Vertel kort wat je wilt bouwen, wanneer, en ongeveer wat het mag kosten. Geen lang formulier. We reageren binnen 1 werkdag.</p>
+  <p class="jr-lede">Vertel kort wat je wilt bouwen. Kies een pakket als je dat al weet. We reageren binnen 1 werkdag.</p>
 </div>
 
 <section class="jr-section">
+  <div class="jr-container">
+    <p class="jr-kicker">Waarvoor</p>
+    <h2 class="jr-offerte-choose__title">Kies eerst wat je wilt</h2>
+    <div class="jr-offerte-choose">
+      <a class="jr-offerte-choose__card{% if chosen == 'webshop' %} is-active{% endif %}" href="{{ offerte_webshop | strip }}#offerte-form">
+        <p class="jr-offerte-choose__name">Webshop</p>
+        <p class="jr-offerte-choose__price">Vanaf €499</p>
+        <p class="jr-offerte-choose__cta">Kies webshop</p>
+      </a>
+      <a class="jr-offerte-choose__card{% if chosen == 'app' %} is-active{% endif %}" href="{{ offerte_app | strip }}#offerte-form">
+        <p class="jr-offerte-choose__name">App</p>
+        <p class="jr-offerte-choose__price">Vanaf €999</p>
+        <p class="jr-offerte-choose__cta">Kies app</p>
+      </a>
+      <a class="jr-offerte-choose__card{% if chosen == 'onderhoud' %} is-active{% endif %}" href="{{ offerte_onderhoud | strip }}#offerte-form">
+        <p class="jr-offerte-choose__name">Onderhoud</p>
+        <p class="jr-offerte-choose__price">Vanaf €49 per maand</p>
+        <p class="jr-offerte-choose__cta">Kies onderhoud</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="jr-section jr-section--muted">
   <div class="jr-container jr-contact-grid">
     <div>
       <ul class="jr-checks">
-        <li><span class="jr-dot"></span>Webshop vanaf €499, app vanaf €999.</li>
+        <li><span class="jr-dot"></span>Webshop vanaf €499. App vanaf €999.</li>
         <li><span class="jr-dot"></span>Onderhoud vanaf €49 per maand, opzegbaar.</li>
-        <li><span class="jr-dot"></span>Vaste offerte voordat we beginnen.</li>
+        <li><span class="jr-dot"></span>Je kiest een pakket. Daarna een vaste prijs, voordat we beginnen.</li>
         <li><span class="jr-dot"></span>Alleen een vraag? Ga naar <a class="jr-link" href="/pages/contact">contact</a>.</li>
       </ul>
       <p class="jr-form-note" style="margin-top: 40px;">

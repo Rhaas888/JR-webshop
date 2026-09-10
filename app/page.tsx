@@ -3,7 +3,7 @@ import Link from "next/link";
 import { CtaBand } from "@/components/cta-band";
 import { Faq } from "@/components/faq";
 import { LogoTicker } from "@/components/logo-ticker";
-import { MaintenanceTeaser } from "@/components/maintenance-teaser";
+import { PricingSwitcher } from "@/components/pricing-switcher";
 import { Process } from "@/components/process";
 import { ReviewsTeaser } from "@/components/reviews/reviews-board";
 import { Section, SectionHeading } from "@/components/section";
@@ -35,7 +35,7 @@ export default function HomePage() {
             title="Webshop laten bouwen"
             price={prices.webshop.label}
             text="Een eigen shop: producten, checkout, beheer en een ontwerp dat bij je merk past."
-            href="/webshop-laten-bouwen"
+            href="/prijzen?dienst=webshop"
             image="/images/shop-still.png"
             imageAlt="Productstilte voor een rustige webshop"
           />
@@ -43,14 +43,17 @@ export default function HomePage() {
             title="App laten maken"
             price={prices.app.label}
             text="Een app die past bij hoe jij werkt. Eerst een versie die je kunt gebruiken, daarna bouwen we verder."
-            href="/app-laten-maken"
+            href="/prijzen?dienst=app"
             image="/images/app-desk.png"
             imageAlt="Tablet met een overzichtelijk dashboard"
           />
         </div>
       </Section>
 
-      <MaintenanceTeaser />
+      <Section tone="muted">
+        <PricingSwitcher heading tone="muted" />
+      </Section>
+
       <Process />
       <ReviewsTeaser />
 
@@ -121,7 +124,7 @@ function ServiceCard({
           href={href}
           className="mt-8 inline-flex h-11 items-center justify-center rounded-2xl bg-foreground px-5 text-sm font-medium text-background transition-colors hover:bg-neutral-800"
         >
-          Bekijk deze dienst
+          Bekijk prijzen
         </Link>
       </div>
     </article>

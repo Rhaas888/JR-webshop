@@ -1,7 +1,7 @@
 {%- assign interest_default = default_interest | default: 'webshop' -%}
 {%- assign variant = form_variant | default: 'contact' -%}
 
-<div data-contact-form data-form-variant="{{ variant }}">
+<div data-contact-form data-form-variant="{{ variant }}"{% if variant == 'offerte' %} id="offerte-form"{% endif %}>
 {% form 'contact', class: 'jr-form' %}
   {%- if form.posted_successfully? -%}
     <div class="jr-success">
@@ -38,13 +38,22 @@
 
     <div class="jr-field jr-field--full">
       <label for="ContactInterest">Interesse</label>
-      <select id="ContactInterest" name="contact[interesse]">
+      <select id="ContactInterest" name="contact[interesse]" data-interest-select>
         <option value="webshop"{% if interest_default == 'webshop' %} selected{% endif %}>Webshop laten bouwen</option>
         <option value="app"{% if interest_default == 'app' %} selected{% endif %}>App laten maken</option>
         <option value="onderhoud"{% if interest_default == 'onderhoud' %} selected{% endif %}>Onderhoud</option>
         <option value="anders"{% if interest_default == 'anders' %} selected{% endif %}>Iets anders</option>
       </select>
     </div>
+
+    {%- if variant == 'offerte' -%}
+      <div class="jr-field jr-field--full" data-package-field hidden>
+        <label for="ContactPackage">Pakket</label>
+        <select id="ContactPackage" name="contact[pakket]" data-package-select>
+          <option value="">Nog niet gekozen</option>
+        </select>
+      </div>
+    {%- endif -%}
 
     {%- if variant == 'offerte' -%}
       <div class="jr-form-grid">
@@ -81,4 +90,25 @@
     </p>
   {%- endif -%}
 {% endform %}
+{%- if variant == 'offerte' -%}
+  <script type="application/json" data-package-options>
+    {
+      "webshop": [
+        { "id": "start", "name": "Start", "price": "€499" },
+        { "id": "groei", "name": "Groei", "price": "vanaf €1.499" },
+        { "id": "maatwerk", "name": "Op maat", "price": "Offerte" }
+      ],
+      "app": [
+        { "id": "start", "name": "Start", "price": "€999" },
+        { "id": "groei", "name": "Groei", "price": "vanaf €1.999" },
+        { "id": "maatwerk", "name": "Op maat", "price": "Offerte" }
+      ],
+      "onderhoud": [
+        { "id": "professional", "name": "Professional", "price": "€49" },
+        { "id": "plus", "name": "Plus", "price": "€99" },
+        { "id": "care", "name": "Care", "price": "€199" }
+      ]
+    }
+  </script>
+{%- endif -%}
 </div>

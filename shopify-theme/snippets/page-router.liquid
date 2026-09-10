@@ -11,30 +11,48 @@
       {% render 'page-webshop' %}
       {% render 'process' %}
       {% render 'faq' %}
+      <section class="jr-section">
+        <div class="jr-container">
+          {% render 'pricing-switcher', default_dienst: 'webshop', show_heading: false %}
+        </div>
+      </section>
       {% render 'page-contact-block',
-        kicker: 'Contact',
+        kicker: 'Offerte',
         title: 'Wil je een webshop laten bouwen?',
         description: 'Beschrijf kort je assortiment en wat je nu mist. Binnen 1 werkdag hoor je van ons.',
-        interest: 'webshop'
+        interest: 'webshop',
+        form_variant: 'offerte'
       %}
-      {% render 'cta-band', title: 'Liever eerst de prijzen zien?' %}
+      {% render 'cta-band',
+        title: 'Liever eerst de prijzen zien?',
+        href: '/pages/prijzen?dienst=webshop',
+        cta: 'Naar prijzen'
+      %}
 
     {%- when 'app-laten-maken', 'app-laten-bouwen' -%}
       {% render 'page-app' %}
       {% render 'process' %}
       {% render 'faq' %}
+      <section class="jr-section">
+        <div class="jr-container">
+          {% render 'pricing-switcher', default_dienst: 'app', show_heading: false %}
+        </div>
+      </section>
       {% render 'page-contact-block',
-        kicker: 'Contact',
+        kicker: 'Offerte',
         title: 'Wil je een app laten maken?',
         description: 'Vertel wat de app moet doen. Binnen 1 werkdag hoor je van ons.',
-        interest: 'app'
+        interest: 'app',
+        form_variant: 'offerte'
       %}
-      {% render 'cta-band' %}
+      {% render 'cta-band',
+        title: 'Liever eerst de prijzen zien?',
+        href: '/pages/prijzen?dienst=app',
+        cta: 'Naar prijzen'
+      %}
 
     {%- when 'prijzen' -%}
-      {% render 'pricing', muted: false %}
-      {% render 'faq' %}
-      {% render 'cta-band', title: 'Wil je weten wat het kost?' %}
+      {% render 'page-prijzen' %}
 
     {%- when 'over-ons' -%}
       {% render 'page-over-ons' %}
@@ -56,7 +74,8 @@
       {% render 'faq' %}
       {% render 'cta-band',
         title: 'Onderhoud nodig?',
-        text: 'Kies een pakket of beschrijf wat je nodig hebt. Binnen 1 werkdag hoor je van ons.'
+        text: 'Kies een pakket of beschrijf wat je nodig hebt. Binnen 1 werkdag hoor je van ons.',
+        href: '/pages/offerte?interesse=onderhoud'
       %}
 
     {%- when 'ervaringen' -%}

@@ -1,11 +1,18 @@
 {%- assign cta_title = title | default: 'Klaar om te starten?' -%}
 {%- assign cta_text = text | default: 'Vertel kort wat je wilt bouwen. Binnen 1 werkdag hoor je van ons.' -%}
+{%- assign cta_label = cta | default: 'Offerte aanvragen' -%}
+{%- if href != blank -%}
+  {%- assign cta_href = href -%}
+{%- else -%}
+  {%- capture cta_href -%}{% render 'offerte-url' %}{%- endcapture -%}
+  {%- assign cta_href = cta_href | strip -%}
+{%- endif -%}
 <section class="jr-section jr-section--muted">
   <div class="jr-container">
     <div class="jr-cta">
       <h2>{{ cta_title }}</h2>
       <p>{{ cta_text }}</p>
-      <a class="jr-btn jr-btn--light" href="{% render 'offerte-url' %}">Offerte aanvragen</a>
+      <a class="jr-btn jr-btn--light" href="{{ cta_href }}">{{ cta_label }}</a>
     </div>
   </div>
 </section>

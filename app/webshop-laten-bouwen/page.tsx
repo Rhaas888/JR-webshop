@@ -4,6 +4,7 @@ import { ContactForm } from "@/components/contact-form";
 import { CtaBand } from "@/components/cta-band";
 import { Faq } from "@/components/faq";
 import { LogoTicker } from "@/components/logo-ticker";
+import { PricingSwitcher } from "@/components/pricing-switcher";
 import { Process } from "@/components/process";
 import { ReviewsTeaser } from "@/components/reviews/reviews-board";
 import { ShowcaseHero } from "@/components/showcase-hero";
@@ -24,7 +25,7 @@ export default function WebshopPage() {
         highlight="laten bouwen"
         line3=""
         description={webshopPage.intro}
-        secondaryHref="/prijzen"
+        secondaryHref="/prijzen?dienst=webshop"
         secondaryLabel="Prijzen"
       />
       <LogoTicker />
@@ -82,17 +83,25 @@ export default function WebshopPage() {
       <ReviewsTeaser />
       <Faq />
 
+      <Section>
+        <PricingSwitcher defaultDienst="webshop" heading={false} />
+      </Section>
+
       <Section tone="muted">
         <div className="grid gap-10 lg:grid-cols-2">
           <SectionHeading
             kicker="Offerte"
             title="Wil je een webshop laten bouwen?"
-    description: 'Beschrijf kort je assortiment en wat je nu mist. Binnen 1 werkdag hoor je van ons.',
+            description="Beschrijf kort je assortiment en wat je nu mist. Binnen 1 werkdag hoor je van ons."
           />
           <ContactForm defaultInterest="webshop" variant="offerte" />
         </div>
       </Section>
-      <CtaBand title="Liever eerst de prijzen zien?" />
+      <CtaBand
+        title="Liever eerst de prijzen zien?"
+        href="/prijzen?dienst=webshop"
+        cta="Naar prijzen"
+      />
     </>
   );
 }

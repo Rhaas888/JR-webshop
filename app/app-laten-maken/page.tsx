@@ -4,6 +4,7 @@ import { ContactForm } from "@/components/contact-form";
 import { CtaBand } from "@/components/cta-band";
 import { Faq } from "@/components/faq";
 import { LogoTicker } from "@/components/logo-ticker";
+import { PricingSwitcher } from "@/components/pricing-switcher";
 import { Process } from "@/components/process";
 import { ReviewsTeaser } from "@/components/reviews/reviews-board";
 import { ShowcaseHero } from "@/components/showcase-hero";
@@ -24,7 +25,7 @@ export default function AppPage() {
         highlight="laten maken"
         line3=""
         description={appPage.intro}
-        secondaryHref="/prijzen"
+        secondaryHref="/prijzen?dienst=app"
         secondaryLabel="Prijzen"
       />
       <LogoTicker />
@@ -82,6 +83,10 @@ export default function AppPage() {
       <ReviewsTeaser />
       <Faq />
 
+      <Section>
+        <PricingSwitcher defaultDienst="app" heading={false} />
+      </Section>
+
       <Section tone="muted">
         <div className="grid gap-10 lg:grid-cols-2">
           <SectionHeading
@@ -92,7 +97,11 @@ export default function AppPage() {
           <ContactForm defaultInterest="app" variant="offerte" />
         </div>
       </Section>
-      <CtaBand />
+      <CtaBand
+        title="Liever eerst de prijzen zien?"
+        href="/prijzen?dienst=app"
+        cta="Naar prijzen"
+      />
     </>
   );
 }

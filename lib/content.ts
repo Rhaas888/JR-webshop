@@ -453,7 +453,7 @@ export const offertePage = {
   kicker: "Offerte",
   title: "Vraag een prijs aan",
   intro:
-    "Vertel kort wat je wilt bouwen, wanneer, en ongeveer wat het mag kosten. Geen lang formulier. We reageren binnen 1 werkdag.",
+    "Vertel kort wat je wilt bouwen. Kies een pakket als je dat al weet. We reageren binnen 1 werkdag.",
 } as const;
 
 export const contactPage = {

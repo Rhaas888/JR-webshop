@@ -2,6 +2,7 @@
 {%- assign block_title = title | default: 'Vertel wat je wilt laten bouwen' -%}
 {%- assign block_description = description | default: 'Een paar zinnen is genoeg. Binnen 1 werkdag hoor je van ons.' -%}
 {%- assign block_interest = interest | default: 'webshop' -%}
+{%- assign block_variant = form_variant | default: 'contact' -%}
 <section class="jr-section jr-section--muted">
   <div class="jr-container">
     <div class="jr-contact-grid">
@@ -10,7 +11,7 @@
         title: block_title,
         description: block_description
       %}
-      {% render 'contact-form', default_interest: block_interest %}
+      {% render 'contact-form', default_interest: block_interest, form_variant: block_variant %}
     </div>
   </div>
 </section>
