@@ -26,17 +26,17 @@ export function TrustStrip() {
               <article
                 key={item.title}
                 className={cn(
-                  "group relative overflow-hidden rounded-2xl border border-black/8 bg-white px-6 pb-8 pt-6 lg:px-[26px] lg:pb-9 lg:pt-7",
+                  "group relative overflow-hidden rounded-2xl border border-black/8 bg-white px-6 pb-8 pt-6 pl-7 lg:px-[26px] lg:pl-8 lg:pb-9 lg:pt-7",
                   hoverCard,
                 )}
               >
-                <span className="absolute inset-y-0 left-0 w-[3px] bg-forest/40 transition-[width,opacity] duration-200 group-hover:w-1 group-hover:bg-forest" />
+                <span className="absolute inset-y-0 left-0 w-[3px] bg-forest transition-[width] duration-200 group-hover:w-1" />
                 <div className="flex items-center justify-between">
                   <span className="text-[13px] font-semibold tracking-[0.14em] text-forest">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <span
-                    className="inline-flex size-11 items-center justify-center rounded-xl bg-forest-soft text-forest"
+                    className="inline-flex size-11 items-center justify-center rounded-xl bg-forest-soft text-forest transition-transform duration-200 group-hover:scale-105"
                     aria-hidden="true"
                   >
                     <Icon />

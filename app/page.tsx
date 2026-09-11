@@ -114,7 +114,7 @@ function ServiceCard({
           alt={imageAlt}
           fill
           quality={100}
-          className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04] motion-reduce:transform-none"
+          className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.06] motion-reduce:transform-none"
           sizes="(min-width: 1024px) 520px, 100vw"
         />
       </div>

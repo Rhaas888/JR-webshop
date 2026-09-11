@@ -159,7 +159,7 @@ body.menu-open {
 
 .jr-btn--primary:hover {
   background: #171717;
-  box-shadow: 0 10px 22px rgba(10, 10, 10, 0.18);
+  box-shadow: 0 12px 26px rgba(10, 10, 10, 0.22);
 }
 
 .jr-btn--ghost {
@@ -1414,7 +1414,7 @@ body.menu-open {
 }
 
 .jr-card--media:hover .jr-card__media img {
-  transform: scale(1.04);
+  transform: scale(1.06);
 }
 
 .jr-card__body {
@@ -1459,7 +1459,7 @@ body.menu-open {
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 16px;
-  padding: 24px 24px 28px;
+  padding: 24px 24px 28px 28px;
   transition:
     transform 0.22s ease,
     box-shadow 0.22s ease,
@@ -1475,20 +1475,22 @@ body.menu-open {
   bottom: 0;
   width: 3px;
   background: var(--forest);
-  opacity: 0.4;
-  transition: width 0.22s ease, opacity 0.22s ease;
+  transition: width 0.22s ease;
 }
 
 .jr-trust__card:hover {
-  transform: translateY(-4px);
-  border-color: color-mix(in srgb, var(--forest) 28%, #e5e5e5);
-  box-shadow: 0 18px 40px rgba(27, 61, 47, 0.1);
+  transform: translateY(-6px);
+  border-color: color-mix(in srgb, var(--forest) 32%, #e5e5e5);
+  box-shadow: 0 20px 44px rgba(27, 61, 47, 0.14);
   background: #fbfcfb;
 }
 
 .jr-trust__card:hover::before {
   width: 4px;
-  opacity: 1;
+}
+
+.jr-trust__card:hover .jr-trust__icon {
+  transform: scale(1.05);
 }
 
 .jr-trust__top {
@@ -1513,6 +1515,7 @@ body.menu-open {
   border-radius: 12px;
   background: var(--forest-soft);
   color: var(--forest);
+  transition: transform 0.22s ease;
 }
 
 .jr-trust__icon svg {
@@ -1566,7 +1569,7 @@ body.menu-open {
   }
 
   .jr-trust__card {
-    padding: 28px 26px 32px;
+    padding: 28px 26px 32px 30px;
   }
 }
 
