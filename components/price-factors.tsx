@@ -1,4 +1,6 @@
 import { priceFactors, pricingPath } from "@/lib/pricing";
+import { hoverCard } from "@/lib/ui";
+import { cn } from "@/lib/utils";
 
 export function PriceFactors() {
   return (
@@ -11,7 +13,7 @@ export function PriceFactors() {
         {priceFactors.map((item) => (
           <article
             key={item.title}
-            className="rounded-[20px] border border-black/6 bg-white px-6 py-7"
+            className={cn("rounded-[20px] border border-black/6 bg-white px-6 py-7", hoverCard)}
           >
             <h3 className="text-[15px] font-semibold tracking-tight text-forest">{item.title}</h3>
             <p className="mt-4 text-sm font-medium leading-[1.65] text-muted-foreground">
@@ -33,7 +35,7 @@ export function PricingPath() {
         {pricingPath.map((item) => (
           <li
             key={item.step}
-            className="rounded-[20px] border border-black/6 bg-white px-6 py-7"
+            className={cn("rounded-[20px] border border-black/6 bg-white px-6 py-7", hoverCard)}
           >
             <p className="text-sm font-semibold text-forest">{item.step}</p>
             <h3 className="mt-3 text-lg font-semibold tracking-tight">{item.title}</h3>

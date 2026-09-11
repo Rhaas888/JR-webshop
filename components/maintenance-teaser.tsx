@@ -3,6 +3,8 @@ import Link from "next/link";
 import { maintenance } from "@/lib/content";
 import { Section } from "@/components/section";
 import { RevealHeading } from "@/components/reveal-heading";
+import { hoverBtn } from "@/lib/ui";
+import { cn } from "@/lib/utils";
 
 export function MaintenanceTeaser() {
   return (
@@ -41,7 +43,10 @@ export function MaintenanceTeaser() {
           </ul>
           <Link
             href="/onderhoud"
-            className="mt-8 inline-flex h-11 items-center justify-center rounded-2xl bg-foreground px-5 text-sm font-medium text-background transition-colors hover:bg-neutral-800"
+            className={cn(
+              "mt-8 inline-flex h-11 items-center justify-center rounded-2xl bg-foreground px-5 text-sm font-medium text-background hover:bg-neutral-800",
+              hoverBtn,
+            )}
           >
             Bekijk onderhoud
           </Link>

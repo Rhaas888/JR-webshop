@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import { cn } from "@/lib/utils";
 import { pricingDiensten } from "@/lib/pricing";
+import { hoverCard } from "@/lib/ui";
 
 export function OfferteChoose() {
   return (
@@ -30,7 +31,8 @@ function OfferteChooseCards({ chosen }: { chosen: string | null }) {
             key={dienst.id}
             href={`/offerte?interesse=${dienst.id}#offerte-form`}
             className={cn(
-              "rounded-[20px] border bg-white p-6 transition-colors hover:border-forest/30",
+              "rounded-[20px] border bg-white p-6",
+              hoverCard,
               chosen === dienst.id ? "border-forest/30" : "border-black/8",
             )}
           >

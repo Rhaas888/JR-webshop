@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { Section } from "@/components/section";
+import { hoverBtn } from "@/lib/ui";
+import { cn } from "@/lib/utils";
 
 export function CtaBand({
   title = "Klaar om te starten?",
@@ -21,7 +23,10 @@ export function CtaBand({
         <p className="mt-4 max-w-xl text-base leading-7 text-white/70">{text}</p>
         <Link
           href={href}
-          className="mt-8 inline-flex h-11 items-center justify-center rounded-2xl bg-white px-5 text-sm font-medium text-foreground transition-colors hover:bg-neutral-100"
+          className={cn(
+            "mt-8 inline-flex h-11 items-center justify-center rounded-2xl bg-white px-5 text-sm font-medium text-foreground hover:bg-neutral-100",
+            hoverBtn,
+          )}
         >
           {cta}
         </Link>

@@ -11,11 +11,11 @@ import {
   pricingDiensten,
   type PricingDienst,
 } from "@/lib/pricing";
+import { hoverBtn, hoverCard, hoverCardFeatured } from "@/lib/ui";
 
 export function PricingSwitcher({
   defaultDienst = "webshop",
   heading = true,
-  tone = "white",
 }: {
   defaultDienst?: PricingDienst;
   heading?: boolean;
@@ -26,7 +26,6 @@ export function PricingSwitcher({
       <PricingSwitcherReady
         defaultDienst={defaultDienst}
         heading={heading}
-        tone={tone}
       />
     </Suspense>
   );
@@ -35,11 +34,9 @@ export function PricingSwitcher({
 function PricingSwitcherReady({
   defaultDienst,
   heading,
-  tone,
 }: {
   defaultDienst: PricingDienst;
   heading: boolean;
-  tone: "white" | "muted";
 }) {
   const router = useRouter();
   const pathname = usePathname();
@@ -98,10 +95,11 @@ function PricingSwitcherReady({
               aria-selected={selected}
               onClick={() => selectDienst(dienst.id)}
               className={cn(
-                "h-11 shrink-0 rounded-2xl px-5 text-sm font-medium transition-colors",
+                "h-11 shrink-0 rounded-2xl px-5 text-sm font-medium",
+                hoverBtn,
                 selected
-                  ? "bg-foreground text-background"
-                  : "border border-black/10 bg-white text-foreground hover:bg-neutral-50",
+                  ? "bg-foreground text-background hover:bg-neutral-800"
+                  : "border border-black/10 bg-white text-foreground hover:bg-neutral-50 hover:border-forest/30",
               )}
             >
               {dienst.label}
@@ -125,10 +123,8 @@ function PricingSwitcherReady({
             className={cn(
               "flex flex-col rounded-[20px] border p-7 sm:p-8",
               pack.featured
-                ? "border-forest bg-forest text-white"
-                : tone === "muted"
-                  ? "border-black/8 bg-white"
-                  : "border-black/8 bg-white",
+                ? cn("border-forest bg-forest text-white", hoverCardFeatured)
+                : cn("border-black/8 bg-white", hoverCard),
             )}
           >
             {pack.featured ? (
@@ -176,7 +172,8 @@ function PricingSwitcherReady({
             <Link
               href={offerteHref(catalog.offerteInterest, pack.id)}
               className={cn(
-                "mt-8 inline-flex h-11 items-center justify-center rounded-2xl px-5 text-sm font-medium transition-colors",
+                "mt-8 inline-flex h-11 items-center justify-center rounded-2xl px-5 text-sm font-medium",
+                hoverBtn,
                 pack.featured
                   ? "bg-white text-forest hover:bg-neutral-100"
                   : "bg-foreground text-background hover:bg-neutral-800",

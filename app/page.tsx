@@ -10,6 +10,8 @@ import { Section, SectionHeading } from "@/components/section";
 import { ShowcaseHero } from "@/components/showcase-hero";
 import { TrustStrip } from "@/components/trust-strip";
 import { about, prices } from "@/lib/content";
+import { hoverBtn, hoverCard } from "@/lib/ui";
+import { cn } from "@/lib/utils";
 
 export default function HomePage() {
   return (
@@ -75,7 +77,7 @@ export default function HomePage() {
             ))}
             <Link
               href="/over-ons"
-              className="mt-6 inline-flex text-sm font-medium text-forest underline underline-offset-4"
+              className="mt-6 inline-flex text-sm font-medium text-forest underline underline-offset-4 transition-colors hover:text-foreground"
             >
               Meer over JR Intelligence
             </Link>
@@ -105,14 +107,14 @@ function ServiceCard({
   imageAlt: string;
 }) {
   return (
-    <article className="flex flex-col overflow-hidden rounded-3xl border border-black/8">
-      <div className="relative aspect-[4/3]">
+    <article className={cn("group flex flex-col overflow-hidden rounded-3xl border border-black/8 bg-white", hoverCard)}>
+      <div className="relative aspect-[4/3] overflow-hidden">
         <Image
           src={image}
           alt={imageAlt}
           fill
           quality={100}
-          className="object-cover"
+          className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04] motion-reduce:transform-none"
           sizes="(min-width: 1024px) 520px, 100vw"
         />
       </div>
@@ -122,7 +124,10 @@ function ServiceCard({
         <p className="mt-4 flex-1 text-base font-medium leading-7 text-foreground">{text}</p>
         <Link
           href={href}
-          className="mt-8 inline-flex h-11 items-center justify-center rounded-2xl bg-foreground px-5 text-sm font-medium text-background transition-colors hover:bg-neutral-800"
+          className={cn(
+            "mt-8 inline-flex h-11 items-center justify-center rounded-2xl bg-foreground px-5 text-sm font-medium text-background hover:bg-neutral-800",
+            hoverBtn,
+          )}
         >
           Bekijk prijzen
         </Link>

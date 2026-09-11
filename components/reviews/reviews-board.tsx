@@ -15,6 +15,7 @@ import {
   seededPublicReviews,
   type ReviewTopic,
 } from "@/lib/reviews";
+import { hoverBtn } from "@/lib/ui";
 import { cn } from "@/lib/utils";
 
 const filters: { id: "all" | ReviewTopic; label: string }[] = [
@@ -123,9 +124,10 @@ function ReviewsBoardView({
                 type="button"
                 onClick={() => setFilter(item.id)}
                 className={cn(
-                  "h-10 rounded-full px-4 text-sm font-medium transition-colors",
+                  "h-10 rounded-full px-4 text-sm font-medium",
+                  hoverBtn,
                   filter === item.id
-                    ? "bg-forest text-white"
+                    ? "bg-forest text-white hover:bg-forest"
                     : "bg-forest-soft text-forest hover:bg-[#dce6df]",
                 )}
               >
@@ -168,7 +170,7 @@ export function ReviewsTeaser() {
       </div>
       <Link
         href="/ervaringen"
-        className="mt-8 inline-flex text-sm font-medium text-forest underline underline-offset-4"
+        className="mt-8 inline-flex text-sm font-medium text-forest underline underline-offset-4 transition-colors hover:text-foreground"
       >
         Alle ervaringen
       </Link>

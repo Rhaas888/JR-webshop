@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/section";
+import { hoverBtn } from "@/lib/ui";
+import { cn } from "@/lib/utils";
 
 export function Hero({
   kicker,
@@ -55,14 +57,20 @@ export function Hero({
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
               href={primaryHref}
-              className="inline-flex h-11 items-center justify-center rounded-lg bg-foreground px-5 text-sm font-medium text-background transition-colors hover:bg-neutral-800"
+              className={cn(
+                "inline-flex h-11 items-center justify-center rounded-lg bg-foreground px-5 text-sm font-medium text-background hover:bg-neutral-800",
+                hoverBtn,
+              )}
             >
               {primaryLabel}
             </Link>
             {secondaryHref && secondaryLabel ? (
               <Link
                 href={secondaryHref}
-                className="inline-flex h-11 items-center justify-center rounded-lg border border-black/10 bg-white px-5 text-sm font-medium transition-colors hover:bg-neutral-50"
+                className={cn(
+                  "inline-flex h-11 items-center justify-center rounded-lg border border-black/10 bg-white px-5 text-sm font-medium hover:bg-neutral-50 hover:border-forest/30",
+                  hoverBtn,
+                )}
               >
                 {secondaryLabel}
               </Link>

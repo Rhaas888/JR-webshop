@@ -1,11 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { hoverBtn } from "@/lib/ui";
+import { cn } from "@/lib/utils";
 
-const filledButtonClass =
-  "inline-flex h-[52px] min-w-[8.5rem] items-center justify-center rounded-2xl bg-foreground px-7 text-base font-medium text-background transition-colors hover:bg-neutral-800";
-const ghostButtonClass =
-  "inline-flex h-[52px] min-w-[8.5rem] items-center justify-center rounded-2xl border border-black/10 bg-white px-7 text-base font-medium transition-colors hover:bg-neutral-50";
+const filledButtonClass = cn(
+  "inline-flex h-[52px] min-w-[8.5rem] items-center justify-center rounded-2xl bg-foreground px-7 text-base font-medium text-background hover:bg-neutral-800",
+  hoverBtn,
+);
+const ghostButtonClass = cn(
+  "inline-flex h-[52px] min-w-[8.5rem] items-center justify-center rounded-2xl border border-black/10 bg-white px-7 text-base font-medium hover:bg-neutral-50 hover:border-forest/30",
+  hoverBtn,
+);
 
 export function ShowcaseHero({
   line1 = "Webshop of app",

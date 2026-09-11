@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { included, prices } from "@/lib/content";
 import { Section, SectionHeading } from "@/components/section";
+import { hoverBtn, hoverCard } from "@/lib/ui";
+import { cn } from "@/lib/utils";
 
 export function PricingTable({
   tone = "muted",
@@ -69,7 +71,7 @@ function PriceCard({
   href: string;
 }) {
   return (
-    <article className="flex flex-col rounded-3xl border border-black/8 bg-white p-8">
+    <article className={cn("flex flex-col rounded-3xl border border-black/8 bg-white p-8", hoverCard)}>
       <p className="text-lg font-semibold text-foreground">{title}</p>
       <p className="mt-3 text-3xl font-semibold tracking-tight">{price}</p>
       <p className="mt-3 text-base font-medium leading-7 text-foreground">{summary}</p>
@@ -83,7 +85,10 @@ function PriceCard({
       </ul>
       <Link
         href={href}
-        className="mt-8 inline-flex h-11 items-center justify-center rounded-2xl border border-black/10 text-sm font-medium transition-colors hover:bg-neutral-50"
+        className={cn(
+          "mt-8 inline-flex h-11 items-center justify-center rounded-2xl border border-black/10 text-sm font-medium hover:bg-neutral-50 hover:border-forest/30",
+          hoverBtn,
+        )}
       >
         Meer over {title.toLowerCase()}
       </Link>

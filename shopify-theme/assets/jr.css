@@ -129,7 +129,27 @@ body.menu-open {
   font-weight: 500;
   text-decoration: none;
   cursor: pointer;
-  transition: background-color 0.15s ease, color 0.15s ease;
+  transform: translateY(0);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.jr-btn:hover {
+  transform: translateY(-2px);
+}
+
+.jr-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.jr-btn:focus-visible {
+  outline: 2px solid var(--forest);
+  outline-offset: 3px;
 }
 
 .jr-btn--primary {
@@ -138,7 +158,8 @@ body.menu-open {
 }
 
 .jr-btn--primary:hover {
-  background: #262626;
+  background: #171717;
+  box-shadow: 0 10px 22px rgba(10, 10, 10, 0.18);
 }
 
 .jr-btn--ghost {
@@ -149,6 +170,8 @@ body.menu-open {
 
 .jr-btn--ghost:hover {
   background: #fafafa;
+  border-color: color-mix(in srgb, var(--forest) 32%, #e5e5e5);
+  box-shadow: 0 8px 18px rgba(10, 10, 10, 0.08);
 }
 
 .jr-btn--light {
@@ -157,7 +180,8 @@ body.menu-open {
 }
 
 .jr-btn--light:hover {
-  background: #f5f5f5;
+  background: #fff;
+  box-shadow: 0 10px 22px rgba(10, 10, 10, 0.12);
 }
 
 .jr-btn--full {
@@ -227,13 +251,32 @@ body.menu-open {
 }
 
 .jr-nav a {
+  position: relative;
   color: rgba(255, 255, 255, 0.82);
   text-decoration: none;
   font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.jr-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
 }
 
 .jr-nav a:hover {
   color: #fff;
+}
+
+.jr-nav a:hover::after {
+  transform: scaleX(1);
 }
 
 .jr-header.is-scrolled .jr-nav a {
@@ -287,7 +330,8 @@ body.menu-open {
 }
 
 .jr-header__cta:hover {
-  background: #e5e5e5;
+  background: #f4f4f4;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
 }
 
 .jr-header.is-scrolled .jr-header__cta {
@@ -296,7 +340,8 @@ body.menu-open {
 }
 
 .jr-header.is-scrolled .jr-header__cta:hover {
-  background: #262626;
+  background: #171717;
+  box-shadow: 0 10px 22px rgba(10, 10, 10, 0.18);
 }
 
 .jr-menu-btn {
@@ -306,9 +351,19 @@ body.menu-open {
   width: 40px;
   height: 40px;
   border: 0;
+  border-radius: 8px;
   background: transparent;
   cursor: pointer;
   color: inherit;
+  transition: background-color 0.2s ease;
+}
+
+.jr-menu-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.jr-header.is-scrolled .jr-menu-btn:hover {
+  background: rgba(0, 0, 0, 0.06);
 }
 
 .jr-drawer {
@@ -373,10 +428,12 @@ body.menu-open {
   color: #262626;
   text-decoration: none;
   font-size: 16px;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .jr-drawer nav a:hover {
   background: var(--surface);
+  color: var(--foreground);
 }
 
 .jr-drawer__rule {
@@ -650,6 +707,16 @@ body.menu-open {
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 16px;
   background: #fff;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.jr-card:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--forest) 22%, #e5e5e5);
+  box-shadow: 0 18px 40px rgba(10, 10, 10, 0.08);
 }
 
 .jr-card h3 {
@@ -700,6 +767,11 @@ body.menu-open {
   margin: 0;
   padding: 24px 28px;
   background: #fff;
+  transition: background-color 0.2s ease;
+}
+
+.jr-process li:hover {
+  background: color-mix(in srgb, var(--forest-soft) 55%, white);
 }
 
 .jr-process {
@@ -865,6 +937,11 @@ body.menu-open {
   padding: 12px 0;
   font-size: 18px;
   font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.jr-faq-list summary:hover {
+  color: var(--forest);
 }
 
 .jr-faq-list summary::-webkit-details-marker {
@@ -1254,6 +1331,7 @@ body.menu-open {
   font-size: 14px;
   color: var(--muted-foreground);
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .jr-footer a:hover {
@@ -1332,6 +1410,11 @@ body.menu-open {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.jr-card--media:hover .jr-card__media img {
+  transform: scale(1.04);
 }
 
 .jr-card__body {
@@ -1347,33 +1430,106 @@ body.menu-open {
 }
 
 .jr-trust .jr-container {
-  padding-top: 28px;
-  padding-bottom: 28px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.jr-trust__intro {
+  max-width: 36rem;
+}
+
+.jr-trust__intro h2 {
+  margin: 8px 0 0;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
 }
 
 .jr-trust__grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 14px;
+  margin-top: 32px;
 }
 
 .jr-trust__card {
+  position: relative;
+  overflow: hidden;
   background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: 20px;
-  padding: 28px 24px 32px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 24px 24px 28px;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease,
+    background-color 0.22s ease;
 }
 
-.jr-trust__title {
-  margin: 0;
-  font-size: 15px;
+.jr-trust__card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--forest);
+  opacity: 0.4;
+  transition: width 0.22s ease, opacity 0.22s ease;
+}
+
+.jr-trust__card:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--forest) 28%, #e5e5e5);
+  box-shadow: 0 18px 40px rgba(27, 61, 47, 0.1);
+  background: #fbfcfb;
+}
+
+.jr-trust__card:hover::before {
+  width: 4px;
+  opacity: 1;
+}
+
+.jr-trust__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.jr-trust__index {
+  font-size: 13px;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.14em;
   color: var(--forest);
 }
 
+.jr-trust__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--forest-soft);
+  color: var(--forest);
+}
+
+.jr-trust__icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.jr-trust__title {
+  margin: 28px 0 0;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: var(--foreground);
+}
+
 .jr-trust__text {
-  margin: 18px 0 0;
+  margin: 12px 0 0;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.65;
@@ -1382,29 +1538,35 @@ body.menu-open {
 
 @media (min-width: 768px) {
   .jr-trust .jr-container {
-    padding-top: 36px;
-    padding-bottom: 36px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .jr-trust__intro h2 {
+    font-size: 30px;
   }
 
   .jr-trust__grid {
     grid-template-columns: 1fr 1fr;
     gap: 16px;
+    margin-top: 36px;
   }
 }
 
 @media (min-width: 1024px) {
   .jr-trust .jr-container {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 56px;
+    padding-bottom: 56px;
   }
 
   .jr-trust__grid {
     grid-template-columns: repeat(4, 1fr);
     gap: 18px;
+    margin-top: 40px;
   }
 
   .jr-trust__card {
-    padding: 32px 26px 36px;
+    padding: 28px 26px 32px;
   }
 }
 
@@ -1498,6 +1660,33 @@ body.menu-open {
     flex-wrap: wrap;
     width: auto;
     justify-content: center;
+  }
+
+  .jr-btn,
+  .jr-switcher__tab,
+  .jr-card,
+  .jr-pack,
+  .jr-trust__card,
+  .jr-price-factors__card,
+  .jr-pricing-path__list li,
+  .jr-offerte-choose__card,
+  .jr-card__media img,
+  .jr-nav a::after {
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .jr-btn:hover,
+  .jr-btn:active,
+  .jr-switcher__tab:hover,
+  .jr-card:hover,
+  .jr-pack:hover,
+  .jr-trust__card:hover,
+  .jr-price-factors__card:hover,
+  .jr-pricing-path__list li:hover,
+  .jr-offerte-choose__card:hover,
+  .jr-card--media:hover .jr-card__media img,
+  .jr-nav a:hover::after {
+    transform: none;
   }
 }
 
@@ -1813,6 +2002,19 @@ body.menu-open {
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 24px;
   background: #fff;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.jr-pack:hover {
+  transform: translateY(-4px);
+}
+
+.jr-pack:not(.jr-pack--featured):hover {
+  border-color: color-mix(in srgb, var(--forest) 22%, #e5e5e5);
+  box-shadow: 0 18px 40px rgba(10, 10, 10, 0.08);
 }
 
 .jr-pack--featured {
@@ -1820,6 +2022,10 @@ body.menu-open {
   border-color: var(--forest);
   color: #fff;
   box-shadow: 0 18px 40px rgba(27, 61, 47, 0.18);
+}
+
+.jr-pack--featured:hover {
+  box-shadow: 0 22px 48px rgba(27, 61, 47, 0.28);
 }
 
 .jr-pack__badge {
@@ -2157,10 +2363,19 @@ body.menu-open {
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
+  transform: translateY(0);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
 .jr-switcher__tab:hover {
   background: #fafafa;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(10, 10, 10, 0.08);
 }
 
 .jr-switcher__tab.is-active {
@@ -2170,7 +2385,8 @@ body.menu-open {
 }
 
 .jr-switcher__tab.is-active:hover {
-  background: #262626;
+  background: #171717;
+  box-shadow: 0 8px 18px rgba(10, 10, 10, 0.16);
 }
 
 .jr-switcher__intro {
@@ -2322,6 +2538,16 @@ body.menu-open {
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 20px;
   background: #fff;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.jr-price-factors__card:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--forest) 22%, #e5e5e5);
+  box-shadow: 0 14px 32px rgba(10, 10, 10, 0.07);
 }
 
 .jr-price-factors__card h3 {
@@ -2358,6 +2584,16 @@ body.menu-open {
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 20px;
   background: #fff;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.jr-pricing-path__list li:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--forest) 22%, #e5e5e5);
+  box-shadow: 0 14px 32px rgba(10, 10, 10, 0.07);
 }
 
 .jr-pricing-path__step {
@@ -2407,11 +2643,20 @@ body.menu-open {
   background: #fff;
   text-decoration: none;
   color: inherit;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
 }
 
 .jr-offerte-choose__card:hover,
 .jr-offerte-choose__card.is-active {
   border-color: color-mix(in srgb, var(--forest) 30%, transparent);
+}
+
+.jr-offerte-choose__card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(10, 10, 10, 0.07);
 }
 
 .jr-offerte-choose__name {

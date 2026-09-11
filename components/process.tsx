@@ -5,6 +5,7 @@ import Link from "next/link";
 import { processSteps } from "@/lib/content";
 import { RevealHeading } from "@/components/reveal-heading";
 import { Section } from "@/components/section";
+import { hoverCard } from "@/lib/ui";
 import { cn } from "@/lib/utils";
 
 export function Process() {
@@ -92,7 +93,8 @@ export function Process() {
               <li
                 key={item.step}
                 className={cn(
-                  "rounded-3xl border p-6 transition-colors sm:p-7",
+                  "rounded-3xl border p-6 sm:p-7",
+                  hoverCard,
                   index <= active
                     ? "border-forest/25 bg-forest-soft/50"
                     : "border-black/8 bg-white",
@@ -117,7 +119,7 @@ export function Process() {
                     {isLive ? (
                       <Link
                         href="/onderhoud"
-                        className="mt-3 inline-flex text-sm font-medium text-forest underline underline-offset-4"
+                        className="mt-3 inline-flex text-sm font-medium text-forest underline underline-offset-4 transition-colors hover:text-foreground"
                       >
                         Daarna optioneel onderhoud
                       </Link>
