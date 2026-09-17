@@ -1837,10 +1837,10 @@ body.menu-open {
 
 .jr-bento__laptop {
   position: absolute;
-  left: 8%;
-  top: 18%;
-  width: 58%;
-  max-width: 240px;
+  left: 4%;
+  top: 16%;
+  width: 66%;
+  max-width: 280px;
   animation: jr-bento-float 5.5s ease-in-out infinite;
 }
 
@@ -1861,9 +1861,9 @@ body.menu-open {
 .jr-bento__laptop-copy {
   display: flex;
   align-items: flex-end;
-  padding: 14px 12px 16px;
+  padding: 14px 10px 16px;
   color: #111;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   line-height: 1.25;
 }
@@ -1892,8 +1892,8 @@ body.menu-open {
 
 .jr-bento__phone {
   position: absolute;
-  right: 10%;
-  top: 12%;
+  right: 6%;
+  top: 10%;
   width: 92px;
   height: 168px;
   padding: 18px 12px;

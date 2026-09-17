@@ -123,10 +123,10 @@ export function WorkBento() {
             <WishLink />
           </div>
           <div className="relative mt-6 min-h-[210px] overflow-hidden rounded-3xl bg-[radial-gradient(120%_80%_at_80%_20%,rgba(5,155,96,0.18),transparent_55%),linear-gradient(180deg,#eef7f3,#f5f5f5)] lg:mt-0">
-            <div className="absolute top-[18%] left-[8%] w-[58%] max-w-[240px] animate-[jrBentoFloat_5.5s_ease-in-out_infinite] motion-reduce:animate-none">
+            <div className="absolute top-[16%] left-[4%] w-[66%] max-w-[280px] animate-[jrBentoFloat_5.5s_ease-in-out_infinite] motion-reduce:animate-none">
               <div className="grid min-h-[118px] grid-cols-[0.44fr_0.56fr] overflow-hidden rounded-[18px] bg-white shadow-[0_16px_32px_rgba(0,0,0,0.12)]">
                 <span className="bg-black" />
-                <span className="flex items-end px-3 pb-4 text-[13px] font-bold leading-tight text-black">
+                <span className="flex items-end px-2.5 pb-4 text-[12px] font-bold leading-tight text-black">
                   Jouw verhaal.
                   <br />
                   Sterk in beeld.
@@ -138,7 +138,7 @@ export function WorkBento() {
                 <i className="size-2 rounded-full bg-neutral-300" />
               </div>
             </div>
-            <div className="absolute top-[12%] right-[10%] h-[168px] w-[92px] rounded-[22px] bg-white p-[18px_12px] shadow-[0_18px_36px_rgba(0,0,0,0.14)] animate-[jrBentoFloat_4.8s_ease-in-out_infinite] [animation-delay:400ms] motion-reduce:animate-none">
+            <div className="absolute top-[10%] right-[6%] h-[168px] w-[92px] rounded-[22px] bg-white p-[18px_12px] shadow-[0_18px_36px_rgba(0,0,0,0.14)] animate-[jrBentoFloat_4.8s_ease-in-out_infinite] [animation-delay:400ms] motion-reduce:animate-none">
               <div className="absolute inset-2 rounded-2xl bg-[#059b60]" />
               <p className="relative mt-[18px] text-[13px] font-bold leading-tight text-white">
                 Mooi op
