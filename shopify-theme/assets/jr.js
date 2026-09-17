@@ -270,4 +270,49 @@
     window.addEventListener("pageshow", playHeroVideos);
     document.addEventListener("touchstart", playHeroVideos, { once: true, passive: true });
   }
+
+  var bento = document.querySelector("[data-bento]");
+  if (bento) {
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function countTo(node, end) {
+      if (!node) return;
+      if (reduceMotion) {
+        node.textContent = String(end);
+        return;
+      }
+      var start = 0;
+      var started = performance.now();
+      var duration = 1100;
+      function tick(now) {
+        var t = Math.min(1, (now - started) / duration);
+        var eased = 1 - Math.pow(1 - t, 3);
+        node.textContent = String(Math.round(start + (end - start) * eased));
+        if (t < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+
+    function revealBento() {
+      bento.classList.add("is-inview");
+      countTo(bento.querySelector("[data-bento-score]"), 96);
+      countTo(bento.querySelector("[data-bento-growth]"), 38);
+    }
+
+    bento.classList.add("js-anim");
+
+    if (reduceMotion || !("IntersectionObserver" in window)) {
+      revealBento();
+    } else {
+      var bentoObs = new IntersectionObserver(
+        function (entries) {
+          if (!entries[0] || !entries[0].isIntersecting) return;
+          revealBento();
+          bentoObs.disconnect();
+        },
+        { threshold: 0.28 }
+      );
+      bentoObs.observe(bento);
+    }
+  }
 })();

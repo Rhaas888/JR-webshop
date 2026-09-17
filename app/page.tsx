@@ -9,6 +9,7 @@ import { ReviewsTeaser } from "@/components/reviews/reviews-board";
 import { Section, SectionHeading } from "@/components/section";
 import { ShowcaseHero } from "@/components/showcase-hero";
 import { TrustStrip } from "@/components/trust-strip";
+import { WorkBento } from "@/components/work-bento";
 import { about, prices } from "@/lib/content";
 import { hoverBtn, hoverCard, brandFill } from "@/lib/ui";
 import { cn } from "@/lib/utils";
@@ -23,8 +24,9 @@ export default function HomePage() {
         secondaryLabel="App"
         secondaryFilled
       />
-      <TrustStrip />
       <LogoTicker />
+      <WorkBento />
+      <TrustStrip />
 
       <Section>
         <SectionHeading

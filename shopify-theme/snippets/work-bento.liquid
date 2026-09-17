@@ -1,0 +1,129 @@
+{%- capture offerte_href -%}{% render 'offerte-url' %}{%- endcapture -%}
+{%- assign offerte_href = offerte_href | strip -%}
+
+<section class="jr-bento" data-bento aria-label="Hoe we bouwen">
+  <div class="jr-container">
+    <div class="jr-bento__grid">
+      <article class="jr-bento__card">
+        <span class="jr-bento__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 18h6" />
+            <path d="M10 21h4" />
+            <path d="M12 3a6 6 0 0 0-3.5 10.7c.5.4.8 1 .9 1.6h5.2c.1-.6.4-1.2.9-1.6A6 6 0 0 0 12 3Z" />
+          </svg>
+        </span>
+        <h2>Strategie en structuur</h2>
+        <p>We beginnen bij wat jij wilt verkopen en wie het moet kopen. Elke pagina heeft een taak.</p>
+        <a class="jr-bento__cta" href="{{ offerte_href }}">
+          Bespreek je wensen
+          <span aria-hidden="true">↗</span>
+        </a>
+      </article>
+
+      <article class="jr-bento__card jr-bento__card--split">
+        <div class="jr-bento__copy">
+          <span class="jr-bento__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3l1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6L12 3Z" />
+              <path d="M18.5 14.5 19 16l1.5.5L19 17l-.5 1.5L18 17l-1.5-.5L18 16l.5-1.5Z" />
+            </svg>
+          </span>
+          <h2>Design en ontwikkeling</h2>
+          <p>Een ontwerp dat bij je merk past. Snel, duidelijk, en het werkt op telefoon en laptop.</p>
+          <a class="jr-bento__cta" href="{{ offerte_href }}">
+            Bespreek je wensen
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <div class="jr-bento__stage jr-bento__stage--devices" aria-hidden="true">
+          <div class="jr-bento__laptop">
+            <div class="jr-bento__laptop-screen">
+              <span>Jouw verhaal.<br>Sterk in beeld.</span>
+            </div>
+            <div class="jr-bento__dots">
+              <i></i><i></i><i></i>
+            </div>
+          </div>
+          <div class="jr-bento__phone">
+            <p>Mooi op<br>elk scherm.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="jr-bento__card jr-bento__card--flow">
+        <div class="jr-bento__stage jr-bento__stage--flow" aria-hidden="true">
+          <span class="jr-bento__chip jr-bento__chip--dark">Heldere route</span>
+          <div class="jr-bento__browser">
+            <p class="jr-bento__browser-label">Jouw plan</p>
+            <div class="jr-bento__nodes">
+              <span class="jr-bento__node jr-bento__node--light">
+                <small>01</small>
+                Doel
+              </span>
+              <span class="jr-bento__line"></span>
+              <span class="jr-bento__node jr-bento__node--dark">
+                <small>02</small>
+                Structuur
+              </span>
+              <span class="jr-bento__line"></span>
+              <span class="jr-bento__node jr-bento__node--brand">
+                <small>03</small>
+                Conversie
+              </span>
+            </div>
+          </div>
+          <span class="jr-bento__chip jr-bento__chip--brand">Focus op je klant</span>
+        </div>
+      </article>
+
+      <article class="jr-bento__card jr-bento__card--split">
+        <div class="jr-bento__copy">
+          <span class="jr-bento__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 12a9 9 0 1 0 9-9" />
+              <path d="M3 4v5h5" />
+            </svg>
+          </span>
+          <h2><span class="jr-bento__mark">SEO</span>, snelheid en groei</h2>
+          <p>Je shop of app moet te vinden zijn en snel laden. Dat zetten we er vanaf het begin in.</p>
+          <a class="jr-bento__cta" href="{{ offerte_href }}">
+            Bespreek je wensen
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <div class="jr-bento__charts" aria-hidden="true">
+          <span class="jr-bento__chip jr-bento__chip--brand jr-bento__chip--float">Goed vindbaar</span>
+          <div class="jr-bento__ring-card">
+            <svg class="jr-bento__ring" viewBox="0 0 120 120">
+              <circle cx="60" cy="60" r="48"></circle>
+              <circle class="jr-bento__ring-value" cx="60" cy="60" r="48"></circle>
+            </svg>
+            <div class="jr-bento__ring-label">
+              <strong><span data-bento-score>0</span>/100</strong>
+              <small>Performance</small>
+            </div>
+          </div>
+          <div class="jr-bento__growth">
+            <div class="jr-bento__growth-top">
+              <span>Organische groei</span>
+              <strong>+<span data-bento-growth>0</span>%</strong>
+            </div>
+            <div class="jr-bento__bars">
+              <span style="--h: 38%"></span>
+              <span style="--h: 58%"></span>
+              <span style="--h: 46%"></span>
+              <span style="--h: 72%"></span>
+              <span style="--h: 64%"></span>
+              <span style="--h: 88%"></span>
+            </div>
+            <div class="jr-bento__bar-labels">
+              <span>SEO</span>
+              <span>Snelheid</span>
+              <span>Conversie</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
