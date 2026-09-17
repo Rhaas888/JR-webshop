@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { HeroVideo } from "@/components/hero-video";
 import { hoverBtn } from "@/lib/ui";
 import { cn } from "@/lib/utils";
 
@@ -41,7 +42,7 @@ export function ShowcaseHero({
   secondaryFilled?: boolean;
 }) {
   return (
-    <section className="relative min-h-[calc(100vh-4.5rem)] overflow-hidden bg-[#f2f2f2]">
+    <section className="relative overflow-hidden bg-[#f2f2f2]">
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <Image
           src="/images/hero-collage.png"
@@ -54,7 +55,7 @@ export function ShowcaseHero({
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.82)_0%,rgba(255,255,255,0.9)_36%,rgba(242,242,242,0.96)_68%,#f2f2f2_100%)]" />
       </div>
 
-      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-4.5rem)] w-full max-w-[1120px] flex-col px-6 pt-16 sm:pt-[5.5rem] lg:pt-[6.5rem]">
+      <div className="relative z-10 mx-auto flex w-full max-w-[1120px] flex-col px-6 pt-16 pb-12 sm:pt-[5.5rem] lg:pt-[6.5rem]">
         <div className="mx-auto max-w-[38rem] text-center">
           <h1 className="mx-auto max-w-[12em] text-[clamp(2.5rem,5.8vw,4.25rem)] font-bold tracking-[-0.03em] leading-[1.45]">
             {line1}
@@ -93,18 +94,7 @@ export function ShowcaseHero({
           </div>
         </div>
 
-        <div className="mt-auto pt-12">
-          <Image
-            src="/images/hero-devices.png"
-            alt="Webshop en app op laptop, telefoon en iPad"
-            width={1920}
-            height={1080}
-            quality={100}
-            priority
-            sizes="(max-width: 1120px) 100vw, 1200px"
-            className="mx-auto mb-[-4%] w-[min(1200px,118%)] max-w-none drop-shadow-[0_28px_48px_rgba(0,0,0,0.16)]"
-          />
-        </div>
+        <HeroVideo />
       </div>
     </section>
   );

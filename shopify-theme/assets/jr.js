@@ -244,4 +244,11 @@
       });
     });
   });
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.querySelectorAll(".jr-showcase__video").forEach(function (video) {
+      video.removeAttribute("autoplay");
+      video.pause();
+    });
+  }
 })();
