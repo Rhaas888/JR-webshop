@@ -1,10 +1,39 @@
 {%- capture offerte_href -%}{% render 'offerte-url' %}{%- endcapture -%}
 {%- assign offerte_href = offerte_href | strip -%}
+{%- assign proof_gif = 'https://cdn.shopify.com/s/files/1/1073/7549/3457/files/google-digital-champions.gif?v=1789670038' -%}
+{%- assign proof_partner = 'https://cdn.shopify.com/s/files/1/1073/7549/3457/files/google-premier-partner-2026.svg?v=1789670036' -%}
 
-<section class="jr-bento" data-bento aria-label="Hoe we bouwen">
-  <div class="jr-container">
-    <div class="jr-bento__grid">
-      <article class="jr-bento__card">
+<section class="jr-bento" data-bento aria-label="Aanpak en erkenning">
+  <div class="jr-bento__bleed">
+    <div class="jr-bento__proof">
+      <figure class="jr-bento__proof-card">
+        <img
+          src="{{ 'jr-invoice.jpg' | asset_url }}"
+          alt="JR Intelligence"
+          width="900"
+          height="814"
+        >
+      </figure>
+      <figure class="jr-bento__proof-card jr-bento__proof-card--gif">
+        <img
+          src="{{ proof_gif }}"
+          alt="Google Digital Champions"
+          width="600"
+          height="250"
+        >
+      </figure>
+      <figure class="jr-bento__proof-card jr-bento__proof-card--badge">
+        <img
+          src="{{ proof_partner }}"
+          alt="Google Premier Partner 2026"
+          width="152"
+          height="146"
+        >
+      </figure>
+    </div>
+
+    <div class="jr-bento__shell">
+      <article class="jr-bento__feature jr-bento__feature--tall">
         <span class="jr-bento__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <path d="M9 18h6" />
@@ -18,9 +47,35 @@
           Bespreek je wensen
           <span aria-hidden="true">↗</span>
         </a>
+        <div class="jr-bento__graphic" aria-hidden="true">
+          <span class="jr-bento__chip jr-bento__chip--dark">Heldere route</span>
+          <div class="jr-bento__window">
+            <div class="jr-bento__browserbar">
+              <i></i><i></i><i></i>
+              <small>Jouw plan</small>
+            </div>
+            <div class="jr-bento__nodes">
+              <span class="jr-bento__node jr-bento__node--light">
+                <small>01</small>
+                <strong>Doel</strong>
+              </span>
+              <span class="jr-bento__line"><i></i></span>
+              <span class="jr-bento__node jr-bento__node--dark">
+                <small>02</small>
+                <strong>Structuur</strong>
+              </span>
+              <span class="jr-bento__line"><i></i></span>
+              <span class="jr-bento__node jr-bento__node--brand">
+                <small>03</small>
+                <strong>Conversie</strong>
+              </span>
+            </div>
+          </div>
+          <span class="jr-bento__chip jr-bento__chip--brand">Focus op je klant</span>
+        </div>
       </article>
 
-      <article class="jr-bento__card jr-bento__card--split">
+      <article class="jr-bento__feature jr-bento__feature--design">
         <div class="jr-bento__copy">
           <span class="jr-bento__icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -35,49 +90,25 @@
             <span aria-hidden="true">↗</span>
           </a>
         </div>
-        <div class="jr-bento__stage jr-bento__stage--devices" aria-hidden="true">
-          <div class="jr-bento__laptop">
-            <div class="jr-bento__laptop-screen">
-              <span class="jr-bento__laptop-dark"></span>
-              <span class="jr-bento__laptop-copy">Jouw verhaal.<br>Sterk in beeld.</span>
+        <div class="jr-bento__graphic jr-bento__graphic--design" aria-hidden="true">
+          <div class="jr-bento__device jr-bento__device--desktop">
+            <div class="jr-bento__device-nav"><i></i><i></i><i></i></div>
+            <div class="jr-bento__device-hero">
+              <strong>Jouw verhaal.<br>Sterk in beeld.</strong>
             </div>
-            <div class="jr-bento__dots">
-              <i></i><i></i><i></i>
-            </div>
+            <div class="jr-bento__device-cards"><i></i><i></i><i></i></div>
           </div>
-          <div class="jr-bento__phone">
-            <p>Mooi op<br>elk scherm.</p>
+          <div class="jr-bento__device jr-bento__device--mobile">
+            <div class="jr-bento__mobile-top"><i></i><span></span></div>
+            <div class="jr-bento__mobile-hero">
+              <strong>Mooi op<br>elk scherm.</strong>
+            </div>
+            <div class="jr-bento__mobile-lines"><i></i><i></i><i></i></div>
           </div>
         </div>
       </article>
 
-      <article class="jr-bento__card jr-bento__card--flow">
-        <div class="jr-bento__stage jr-bento__stage--flow" aria-hidden="true">
-          <span class="jr-bento__chip jr-bento__chip--dark">Heldere route</span>
-          <div class="jr-bento__browser">
-            <p class="jr-bento__browser-label">Jouw plan</p>
-            <div class="jr-bento__nodes">
-              <span class="jr-bento__node jr-bento__node--light">
-                <small>01</small>
-                Doel
-              </span>
-              <span class="jr-bento__line"></span>
-              <span class="jr-bento__node jr-bento__node--dark">
-                <small>02</small>
-                Structuur
-              </span>
-              <span class="jr-bento__line"></span>
-              <span class="jr-bento__node jr-bento__node--brand">
-                <small>03</small>
-                Conversie
-              </span>
-            </div>
-          </div>
-          <span class="jr-bento__chip jr-bento__chip--brand">Focus op je klant</span>
-        </div>
-      </article>
-
-      <article class="jr-bento__card jr-bento__card--split">
+      <article class="jr-bento__feature jr-bento__feature--growth">
         <div class="jr-bento__copy">
           <span class="jr-bento__icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -92,30 +123,24 @@
             <span aria-hidden="true">↗</span>
           </a>
         </div>
-        <div class="jr-bento__charts" aria-hidden="true">
+        <div class="jr-bento__graphic jr-bento__graphic--growth" aria-hidden="true">
           <span class="jr-bento__chip jr-bento__chip--brand jr-bento__chip--float">Goed vindbaar</span>
-          <div class="jr-bento__ring-card">
-            <svg class="jr-bento__ring" viewBox="0 0 120 120">
-              <circle cx="60" cy="60" r="48"></circle>
-              <circle class="jr-bento__ring-value" cx="60" cy="60" r="48"></circle>
-            </svg>
-            <div class="jr-bento__ring-label">
-              <strong><span data-bento-score>0</span>/100</strong>
-              <small>Performance</small>
-            </div>
+          <div class="jr-bento__score">
+            <strong><span data-bento-score>0</span>/100</strong>
+            <small>Performance</small>
           </div>
-          <div class="jr-bento__growth">
-            <div class="jr-bento__growth-top">
+          <div class="jr-bento__chart">
+            <div class="jr-bento__chart-top">
               <span>Organische groei</span>
               <strong>+<span data-bento-growth>0</span>%</strong>
             </div>
             <div class="jr-bento__bars">
-              <span style="--h: 38%"></span>
-              <span style="--h: 58%"></span>
-              <span style="--h: 46%"></span>
-              <span style="--h: 72%"></span>
-              <span style="--h: 64%"></span>
-              <span style="--h: 88%"></span>
+              <i style="--h: 34%; --d: 0s"></i>
+              <i style="--h: 52%; --d: 0.18s"></i>
+              <i style="--h: 44%; --d: 0.32s"></i>
+              <i style="--h: 68%; --d: 0.46s"></i>
+              <i style="--h: 78%; --d: 0.6s"></i>
+              <i style="--h: 96%; --d: 0.74s"></i>
             </div>
             <div class="jr-bento__bar-labels">
               <span>SEO</span>

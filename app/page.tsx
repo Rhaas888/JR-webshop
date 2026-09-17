@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { CtaBand } from "@/components/cta-band";
 import { Faq } from "@/components/faq";
-import { LogoTicker } from "@/components/logo-ticker";
 import { PricingSwitcher } from "@/components/pricing-switcher";
 import { Process } from "@/components/process";
 import { ReviewsTeaser } from "@/components/reviews/reviews-board";
@@ -24,7 +23,6 @@ export default function HomePage() {
         secondaryLabel="App"
         secondaryFilled
       />
-      <LogoTicker />
       <WorkBento />
       <TrustStrip />
 

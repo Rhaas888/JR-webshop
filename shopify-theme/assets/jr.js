@@ -299,8 +299,6 @@
       countTo(bento.querySelector("[data-bento-growth]"), 38);
     }
 
-    bento.classList.add("js-anim");
-
     if (reduceMotion || !("IntersectionObserver" in window)) {
       revealBento();
     } else {
@@ -310,7 +308,7 @@
           revealBento();
           bentoObs.disconnect();
         },
-        { threshold: 0.28 }
+        { threshold: 0.18, rootMargin: "0px 0px -8% 0px" }
       );
       bentoObs.observe(bento);
     }
