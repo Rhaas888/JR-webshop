@@ -3,13 +3,7 @@
 
 <section class="jr-showcase">
   <div class="jr-showcase__media" aria-hidden="true">
-    <img
-      class="jr-showcase__collage"
-      src="{{ 'hero-collage.png' | asset_url }}"
-      alt=""
-      width="1920"
-      height="1080"
-    >
+    {% render 'hero-video' %}
   </div>
 
   <div class="jr-container jr-showcase__inner">
@@ -30,8 +24,6 @@
         <a class="jr-btn jr-btn--primary jr-btn--lg" href="{{ app_href }}">App</a>
       </div>
     </div>
-
-    {% render 'hero-video' %}
   </div>
 </section>
 

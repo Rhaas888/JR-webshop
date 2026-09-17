@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { HeroVideo } from "@/components/hero-video";
@@ -42,20 +41,13 @@ export function ShowcaseHero({
   secondaryFilled?: boolean;
 }) {
   return (
-    <section className="relative overflow-hidden bg-[#f2f2f2]">
+    <section className="relative min-h-[calc(100vh-4.5rem)] overflow-hidden bg-neutral-900">
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <Image
-          src="/images/hero-collage.png"
-          alt=""
-          fill
-          priority
-          className="object-cover grayscale contrast-95"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.82)_0%,rgba(255,255,255,0.9)_36%,rgba(242,242,242,0.96)_68%,#f2f2f2_100%)]" />
+        <HeroVideo />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.42)_0%,rgba(255,255,255,0.55)_42%,rgba(255,255,255,0.72)_78%,#f2f2f2_100%)]" />
       </div>
 
-      <div className="relative z-10 mx-auto flex w-full max-w-[1120px] flex-col px-6 pt-16 pb-12 sm:pt-[5.5rem] lg:pt-[6.5rem]">
+      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-4.5rem)] w-full max-w-[1120px] flex-col justify-center px-6 pt-16 pb-16 sm:pt-[5.5rem] lg:pt-[6.5rem]">
         <div className="mx-auto max-w-[38rem] text-center">
           <h1 className="mx-auto max-w-[12em] text-[clamp(2.5rem,5.8vw,4.25rem)] font-bold tracking-[-0.03em] leading-[1.45]">
             {line1}
@@ -93,8 +85,6 @@ export function ShowcaseHero({
             ) : null}
           </div>
         </div>
-
-        <HeroVideo />
       </div>
     </section>
   );

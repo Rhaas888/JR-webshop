@@ -1,12 +1,6 @@
 <section class="jr-showcase">
   <div class="jr-showcase__media" aria-hidden="true">
-    <img
-      class="jr-showcase__collage"
-      src="{{ 'hero-collage.png' | asset_url }}"
-      alt=""
-      width="1920"
-      height="1080"
-    >
+    {% render 'hero-video' %}
   </div>
 
   <div class="jr-container jr-showcase__inner">
@@ -33,7 +27,5 @@
         {%- endif -%}
       </div>
     </div>
-
-    {% render 'hero-video' %}
   </div>
 </section>
