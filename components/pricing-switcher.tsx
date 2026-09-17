@@ -11,7 +11,7 @@ import {
   pricingDiensten,
   type PricingDienst,
 } from "@/lib/pricing";
-import { hoverBtn, hoverCard, hoverCardFeatured } from "@/lib/ui";
+import { hoverBtn, hoverCard, hoverCardFeatured, brandFill, brandFillOnDark } from "@/lib/ui";
 
 export function PricingSwitcher({
   defaultDienst = "webshop",
@@ -98,8 +98,8 @@ function PricingSwitcherReady({
                 "h-11 shrink-0 rounded-2xl px-5 text-sm font-medium",
                 hoverBtn,
                 selected
-                  ? "bg-foreground text-background hover:bg-neutral-800"
-                  : "border border-black/10 bg-white text-foreground hover:bg-neutral-50 hover:border-forest/30",
+                  ? "bg-[#059b60] text-white hover:bg-[#048552]"
+                  : "border border-black/10 bg-white text-foreground hover:bg-neutral-50 hover:border-[#059b60]/40",
               )}
             >
               {dienst.label}
@@ -174,9 +174,7 @@ function PricingSwitcherReady({
               className={cn(
                 "mt-8 inline-flex h-11 items-center justify-center rounded-2xl px-5 text-sm font-medium",
                 hoverBtn,
-                pack.featured
-                  ? "bg-white text-forest hover:bg-neutral-100"
-                  : "bg-foreground text-background hover:bg-neutral-800",
+                pack.featured ? brandFillOnDark : brandFill,
               )}
             >
               {pack.cta}

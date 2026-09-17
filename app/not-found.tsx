@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/section";
-import { hoverBtn } from "@/lib/ui";
+import { hoverBtn, brandFill } from "@/lib/ui";
 import { cn } from "@/lib/utils";
 
 export default function NotFound() {
@@ -17,7 +17,8 @@ export default function NotFound() {
         <Link
           href="/"
           className={cn(
-            "inline-flex h-11 items-center rounded-2xl bg-foreground px-5 text-sm font-medium text-background hover:bg-neutral-800",
+            "inline-flex h-11 items-center rounded-2xl px-5 text-sm font-medium",
+            brandFill,
             hoverBtn,
           )}
         >
@@ -26,7 +27,7 @@ export default function NotFound() {
         <Link
           href="/offerte"
           className={cn(
-            "inline-flex h-11 items-center rounded-2xl border border-black/10 px-5 text-sm font-medium hover:bg-neutral-50 hover:border-forest/30",
+            "inline-flex h-11 items-center rounded-2xl border border-black/10 px-5 text-sm font-medium hover:bg-[#059b60] hover:text-white hover:border-[#059b60]",
             hoverBtn,
           )}
         >

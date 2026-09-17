@@ -245,10 +245,29 @@
     });
   });
 
+  function playHeroVideos() {
+    document.querySelectorAll(".jr-showcase__video").forEach(function (video) {
+      video.muted = true;
+      video.defaultMuted = true;
+      video.setAttribute("playsinline", "");
+      video.setAttribute("webkit-playsinline", "");
+      video.playsInline = true;
+      var attempt = video.play();
+      if (attempt && attempt.catch) {
+        attempt.catch(function () {});
+      }
+    });
+  }
+
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     document.querySelectorAll(".jr-showcase__video").forEach(function (video) {
       video.removeAttribute("autoplay");
       video.pause();
     });
+  } else {
+    playHeroVideos();
+    document.addEventListener("DOMContentLoaded", playHeroVideos);
+    window.addEventListener("pageshow", playHeroVideos);
+    document.addEventListener("touchstart", playHeroVideos, { once: true, passive: true });
   }
 })();

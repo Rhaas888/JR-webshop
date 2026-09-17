@@ -1,15 +1,16 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { HeroVideo } from "@/components/hero-video";
-import { hoverBtn } from "@/lib/ui";
+import { hoverBtn, brandFillOnDark } from "@/lib/ui";
 import { cn } from "@/lib/utils";
 
 const filledButtonClass = cn(
-  "inline-flex h-[52px] min-w-[8.5rem] items-center justify-center rounded-2xl bg-white px-7 text-base font-medium text-foreground hover:bg-neutral-100",
+  "inline-flex h-[52px] min-w-[8.5rem] items-center justify-center rounded-2xl px-7 text-base font-medium",
+  brandFillOnDark,
   hoverBtn,
 );
 const ghostButtonClass = cn(
-  "inline-flex h-[52px] min-w-[8.5rem] items-center justify-center rounded-2xl border border-white/30 bg-white/10 px-7 text-base font-medium text-white hover:bg-white/20 hover:border-white/50",
+  "inline-flex h-[52px] min-w-[8.5rem] items-center justify-center rounded-2xl border border-white/30 bg-white/10 px-7 text-base font-medium text-white hover:border-transparent hover:bg-[#059b60] hover:text-white",
   hoverBtn,
 );
 
@@ -41,15 +42,15 @@ export function ShowcaseHero({
   secondaryFilled?: boolean;
 }) {
   return (
-    <section className="relative min-h-[calc(100vh-4.5rem)] overflow-hidden bg-neutral-900">
+    <section className="relative min-h-[calc(100vh-4.5rem)] overflow-hidden bg-neutral-900 max-sm:min-h-0">
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <HeroVideo />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.42)_0%,rgba(0,0,0,0.52)_42%,rgba(0,0,0,0.62)_78%,rgba(0,0,0,0.72)_100%)]" />
       </div>
 
-      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-4.5rem)] w-full max-w-[1120px] flex-col justify-center px-6 pt-16 pb-16 sm:pt-[5.5rem] lg:pt-[6.5rem]">
+      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-4.5rem)] w-full max-w-[1120px] flex-col justify-center px-6 pt-16 pb-16 max-sm:min-h-[32rem] max-sm:justify-end max-sm:pt-9 max-sm:pb-10 sm:pt-[5.5rem] lg:pt-[6.5rem]">
         <div className="mx-auto max-w-[38rem] text-center">
-          <h1 className="mx-auto max-w-[12em] text-[clamp(2.5rem,5.8vw,4.25rem)] font-bold tracking-[-0.03em] leading-[1.45] text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.35)]">
+          <h1 className="mx-auto max-w-[12em] text-[clamp(2.5rem,5.8vw,4.25rem)] font-bold tracking-[-0.03em] leading-[1.45] text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.35)] max-sm:max-w-none max-sm:text-[clamp(1.85rem,8vw,2.35rem)] max-sm:leading-[1.28]">
             {line1}
             <br />
             <span className="relative inline-block whitespace-nowrap">
@@ -68,10 +69,10 @@ export function ShowcaseHero({
               </>
             ) : null}
           </h1>
-          <p className="mx-auto mt-10 max-w-[34rem] text-base leading-[1.85] tracking-[0.01em] text-white/80 sm:text-[17px]">
+          <p className="mx-auto mt-10 max-w-[34rem] text-base leading-[1.85] tracking-[0.01em] text-white/80 max-sm:mt-4 max-sm:text-[15px] max-sm:leading-[1.65] sm:text-[17px]">
             {description}
           </p>
-          <div className="mt-11 flex flex-col items-center justify-center gap-3.5 sm:flex-row">
+          <div className="mt-11 flex flex-col items-center justify-center gap-3.5 max-sm:mt-[22px] max-sm:gap-2.5 sm:flex-row">
             <Link href={primaryHref} className={filledButtonClass}>
               {primaryLabel}
             </Link>

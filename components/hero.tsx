@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/section";
-import { hoverBtn } from "@/lib/ui";
+import { hoverBtn, brandFill } from "@/lib/ui";
 import { cn } from "@/lib/utils";
 
 export function Hero({
@@ -58,7 +58,8 @@ export function Hero({
             <Link
               href={primaryHref}
               className={cn(
-                "inline-flex h-11 items-center justify-center rounded-lg bg-foreground px-5 text-sm font-medium text-background hover:bg-neutral-800",
+                "inline-flex h-11 items-center justify-center rounded-lg px-5 text-sm font-medium",
+                brandFill,
                 hoverBtn,
               )}
             >
@@ -68,7 +69,7 @@ export function Hero({
               <Link
                 href={secondaryHref}
                 className={cn(
-                  "inline-flex h-11 items-center justify-center rounded-lg border border-black/10 bg-white px-5 text-sm font-medium hover:bg-neutral-50 hover:border-forest/30",
+                  "inline-flex h-11 items-center justify-center rounded-lg border border-black/10 bg-white px-5 text-sm font-medium hover:bg-[#059b60] hover:text-white hover:border-[#059b60]",
                   hoverBtn,
                 )}
               >

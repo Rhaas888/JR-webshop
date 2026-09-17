@@ -86,7 +86,7 @@ function PriceCard({
       <Link
         href={href}
         className={cn(
-          "mt-8 inline-flex h-11 items-center justify-center rounded-2xl border border-black/10 text-sm font-medium hover:bg-neutral-50 hover:border-forest/30",
+          "mt-8 inline-flex h-11 items-center justify-center rounded-2xl border border-black/10 text-sm font-medium hover:bg-[#059b60] hover:text-white hover:border-[#059b60]",
           hoverBtn,
         )}
       >

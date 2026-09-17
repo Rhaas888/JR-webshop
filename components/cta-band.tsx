@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Section } from "@/components/section";
-import { hoverBtn } from "@/lib/ui";
+import { hoverBtn, brandFillOnDark } from "@/lib/ui";
 import { cn } from "@/lib/utils";
 
 export function CtaBand({
@@ -24,7 +24,8 @@ export function CtaBand({
         <Link
           href={href}
           className={cn(
-            "mt-8 inline-flex h-11 items-center justify-center rounded-2xl bg-white px-5 text-sm font-medium text-foreground hover:bg-neutral-100",
+            "mt-8 inline-flex h-11 items-center justify-center rounded-2xl px-5 text-sm font-medium",
+            brandFillOnDark,
             hoverBtn,
           )}
         >

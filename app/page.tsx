@@ -10,7 +10,7 @@ import { Section, SectionHeading } from "@/components/section";
 import { ShowcaseHero } from "@/components/showcase-hero";
 import { TrustStrip } from "@/components/trust-strip";
 import { about, prices } from "@/lib/content";
-import { hoverBtn, hoverCard } from "@/lib/ui";
+import { hoverBtn, hoverCard, brandFill } from "@/lib/ui";
 import { cn } from "@/lib/utils";
 
 export default function HomePage() {
@@ -125,7 +125,8 @@ function ServiceCard({
         <Link
           href={href}
           className={cn(
-            "mt-8 inline-flex h-11 items-center justify-center rounded-2xl bg-foreground px-5 text-sm font-medium text-background hover:bg-neutral-800",
+            "mt-8 inline-flex h-11 items-center justify-center rounded-2xl px-5 text-sm font-medium",
+            brandFill,
             hoverBtn,
           )}
         >
