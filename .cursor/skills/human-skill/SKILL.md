@@ -1,6 +1,6 @@
 ---
 name: human-skill
-description: Write all Dutch website copy for JR Intelligence (jr-intelligence.com) as a real Dutch entrepreneur. Use whenever writing, rewriting, reviewing, or translating customer-facing text on the Next.js site or the Shopify theme zip (shopify-theme, JR-WEBSHOP-test.zip). Covers homepage, pages, FAQ, forms, buttons, meta descriptions, and any JR-site teksten.
+description: Write all Dutch website copy for JR Intelligence (jr-intelligence.com) as a real Dutch entrepreneur. Use whenever writing, rewriting, reviewing, or translating customer-facing text on the Next.js site or the Shopify theme in shopify-theme/. Covers homepage, pages, FAQ, forms, buttons, meta descriptions, and any JR-site teksten.
 ---
 
 # Human Copywriter — JR Intelligence
@@ -219,7 +219,7 @@ Keep homepage lines that Rik already approved, unless they break this skill (em 
 
 Do not rewrite customer review quotes unless they address the reader with "u".
 
-After Shopify theme copy changes, rebuild `JR-WEBSHOP-test.zip` from the contents of `shopify-theme/` at zip root (not wrapped in a `shopify-theme/` folder).
+After Shopify theme copy changes, commit and push `shopify-theme/`. GitHub Actions uploads it to the live Shopify theme. Do not rebuild a zip unless someone asks for one.
 
 ## Important
 

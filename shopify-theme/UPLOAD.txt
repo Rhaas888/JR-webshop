@@ -1,13 +1,12 @@
-JR-WEBSHOP test — Shopify-thema
+JR Shopify-thema
 
-Bestand: JR-WEBSHOP-test.zip
+Live zetten gaat via GitHub Actions, niet via een zip.
 
-Upload:
-  Shopify Admin → Online Store → Themes → Add theme → Upload zip
-  Kies: JR-WEBSHOP-test.zip
-  Niet uploaden onder Apps.
+Als shopify-theme/ naar GitHub gaat, pusht de workflow het naar het live thema
+in shop 80ef9z-cr.myshopify.com. Secrets staan in GitHub:
+SHOPIFY_FLAG_STORE, SHOPIFY_CLI_THEME_TOKEN, SHOPIFY_THEME_ID.
 
-Na upload zie je het thema als "JR-WEBSHOP test". Daarna Publish.
+Handmatig draaien: GitHub → Actions → Deploy Shopify theme → Run workflow.
 
 De startpagina hoort eruit te zien als https://jr-intelligence.vercel.app/
 Pagina-inhoud volgt de URL/handle, niet het template in de dropdown.
