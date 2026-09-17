@@ -124,8 +124,9 @@ export function WorkBento() {
           </div>
           <div className="relative mt-6 min-h-[210px] overflow-hidden rounded-3xl bg-[radial-gradient(120%_80%_at_80%_20%,rgba(5,155,96,0.18),transparent_55%),linear-gradient(180deg,#eef7f3,#f5f5f5)] lg:mt-0">
             <div className="absolute top-[18%] left-[8%] w-[58%] max-w-[240px] animate-[jrBentoFloat_5.5s_ease-in-out_infinite] motion-reduce:animate-none">
-              <div className="flex min-h-[118px] items-end rounded-[18px] bg-[linear-gradient(90deg,#111_0_46%,#fff_46%)] px-4 py-4 text-[13px] font-bold leading-tight shadow-[0_16px_32px_rgba(0,0,0,0.12)]">
-                <span className="ml-[48%] max-w-[9ch] text-black">
+              <div className="grid min-h-[118px] grid-cols-[0.44fr_0.56fr] overflow-hidden rounded-[18px] bg-white shadow-[0_16px_32px_rgba(0,0,0,0.12)]">
+                <span className="bg-black" />
+                <span className="flex items-end px-3 pb-4 text-[13px] font-bold leading-tight text-black">
                   Jouw verhaal.
                   <br />
                   Sterk in beeld.
