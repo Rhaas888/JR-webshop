@@ -673,6 +673,12 @@
     min-height: 0;
   }
 
+  .jr-bento__feature--design {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(280px, 1fr);
+    align-items: stretch;
+  }
+
   .jr-bento__feature--design .jr-bento__graphic,
   .jr-bento__feature--tall.jr-bento__feature--design .jr-bento__graphic {
     position: relative;
@@ -682,7 +688,7 @@
     left: auto;
     width: auto;
     height: auto;
-    min-height: 0;
+    min-height: 280px;
   }
 
   .jr-bento__feature h2 {
