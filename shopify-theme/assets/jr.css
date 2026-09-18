@@ -1777,10 +1777,17 @@ body.menu-open {
     box-shadow 0.28s ease;
 }
 
-.jr-bento__feature--design,
 .jr-bento__feature--growth {
   min-height: 520px;
   padding-bottom: 292px;
+}
+
+.jr-bento__feature--design {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(168px, 1.2fr);
+  gap: 16px 20px;
+  align-items: stretch;
+  min-height: 280px;
 }
 
 .jr-bento__feature:hover {
@@ -1907,6 +1914,22 @@ body.menu-open {
   left: 18px;
   right: 18px;
   width: auto;
+}
+
+.jr-bento__feature--design .jr-bento__copy {
+  max-width: none;
+}
+
+.jr-bento__feature--design .jr-bento__graphic,
+.jr-bento__feature--tall.jr-bento__feature--design .jr-bento__graphic {
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  width: auto;
+  height: auto;
+  min-height: 220px;
 }
 
 .jr-bento__chip {
@@ -2068,6 +2091,17 @@ body.menu-open {
   background:
     radial-gradient(80% 70% at 80% 20%, rgba(5, 155, 96, 0.12), transparent 55%),
     linear-gradient(180deg, #eef2ee 0%, #e4e8e3 100%);
+}
+
+.jr-bento__feature--design .jr-mac {
+  top: 16%;
+  width: 78%;
+  max-width: none;
+}
+
+.jr-bento__feature--design .jr-phone {
+  width: 34%;
+  max-width: 158px;
 }
 
 .jr-mac {
@@ -2352,6 +2386,18 @@ body.menu-open {
     min-height: 0;
   }
 
+  .jr-bento__feature--design .jr-bento__graphic,
+  .jr-bento__feature--tall.jr-bento__feature--design .jr-bento__graphic {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    width: auto;
+    height: auto;
+    min-height: 0;
+  }
+
   .jr-bento__feature h2 {
     font-size: 32px;
   }
@@ -2390,6 +2436,31 @@ body.menu-open {
     left: 18px;
     width: auto;
     height: 255px;
+  }
+
+  .jr-bento__feature--design .jr-bento__graphic,
+  .jr-bento__feature--tall.jr-bento__feature--design .jr-bento__graphic {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    width: auto;
+    height: auto;
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 559px) {
+  .jr-bento__feature--design {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .jr-bento__feature--design .jr-bento__graphic,
+  .jr-bento__feature--tall.jr-bento__feature--design .jr-bento__graphic {
+    min-height: 230px;
+    height: 250px;
   }
 }
 
