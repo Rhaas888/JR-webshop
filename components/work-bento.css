@@ -13,29 +13,6 @@
   font-style: normal;
 }
 
-.jr-bento__intro {
-  max-width: 640px;
-  margin: 0 auto 22px;
-  text-align: center;
-}
-
-.jr-bento__intro h2 {
-  margin: 0;
-  font-size: 26px;
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  line-height: 1.15;
-}
-
-.jr-bento__intro p {
-  margin: 10px auto 0;
-  max-width: 40ch;
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 1.6;
-  color: #525252;
-}
-
 .jr-bento__proof {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -613,10 +590,6 @@
 @media (min-width: 900px) {
   .jr-bento {
     padding: 40px 20px 88px;
-  }
-
-  .jr-bento__intro h2 {
-    font-size: 32px;
   }
 
   .jr-bento__proof {

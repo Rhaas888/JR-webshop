@@ -86,11 +86,6 @@ export function WorkBento() {
   return (
     <section ref={ref} className="jr-bento" aria-label="Aanpak en erkenning">
       <div className="jr-bento__bleed">
-        <div className="jr-bento__intro">
-          <h2>Eerst het ontwerp. Dan bouwen we hem.</h2>
-          <p>Een shop of app die er goed uitziet, op laptop en op telefoon.</p>
-        </div>
-
         <div className="jr-bento__proof">
           <figure className="jr-bento__proof-card">
             {/* eslint-disable-next-line @next/next/no-img-element */}
