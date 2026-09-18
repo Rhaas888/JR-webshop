@@ -86,21 +86,6 @@ export function WorkBento() {
   return (
     <section ref={ref} className="jr-bento" aria-label="Aanpak en erkenning">
       <div className="jr-bento__bleed">
-        <div className="jr-bento__proof">
-          <figure className="jr-bento__proof-card">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={PROOF_META} alt="Meta Certified Digital Marketing Associate" width={416} height={416} />
-          </figure>
-          <figure className="jr-bento__proof-card">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={PROOF_GIF} alt="Google Digital Champions" width={600} height={250} />
-          </figure>
-          <figure className="jr-bento__proof-card">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={PROOF_PARTNER} alt="Google Premier Partner 2026" width={152} height={146} />
-          </figure>
-        </div>
-
         <div className="jr-bento__shell">
           <article className="jr-bento__feature jr-bento__feature--tall jr-bento__feature--design">
             <div className="jr-bento__copy">
@@ -194,6 +179,21 @@ export function WorkBento() {
               </div>
             </div>
           </article>
+        </div>
+
+        <div className="jr-bento__proof">
+          <figure className="jr-bento__proof-card">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={PROOF_META} alt="Meta Certified Digital Marketing Associate" width={416} height={416} />
+          </figure>
+          <figure className="jr-bento__proof-card">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={PROOF_GIF} alt="Google Digital Champions" width={600} height={250} />
+          </figure>
+          <figure className="jr-bento__proof-card">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={PROOF_PARTNER} alt="Google Premier Partner 2026" width={152} height={146} />
+          </figure>
         </div>
       </div>
     </section>

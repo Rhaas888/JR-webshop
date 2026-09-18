@@ -1736,7 +1736,7 @@ body.menu-open {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
   width: 100%;
-  margin: 0 auto 24px;
+  margin: 24px auto 0;
 }
 
 .jr-bento__proof-card {
@@ -2346,7 +2346,8 @@ body.menu-open {
 
   .jr-bento__proof {
     gap: 16px;
-    margin-bottom: 32px;
+    margin-top: 32px;
+    margin-bottom: 0;
   }
 
   .jr-bento__proof-card {
