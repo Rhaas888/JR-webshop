@@ -1,5 +1,4 @@
 import { trustItems } from "@/lib/content";
-import { hoverCard } from "@/lib/ui";
 import { cn } from "@/lib/utils";
 
 const trustIcons = {
@@ -11,11 +10,11 @@ const trustIcons = {
 
 export function TrustStrip() {
   return (
-    <section className="border-b border-black/6 bg-forest-soft/70">
+    <section className="border-b border-black/6 bg-[#f5f5f5]">
       <div className="mx-auto w-full max-w-[1120px] px-6 py-10 md:py-12 lg:py-14">
         <div className="max-w-xl">
-          <p className="text-sm font-semibold tracking-wide text-forest">Samenwerken</p>
-          <h2 className="mt-2 text-[1.65rem] font-semibold tracking-tight sm:text-3xl">
+          <p className="text-sm font-semibold tracking-wide text-[#059b60]">Samenwerken</p>
+          <h2 className="mt-2 text-[1.65rem] font-semibold tracking-tight text-black sm:text-3xl">
             Dit kun je van ons verwachten
           </h2>
         </div>
@@ -27,22 +26,22 @@ export function TrustStrip() {
                 key={item.title}
                 className={cn(
                   "group relative overflow-hidden rounded-2xl border border-black/8 bg-white px-6 pb-8 pt-6 pl-7 lg:px-[26px] lg:pl-8 lg:pb-9 lg:pt-7",
-                  hoverCard,
+                  "transition-[border-color,box-shadow,transform] duration-200 ease-out hover:-translate-y-1.5 hover:border-[#059b60]/35 hover:shadow-[0_20px_44px_rgba(5,155,96,0.16)] motion-reduce:transform-none",
                 )}
               >
-                <span className="absolute inset-y-0 left-0 w-[3px] bg-forest transition-[width] duration-200 group-hover:w-1" />
+                <span className="absolute inset-y-0 left-0 w-[3px] bg-[#059b60] transition-[width] duration-200 group-hover:w-1" />
                 <div className="flex items-center justify-between">
-                  <span className="text-[13px] font-semibold tracking-[0.14em] text-forest">
+                  <span className="text-[13px] font-semibold tracking-[0.14em] text-[#059b60]">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <span
-                    className="inline-flex size-11 items-center justify-center rounded-xl bg-forest-soft text-forest transition-transform duration-200 group-hover:scale-105"
+                    className="inline-flex size-11 items-center justify-center rounded-xl bg-[#059b60] text-white transition-transform duration-200 group-hover:scale-105"
                     aria-hidden="true"
                   >
                     <Icon />
                   </span>
                 </div>
-                <p className="mt-7 text-lg font-semibold tracking-tight text-foreground">
+                <p className="mt-7 text-lg font-semibold tracking-tight text-black">
                   {item.title}
                 </p>
                 <p className="mt-3 text-sm font-medium leading-[1.65] text-muted-foreground">

@@ -1481,7 +1481,7 @@ body.menu-open {
 }
 
 .jr-trust {
-  background: color-mix(in srgb, var(--forest-soft) 70%, white);
+  background: #f5f5f5;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
@@ -1494,12 +1494,17 @@ body.menu-open {
   max-width: 36rem;
 }
 
+.jr-trust .jr-kicker {
+  color: var(--brand);
+}
+
 .jr-trust__intro h2 {
   margin: 8px 0 0;
   font-size: 26px;
   font-weight: 600;
   letter-spacing: -0.025em;
   line-height: 1.2;
+  color: #000;
 }
 
 .jr-trust__grid {
@@ -1530,15 +1535,15 @@ body.menu-open {
   top: 0;
   bottom: 0;
   width: 3px;
-  background: var(--forest);
+  background: var(--brand);
   transition: width 0.22s ease;
 }
 
 .jr-trust__card:hover {
   transform: translateY(-6px);
-  border-color: color-mix(in srgb, var(--forest) 32%, #e5e5e5);
-  box-shadow: 0 20px 44px rgba(27, 61, 47, 0.14);
-  background: #fbfcfb;
+  border-color: rgba(5, 155, 96, 0.35);
+  box-shadow: 0 20px 44px rgba(5, 155, 96, 0.16);
+  background: #fff;
 }
 
 .jr-trust__card:hover::before {
@@ -1559,7 +1564,7 @@ body.menu-open {
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.14em;
-  color: var(--forest);
+  color: var(--brand);
 }
 
 .jr-trust__icon {
@@ -1569,8 +1574,8 @@ body.menu-open {
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: var(--forest-soft);
-  color: var(--forest);
+  background: var(--brand);
+  color: #fff;
   transition: transform 0.22s ease;
 }
 
@@ -1584,7 +1589,7 @@ body.menu-open {
   font-size: 18px;
   font-weight: 600;
   letter-spacing: -0.025em;
-  color: var(--foreground);
+  color: #000;
 }
 
 .jr-trust__text {
