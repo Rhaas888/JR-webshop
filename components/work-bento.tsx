@@ -4,6 +4,8 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import Link from "next/link";
 import "./work-bento.css";
 
+const PROOF_META =
+  "https://cdn.shopify.com/s/files/1/1073/7549/3457/files/meta-certified-digital-marketing-associate.png?v=1789765533";
 const PROOF_GIF =
   "https://cdn.shopify.com/s/files/1/1073/7549/3457/files/google-digital-champions.gif?v=1789670038";
 const PROOF_PARTNER =
@@ -84,23 +86,63 @@ export function WorkBento() {
   return (
     <section ref={ref} className="jr-bento" aria-label="Aanpak en erkenning">
       <div className="jr-bento__bleed">
+        <div className="jr-bento__intro">
+          <h2>Eerst het ontwerp. Dan bouwen we hem.</h2>
+          <p>Een shop of app die er goed uitziet, op laptop en op telefoon.</p>
+        </div>
+
         <div className="jr-bento__proof">
           <figure className="jr-bento__proof-card">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/jr-invoice.jpg" alt="JR Intelligence" width={900} height={814} />
+            <img src={PROOF_META} alt="Meta Certified Digital Marketing Associate" width={416} height={416} />
           </figure>
-          <figure className="jr-bento__proof-card jr-bento__proof-card--gif">
+          <figure className="jr-bento__proof-card">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={PROOF_GIF} alt="Google Digital Champions" width={600} height={250} />
           </figure>
-          <figure className="jr-bento__proof-card jr-bento__proof-card--badge">
+          <figure className="jr-bento__proof-card">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={PROOF_PARTNER} alt="Google Premier Partner 2026" width={152} height={146} />
           </figure>
         </div>
 
         <div className="jr-bento__shell">
-          <article className="jr-bento__feature jr-bento__feature--tall">
+          <article className="jr-bento__feature jr-bento__feature--tall jr-bento__feature--design">
+            <div className="jr-bento__copy">
+              <Icon>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                  <path d="M12 3l1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6L12 3Z" />
+                </svg>
+              </Icon>
+              <h2>Design en ontwikkeling</h2>
+              <p>We maken het ontwerp en bouwen de shop. Op laptop en op telefoon, zodat het eruitziet zoals jij het wilt.</p>
+              <WishLink />
+            </div>
+            <div className="jr-bento__graphic jr-bento__graphic--design" aria-hidden="true">
+              <div className="jr-mac">
+                <div className="jr-mac__lid">
+                  <div className="jr-mac__bezel">
+                    <span className="jr-mac__cam" />
+                    <div className="jr-mac__screen">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src="/images/shop-desktop.png" alt="" width={1600} height={1000} />
+                    </div>
+                  </div>
+                </div>
+                <div className="jr-mac__base" />
+              </div>
+              <div className="jr-phone">
+                <span className="jr-phone__island" />
+                <div className="jr-phone__screen">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/images/shop-mobile.png" alt="" width={800} height={1600} />
+                </div>
+                <span className="jr-phone__bar" />
+              </div>
+            </div>
+          </article>
+
+          <article className="jr-bento__feature">
             <Icon>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
                 <path d="M9 18h6M10 21h4" />
@@ -110,90 +152,6 @@ export function WorkBento() {
             <h2>Strategie en structuur</h2>
             <p>We beginnen bij wat jij wilt verkopen en wie het moet kopen. Elke pagina heeft een taak.</p>
             <WishLink />
-            <div className="jr-bento__graphic" aria-hidden="true">
-              <span className="jr-bento__chip jr-bento__chip--dark">Heldere route</span>
-              <div className="jr-bento__window">
-                <div className="jr-bento__browserbar">
-                  <i />
-                  <i />
-                  <i />
-                  <small>Jouw plan</small>
-                </div>
-                <div className="jr-bento__nodes">
-                  <span className="jr-bento__node jr-bento__node--light">
-                    <small>01</small>
-                    <strong>Doel</strong>
-                  </span>
-                  <span className="jr-bento__line">
-                    <i />
-                  </span>
-                  <span className="jr-bento__node jr-bento__node--dark">
-                    <small>02</small>
-                    <strong>Structuur</strong>
-                  </span>
-                  <span className="jr-bento__line">
-                    <i />
-                  </span>
-                  <span className="jr-bento__node jr-bento__node--brand">
-                    <small>03</small>
-                    <strong>Conversie</strong>
-                  </span>
-                </div>
-              </div>
-              <span className="jr-bento__chip jr-bento__chip--brand">Focus op je klant</span>
-            </div>
-          </article>
-
-          <article className="jr-bento__feature jr-bento__feature--design">
-            <div className="jr-bento__copy">
-              <Icon>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                  <path d="M12 3l1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6L12 3Z" />
-                </svg>
-              </Icon>
-              <h2>Design en ontwikkeling</h2>
-              <p>Een ontwerp dat bij je merk past. Snel, duidelijk, en het werkt op telefoon en laptop.</p>
-              <WishLink />
-            </div>
-            <div className="jr-bento__graphic jr-bento__graphic--design" aria-hidden="true">
-              <div className="jr-bento__device jr-bento__device--desktop">
-                <div className="jr-bento__device-nav">
-                  <i />
-                  <i />
-                  <i />
-                </div>
-                <div className="jr-bento__device-hero">
-                  <strong>
-                    Jouw verhaal.
-                    <br />
-                    Sterk in beeld.
-                  </strong>
-                </div>
-                <div className="jr-bento__device-cards">
-                  <i />
-                  <i />
-                  <i />
-                </div>
-              </div>
-              <div className="jr-bento__device jr-bento__device--mobile">
-                <div className="jr-bento__mobile-top">
-                  <i />
-                  <span />
-                </div>
-                <div className="jr-bento__mobile-hero">
-                  <strong>
-                    Mooi op
-                    <br />
-                    elk scherm.
-                  </strong>
-                </div>
-                <div className="jr-bento__mobile-lines">
-                  <i />
-                  <i />
-                  <i />
-                </div>
-              </div>
-            </div>
           </article>
 
           <article className="jr-bento__feature jr-bento__feature--growth">
@@ -211,7 +169,6 @@ export function WorkBento() {
               <WishLink />
             </div>
             <div className="jr-bento__graphic jr-bento__graphic--growth" aria-hidden="true">
-              <span className="jr-bento__chip jr-bento__chip--brand jr-bento__chip--float">Goed vindbaar</span>
               <div className="jr-bento__score">
                 <strong>
                   <Count value={96} active={inView} />
