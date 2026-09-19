@@ -29,7 +29,6 @@ export function PricingFocus() {
         <div className="jr-focus__intro">
           <p className="jr-focus__kicker">Prijzen</p>
           <h1>Kies wat je wilt laten maken</h1>
-          <p>Drie keuzes. Daarna zie je wat het kost.</p>
         </div>
         <div className="jr-focus__cards">
           {cards.map((card) => (

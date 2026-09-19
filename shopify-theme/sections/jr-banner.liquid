@@ -9,19 +9,18 @@
   <div class="jr-container jr-showcase__inner">
     <div class="jr-showcase__copy">
       <h1>
-        {{ section.settings.line1 }}<br>
-        <span class="jr-scribble">{{ section.settings.highlight }}{% render 'scribble' %}</span>
-        {%- if section.settings.line3 != blank -%}
-          <br>{{ section.settings.line3 }}
-        {%- endif -%}
+        Webshop, app of automatisatie<br>
+        <span class="jr-scribble">op maat{% render 'scribble' %}</span>
+        <br>voor jouw bedrijf
       </h1>
       <p class="jr-showcase__lede">
         Jouw bedrijf is uniek. Je webshop mag dat ook zijn.<br>
-        Webshops en apps volledig op maat.
+        Net als je app, of het werk dat je nu met de hand doet.
       </p>
       <div class="jr-showcase__actions">
         <a class="jr-btn jr-btn--primary jr-btn--lg" href="/pages/webshop-laten-bouwen">Webshop</a>
         <a class="jr-btn jr-btn--primary jr-btn--lg" href="{{ app_href }}">App</a>
+        <a class="jr-btn jr-btn--primary jr-btn--lg" href="/pages/prijzen?dienst=automatisatie">Automatisatie</a>
       </div>
     </div>
   </div>
@@ -35,7 +34,7 @@
       "type": "text",
       "id": "line1",
       "label": "Regel 1",
-      "default": "Webshop of app"
+      "default": "Webshop, app of automatisatie"
     },
     {
       "type": "text",
@@ -53,7 +52,7 @@
       "type": "textarea",
       "id": "description",
       "label": "Tekst",
-      "default": "Jouw bedrijf is uniek. Je webshop mag dat ook zijn. Webshops en apps volledig op maat."
+      "default": "Jouw bedrijf is uniek. Je webshop mag dat ook zijn. Net als je app, of het werk dat je nu met de hand doet."
     }
   ],
   "presets": [

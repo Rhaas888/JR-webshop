@@ -5,24 +5,24 @@ import { hoverBtn, brandFillOnDark } from "@/lib/ui";
 import { cn } from "@/lib/utils";
 
 const filledButtonClass = cn(
-  "inline-flex h-[52px] min-w-[8.5rem] items-center justify-center rounded-2xl px-7 text-base font-medium",
+  "inline-flex h-[52px] min-w-[8rem] items-center justify-center rounded-2xl px-7 text-base font-medium",
   brandFillOnDark,
   hoverBtn,
 );
 const ghostButtonClass = cn(
-  "inline-flex h-[52px] min-w-[8.5rem] items-center justify-center rounded-2xl border border-white/30 bg-white/10 px-7 text-base font-medium text-white hover:border-transparent hover:bg-[#059b60] hover:text-white",
+  "inline-flex h-[52px] min-w-[8rem] items-center justify-center rounded-2xl border border-white/30 bg-white/10 px-7 text-base font-medium text-white hover:border-transparent hover:bg-[#059b60] hover:text-white",
   hoverBtn,
 );
 
 export function ShowcaseHero({
-  line1 = "Webshop of app",
+  line1 = "Webshop, app of automatisatie",
   highlight = "op maat",
   line3 = "voor jouw bedrijf",
   description = (
     <>
       Jouw bedrijf is uniek. Je webshop mag dat ook zijn.
       <br />
-      Webshops en apps volledig op maat.
+      Net als je app, of het werk dat je nu met de hand doet.
     </>
   ),
   primaryHref = "/offerte",
@@ -30,6 +30,8 @@ export function ShowcaseHero({
   secondaryHref,
   secondaryLabel,
   secondaryFilled = false,
+  tertiaryHref,
+  tertiaryLabel,
 }: {
   line1?: string;
   highlight?: string;
@@ -40,6 +42,8 @@ export function ShowcaseHero({
   secondaryHref?: string;
   secondaryLabel?: string;
   secondaryFilled?: boolean;
+  tertiaryHref?: string;
+  tertiaryLabel?: string;
 }) {
   return (
     <section className="relative min-h-[calc(100vh-4.5rem)] overflow-hidden bg-neutral-900 max-sm:min-h-0">
@@ -50,7 +54,7 @@ export function ShowcaseHero({
 
       <div className="relative z-10 mx-auto flex min-h-[calc(100vh-4.5rem)] w-full max-w-[1120px] flex-col justify-center px-6 pt-16 pb-16 max-sm:min-h-[32rem] max-sm:justify-end max-sm:pt-9 max-sm:pb-10 sm:pt-[5.5rem] lg:pt-[6.5rem]">
         <div className="mx-auto max-w-[38rem] text-center">
-          <h1 className="mx-auto max-w-[12em] text-[clamp(2.5rem,5.8vw,4.25rem)] font-bold tracking-[-0.03em] leading-[1.45] text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.35)] max-sm:max-w-none max-sm:text-[clamp(1.85rem,8vw,2.35rem)] max-sm:leading-[1.28]">
+          <h1 className="mx-auto max-w-[16em] text-[clamp(2.5rem,5.8vw,4.25rem)] font-bold tracking-[-0.03em] leading-[1.45] text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.35)] max-sm:max-w-none max-sm:text-[clamp(1.85rem,8vw,2.35rem)] max-sm:leading-[1.28]">
             {line1}
             <br />
             <span className="relative inline-block whitespace-nowrap">
@@ -87,7 +91,7 @@ export function ShowcaseHero({
           <p className="mx-auto mt-10 max-w-[34rem] text-base leading-[1.85] tracking-[0.01em] text-white/80 max-sm:mt-4 max-sm:text-[15px] max-sm:leading-[1.65] sm:text-[17px]">
             {description}
           </p>
-          <div className="mt-11 flex flex-col items-center justify-center gap-3.5 max-sm:mt-[22px] max-sm:gap-2.5 sm:flex-row">
+          <div className="mt-11 flex flex-col flex-wrap items-center justify-center gap-3.5 max-sm:mt-[22px] max-sm:gap-2.5 sm:flex-row">
             <Link href={primaryHref} className={filledButtonClass}>
               {primaryLabel}
             </Link>
@@ -97,6 +101,11 @@ export function ShowcaseHero({
                 className={secondaryFilled ? filledButtonClass : ghostButtonClass}
               >
                 {secondaryLabel}
+              </Link>
+            ) : null}
+            {tertiaryHref && tertiaryLabel ? (
+              <Link href={tertiaryHref} className={filledButtonClass}>
+                {tertiaryLabel}
               </Link>
             ) : null}
           </div>

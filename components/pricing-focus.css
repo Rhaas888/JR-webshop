@@ -25,9 +25,9 @@
 
 .jr-focus__kicker {
   margin: 0;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   color: #059b60;
 }
 
@@ -38,14 +38,6 @@
   letter-spacing: -0.03em;
   line-height: 1.15;
   color: #000;
-}
-
-.jr-focus__intro p:last-child {
-  margin: 14px 0 0;
-  font-size: 17px;
-  font-weight: 500;
-  line-height: 1.6;
-  color: #525252;
 }
 
 .jr-focus__cards {
@@ -218,6 +210,10 @@
 @media (min-width: 640px) {
   .jr-focus {
     padding: 72px 0 104px;
+  }
+
+  .jr-focus__kicker {
+    font-size: 28px;
   }
 
   .jr-focus__intro h1 {

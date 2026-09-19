@@ -22,6 +22,8 @@ export default function HomePage() {
         secondaryHref="/app-laten-maken"
         secondaryLabel="App"
         secondaryFilled
+        tertiaryHref="/prijzen?dienst=automatisatie"
+        tertiaryLabel="Automatisatie"
       />
       <WorkBento />
       <TrustStrip />
