@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { CtaBand } from "@/components/cta-band";
+import { Expect } from "@/components/expect";
 import { PageIntro } from "@/components/page-intro";
 import { Container, Section } from "@/components/section";
 import { about, company } from "@/lib/content";
@@ -38,15 +39,9 @@ export default function OverOnsPage() {
             <p key={paragraph}>{paragraph}</p>
           ))}
         </div>
-        <div className="mt-14 grid gap-6 sm:grid-cols-3">
-          {about.values.map((value) => (
-            <article key={value.title} className="rounded-3xl border border-black/8 p-6">
-              <h2 className="text-lg font-semibold tracking-tight">{value.title}</h2>
-              <p className="mt-3 text-base font-medium leading-7 text-foreground">{value.text}</p>
-            </article>
-          ))}
-        </div>
       </Section>
+
+      <Expect />
 
       <Section tone="muted">
         <div className="grid items-center gap-10 lg:grid-cols-2">
