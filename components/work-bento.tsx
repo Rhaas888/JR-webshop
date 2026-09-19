@@ -63,10 +63,10 @@ function Count({ value, active }: { value: number; active: boolean }) {
   return <>{n}</>;
 }
 
-function WishLink() {
+function InfoLink() {
   return (
     <Link href="/offerte" className="jr-bento__cta">
-      Bespreek je wensen
+      Meer informatie
       <span aria-hidden="true">↗</span>
     </Link>
   );
@@ -96,7 +96,7 @@ export function WorkBento() {
               </Icon>
               <h2>Design en ontwikkeling</h2>
               <p>We maken het ontwerp en bouwen de shop. Op laptop en op telefoon, zodat het eruitziet zoals jij het wilt.</p>
-              <WishLink />
+              <InfoLink />
             </div>
             <div className="jr-bento__graphic jr-bento__graphic--design" aria-hidden="true">
               <div className="jr-mac">
@@ -131,7 +131,7 @@ export function WorkBento() {
             </Icon>
             <h2>Strategie en structuur</h2>
             <p>We beginnen bij wat jij wilt verkopen en wie het moet kopen. Elke pagina heeft een taak.</p>
-            <WishLink />
+            <InfoLink />
           </article>
 
           <article className="jr-bento__feature jr-bento__feature--growth">
@@ -146,7 +146,7 @@ export function WorkBento() {
                 <span className="jr-bento__mark">SEO</span>, snelheid en groei
               </h2>
               <p>Je shop of app moet te vinden zijn en snel laden. Dat zetten we er vanaf het begin in.</p>
-              <WishLink />
+              <InfoLink />
             </div>
             <div className="jr-bento__graphic jr-bento__graphic--growth" aria-hidden="true">
               <div className="jr-bento__score">
