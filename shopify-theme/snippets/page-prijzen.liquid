@@ -1,31 +1,51 @@
-<div class="jr-container jr-page-intro">
-  <p class="jr-kicker">Prijzen</p>
-  <h1>Je ziet wat het kost. Daarna kies je een pakket.</h1>
-  <p class="jr-lede">Webshop vanaf €499, app vanaf €999, onderhoud vanaf €49 per maand. Wissel hieronder. Wat extra is, zeggen we vooraf.</p>
-</div>
+{%- assign dienst = request.query_parameters.dienst | default: '' -%}
 
-<section class="jr-section">
-  <div class="jr-container">
-    {% render 'price-factors' %}
+{%- if dienst == 'webshop' or dienst == 'app' or dienst == 'onderhoud' or dienst == 'automatisatie' -%}
+  {%- if dienst == 'webshop' -%}
+    {%- assign dienst_titel = 'Webshop' -%}
+    {%- assign dienst_lede = 'Webshop vanaf €499. Kies een pakket. Wat extra is, zeggen we vooraf.' -%}
+  {%- elsif dienst == 'app' -%}
+    {%- assign dienst_titel = 'App' -%}
+    {%- assign dienst_lede = 'App vanaf €999. Kies een pakket. Wat extra is, zeggen we vooraf.' -%}
+  {%- elsif dienst == 'automatisatie' -%}
+    {%- assign dienst_titel = 'Automatisatie' -%}
+    {%- assign dienst_lede = 'We kijken eerst wat je nu met de hand doet. Daarna krijg je een vaste prijs.' -%}
+  {%- else -%}
+    {%- assign dienst_titel = 'Onderhoud' -%}
+    {%- assign dienst_lede = 'Onderhoud vanaf €49 per maand. Niet verplicht. Je kunt elke maand stoppen.' -%}
+  {%- endif -%}
+
+  <div class="jr-container jr-page-intro">
+    <p class="jr-kicker">Prijzen</p>
+    <p class="jr-focus-back"><a href="/pages/prijzen">Terug naar prijzen</a></p>
+    <h1>{{ dienst_titel }}</h1>
+    <p class="jr-lede">{{ dienst_lede }}</p>
   </div>
-</section>
 
-<section class="jr-section jr-section--muted">
-  <div class="jr-container">
-    {% render 'pricing-switcher', default_dienst: 'webshop' %}
-  </div>
-</section>
+  <section class="jr-section jr-section--muted">
+    <div class="jr-container">
+      {%- if dienst == 'automatisatie' -%}
+        {% render 'pricing-automatisatie' %}
+      {%- else -%}
+        {% render 'pricing-switcher', default_dienst: dienst, show_heading: false, hide_tabs: true %}
+      {%- endif -%}
+    </div>
+  </section>
 
-<section class="jr-section">
-  <div class="jr-container">
-    {% render 'pricing-path' %}
-    <p class="jr-pricing-follow">
-      Klaar om te kiezen?
-      <a class="jr-link" href="{% render 'offerte-url' %}">Vraag een offerte</a>
-      of ga naar
-      <a class="jr-link" href="/pages/contact">contact</a>.
-    </p>
-  </div>
-</section>
+  <section class="jr-section">
+    <div class="jr-container">
+      {% render 'pricing-path' %}
+      <p class="jr-pricing-follow">
+        Klaar om te kiezen?
+        <a class="jr-link" href="{% render 'offerte-url' %}">Vraag een offerte</a>
+        of ga naar
+        <a class="jr-link" href="/pages/contact">contact</a>.
+      </p>
+    </div>
+  </section>
 
-{% render 'cta-band', title: 'Wil je weten wat het kost?' %}
+  {% render 'cta-band', title: 'Wil je weten wat het kost?' %}
+
+{%- else -%}
+  {% render 'pricing-focus' %}
+{%- endif -%}

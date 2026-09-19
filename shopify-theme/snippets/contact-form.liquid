@@ -42,6 +42,7 @@
         <option value="webshop"{% if interest_default == 'webshop' %} selected{% endif %}>Webshop laten bouwen</option>
         <option value="app"{% if interest_default == 'app' %} selected{% endif %}>App laten maken</option>
         <option value="onderhoud"{% if interest_default == 'onderhoud' %} selected{% endif %}>Onderhoud</option>
+        <option value="automatisatie"{% if interest_default == 'automatisatie' %} selected{% endif %}>Automatisatie</option>
         <option value="anders"{% if interest_default == 'anders' %} selected{% endif %}>Iets anders</option>
       </select>
     </div>
@@ -107,6 +108,11 @@
         { "id": "professional", "name": "Professional", "price": "€49" },
         { "id": "plus", "name": "Plus", "price": "€99" },
         { "id": "care", "name": "Care", "price": "€199" }
+      ],
+      "automatisatie": [
+        { "id": "start", "name": "Start", "price": "Offerte" },
+        { "id": "groei", "name": "Groei", "price": "Offerte" },
+        { "id": "maatwerk", "name": "Op maat", "price": "Offerte" }
       ]
     }
   </script>

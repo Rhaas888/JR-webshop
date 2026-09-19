@@ -1,4 +1,4 @@
-export type PricingDienst = "webshop" | "app" | "onderhoud";
+export type PricingDienst = "webshop" | "app" | "onderhoud" | "automatisatie";
 
 export type CompareValue = "yes" | "no" | "basis" | string;
 
@@ -206,6 +206,82 @@ export const pricingDiensten: PricingCatalog[] = [
     ],
   },
   {
+    id: "automatisatie",
+    label: "Automatisatie",
+    intro:
+      "We kijken eerst wat je nu met de hand doet. Daarna krijg je een vaste prijs, voordat we beginnen.",
+    moreHref: "/contact",
+    moreLabel: "Vraag het ons",
+    offerteInterest: "automatisatie",
+    packages: [
+      {
+        id: "start",
+        name: "Start",
+        price: "Offerte",
+        period: "vaste prijs vooraf",
+        summary: "Eén proces dat we voor je vastzetten, zodat jij het niet meer zelf hoeft te doen.",
+        features: [
+          "We kijken hoe jij nu werkt",
+          "Eén vast proces",
+          "Je krijgt vooraf een prijs",
+          "Het loopt zoals jij het wilt",
+        ],
+        cta: "Vraag een prijs aan",
+        featured: false,
+      },
+      {
+        id: "groei",
+        name: "Groei",
+        price: "Offerte",
+        period: "vaste prijs vooraf",
+        summary: "Meerdere stappen achter elkaar, zodat er minder blijft liggen.",
+        features: [
+          "Alles uit Start",
+          "Meerdere processen",
+          "Melding als iets misgaat",
+          "We bouwen door als het werkt",
+        ],
+        cta: "Vraag een prijs aan",
+        featured: true,
+      },
+      {
+        id: "maatwerk",
+        name: "Op maat",
+        price: "Offerte",
+        period: "vaste prijs vooraf",
+        summary: "Koppeling met software die je al hebt, of een grotere set processen.",
+        features: [
+          "Alles uit Groei",
+          "Koppeling met je huidige software",
+          "We plannen het samen",
+          "Je weet vooraf wat het kost",
+        ],
+        cta: "Vraag een prijs aan",
+        featured: false,
+      },
+    ],
+    compare: [
+      { label: "Eén vast proces", values: ["yes", "yes", "yes"] },
+      { label: "Vaste prijs vooraf", values: ["yes", "yes", "yes"] },
+      { label: "Meerdere processen", values: ["no", "yes", "yes"] },
+      { label: "Koppeling met je software", values: ["no", "basis", "yes"] },
+    ],
+    faqs: [
+      {
+        q: "Wat kost automatisatie?",
+        a: "Dat hangt af van wat je nu met de hand doet, en of we moeten koppelen met software die je al hebt. Je krijgt een vaste prijs voordat we beginnen.",
+      },
+      {
+        q: "Waar hangt de prijs van af?",
+        a: "Van hoeveel stappen erin zitten, hoe vaak het moet lopen, en of andere systemen mee moeten. We beginnen vaak klein.",
+      },
+      {
+        q: "Moet ik alles in één keer doen?",
+        a: "Nee. Eén proces is vaak genoeg om te merken of het werkt. Extra’s kunnen later, met een nieuwe vaste prijs.",
+      },
+    ],
+  },
+  {
     id: "onderhoud",
     label: "Onderhoud",
     intro:
@@ -316,7 +392,7 @@ export const pricingPath = [
   {
     step: "01",
     title: "Kies een dienst",
-    text: "Webshop, app of onderhoud. Je wisselt hierboven.",
+    text: "Webshop, app of automatisatie. Daarna kies je een pakket.",
   },
   {
     step: "02",
@@ -331,7 +407,7 @@ export const pricingPath = [
 ];
 
 export function isPricingDienst(value: string | null): value is PricingDienst {
-  return value === "webshop" || value === "app" || value === "onderhoud";
+  return value === "webshop" || value === "app" || value === "onderhoud" || value === "automatisatie";
 }
 
 export function getPricingCatalog(id: PricingDienst): PricingCatalog {

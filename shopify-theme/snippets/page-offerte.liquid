@@ -2,6 +2,7 @@
 {%- capture offerte_webshop -%}{% render 'offerte-url', query: 'interesse=webshop' %}{%- endcapture -%}
 {%- capture offerte_app -%}{% render 'offerte-url', query: 'interesse=app' %}{%- endcapture -%}
 {%- capture offerte_onderhoud -%}{% render 'offerte-url', query: 'interesse=onderhoud' %}{%- endcapture -%}
+{%- capture offerte_automatisatie -%}{% render 'offerte-url', query: 'interesse=automatisatie' %}{%- endcapture -%}
 
 <div class="jr-container jr-page-intro">
   <p class="jr-kicker">Offerte</p>
@@ -28,6 +29,11 @@
         <p class="jr-offerte-choose__name">Onderhoud</p>
         <p class="jr-offerte-choose__price">Vanaf €49 per maand</p>
         <p class="jr-offerte-choose__cta">Kies onderhoud</p>
+      </a>
+      <a class="jr-offerte-choose__card{% if chosen == 'automatisatie' %} is-active{% endif %}" href="{{ offerte_automatisatie | strip }}#offerte-form">
+        <p class="jr-offerte-choose__name">Automatisatie</p>
+        <p class="jr-offerte-choose__price">Vaste prijs vooraf</p>
+        <p class="jr-offerte-choose__cta">Kies automatisatie</p>
       </a>
     </div>
   </div>

@@ -25,7 +25,7 @@ function OfferteChooseCards({ chosen }: { chosen: string | null }) {
     <div>
       <p className="text-sm font-semibold tracking-wide text-forest">Waarvoor</p>
       <h2 className="mt-2 text-2xl font-semibold tracking-tight">Kies eerst wat je wilt</h2>
-      <div className="mt-8 grid gap-4 md:grid-cols-3">
+      <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {pricingDiensten.map((dienst) => (
           <Link
             key={dienst.id}
@@ -40,7 +40,9 @@ function OfferteChooseCards({ chosen }: { chosen: string | null }) {
             <p className="mt-2 text-sm font-medium leading-6 text-muted-foreground">
               {dienst.id === "onderhoud"
                 ? `Vanaf ${dienst.packages[0]?.price} per maand`
-                : `Vanaf ${dienst.packages[0]?.price}`}
+                : dienst.packages[0]?.price === "Offerte"
+                  ? "Vaste prijs vooraf"
+                  : `Vanaf ${dienst.packages[0]?.price}`}
             </p>
             <p className="mt-3 text-sm font-medium text-forest">Kies {dienst.label.toLowerCase()}</p>
           </Link>

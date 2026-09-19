@@ -1166,6 +1166,281 @@ body.menu-open {
   max-width: 42rem;
 }
 
+.jr-focus-back {
+  margin: 10px 0 0;
+}
+
+.jr-focus-back a {
+  color: var(--brand);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.jr-focus-back a:hover {
+  text-decoration: underline;
+}
+
+.jr-focus {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: calc(100dvh - 88px);
+  padding: 56px 0 88px;
+  background: #fff;
+}
+
+.jr-focus .jr-container,
+.jr-focus__wrap {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.jr-focus__intro {
+  max-width: 36rem;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.jr-focus__intro .jr-kicker,
+.jr-focus__kicker {
+  color: #059b60;
+}
+
+.jr-focus__kicker {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.jr-focus__intro h1 {
+  margin: 8px 0 0;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: #000;
+}
+
+.jr-focus__intro p:last-child {
+  margin: 14px 0 0;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #525252;
+}
+
+.jr-focus__cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  width: min(760px, 100%);
+  margin: 0 auto;
+}
+
+.jr-focus__card {
+  --accent: #059b60;
+  --accent-glow: rgba(5, 155, 96, 0.32);
+  position: relative;
+  display: block;
+  min-height: 168px;
+  overflow: hidden;
+  border: 2px solid var(--accent);
+  border-radius: 18px;
+  color: #fff;
+  text-decoration: none;
+  box-shadow:
+    0 0 24px var(--accent-glow),
+    0 10px 28px rgba(0, 0, 0, 0.18);
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.45s ease,
+    opacity 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+.jr-focus__media,
+.jr-focus__overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.jr-focus__media {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.jr-focus__overlay {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0.55) 100%),
+    radial-gradient(circle at 50% 120%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 65%);
+}
+
+.jr-focus__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 168px;
+  padding: 24px 18px;
+  text-align: center;
+}
+
+.jr-focus__label {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.45);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.jr-focus__text {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.82);
+  opacity: 0.75;
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.45s ease;
+}
+
+.jr-focus__hint {
+  margin-top: 16px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.45s ease;
+}
+
+.jr-focus__cards:has(.jr-focus__card:hover) .jr-focus__card:not(:hover),
+.jr-focus__cards:has(.jr-focus__card:focus-visible) .jr-focus__card:not(:focus-visible) {
+  filter: blur(8px) brightness(0.72);
+  opacity: 0.78;
+  transform: scale(0.96);
+}
+
+.jr-focus__card:hover,
+.jr-focus__card:focus-visible {
+  z-index: 2;
+  transform: scale(1.06) translateY(-4px);
+  box-shadow:
+    0 16px 44px rgba(0, 0, 0, 0.28),
+    0 0 32px var(--accent-glow);
+  outline: none;
+}
+
+.jr-focus__card:hover .jr-focus__media,
+.jr-focus__card:focus-visible .jr-focus__media {
+  transform: scale(1.08);
+}
+
+.jr-focus__card:hover .jr-focus__label,
+.jr-focus__card:focus-visible .jr-focus__label {
+  transform: scale(1.06);
+}
+
+.jr-focus__card:hover .jr-focus__text,
+.jr-focus__card:focus-visible .jr-focus__text {
+  opacity: 1;
+  transform: translateY(2px);
+}
+
+.jr-focus__card:hover .jr-focus__hint,
+.jr-focus__card:focus-visible .jr-focus__hint {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.jr-focus__card--webshop {
+  grid-column: 1 / -1;
+  min-height: 220px;
+}
+
+.jr-focus__card--webshop .jr-focus__content {
+  min-height: 220px;
+}
+
+.jr-focus__card--webshop .jr-focus__media {
+  background-color: #111;
+  background-image:
+    var(--jr-focus-webshop-image, linear-gradient(160deg, #1f1f1f 0%, #0c0c0c 100%)),
+    radial-gradient(80% 70% at 80% 18%, rgba(5, 155, 96, 0.42), transparent 58%);
+}
+
+.jr-focus__card--app .jr-focus__media {
+  background-image:
+    var(--jr-focus-app-image, linear-gradient(160deg, #191919 0%, #0a0a0a 100%)),
+    radial-gradient(80% 70% at 20% 80%, rgba(5, 155, 96, 0.28), transparent 58%);
+  background-color: #111;
+}
+
+.jr-focus__card--auto {
+  --accent: #048552;
+  --accent-glow: rgba(4, 133, 82, 0.3);
+}
+
+.jr-focus__card--auto .jr-focus__media {
+  background-image:
+    var(--jr-focus-auto-image, linear-gradient(160deg, #141414 0%, #080808 100%)),
+    radial-gradient(80% 70% at 80% 80%, rgba(5, 155, 96, 0.22), transparent 58%);
+  background-color: #111;
+}
+
+@media (min-width: 640px) {
+  .jr-focus {
+    padding: 72px 0 104px;
+  }
+
+  .jr-focus__intro h1 {
+    font-size: 42px;
+  }
+
+  .jr-focus__cards {
+    gap: 20px;
+  }
+
+  .jr-focus__card {
+    min-height: 188px;
+  }
+
+  .jr-focus__content {
+    min-height: 188px;
+  }
+
+  .jr-focus__card--webshop,
+  .jr-focus__card--webshop .jr-focus__content {
+    min-height: 248px;
+  }
+
+  .jr-focus__label {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 559px) {
+  .jr-focus__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .jr-focus__card--webshop {
+    grid-column: auto;
+  }
+}
+
 .jr-photo {
   overflow: hidden;
   border-radius: 32px;
@@ -2498,6 +2773,26 @@ body.menu-open {
     transform: none;
   }
 
+  .jr-focus__cards:has(.jr-focus__card:hover) .jr-focus__card:not(:hover),
+  .jr-focus__cards:has(.jr-focus__card:focus-visible) .jr-focus__card:not(:focus-visible),
+  .jr-focus__card:hover,
+  .jr-focus__card:focus-visible,
+  .jr-focus__card:hover .jr-focus__media,
+  .jr-focus__card:focus-visible .jr-focus__media,
+  .jr-focus__card:hover .jr-focus__label,
+  .jr-focus__card:focus-visible .jr-focus__label,
+  .jr-focus__card:hover .jr-focus__hint,
+  .jr-focus__card:focus-visible .jr-focus__hint {
+    filter: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .jr-focus__hint {
+    opacity: 0.9;
+    transform: none;
+  }
+
   .jr-bento__bars i {
     transform: scaleY(1);
     opacity: 1;
@@ -3188,6 +3483,10 @@ body.menu-open {
   background: transparent;
 }
 
+.jr-switcher--solo .jr-switcher__tabs {
+  display: none;
+}
+
 .jr-section--muted .jr-switcher__tabs {
   background: var(--surface);
 }
@@ -3474,9 +3773,15 @@ body.menu-open {
   margin-top: 32px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 700px) {
   .jr-offerte-choose {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .jr-offerte-choose {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 

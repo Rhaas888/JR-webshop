@@ -16,16 +16,19 @@ import { hoverBtn, hoverCard, hoverCardFeatured, brandFill, brandFillOnDark } fr
 export function PricingSwitcher({
   defaultDienst = "webshop",
   heading = true,
+  hideTabs = false,
 }: {
   defaultDienst?: PricingDienst;
   heading?: boolean;
   tone?: "white" | "muted";
+  hideTabs?: boolean;
 }) {
   return (
     <Suspense fallback={<div className="min-h-[40rem]" />}>
       <PricingSwitcherReady
         defaultDienst={defaultDienst}
         heading={heading}
+        hideTabs={hideTabs}
       />
     </Suspense>
   );
@@ -34,9 +37,11 @@ export function PricingSwitcher({
 function PricingSwitcherReady({
   defaultDienst,
   heading,
+  hideTabs,
 }: {
   defaultDienst: PricingDienst;
   heading: boolean;
+  hideTabs: boolean;
 }) {
   const router = useRouter();
   const pathname = usePathname();
@@ -77,6 +82,7 @@ function PricingSwitcherReady({
         </div>
       ) : null}
 
+      {!hideTabs ? (
       <div
         className={cn(
           "flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
@@ -85,7 +91,9 @@ function PricingSwitcherReady({
         role="tablist"
         aria-label="Kies een dienst"
       >
-        {pricingDiensten.map((dienst) => {
+        {pricingDiensten
+          .filter((dienst) => dienst.id !== "automatisatie")
+          .map((dienst) => {
           const selected = dienst.id === catalog.id;
           return (
             <button
@@ -107,6 +115,7 @@ function PricingSwitcherReady({
           );
         })}
       </div>
+      ) : null}
 
       <p className="mt-6 max-w-2xl text-base font-medium leading-7 text-foreground">
         {catalog.intro}{" "}

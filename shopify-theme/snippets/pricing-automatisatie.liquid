@@ -1,0 +1,107 @@
+<div class="jr-switcher jr-switcher--solo" id="prijzen-kiezer">
+  <p class="jr-switcher__intro">
+    We kijken eerst wat je nu met de hand doet. Daarna krijg je een vaste prijs, voordat we beginnen.
+  </p>
+  <div class="jr-pack-grid">
+    <article class="jr-pack">
+      <p class="jr-pack__kicker">Automatisatie</p>
+      <h3>Start</h3>
+      <p class="jr-pack__price">Offerte <span>vaste prijs vooraf</span></p>
+      <p>Eén proces dat we voor je vastzetten, zodat jij het niet meer zelf hoeft te doen.</p>
+      <ul>
+        <li>We kijken hoe jij nu werkt</li>
+        <li>Eén vast proces</li>
+        <li>Je krijgt vooraf een prijs</li>
+        <li>Het loopt zoals jij het wilt</li>
+      </ul>
+      <a class="jr-btn jr-btn--primary" href="{% render 'offerte-url', query: 'interesse=automatisatie&pakket=start' %}">Vraag een prijs aan</a>
+    </article>
+    <article class="jr-pack jr-pack--featured">
+      <p class="jr-pack__badge">Meest gekozen</p>
+      <h3>Groei</h3>
+      <p class="jr-pack__price">Offerte <span>vaste prijs vooraf</span></p>
+      <p>Meerdere stappen achter elkaar, zodat er minder blijft liggen.</p>
+      <ul>
+        <li>Alles uit Start</li>
+        <li>Meerdere processen</li>
+        <li>Melding als iets misgaat</li>
+        <li>We bouwen door als het werkt</li>
+      </ul>
+      <a class="jr-btn jr-btn--light" href="{% render 'offerte-url', query: 'interesse=automatisatie&pakket=groei' %}">Vraag een prijs aan</a>
+    </article>
+    <article class="jr-pack">
+      <p class="jr-pack__kicker">Automatisatie</p>
+      <h3>Op maat</h3>
+      <p class="jr-pack__price">Offerte <span>vaste prijs vooraf</span></p>
+      <p>Koppeling met software die je al hebt, of een grotere set processen.</p>
+      <ul>
+        <li>Alles uit Groei</li>
+        <li>Koppeling met je huidige software</li>
+        <li>We plannen het samen</li>
+        <li>Je weet vooraf wat het kost</li>
+      </ul>
+      <a class="jr-btn jr-btn--primary" href="{% render 'offerte-url', query: 'interesse=automatisatie&pakket=maatwerk' %}">Vraag een prijs aan</a>
+    </article>
+  </div>
+
+  <div class="jr-compare">
+    <div class="jr-compare__head">
+      <h3>Wat zit erin</h3>
+      <p>Zelfde drie keuzes, naast elkaar. Zo zie je snel het verschil.</p>
+    </div>
+    <div class="jr-compare__scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Onderdeel</th>
+            <th>Start</th>
+            <th>Groei</th>
+            <th>Op maat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Eén vast proces</td>
+            <td>Ja</td>
+            <td>Ja</td>
+            <td>Ja</td>
+          </tr>
+          <tr>
+            <td>Vaste prijs vooraf</td>
+            <td>Ja</td>
+            <td>Ja</td>
+            <td>Ja</td>
+          </tr>
+          <tr>
+            <td>Meerdere processen</td>
+            <td>Nee</td>
+            <td>Ja</td>
+            <td>Ja</td>
+          </tr>
+          <tr>
+            <td>Koppeling met je software</td>
+            <td>Nee</td>
+            <td>Basis</td>
+            <td>Ja</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="jr-switcher__faq">
+    <h3>Vragen over deze prijzen</h3>
+    <details>
+      <summary><span>Wat kost automatisatie? <span class="jr-faq-open">+</span><span class="jr-faq-close">−</span></span></summary>
+      <p>Dat hangt af van wat je nu met de hand doet, en of we moeten koppelen met software die je al hebt. Je krijgt een vaste prijs voordat we beginnen.</p>
+    </details>
+    <details>
+      <summary><span>Waar hangt de prijs van af? <span class="jr-faq-open">+</span><span class="jr-faq-close">−</span></span></summary>
+      <p>Van hoeveel stappen erin zitten, hoe vaak het moet lopen, en of andere systemen mee moeten. We beginnen vaak klein.</p>
+    </details>
+    <details>
+      <summary><span>Moet ik alles in één keer doen? <span class="jr-faq-open">+</span><span class="jr-faq-close">−</span></span></summary>
+      <p>Nee. Eén proces is vaak genoeg om te merken of het werkt. Extra’s kunnen later, met een nieuwe vaste prijs.</p>
+    </details>
+  </div>
+</div>

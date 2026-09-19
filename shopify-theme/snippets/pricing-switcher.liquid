@@ -5,7 +5,7 @@
 {%- capture app_href -%}{% render 'app-url' %}{%- endcapture -%}
 {%- assign app_href = app_href | strip -%}
 
-<div class="jr-switcher" id="prijzen-kiezer" data-pricing-switcher data-active="{{ active }}">
+<div class="jr-switcher{% if hide_tabs %} jr-switcher--solo{% endif %}" id="prijzen-kiezer" data-pricing-switcher data-active="{{ active }}">
   {%- unless show_heading == false -%}
     <div class="jr-heading">
       <p class="jr-kicker">Prijzen</p>
@@ -14,11 +14,13 @@
     </div>
   {%- endunless -%}
 
+  {%- unless hide_tabs -%}
   <div class="jr-switcher__tabs" role="tablist" aria-label="Kies een dienst">
     <button type="button" class="jr-switcher__tab{% if active == 'webshop' %} is-active{% endif %}" role="tab" id="prijzen-tab-webshop" data-dienst="webshop" aria-controls="prijzen-panel-webshop" aria-selected="{% if active == 'webshop' %}true{% else %}false{% endif %}">Webshop</button>
     <button type="button" class="jr-switcher__tab{% if active == 'app' %} is-active{% endif %}" role="tab" id="prijzen-tab-app" data-dienst="app" aria-controls="prijzen-panel-app" aria-selected="{% if active == 'app' %}true{% else %}false{% endif %}">App</button>
     <button type="button" class="jr-switcher__tab{% if active == 'onderhoud' %} is-active{% endif %}" role="tab" id="prijzen-tab-onderhoud" data-dienst="onderhoud" aria-controls="prijzen-panel-onderhoud" aria-selected="{% if active == 'onderhoud' %}true{% else %}false{% endif %}">Onderhoud</button>
   </div>
+  {%- endunless -%}
 
   <div class="jr-switcher__panel{% if active == 'webshop' %} is-active{% endif %}" id="prijzen-panel-webshop" role="tabpanel" data-panel="webshop" aria-labelledby="prijzen-tab-webshop"{% unless active == 'webshop' %} hidden{% endunless %}>
     <p class="jr-switcher__intro">

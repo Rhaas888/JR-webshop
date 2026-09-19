@@ -60,7 +60,7 @@
   var params = new URLSearchParams(window.location.search);
   var interestParam = params.get("interesse");
   var packageParam = params.get("pakket");
-  var allowedInterest = ["webshop", "app", "onderhoud", "anders"];
+  var allowedInterest = ["webshop", "app", "onderhoud", "automatisatie", "anders"];
 
   function parsePackageOptions(wrap) {
     var node = wrap.querySelector("[data-package-options]");

@@ -113,6 +113,7 @@ export const interestOptions = [
   { value: "webshop", label: "Webshop laten bouwen" },
   { value: "app", label: "App laten maken" },
   { value: "onderhoud", label: "Onderhoud" },
+  { value: "automatisatie", label: "Automatisatie" },
   { value: "anders", label: "Iets anders" },
 ] as const;
 

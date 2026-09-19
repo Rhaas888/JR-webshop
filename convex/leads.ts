@@ -7,6 +7,7 @@ const interestValidator = v.union(
   v.literal("webshop"),
   v.literal("app"),
   v.literal("onderhoud"),
+  v.literal("automatisatie"),
   v.literal("anders"),
 );
 
