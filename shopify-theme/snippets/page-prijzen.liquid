@@ -1,51 +1,67 @@
-{%- assign dienst = request.query_parameters.dienst | default: '' -%}
+<div class="jr-prijzen" data-prijzen-root data-view="hub">
+  <script>
+    (function () {
+      var root = document.currentScript && document.currentScript.parentElement;
+      if (!root) return;
+      var dienst = new URLSearchParams(window.location.search).get("dienst") || "";
+      var allowed = ["webshop", "app", "onderhoud", "automatisatie"];
+      root.setAttribute("data-view", allowed.indexOf(dienst) === -1 ? "hub" : dienst);
+    })();
+  </script>
 
-{%- if dienst == 'webshop' or dienst == 'app' or dienst == 'onderhoud' or dienst == 'automatisatie' -%}
-  {%- if dienst == 'webshop' -%}
-    {%- assign dienst_titel = 'Webshop' -%}
-    {%- assign dienst_lede = 'Webshop vanaf €499. Kies een pakket. Wat extra is, zeggen we vooraf.' -%}
-  {%- elsif dienst == 'app' -%}
-    {%- assign dienst_titel = 'App' -%}
-    {%- assign dienst_lede = 'App vanaf €999. Kies een pakket. Wat extra is, zeggen we vooraf.' -%}
-  {%- elsif dienst == 'automatisatie' -%}
-    {%- assign dienst_titel = 'Automatisatie' -%}
-    {%- assign dienst_lede = 'We kijken eerst wat je nu met de hand doet. Daarna krijg je een vaste prijs.' -%}
-  {%- else -%}
-    {%- assign dienst_titel = 'Onderhoud' -%}
-    {%- assign dienst_lede = 'Onderhoud vanaf €49 per maand. Niet verplicht. Je kunt elke maand stoppen.' -%}
-  {%- endif -%}
-
-  <div class="jr-container jr-page-intro">
-    <p class="jr-kicker">Prijzen</p>
-    <p class="jr-focus-back"><a href="/pages/prijzen">Terug naar prijzen</a></p>
-    <h1>{{ dienst_titel }}</h1>
-    <p class="jr-lede">{{ dienst_lede }}</p>
+  <div data-prijzen-hub>
+    {% render 'pricing-focus' %}
   </div>
 
-  <section class="jr-section jr-section--muted">
-    <div class="jr-container">
-      {%- if dienst == 'automatisatie' -%}
-        {% render 'pricing-automatisatie' %}
-      {%- else -%}
-        {% render 'pricing-switcher', default_dienst: dienst, show_heading: false, hide_tabs: true %}
-      {%- endif -%}
+  <div data-prijzen-detail>
+    <div class="jr-container jr-page-intro" data-prijzen-intro="webshop">
+      <p class="jr-kicker">Prijzen</p>
+      <p class="jr-focus-back"><a href="/pages/prijzen">Terug naar prijzen</a></p>
+      <h1>Webshop</h1>
+      <p class="jr-lede">Webshop vanaf €499. Kies een pakket. Wat extra is, zeggen we vooraf.</p>
     </div>
-  </section>
-
-  <section class="jr-section">
-    <div class="jr-container">
-      {% render 'pricing-path' %}
-      <p class="jr-pricing-follow">
-        Klaar om te kiezen?
-        <a class="jr-link" href="{% render 'offerte-url' %}">Vraag een offerte</a>
-        of ga naar
-        <a class="jr-link" href="/pages/contact">contact</a>.
-      </p>
+    <div class="jr-container jr-page-intro" data-prijzen-intro="app">
+      <p class="jr-kicker">Prijzen</p>
+      <p class="jr-focus-back"><a href="/pages/prijzen">Terug naar prijzen</a></p>
+      <h1>App</h1>
+      <p class="jr-lede">App vanaf €999. Kies een pakket. Wat extra is, zeggen we vooraf.</p>
     </div>
-  </section>
+    <div class="jr-container jr-page-intro" data-prijzen-intro="automatisatie">
+      <p class="jr-kicker">Prijzen</p>
+      <p class="jr-focus-back"><a href="/pages/prijzen">Terug naar prijzen</a></p>
+      <h1>Automatisatie</h1>
+      <p class="jr-lede">We kijken eerst wat je nu met de hand doet. Daarna krijg je een vaste prijs.</p>
+    </div>
+    <div class="jr-container jr-page-intro" data-prijzen-intro="onderhoud">
+      <p class="jr-kicker">Prijzen</p>
+      <p class="jr-focus-back"><a href="/pages/prijzen">Terug naar prijzen</a></p>
+      <h1>Onderhoud</h1>
+      <p class="jr-lede">Onderhoud vanaf €49 per maand. Niet verplicht. Je kunt elke maand stoppen.</p>
+    </div>
 
-  {% render 'cta-band', title: 'Wil je weten wat het kost?' %}
+    <section class="jr-section jr-section--muted">
+      <div class="jr-container">
+        <div data-prijzen-switcher>
+          {% render 'pricing-switcher', default_dienst: 'webshop', show_heading: false, hide_tabs: true %}
+        </div>
+        <div data-prijzen-auto>
+          {% render 'pricing-automatisatie' %}
+        </div>
+      </div>
+    </section>
 
-{%- else -%}
-  {% render 'pricing-focus' %}
-{%- endif -%}
+    <section class="jr-section">
+      <div class="jr-container">
+        {% render 'pricing-path' %}
+        <p class="jr-pricing-follow">
+          Klaar om te kiezen?
+          <a class="jr-link" href="{% render 'offerte-url' %}">Vraag een offerte</a>
+          of ga naar
+          <a class="jr-link" href="/pages/contact">contact</a>.
+        </p>
+      </div>
+    </section>
+
+    {% render 'cta-band', title: 'Wil je weten wat het kost?' %}
+  </div>
+</div>

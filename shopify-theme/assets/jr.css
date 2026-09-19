@@ -1166,6 +1166,25 @@ body.menu-open {
   max-width: 42rem;
 }
 
+.jr-prijzen[data-view="hub"] [data-prijzen-detail],
+.jr-prijzen:not([data-view="hub"]) [data-prijzen-hub],
+.jr-prijzen [data-prijzen-intro],
+.jr-prijzen [data-prijzen-auto] {
+  display: none;
+}
+
+.jr-prijzen[data-view="webshop"] [data-prijzen-intro="webshop"],
+.jr-prijzen[data-view="app"] [data-prijzen-intro="app"],
+.jr-prijzen[data-view="automatisatie"] [data-prijzen-intro="automatisatie"],
+.jr-prijzen[data-view="onderhoud"] [data-prijzen-intro="onderhoud"],
+.jr-prijzen[data-view="automatisatie"] [data-prijzen-auto] {
+  display: block;
+}
+
+.jr-prijzen[data-view="automatisatie"] [data-prijzen-switcher] {
+  display: none;
+}
+
 .jr-focus-back {
   margin: 10px 0 0;
 }

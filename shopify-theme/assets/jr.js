@@ -149,6 +149,7 @@
     var tabs = root.querySelectorAll("[data-dienst]");
     var panels = root.querySelectorAll("[data-panel]");
     var allowed = ["webshop", "app", "onderhoud"];
+    var fromUrl = new URLSearchParams(window.location.search).get("dienst");
 
     function show(id, updateUrl) {
       if (allowed.indexOf(id) === -1) return;
@@ -188,6 +189,8 @@
         show(list[next].getAttribute("data-dienst"), true);
       });
     });
+
+    if (fromUrl && allowed.indexOf(fromUrl) !== -1) show(fromUrl, false);
   });
 
   var process = document.querySelector("[data-process]");
