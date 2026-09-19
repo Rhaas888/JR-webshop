@@ -27,8 +27,8 @@ export function PricingFocus() {
     <section className="jr-focus" aria-label="Kies een prijslijst">
       <div className="jr-focus__wrap">
         <div className="jr-focus__intro">
-          <p className="jr-focus__kicker">Prijzen</p>
-          <h1>Kies wat je wilt laten maken</h1>
+          <h1>Prijzen</h1>
+          <p>Kies wat je wilt laten maken</p>
         </div>
         <div className="jr-focus__cards">
           {cards.map((card) => (

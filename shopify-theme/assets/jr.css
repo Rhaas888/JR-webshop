@@ -1232,25 +1232,22 @@ body.menu-open {
   text-align: center;
 }
 
-.jr-focus__intro .jr-kicker,
-.jr-focus__kicker {
-  color: #059b60;
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-}
-
-.jr-focus__kicker {
-  margin: 0;
-}
-
 .jr-focus__intro h1 {
-  margin: 8px 0 0;
-  font-size: 32px;
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  line-height: 1.15;
-  color: #000;
+  margin: 0;
+  font-size: clamp(3rem, 9vw, 5rem);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 0.95;
+  color: #059b60;
+}
+
+.jr-focus__intro p {
+  margin: 14px 0 0;
+  font-size: clamp(1.125rem, 2.4vw, 1.5rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  color: #0a0a0a;
 }
 
 .jr-focus__cards {
@@ -1425,13 +1422,12 @@ body.menu-open {
     padding: 72px 0 104px;
   }
 
-  .jr-focus__intro .jr-kicker,
-  .jr-focus__kicker {
-    font-size: 28px;
+  .jr-focus__intro h1 {
+    font-size: 80px;
   }
 
-  .jr-focus__intro h1 {
-    font-size: 42px;
+  .jr-focus__intro p {
+    font-size: 24px;
   }
 
   .jr-focus__cards {
