@@ -55,11 +55,26 @@ export function ShowcaseHero({
             <br />
             <span className="relative inline-block whitespace-nowrap">
               {highlight.replaceAll(" ", "\u00a0")}
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                width="0"
+                height="0"
+                className="absolute h-0 w-0 overflow-hidden"
+              >
+                <filter id="jr-scribble-brand" colorInterpolationFilters="sRGB">
+                  <feColorMatrix
+                    type="matrix"
+                    values="0 0 0 0 0.01960784 0 0 0 0 0.60784314 0 0 0 0 0.37647059 0 0 0 1 0"
+                  />
+                </filter>
+              </svg>
               <img
                 src="/images/underline-scratch.png?v=exact"
                 alt=""
                 aria-hidden="true"
-                className="pointer-events-none absolute top-[0.82em] left-[-3%] w-[112%] select-none invert"
+                className="pointer-events-none absolute top-[0.82em] left-[-3%] w-[112%] select-none"
+                style={{ filter: "url(#jr-scribble-brand)" }}
               />
             </span>
             {line3 ? (

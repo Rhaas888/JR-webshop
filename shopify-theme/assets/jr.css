@@ -520,6 +520,13 @@ body.menu-open {
   white-space: nowrap;
 }
 
+.jr-scribble-filter {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
 .jr-scribble__mark {
   position: absolute;
   left: -3%;
@@ -622,10 +629,6 @@ body.menu-open {
   line-height: 1.45;
   color: #fff;
   text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
-}
-
-.jr-showcase .jr-scribble__mark {
-  filter: invert(1);
 }
 
 .jr-showcase__lede {
