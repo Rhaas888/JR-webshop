@@ -1,0 +1,12 @@
+<section class="jr-section">
+  <div class="jr-container">
+    <h1 class="jr-title">Bestelling {{ order.name }}</h1>
+    <p class="jr-lede">{{ order.created_at | date: '%d-%m-%Y' }} · {{ order.financial_status }}</p>
+    <ul class="jr-list" style="margin-top: 24px;">
+      {%- for line_item in order.line_items -%}
+        <li>{{ line_item.quantity }}× {{ line_item.title }} — {{ line_item.final_line_price | money }}</li>
+      {%- endfor -%}
+    </ul>
+    <p><strong>Totaal {{ order.total_price | money }}</strong></p>
+  </div>
+</section>

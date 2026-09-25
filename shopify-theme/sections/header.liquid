@@ -1,6 +1,10 @@
+{%- capture offerte_url -%}{% render 'offerte-url' %}{%- endcapture -%}
+{%- assign offerte_url = offerte_url | strip -%}
+{%- capture app_url -%}{% render 'app-url' %}{%- endcapture -%}
+{%- assign app_url = app_url | strip -%}
 <header class="jr-header" data-header>
   <div class="jr-container jr-header__inner">
-    <a href="/" class="jr-logo">
+    <a href="{{ routes.root_url }}" class="jr-logo">
       <img
         class="jr-logo__img jr-logo__img--light"
         src="{{ 'logo-jr.png' | asset_url }}"
@@ -19,14 +23,14 @@
 
     <nav class="jr-nav" aria-label="Hoofdmenu">
       <a href="/pages/webshop-laten-bouwen">Webshop</a>
-      <a href="/pages/app-laten-maken">App</a>
+      <a href="{{ app_url }}">App</a>
       <a href="/pages/prijzen">Prijzen</a>
       <a href="/pages/over-ons">Over ons</a>
       <a href="/pages/contact">Contact</a>
     </nav>
 
     <div class="jr-header__actions">
-      <a class="jr-btn jr-btn--primary jr-header__cta" href="/pages/contact">Offerte aanvragen</a>
+      <a class="jr-btn jr-btn--primary jr-header__cta" href="{{ offerte_url }}">Offerte aanvragen</a>
       <button
         type="button"
         class="jr-menu-btn"
@@ -51,11 +55,16 @@
     </p>
     <nav aria-label="Mobiel menu">
       <a href="/pages/webshop-laten-bouwen" data-menu-close>Webshop</a>
-      <a href="/pages/app-laten-maken" data-menu-close>App</a>
+      <a href="{{ app_url }}" data-menu-close>App</a>
       <a href="/pages/prijzen" data-menu-close>Prijzen</a>
       <a href="/pages/over-ons" data-menu-close>Over ons</a>
       <a href="/pages/contact" data-menu-close>Contact</a>
-      <a class="jr-btn jr-btn--primary" href="/pages/contact">Offerte aanvragen</a>
+      <hr class="jr-drawer__rule">
+      <a href="/pages/onderhoud" data-menu-close>Onderhoud</a>
+      <a href="/pages/ervaringen" data-menu-close>Ervaringen</a>
+      <a href="/pages/faq" data-menu-close>FAQ</a>
+      <a href="{{ offerte_url }}" data-menu-close>Offerte</a>
+      <a class="jr-btn jr-btn--primary" href="{{ offerte_url }}">Offerte aanvragen</a>
     </nav>
   </div>
 </div>

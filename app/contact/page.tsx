@@ -8,7 +8,7 @@ import { company, contactPage } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Stel een vraag aan JR Intelligence. We reageren binnen 1 werkdag. Voor een prijsvoorstel gebruik je de offertepagina.",
+    "Stel een vraag aan JR Intelligence. We reageren binnen 1 werkdag. Voor een prijs gebruik je de offertepagina.",
 };
 
 export default function ContactPage() {
@@ -38,9 +38,9 @@ export default function ContactPage() {
               <div>
                 <dt className="font-semibold">Offerte</dt>
                 <dd className="mt-1 font-medium text-foreground">
-                  Voor een gerichte prijs:{" "}
+                  Wil je een prijs?{" "}
                   <Link href="/offerte" className="text-forest underline underline-offset-4">
-                    offerte aanvragen
+                    Offerte aanvragen
                   </Link>
                   .
                 </dd>

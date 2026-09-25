@@ -1,0 +1,49 @@
+<section class="jr-section">
+  <div class="jr-container">
+    <div class="jr-page-intro" style="padding-top: 0;">
+      <p class="jr-kicker">Zoeken</p>
+      <h1 class="jr-title">
+        {%- if search.performed -%}
+          Resultaten voor “{{ search.terms | escape }}”
+        {%- else -%}
+          Zoeken
+        {%- endif -%}
+      </h1>
+    </div>
+
+    <form action="{{ routes.search_url }}" method="get" class="jr-search-form" role="search">
+      <input type="hidden" name="type" value="product">
+      <div class="jr-field">
+        <label class="jr-visually-hidden" for="Search">Zoekterm</label>
+        <input id="Search" type="search" name="q" value="{{ search.terms | escape }}" placeholder="Product zoeken">
+      </div>
+      <button type="submit" class="jr-btn jr-btn--primary">Zoeken</button>
+    </form>
+
+    {%- if search.performed -%}
+      {%- paginate search.results by 12 -%}
+        {%- if search.results.size > 0 -%}
+          <div class="jr-product-grid">
+            {%- for item in search.results -%}
+              {%- if item.object_type == 'product' -%}
+                {% render 'product-card', product: item %}
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+          {%- if paginate.pages > 1 -%}
+            <div class="jr-pagination">{{ paginate | default_pagination }}</div>
+          {%- endif -%}
+        {%- else -%}
+          <p class="jr-lede">Geen producten gevonden.</p>
+        {%- endif -%}
+      {%- endpaginate -%}
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Zoeken",
+  "settings": []
+}
+{% endschema %}

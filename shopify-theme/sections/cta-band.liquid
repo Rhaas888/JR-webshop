@@ -1,12 +1,6 @@
-<section class="jr-section jr-section--muted">
-  <div class="jr-container">
-    <div class="jr-cta">
-      <h2>{{ section.settings.title }}</h2>
-      <p>{{ section.settings.text }}</p>
-      <a class="jr-btn jr-btn--light" href="/pages/contact">Offerte aanvragen</a>
-    </div>
-  </div>
-</section>
+{%- unless page.handle contains 'offerte' -%}
+  {% render 'cta-band', title: section.settings.title, text: section.settings.text %}
+{%- endunless -%}
 
 {% schema %}
 {
@@ -17,7 +11,7 @@
       "type": "textarea",
       "id": "text",
       "label": "Tekst",
-      "default": "Vertel kort wat je wilt bouwen. We reageren binnen één werkdag met een voorstel of een paar scherpe vragen."
+      "default": "Vertel kort wat je wilt bouwen. Binnen 1 werkdag hoor je van ons."
     }
   ]
 }

@@ -24,11 +24,11 @@ export const metadata: Metadata = {
     template: `%s | ${company.name}`,
   },
   description:
-    "JR Intelligence bouwt webshops en apps op maat voor Nederlandse bedrijven. Strak, overzichtelijk en met een vaste vanaf-prijs.",
+    "JR Intelligence bouwt webshops en apps op maat voor Nederlandse bedrijven. Je weet vooraf wat het kost.",
   openGraph: {
     title: `${company.name} | Webshop of app laten bouwen`,
     description:
-      "Webshops en apps op maat. Helder proces, vanaf-prijzen, persoonlijk contact.",
+      "Webshops en apps op maat. Je weet vooraf wat het kost. Binnen 1 werkdag reactie.",
     locale: "nl_NL",
     type: "website",
   },

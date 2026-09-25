@@ -4,15 +4,15 @@ import Link from "next/link";
 import { CtaBand } from "@/components/cta-band";
 import { Faq } from "@/components/faq";
 import { LogoTicker } from "@/components/logo-ticker";
-import { MaintenanceCards } from "@/components/maintenance-cards";
 import { PageIntro } from "@/components/page-intro";
+import { PricingSwitcher } from "@/components/pricing-switcher";
 import { Section, SectionHeading } from "@/components/section";
 import { faqGroups, maintenance } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Onderhoud webshop of app",
   description:
-    "Drie onderhoudspakketten voor je webshop of app: Professional €49, Plus €99 en Care €199 per maand. Opzegbaar, niet verplicht.",
+    "Drie onderhoudspakketten: Professional €49, Plus €99 en Care €199 per maand. Opzegbaar, niet verplicht.",
 };
 
 export default function OnderhoudPage() {
@@ -26,15 +26,11 @@ export default function OnderhoudPage() {
         description={maintenance.intro}
       />
       <Section>
-        <MaintenanceCards />
+        <PricingSwitcher defaultDienst="onderhoud" heading={false} />
         <p className="mt-8 max-w-2xl text-sm leading-6 text-muted-foreground">
           {maintenance.note} Twijfel je?{" "}
           <Link href="/contact" className="text-forest underline underline-offset-4">
             Stel een vraag
-          </Link>{" "}
-          of vraag meteen een{" "}
-          <Link href="/offerte?interesse=onderhoud" className="text-forest underline underline-offset-4">
-            onderhoudsofferte
           </Link>
           .
         </p>
@@ -56,7 +52,7 @@ export default function OnderhoudPage() {
             <SectionHeading
               kicker="Waarom"
               title="Niet omdat het moet. Omdat het stil moet blijven werken."
-              description="Updates, backups en kleine wijzigingen stapelen. Een vast bedrag is voorspelbaarder dan losse uurtjes — en je kunt elke maand stoppen."
+              description="Updates, backups en kleine wijzigingen stapelen. Een vast bedrag is duidelijker dan losse uurtjes. En je kunt elke maand stoppen."
             />
           </div>
         </div>
@@ -64,7 +60,11 @@ export default function OnderhoudPage() {
 
       <LogoTicker />
       <Faq items={onderhoudFaqs} />
-      <CtaBand title="Onderhoud inplannen?" text="Kies een pakket of beschrijf wat je nodig hebt. We reageren binnen één werkdag." />
+      <CtaBand
+        title="Onderhoud nodig?"
+        text="Kies een pakket of beschrijf wat je nodig hebt. Binnen 1 werkdag hoor je van ons."
+        href="/offerte?interesse=onderhoud"
+      />
     </>
   );
 }

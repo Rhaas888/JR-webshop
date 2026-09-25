@@ -2,7 +2,7 @@
 
 import { useMutation } from "convex/react";
 import { useSearchParams } from "next/navigation";
-import { Suspense, useState, type FormEvent, type ReactNode } from "react";
+import { Suspense, useEffect, useState, type FormEvent, type ReactNode } from "react";
 import { api } from "@/convex/_generated/api";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -15,6 +15,10 @@ import {
   timelineOptions,
   type Interest,
 } from "@/lib/content";
+import {
+  getPricingCatalog,
+  isPricingDienst,
+} from "@/lib/pricing";
 
 type LeadPayload = {
   name: string;
@@ -30,6 +34,15 @@ type LeadPayload = {
 
 function isInterest(value: string | null): value is Interest {
   return interestOptions.some((option) => option.value === value);
+}
+
+function matchPackageId(interest: Interest, raw: string) {
+  if (!raw || !isPricingDienst(interest)) return "";
+  const needle = raw.toLowerCase();
+  const found = getPricingCatalog(interest).packages.find(
+    (item) => item.id === needle || item.name.toLowerCase() === needle,
+  );
+  return found?.id ?? "";
 }
 
 export function ContactForm({
@@ -94,7 +107,7 @@ function MailtoContactForm({
       variant={variant}
       onSend={async (payload) => {
         const subject = encodeURIComponent(
-          `${variant === "offerte" ? "Offerte" : "Contact"} ${payload.interest} — ${payload.name}`,
+          `${variant === "offerte" ? "Offerte" : "Contact"} ${payload.interest}: ${payload.name}`,
         );
         const body = encodeURIComponent(
           [
@@ -130,21 +143,35 @@ function ContactFormFields({
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [error, setError] = useState<string | null>(null);
   const queryInterest = searchParams.get("interesse");
+  const queryPackage = searchParams.get("pakket") ?? "";
   const [interest, setInterest] = useState<Interest>(
     isInterest(queryInterest) ? queryInterest : defaultInterest,
   );
+  const [pakket, setPakket] = useState(() =>
+    matchPackageId(isInterest(queryInterest) ? queryInterest : defaultInterest, queryPackage),
+  );
+  const packageOptions = isPricingDienst(interest)
+    ? getPricingCatalog(interest).packages
+    : [];
+
+  useEffect(() => {
+    const nextInterest = isInterest(queryInterest) ? queryInterest : defaultInterest;
+    setInterest(nextInterest);
+    setPakket(matchPackageId(nextInterest, queryPackage));
+  }, [defaultInterest, queryInterest, queryPackage]);
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
     const data = new FormData(form);
-    const pakket = searchParams.get("pakket");
 
     setStatus("sending");
     setError(null);
 
+    const chosenPackage = String(data.get("pakket") ?? "");
+    const pack = packageOptions.find((item) => item.id === chosenPackage);
     const extraLines = [
-      pakket ? `Pakket: ${pakket}` : null,
+      pack ? `Pakket: ${pack.name} (${pack.price})` : chosenPackage ? `Pakket: ${chosenPackage}` : null,
     ]
       .filter(Boolean)
       .join("\n");
@@ -170,6 +197,7 @@ function ContactFormFields({
       setStatus("sent");
       form.reset();
       setInterest(defaultInterest);
+      setPakket("");
     } catch (unknownError) {
       setStatus("error");
       setError(
@@ -192,7 +220,11 @@ function ContactFormFields({
   }
 
   return (
-    <form onSubmit={onSubmit} className="rounded-3xl border border-black/8 bg-white p-6 sm:p-8">
+    <form
+      id={variant === "offerte" ? "offerte-form" : undefined}
+      onSubmit={onSubmit}
+      className="scroll-mt-24 rounded-3xl border border-black/8 bg-white p-6 sm:p-8"
+    >
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label="Naam" htmlFor="name">
           <Input id="name" name="name" required autoComplete="name" className="h-11 rounded-2xl" />
@@ -222,7 +254,11 @@ function ContactFormFields({
         <select
           id="interest"
           value={interest}
-          onChange={(event) => setInterest(event.target.value as Interest)}
+          onChange={(event) => {
+            const next = event.target.value as Interest;
+            setInterest(next);
+            setPakket("");
+          }}
           className="h-11 w-full rounded-2xl border border-input bg-transparent px-2.5 text-sm outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
         >
           {interestOptions.map((option) => (
@@ -233,6 +269,28 @@ function ContactFormFields({
         </select>
       </div>
 
+      {variant === "offerte" && packageOptions.length > 0 ? (
+        <div className="mt-5">
+          <Label htmlFor="pakket" className="mb-2">
+            Pakket
+          </Label>
+          <select
+            id="pakket"
+            name="pakket"
+            value={pakket}
+            onChange={(event) => setPakket(event.target.value)}
+            className="h-11 w-full rounded-2xl border border-input bg-transparent px-2.5 text-sm outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
+          >
+            <option value="">Nog niet gekozen</option>
+            {packageOptions.map((option) => (
+              <option key={option.id} value={option.id}>
+                {option.name} ({option.price})
+              </option>
+            ))}
+          </select>
+        </div>
+      ) : null}
+
       {variant === "offerte" ? (
         <div className="mt-5 grid gap-5 sm:grid-cols-2">
           <div>
@@ -242,7 +300,7 @@ function ContactFormFields({
             <select
               id="budget"
               name="budget"
-              defaultValue="onbekend"
+              defaultValue="Nog niet bekend"
               className="h-11 w-full rounded-2xl border border-input bg-transparent px-2.5 text-sm outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
             >
               {budgetOptions.map((option) => (
@@ -259,7 +317,7 @@ function ContactFormFields({
             <select
               id="timeline"
               name="timeline"
-              defaultValue="onbekend"
+              defaultValue="Nog niet bekend"
               className="h-11 w-full rounded-2xl border border-input bg-transparent px-2.5 text-sm outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
             >
               {timelineOptions.map((option) => (

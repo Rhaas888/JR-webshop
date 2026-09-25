@@ -1,0 +1,61 @@
+<section class="jr-section">
+  <div class="jr-container">
+    {% render 'section-heading',
+      kicker: 'Proces',
+      title: 'Van eerste gesprek tot live',
+      description: 'Vijf stappen. Je weet steeds wat er gebeurt, wat het kost en wanneer het klaar is.'
+    %}
+    <div class="jr-process-track" data-process>
+      <div class="jr-process-rail" aria-hidden="true">
+        <div class="jr-process-rail__bg"></div>
+        <div class="jr-process-rail__fill" data-process-fill></div>
+        <div class="jr-process-car" data-process-car>
+          <img
+            src="{{ 'process-rocket.png' | asset_url }}"
+            alt=""
+            width="52"
+            height="160"
+          >
+        </div>
+      </div>
+      <ol class="jr-process-steps">
+        <li data-process-step>
+          <span class="jr-process-steps__num">01</span>
+          <div>
+            <h3>Kennismaking</h3>
+            <p>We horen wat je wilt, voor wie, en wat er nu al is. Binnen 1 werkdag een reactie.</p>
+          </div>
+        </li>
+        <li data-process-step>
+          <span class="jr-process-steps__num">02</span>
+          <div>
+            <h3>Concept</h3>
+            <p>Je weet wat we bouwen, wat het kost en wanneer het live kan.</p>
+          </div>
+        </li>
+        <li data-process-step>
+          <span class="jr-process-steps__num">03</span>
+          <div>
+            <h3>Bouwen</h3>
+            <p>Je kijkt tussendoor mee. Geen verrassingen achteraf.</p>
+          </div>
+        </li>
+        <li data-process-step>
+          <span class="jr-process-steps__num">04</span>
+          <div>
+            <h3>Live</h3>
+            <p>We testen en zetten hem live. Jij houdt de toegang.</p>
+          </div>
+        </li>
+        <li data-process-step>
+          <span class="jr-process-steps__num">05</span>
+          <div>
+            <h3>Nazorg</h3>
+            <p>Na live blijven we even beschikbaar voor kleine fixes. Daarna onderhoud, als je dat wilt.</p>
+            <a class="jr-link" href="/pages/onderhoud">Daarna optioneel onderhoud</a>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>

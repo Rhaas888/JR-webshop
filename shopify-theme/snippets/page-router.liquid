@@ -1,0 +1,98 @@
+{%- comment -%}
+  Inhoud volgt de pagina-handle, niet het gekozen theme-template.
+  Anders toont /pages/offerte de app-pagina als in Admin per ongeluk
+  template "app" is gekozen (dat is nu live het geval).
+{%- endcomment -%}
+{%- if page.handle contains 'offerte' -%}
+  {% render 'page-offerte' %}
+{%- else -%}
+  {%- case page.handle -%}
+    {%- when 'webshop-laten-bouwen' -%}
+      {% render 'page-webshop' %}
+      {% render 'process' %}
+      {% render 'faq' %}
+      <section class="jr-section">
+        <div class="jr-container">
+          {% render 'pricing-switcher', default_dienst: 'webshop', show_heading: false %}
+        </div>
+      </section>
+      {% render 'page-contact-block',
+        kicker: 'Offerte',
+        title: 'Wil je een webshop laten bouwen?',
+        description: 'Beschrijf kort je assortiment en wat je nu mist. Binnen 1 werkdag hoor je van ons.',
+        interest: 'webshop',
+        form_variant: 'offerte'
+      %}
+      {% render 'cta-band',
+        title: 'Liever eerst de prijzen zien?',
+        href: '/pages/prijzen?dienst=webshop',
+        cta: 'Naar prijzen'
+      %}
+
+    {%- when 'app-laten-maken', 'app-laten-bouwen' -%}
+      {% render 'page-app' %}
+      {% render 'process' %}
+      {% render 'faq' %}
+      <section class="jr-section">
+        <div class="jr-container">
+          {% render 'pricing-switcher', default_dienst: 'app', show_heading: false %}
+        </div>
+      </section>
+      {% render 'page-contact-block',
+        kicker: 'Offerte',
+        title: 'Wil je een app laten maken?',
+        description: 'Vertel wat de app moet doen. Binnen 1 werkdag hoor je van ons.',
+        interest: 'app',
+        form_variant: 'offerte'
+      %}
+      {% render 'cta-band',
+        title: 'Liever eerst de prijzen zien?',
+        href: '/pages/prijzen?dienst=app',
+        cta: 'Naar prijzen'
+      %}
+
+    {%- when 'prijzen' -%}
+      {% render 'page-prijzen' %}
+
+    {%- when 'over-ons' -%}
+      {% render 'page-over-ons' %}
+      {% render 'cta-band', title: 'Zin om kennis te maken?' %}
+
+    {%- when 'contact' -%}
+      {% render 'page-contact' %}
+
+    {%- when 'privacy' -%}
+      {% render 'page-privacy' %}
+
+    {%- when 'faq' -%}
+      {% render 'page-faq' %}
+      {% render 'cta-band' %}
+
+    {%- when 'onderhoud' -%}
+      {% render 'page-onderhoud' %}
+      {% render 'logo-ticker' %}
+      {% render 'faq' %}
+      {% render 'cta-band',
+        title: 'Onderhoud nodig?',
+        text: 'Kies een pakket of beschrijf wat je nodig hebt. Binnen 1 werkdag hoor je van ons.',
+        href: '/pages/offerte?interesse=onderhoud'
+      %}
+
+    {%- when 'ervaringen' -%}
+      {% render 'page-ervaringen' %}
+      {% render 'reviews', show_form: true, limit: 0 %}
+      {% render 'cta-band' %}
+
+    {%- else -%}
+      <section class="jr-section">
+        <div class="jr-container">
+          <div class="jr-heading">
+            <h1 class="jr-title">{{ page.title }}</h1>
+          </div>
+          <div class="jr-prose" style="margin-top: 32px;">
+            {{ page.content }}
+          </div>
+        </div>
+      </section>
+  {%- endcase -%}
+{%- endif -%}

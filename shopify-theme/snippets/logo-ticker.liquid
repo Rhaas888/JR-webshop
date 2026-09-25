@@ -1,0 +1,21 @@
+<section class="jr-ticker">
+  <div class="jr-container">
+    <div class="jr-ticker__card">
+      <p class="jr-kicker">Stijl</p>
+      <p class="jr-ticker__title">Shops en apps in deze stijl</p>
+      <p class="jr-ticker__caption">Zo kunnen shops en apps eruitzien. Dit zijn geen klanten. Echte logo’s zetten we erbij als die er zijn.</p>
+    </div>
+  </div>
+  <div class="jr-ticker__viewport">
+    <div class="jr-ticker__fade jr-ticker__fade--left"></div>
+    <div class="jr-ticker__fade jr-ticker__fade--right"></div>
+    <div class="jr-ticker__track">
+      {% assign brands = 'haven,kaap,lumen,groenveld,mist,kust,atelier,noord' | split: ',' %}
+      {% for pass in (1..2) %}
+        {% for brand in brands %}
+          <img src="{{ brand | append: '.svg' | asset_url }}" alt="{{ brand | capitalize }}" width="220" height="48">
+        {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

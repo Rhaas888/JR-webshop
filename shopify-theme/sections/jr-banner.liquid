@@ -1,0 +1,64 @@
+{%- capture app_href -%}{% render 'app-url' %}{%- endcapture -%}
+{%- assign app_href = app_href | strip -%}
+
+<section class="jr-showcase">
+  <div class="jr-showcase__media" aria-hidden="true">
+    {% render 'hero-video' %}
+  </div>
+
+  <div class="jr-container jr-showcase__inner">
+    <div class="jr-showcase__copy">
+      <h1>
+        Webshop, app of automatisatie<br>
+        <span class="jr-scribble">op maat{% render 'scribble' %}</span>
+        <br>voor jouw bedrijf
+      </h1>
+      <p class="jr-showcase__lede">
+        Jouw bedrijf is uniek. Je webshop mag dat ook zijn.<br>
+        Net als je app, of het werk dat je nu met de hand doet.
+      </p>
+      <div class="jr-showcase__actions">
+        <a class="jr-btn jr-btn--primary jr-btn--lg" href="/pages/webshop-laten-bouwen">Webshop</a>
+        <a class="jr-btn jr-btn--primary jr-btn--lg" href="{{ app_href }}">App</a>
+        <a class="jr-btn jr-btn--primary jr-btn--lg" href="/pages/prijzen?dienst=automatisatie">Automatisatie</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "line1",
+      "label": "Regel 1",
+      "default": "Webshop, app of automatisatie"
+    },
+    {
+      "type": "text",
+      "id": "highlight",
+      "label": "Scribble-woord",
+      "default": "op maat"
+    },
+    {
+      "type": "text",
+      "id": "line3",
+      "label": "Regel 3",
+      "default": "voor jouw bedrijf"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Tekst",
+      "default": "Jouw bedrijf is uniek. Je webshop mag dat ook zijn. Net als je app, of het werk dat je nu met de hand doet."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner"
+    }
+  ]
+}
+{% endschema %}

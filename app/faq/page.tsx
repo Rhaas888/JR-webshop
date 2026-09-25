@@ -9,7 +9,7 @@ import { faqGroups, faqPage } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Veelgestelde vragen",
   description:
-    "Antwoorden over prijzen, doorlooptijd, webshop, app, onderhoud en samenwerking met JR Intelligence.",
+    "Antwoorden over prijzen, doorlooptijd, webshop, app en onderhoud.",
 };
 
 export default function FaqPage() {

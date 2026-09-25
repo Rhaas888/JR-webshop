@@ -1,0 +1,10 @@
+<section class="jr-section">
+  <div class="jr-container" style="max-width: 36rem;">
+    <h1 class="jr-title">Adressen</h1>
+    {% paginate customer.addresses by 10 %}
+      {%- for address in customer.addresses -%}
+        <p>{{ address | format_address }}</p>
+      {%- endfor -%}
+    {% endpaginate %}
+  </div>
+</section>

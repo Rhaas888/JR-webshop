@@ -1,51 +1,84 @@
-import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
+import { HeroVideo } from "@/components/hero-video";
+import { hoverBtn, brandFillOnDark } from "@/lib/ui";
+import { cn } from "@/lib/utils";
+
+const filledButtonClass = cn(
+  "inline-flex h-[52px] min-w-[8rem] items-center justify-center rounded-2xl px-7 text-base font-medium",
+  brandFillOnDark,
+  hoverBtn,
+);
+const ghostButtonClass = cn(
+  "inline-flex h-[52px] min-w-[8rem] items-center justify-center rounded-2xl border border-white/30 bg-white/10 px-7 text-base font-medium text-white hover:border-transparent hover:bg-[#059b60] hover:text-white",
+  hoverBtn,
+);
 
 export function ShowcaseHero({
-  line1 = "Webshop of app",
+  line1 = "Webshop, app of automatisatie",
   highlight = "op maat",
   line3 = "voor jouw bedrijf",
-  description = "Wij bouwen overzichtelijke webshops en apps die passen bij hoe jullie werken. Strak ontwerp, heldere prijzen, korte lijnen.",
+  description = (
+    <>
+      Jouw bedrijf is uniek. Je webshop mag dat ook zijn.
+      <br />
+      Net als je app, of het werk dat je nu met de hand doet.
+    </>
+  ),
   primaryHref = "/offerte",
   primaryLabel = "Offerte aanvragen",
   secondaryHref,
   secondaryLabel,
+  secondaryFilled = false,
+  tertiaryHref,
+  tertiaryLabel,
 }: {
   line1?: string;
   highlight?: string;
   line3?: string;
-  description?: string;
+  description?: ReactNode;
   primaryHref?: string;
   primaryLabel?: string;
   secondaryHref?: string;
   secondaryLabel?: string;
+  secondaryFilled?: boolean;
+  tertiaryHref?: string;
+  tertiaryLabel?: string;
 }) {
   return (
-    <section className="relative min-h-[calc(100vh-4.5rem)] overflow-hidden bg-[#f2f2f2]">
+    <section className="relative min-h-[calc(100vh-4.5rem)] overflow-hidden bg-neutral-900 max-sm:min-h-0">
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <Image
-          src="/images/hero-collage.png"
-          alt=""
-          fill
-          priority
-          className="object-cover grayscale contrast-95"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.82)_0%,rgba(255,255,255,0.9)_36%,rgba(242,242,242,0.96)_68%,#f2f2f2_100%)]" />
+        <HeroVideo />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.42)_0%,rgba(0,0,0,0.52)_42%,rgba(0,0,0,0.62)_78%,rgba(0,0,0,0.72)_100%)]" />
       </div>
 
-      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-4.5rem)] w-full max-w-[1120px] flex-col px-6 pt-14 sm:pt-16 lg:pt-20">
-        <div className="mx-auto max-w-xl text-center">
-          <h1 className="mx-auto max-w-[12em] text-[clamp(2.5rem,5.8vw,4.25rem)] font-bold tracking-[-0.045em] leading-[1.32]">
+      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-4.5rem)] w-full max-w-[1120px] flex-col justify-center px-6 pt-16 pb-16 max-sm:min-h-[32rem] max-sm:justify-end max-sm:pt-9 max-sm:pb-10 sm:pt-[5.5rem] lg:pt-[6.5rem]">
+        <div className="mx-auto max-w-[38rem] text-center">
+          <h1 className="mx-auto max-w-[16em] text-[clamp(2.5rem,5.8vw,4.25rem)] font-bold tracking-[-0.03em] leading-[1.45] text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.35)] max-sm:max-w-none max-sm:text-[clamp(1.85rem,8vw,2.35rem)] max-sm:leading-[1.28]">
             {line1}
             <br />
             <span className="relative inline-block whitespace-nowrap">
               {highlight.replaceAll(" ", "\u00a0")}
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                width="0"
+                height="0"
+                className="absolute h-0 w-0 overflow-hidden"
+              >
+                <filter id="jr-scribble-brand" colorInterpolationFilters="sRGB">
+                  <feColorMatrix
+                    type="matrix"
+                    values="0 0 0 0 0.01960784 0 0 0 0 0.60784314 0 0 0 0 0.37647059 0 0 0 1 0"
+                  />
+                </filter>
+              </svg>
               <img
                 src="/images/underline-scratch.png?v=exact"
                 alt=""
                 aria-hidden="true"
                 className="pointer-events-none absolute top-[0.82em] left-[-3%] w-[112%] select-none"
+                style={{ filter: "url(#jr-scribble-brand)" }}
               />
             </span>
             {line3 ? (
@@ -55,38 +88,27 @@ export function ShowcaseHero({
               </>
             ) : null}
           </h1>
-          <p className="mx-auto mt-6 max-w-lg text-[17px] leading-[1.65] text-muted-foreground sm:text-lg">
+          <p className="mx-auto mt-10 max-w-[34rem] text-base leading-[1.85] tracking-[0.01em] text-white/80 max-sm:mt-4 max-sm:text-[15px] max-sm:leading-[1.65] sm:text-[17px]">
             {description}
           </p>
-          <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Link
-              href={primaryHref}
-              className="inline-flex h-[52px] items-center justify-center rounded-2xl bg-foreground px-7 text-base font-medium text-background transition-colors hover:bg-neutral-800"
-            >
+          <div className="mt-11 flex flex-col flex-wrap items-center justify-center gap-3.5 max-sm:mt-[22px] max-sm:gap-2.5 sm:flex-row">
+            <Link href={primaryHref} className={filledButtonClass}>
               {primaryLabel}
             </Link>
             {secondaryHref && secondaryLabel ? (
               <Link
                 href={secondaryHref}
-                className="inline-flex h-[52px] items-center justify-center rounded-2xl border border-black/10 bg-white px-7 text-base font-medium transition-colors hover:bg-neutral-50"
+                className={secondaryFilled ? filledButtonClass : ghostButtonClass}
               >
                 {secondaryLabel}
               </Link>
             ) : null}
+            {tertiaryHref && tertiaryLabel ? (
+              <Link href={tertiaryHref} className={filledButtonClass}>
+                {tertiaryLabel}
+              </Link>
+            ) : null}
           </div>
-        </div>
-
-        <div className="mt-auto pt-7">
-          <Image
-            src="/images/hero-devices.png"
-            alt="Webshop en app op laptop, telefoon en iPad"
-            width={1920}
-            height={1080}
-            quality={100}
-            priority
-            sizes="(max-width: 1120px) 100vw, 1200px"
-            className="mx-auto mb-[-4%] w-[min(1200px,118%)] max-w-none drop-shadow-[0_28px_48px_rgba(0,0,0,0.16)]"
-          />
         </div>
       </div>
     </section>

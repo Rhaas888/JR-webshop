@@ -1,0 +1,18 @@
+---
+description: JR Intelligence copy — human Dutch, je/jij, never --, never marketing speak
+alwaysApply: true
+---
+
+# Human Copywriter — JR Intelligence
+
+All customer-facing text on jr-intelligence.com and in `shopify-theme/` follows `.cursor/skills/human-skill/SKILL.md`.
+
+Write as a real Dutch entrepreneur from a small company. Short, concrete, direct. Speak to one business owner with **je** / **jij**. Never **u** / **uw**. Do not address the customer as **jullie**. FAQ questions where the customer asks JR ("Werken jullie met templates?") may keep **jullie**.
+
+Never use `--` or an em dash `—` in copy. CSS names like `jr-btn--primary` are code; leave those.
+
+If a sentence sounds like AI or like a big agency, make it simpler. Prefer a sentence a real person would say.
+
+Avoid: doordachte/naadloze/innovatieve oplossingen, toekomstbestendig, ontzorging, onze expertise, digitale transformatie, jouw digitale partner, persoonlijke aanpak, naar een hoger niveau, de ultieme oplossing.
+
+After theme copy changes, commit and push `shopify-theme/`. GitHub Actions uploads it to the live Shopify theme. Do not rebuild a zip unless someone asks for one.

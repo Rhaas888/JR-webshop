@@ -1,0 +1,11 @@
+{% render 'reviews', show_form: section.settings.show_form, limit: section.settings.limit %}
+
+{% schema %}
+{
+  "name": "Reviews",
+  "settings": [
+    { "type": "checkbox", "id": "show_form", "label": "Toon filters", "default": false },
+    { "type": "range", "id": "limit", "label": "Aantal kaarten", "min": 0, "max": 10, "step": 1, "default": 3 }
+  ]
+}
+{% endschema %}

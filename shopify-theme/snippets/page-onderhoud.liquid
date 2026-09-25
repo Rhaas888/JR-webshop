@@ -1,0 +1,30 @@
+<div class="jr-container jr-page-intro">
+  <p class="jr-kicker">Onderhoud</p>
+  <h1>Drie pakketten, maandelijks opzegbaar</h1>
+  <p class="jr-lede">Als je shop live is, kun je zelf verder. Wil je dat wij updates, backups en kleine wijzigingen doen? Dan kies je een vast bedrag per maand. Niet verplicht.</p>
+</div>
+
+<section class="jr-section">
+  <div class="jr-container">
+    {% render 'pricing-switcher', default_dienst: 'onderhoud', show_heading: false %}
+    <p class="jr-muted" style="margin-top: 32px; max-width: 40rem;">
+      De eerste weken na oplevering horen bij de bouw. Onderhoud start pas als je dat wilt.
+      Twijfel je? <a class="jr-link" href="/pages/contact">Stel een vraag</a>.
+    </p>
+  </div>
+</section>
+
+<section class="jr-section jr-section--muted">
+  <div class="jr-container jr-maintain-teaser">
+    <div class="jr-photo">
+      <img src="{{ 'studio-green.png' | asset_url }}" alt="Onderhoud in een rustige, opgeruimde studio" width="800" height="600">
+    </div>
+    <div>
+      {% render 'section-heading',
+        kicker: 'Waarom',
+        title: 'Niet omdat het moet. Omdat het stil moet blijven werken.',
+        description: 'Updates, backups en kleine wijzigingen stapelen. Een vast bedrag is duidelijker dan losse uurtjes. En je kunt elke maand stoppen.'
+      %}
+    </div>
+  </div>
+</section>

@@ -1,12 +1,18 @@
 import Link from "next/link";
 import { Section } from "@/components/section";
+import { hoverBtn, brandFillOnDark } from "@/lib/ui";
+import { cn } from "@/lib/utils";
 
 export function CtaBand({
   title = "Klaar om te starten?",
-  text = "Vertel kort wat je wilt bouwen. We reageren binnen één werkdag met een voorstel of een paar scherpe vragen.",
+  text = "Vertel kort wat je wilt bouwen. Binnen 1 werkdag hoor je van ons.",
+  href = "/offerte",
+  cta = "Offerte aanvragen",
 }: {
   title?: string;
   text?: string;
+  href?: string;
+  cta?: string;
 }) {
   return (
     <Section tone="muted">
@@ -16,10 +22,14 @@ export function CtaBand({
         </h2>
         <p className="mt-4 max-w-xl text-base leading-7 text-white/70">{text}</p>
         <Link
-          href="/offerte"
-          className="mt-8 inline-flex h-11 items-center justify-center rounded-2xl bg-white px-5 text-sm font-medium text-foreground transition-colors hover:bg-neutral-100"
+          href={href}
+          className={cn(
+            "mt-8 inline-flex h-11 items-center justify-center rounded-2xl px-5 text-sm font-medium",
+            brandFillOnDark,
+            hoverBtn,
+          )}
         >
-          Offerte aanvragen
+          {cta}
         </Link>
       </div>
     </Section>

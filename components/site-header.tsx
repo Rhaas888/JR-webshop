@@ -13,6 +13,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { company, extraNavLinks, navLinks } from "@/lib/content";
+import { hoverBtn, brandFill, brandFillOnDark } from "@/lib/ui";
 import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
@@ -78,7 +79,7 @@ export function SiteHeader() {
               key={link.href}
               href={link.href}
               className={cn(
-                "transition-colors",
+                "jr-nav-link",
                 scrolled ? "hover:text-foreground" : "hover:text-white",
               )}
             >
@@ -91,10 +92,9 @@ export function SiteHeader() {
           <Link
             href="/offerte"
             className={cn(
-              "hidden h-10 items-center rounded-lg px-4 text-sm font-medium transition-colors sm:inline-flex",
-              scrolled
-                ? "bg-foreground text-background hover:bg-neutral-800"
-                : "bg-white text-black hover:bg-neutral-200",
+              "hidden h-10 items-center rounded-lg px-4 text-sm font-medium sm:inline-flex",
+              hoverBtn,
+              scrolled ? brandFill : brandFillOnDark,
             )}
           >
             Offerte aanvragen
@@ -151,7 +151,11 @@ export function SiteHeader() {
                 <button
                   type="button"
                   onClick={() => go("/offerte")}
-                  className="mt-4 inline-flex h-11 items-center justify-center rounded-lg bg-foreground px-4 text-sm font-medium text-background"
+                  className={cn(
+                    "mt-4 inline-flex h-11 items-center justify-center rounded-lg px-4 text-sm font-medium",
+                    brandFill,
+                    hoverBtn,
+                  )}
                 >
                   Offerte aanvragen
                 </button>

@@ -1,25 +1,23 @@
-JR Intelligence — Shopify upload
+JR Shopify-thema
 
-Gebruik ALLEEN dit bestand:
-  Desktop / JR-Intelligence-UPLOAD-DEZE.zip
+Live zetten gaat via GitHub Actions, niet via een zip.
 
-Niet de oude zip jr-intelligence-shopify-theme.zip.
+Als shopify-theme/ naar GitHub gaat, pusht de workflow het naar het live thema
+in shop 80ef9z-cr.myshopify.com. Secrets staan in GitHub:
+SHOPIFY_FLAG_STORE, SHOPIFY_CLI_THEME_TOKEN, SHOPIFY_THEME_ID.
 
-1. Online Store → Themes → Add theme → Upload zip
-   Bestand: JR-Intelligence-UPLOAD-DEZE.zip
-   Daarna: Publish (of Preview op Startpagina, niet 404)
+Handmatig draaien: GitHub → Actions → Deploy Shopify theme → Run workflow.
 
-2. Online Store → Pages — 6 pagina’s met dit thema-template:
-   Titel                         Handle                    Theme template
-   Webshop laten bouwen          webshop-laten-bouwen      page.webshop
-   App laten maken               app-laten-maken           page.app
-   Prijzen                       prijzen                   page.prijzen
-   Over ons                      over-ons                  page.over-ons
-   Contact                       contact                   page.contact
-   Privacy                       privacy                   page.privacy
+De startpagina hoort eruit te zien als https://jr-intelligence.vercel.app/
+Pagina-inhoud volgt de URL/handle, niet het template in de dropdown.
+Dus /pages/offerte toont altijd het offerteformulier, ook als daar per ongeluk
+template "app" is gekozen.
 
-3. Online Store → Preferences
-   Password protection UIT
+Offerte:
+  De knop Offerte aanvragen gaat naar /pages/offerte.
+  Optioneel in Admin: pagina-titel wijzigen van "app" naar "Offerte".
+  De extra pagina /pages/offerte-1 mag weg; die is een duplicaat.
 
-4. Settings → Notifications
-   Contactformulieren naar info@jr-intelligence.com
+App:
+  De app-pagina in deze shop heet /pages/app-laten-bouwen
+  (niet /pages/app-laten-maken).

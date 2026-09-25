@@ -1,6 +1,6 @@
 <section class="jr-showcase">
   <div class="jr-showcase__media" aria-hidden="true">
-    <img class="jr-showcase__collage" src="{{ 'hero-collage.png' | asset_url }}" alt="" width="1920" height="1080">
+    {% render 'hero-video' %}
   </div>
 
   <div class="jr-container jr-showcase__inner">
@@ -12,19 +12,20 @@
           <br>{{ line3 }}
         {%- endif -%}
       </h1>
-
       <p class="jr-showcase__lede">{{ description }}</p>
-
+      {%- capture offerte_href -%}{% render 'offerte-url' %}{%- endcapture -%}
+      {%- assign offerte_href = offerte_href | strip -%}
+      {%- if primary_link == blank or primary_link == '/pages/offerte' -%}
+        {%- assign hero_primary_link = offerte_href -%}
+      {%- else -%}
+        {%- assign hero_primary_link = primary_link -%}
+      {%- endif -%}
       <div class="jr-showcase__actions">
-        <a class="jr-btn jr-btn--primary jr-btn--lg" href="{{ primary_link }}">{{ primary_label }}</a>
+        <a class="jr-btn jr-btn--primary jr-btn--lg" href="{{ hero_primary_link }}">{{ primary_label }}</a>
         {%- if secondary_label != blank -%}
           <a class="jr-btn jr-btn--ghost jr-btn--lg" href="{{ secondary_link }}">{{ secondary_label }}</a>
         {%- endif -%}
       </div>
-    </div>
-
-    <div class="jr-showcase__devices">
-      <img src="{{ 'hero-devices.png' | asset_url }}" alt="Webshop en app op laptop en telefoon" width="1920" height="1080">
     </div>
   </div>
 </section>

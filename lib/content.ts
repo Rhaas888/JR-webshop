@@ -2,7 +2,7 @@ export const company = {
   name: "JR Intelligence",
   email: "info@jr-intelligence.com",
   url: "https://jr-intelligence.com",
-  tagline: "Webshop of app op maat, zonder ruis.",
+  tagline: "Webshop of app op maat.",
 } as const;
 
 export const navLinks = [
@@ -46,13 +46,13 @@ export const prices = {
     from: 499,
     label: "vanaf €499",
     title: "Webshop",
-    summary: "Een strakke webshop die past bij je merk en klaar is om te verkopen.",
+    summary: "Een webshop die past bij je merk en klaar is om te verkopen.",
   },
   app: {
     from: 999,
     label: "vanaf €999",
     title: "App",
-    summary: "Een web-app of PWA die aansluit op hoe jullie écht werken.",
+    summary: "Een app die past bij hoe jij werkt.",
   },
 } as const;
 
@@ -60,18 +60,18 @@ export const included = {
   webshop: [
     "Ontwerp op maat, geen template",
     "Producten, checkout en betalingen",
-    "Zelf beheerbaar CMS",
-    "Responsive op telefoon, tablet en desktop",
-    "SEO-basis: snelheid, structuur, metadata",
-    "Oplevering en korte inwerkperiode",
+    "Je past zelf producten en teksten aan",
+    "Werkt op telefoon, tablet en desktop",
+    "Snel, overzichtelijk, vindbaar in Google",
+    "We zetten hem live en laten kort zien hoe het werkt",
   ],
   app: [
-    "Kennismaking en scherp concept",
-    "Eerste werkende versie (MVP)",
-    "Web-app of PWA, bruikbaar op elk apparaat",
-    "Testomgeving voor jullie team",
-    "Oplevering met korte handleiding",
-    "Ruimte voor doorontwikkeling na livegang",
+    "Eerst een gesprek, dan een duidelijk plan",
+    "Een eerste versie die je kunt gebruiken",
+    "Werkt op telefoon, tablet en desktop",
+    "Een testversie voor jou en je team",
+    "We zetten hem live, met een korte uitleg",
+    "Daarna kunnen we verder bouwen",
   ],
   extra: [
     "Koppelingen met ERP, boekhouding of voorraad",
@@ -85,27 +85,27 @@ export const processSteps = [
   {
     step: "01",
     title: "Kennismaking",
-    text: "We horen wat je wilt bereiken, voor wie, en wat er nu al is. Binnen één werkdag een reactie.",
+    text: "We horen wat je wilt, voor wie, en wat er nu al is. Binnen 1 werkdag een reactie.",
   },
   {
     step: "02",
     title: "Concept",
-    text: "Heldere scope, schermen en prioriteiten. Je weet wat we bouwen, wat het kost en wanneer het live kan.",
+    text: "Je weet wat we bouwen, wat het kost en wanneer het live kan.",
   },
   {
     step: "03",
     title: "Bouwen",
-    text: "Korte sprints, tussentijds meekijken. Geen verrassingen aan het eind van het traject.",
+    text: "Je kijkt tussendoor mee. Geen verrassingen achteraf.",
   },
   {
     step: "04",
     title: "Live",
-    text: "We testen, leveren op en zetten de shop of app live. Jij houdt de regie over content en gebruik.",
+    text: "We testen en zetten hem live. Jij houdt de toegang.",
   },
   {
     step: "05",
     title: "Nazorg",
-    text: "Na livegang blijven we beschikbaar. Kleine fixes, daarna optioneel onderhoud of extra functionaliteit.",
+    text: "Na live blijven we even beschikbaar voor kleine fixes. Daarna onderhoud, als je dat wilt.",
   },
 ] as const;
 
@@ -113,6 +113,7 @@ export const interestOptions = [
   { value: "webshop", label: "Webshop laten bouwen" },
   { value: "app", label: "App laten maken" },
   { value: "onderhoud", label: "Onderhoud" },
+  { value: "automatisatie", label: "Automatisatie" },
   { value: "anders", label: "Iets anders" },
 ] as const;
 
@@ -120,34 +121,34 @@ export type Interest = (typeof interestOptions)[number]["value"];
 
 export const budgetOptions = [
   { value: "tot-500", label: "Tot €500" },
-  { value: "500-1500", label: "€500 – €1.500" },
-  { value: "1500-5000", label: "€1.500 – €5.000" },
+  { value: "500-1500", label: "€500 tot €1.500" },
+  { value: "1500-5000", label: "€1.500 tot €5.000" },
   { value: "onbekend", label: "Nog niet bekend" },
 ] as const;
 
 export const timelineOptions = [
   { value: "zo-snel-mogelijk", label: "Zo snel mogelijk" },
-  { value: "1-2-maanden", label: "Over 1–2 maanden" },
+  { value: "1-2-maanden", label: "Over 1 tot 2 maanden" },
   { value: "3-plus", label: "Over 3 maanden of later" },
   { value: "onbekend", label: "Nog niet bekend" },
 ] as const;
 
 export const trustItems = [
   {
-    title: "Reactie in 1 werkdag",
-    text: "Geen ticketsysteem. Je hoort van de mensen die het bouwen.",
+    title: "Snel contact",
+    text: "Binnen 1 werkdag hoor je van ons.",
   },
   {
-    title: "Vaste prijsafspraak",
-    text: "Offerte vooraf. We beginnen pas als de scope klopt.",
+    title: "Eén duidelijke prijs",
+    text: "Vooraf weet je precies waar je aan toe bent.",
   },
   {
-    title: "Geen templates",
-    text: "Ontwerp en code op maat. Jouw merk, niet een herkenbaar thema.",
+    title: "Volledig op maat",
+    text: "Geen templates. We bouwen het zoals jij het wilt.",
   },
   {
-    title: "Jij houdt de sleutels",
-    text: "Toegang, content en eigenaarschap blijven van jou.",
+    title: "Alles blijft van jou",
+    text: "Jij houdt de volledige toegang en het eigenaarschap.",
   },
 ] as const;
 
@@ -166,14 +167,14 @@ export const ticker = {
   kicker: "Stijl",
   title: "Shops en apps in deze stijl",
   caption:
-    "Voorbeelden van de uitstraling waarin we werken. Geen klantenlijst — echte logo’s plaatsen we hier zodra die er zijn.",
+    "Zo kunnen shops en apps eruitzien. Dit zijn geen klanten. Echte logo’s zetten we erbij als die er zijn.",
 } as const;
 
 export const maintenance = {
   kicker: "Onderhoud",
   title: "Drie pakketten, maandelijks opzegbaar",
   intro:
-    "Na livegang kun je zelf verder. Wil je dat wij updates, backups en kleine wijzigingen bijhouden, kies dan een vast maandtarief. Niet verplicht — wel rust.",
+    "Als je shop live is, kun je zelf verder. Wil je dat wij updates, backups en kleine wijzigingen doen? Dan kies je een vast bedrag per maand. Niet verplicht.",
   note: "De eerste weken na oplevering horen bij de bouw. Onderhoud start pas als je dat wilt.",
   packages: [
     {
@@ -181,12 +182,12 @@ export const maintenance = {
       name: "Professional",
       price: "€49",
       period: "per maand",
-      summary: "De shop of app blijft veilig, snel en up-to-date.",
+      summary: "Updates, backups en we houden de shop bij.",
       features: [
         "Updates van platform en plugins",
         "Dagelijkse backups",
-        "Uptime-monitoring",
-        "SSL en basisbeveiliging",
+        "We houden in de gaten of de shop online blijft",
+        "Beveiliging en SSL",
         "Eén contactmoment per maand",
       ],
       cta: "Kies Professional",
@@ -213,13 +214,13 @@ export const maintenance = {
       name: "Care",
       price: "€199",
       period: "per maand",
-      summary: "Voor wie doorlopend wil bijsturen zonder losse offertes.",
+      summary: "Als je vaker wilt bijsturen, zonder elke keer een nieuwe offerte.",
       features: [
         "Alles uit Professional Plus",
         "6 uur per maand inbegrepen",
-        "Prioriteit bij storingen",
-        "Kwartaalgesprek over verbeteringen",
-        "Doorontwikkel-slot in de planning",
+        "Voorrang bij storingen",
+        "Kwartaalgesprek over wat beter kan",
+        "Ruimte in de planning om verder te bouwen",
       ],
       cta: "Kies Care",
       featured: false,
@@ -230,32 +231,32 @@ export const maintenance = {
 export const faqs = [
   {
     q: "Hoeveel kost een webshop of app?",
-    a: "Een webshop start vanaf €499, een app vanaf €999. De uiteindelijke prijs hangt af van koppelingen, aantal schermen en hoe uniek het proces is. We geven altijd een vaste prijs voordat we beginnen.",
+    a: "Een webshop start vanaf €499, een app vanaf €999. De prijs hangt af van koppelingen, aantal schermen en hoe bijzonder het moet zijn. Je krijgt altijd een vaste prijs voordat we beginnen.",
     group: "prijzen",
   },
   {
     q: "Hoe lang duurt het?",
-    a: "Een overzichtelijke webshop staat vaak in 3 tot 6 weken live. Een eerste versie van een app in 4 tot 8 weken. Grotere koppelingen vragen meer tijd; dat spreken we vooraf af.",
+    a: "Een overzichtelijke webshop staat vaak in 3 tot 6 weken live. Een eerste versie van een app in 4 tot 8 weken. Grotere koppelingen vragen meer tijd. Dat spreken we vooraf af.",
     group: "proces",
   },
   {
     q: "Krijg ik een native app in de stores?",
-    a: "Standaard bouwen we een web-app of PWA: één versie, op telefoon, tablet en desktop, zonder store-gedoe. Wil je wél in de App Store of Play Store, dan nemen we dat als extra mee.",
+    a: "Standaard bouwen we een web-app: één versie, op telefoon, tablet en desktop, zonder store-gedoe. Wil je wél in de App Store of Play Store, dan nemen we dat als extra mee.",
     group: "app",
   },
   {
     q: "Kan ik het zelf beheren?",
-    a: "Ja. Webshops leveren we op met een duidelijk CMS. Apps krijgen de schermen en rollen die jullie nodig hebben. Geen technische kennis vereist voor dagelijks gebruik.",
+    a: "Ja. Bij een webshop pas je zelf producten en teksten aan. Een app krijgt de schermen die jij nodig hebt. Voor dagelijks gebruik heb je geen technische kennis nodig.",
     group: "samenwerking",
   },
   {
     q: "Werken jullie met templates?",
-    a: "Nee. We ontwerpen en bouwen op maat, zodat het product bij jullie merk en processen past. Dat houdt de code schoon en de ervaring overzichtelijk.",
+    a: "Nee. We bouwen het zoals jij het wilt. Geen template.",
     group: "samenwerking",
   },
   {
     q: "Wat is mijn rol als opdrachtgever?",
-    a: "Jij levert de kennis van je bedrijf. Wij nemen de techniek en het ontwerp. We vragen je op vaste momenten mee te kijken en te testen, zodat we snel kunnen bijsturen.",
+    a: "Jij kent je bedrijf. Wij doen de techniek en het ontwerp. We vragen je op vaste momenten mee te kijken, zodat we snel kunnen bijsturen.",
     group: "samenwerking",
   },
 ] as const;
@@ -268,15 +269,15 @@ export const faqGroups = [
       faqs[0],
       {
         q: "Zit onderhoud in de bouwprijs?",
-        a: "De eerste weken na livegang wel: kleine fixes horen erbij. Daarna kun je zelf verder, of een maandelijks pakket nemen vanaf €49. Onderhoud is nooit verplicht.",
+        a: "De eerste weken na live wel. Kleine fixes horen erbij. Daarna kun je zelf verder, of een maandelijks pakket nemen vanaf €49. Onderhoud is nooit verplicht.",
       },
       {
         q: "Hoe werkt betalen?",
-        a: "We splitsen de bouw in duidelijke termijnen, bijvoorbeeld start en livegang. Je betaalt niet in het wilde weg. Abonnementen voor onderhoud factureren we maandelijks en zijn opzegbaar.",
+        a: "We splitsen de bouw in duidelijke termijnen, bijvoorbeeld start en live. Je betaalt niet in het wilde weg. Onderhoud factureren we maandelijks. Dat kun je opzeggen.",
       },
       {
         q: "Waarom zijn jullie vanaf-prijzen lager dan bij veel bureaus?",
-        a: "We zijn een compacte studio. Geen accountlaag, geen uren in pitchdecks. De prijs dekt ontwerp en bouw, niet een groot team eromheen. Unieke koppelingen of extra merken komen bovenop — dat zeggen we vooraf.",
+        a: "We zijn een klein team. Geen groot bureau eromheen. De prijs is voor ontwerp en bouw. Koppelingen of extra merken komen erbij. Dat zeggen we vooraf.",
       },
     ],
   },
@@ -287,11 +288,11 @@ export const faqGroups = [
       faqs[1],
       {
         q: "Wat gebeurt er na mijn offerte-aanvraag?",
-        a: "Binnen één werkdag een reactie. Als het past, plannen we een kort gesprek. Daarna een vaste offerte met scope, prijs en planning. Pas als jij akkoord bent, beginnen we.",
+        a: "Binnen 1 werkdag een reactie. Als het past, plannen we een kort gesprek. Daarna een vaste offerte met wat we bouwen, de prijs en de planning. Pas als jij akkoord bent, beginnen we.",
       },
       {
         q: "Kan ik tussentijds meekijken?",
-        a: "Ja. We werken in korte sprints. Je ziet tussentijdse versies, geen big bang aan het eind.",
+        a: "Ja. Je ziet tussentijdse versies. Niet ineens alles aan het eind.",
       },
     ],
   },
@@ -315,8 +316,8 @@ export const faqGroups = [
     items: [
       faqs[2],
       {
-        q: "Wat is een MVP precies?",
-        a: "De kleinste versie die jullie in de praktijk kunnen gebruiken. Geen dummy. Daarna bouwen we door op wat écht gebruikt wordt, niet op aannames.",
+        q: "Wat is die eerste versie precies?",
+        a: "De kleinste versie die je in de praktijk kunt gebruiken. Geen dummy. Daarna bouwen we door op wat écht gebruikt wordt, niet op aannames.",
       },
     ],
   },
@@ -347,7 +348,7 @@ export const faqGroups = [
       },
       {
         q: "Zijn de reviews op deze site van Google?",
-        a: "Nee. Het zijn reviews via JR Intelligence, in een herkenbare kaartvorm. We kopiëren geen Google-widget en doen niet alsof het officiële Google-reviews zijn.",
+        a: "Nee. Het zijn reviews via JR Intelligence. We doen niet alsof het officiële Google-reviews zijn.",
       },
     ],
   },
@@ -357,19 +358,19 @@ export const webshopPage = {
   title: "Webshop laten bouwen",
   kicker: "Webshop",
   intro:
-    "Een webshop moet overzichtelijk zijn, snel laden en vertrouwen wekken. Wij bouwen shops die er strak uitzien en klaar zijn om te verkopen — voor merken en bedrijven die geen standaard thema willen.",
+    "Een webshop die overzichtelijk is, snel laadt en eruitziet alsof hij van jou is. Geen standaard thema.",
   points: [
     {
-      title: "Gericht op conversie",
-      text: "Duidelijke productpagina’s, een rustige checkout en een pad dat bezoekers niet laat verdwalen.",
+      title: "Makkelijk bestellen",
+      text: "Duidelijke productpagina’s en een rustige checkout. Bezoekers raken niet kwijt.",
     },
     {
       title: "Zelf aanpassen",
       text: "Producten, teksten en foto’s beheer je zelf. Geen ticket voor elke kleine wijziging.",
     },
     {
-      title: "Technisch in orde",
-      text: "Snel, veilig en vindbaar. SSL, schone structuur en een SEO-basis horen er standaard bij.",
+      title: "Snel en veilig",
+      text: "Snel, veilig en vindbaar. Dat hoort er gewoon bij.",
     },
   ],
   forWhom: [
@@ -383,48 +384,48 @@ export const appPage = {
   title: "App laten maken",
   kicker: "App",
   intro:
-    "Standaard software wringt vaak met hoe jullie werken. Wij maken een app die aansluit op jullie processen: intern, voor klanten, of allebei. Eerst een werkende versie, daarna verder bouwen.",
+    "Standaard software past vaak niet bij hoe jij werkt. Wij maken een app die dat wel doet. Intern, voor klanten, of allebei. Eerst een versie die je kunt gebruiken, daarna bouwen we verder.",
   points: [
     {
-      title: "Op jullie werkwijze",
-      text: "Geen pakket waar je je proces omheen moet wringen. De app volgt hoe het team al werkt.",
+      title: "Past bij hoe jij werkt",
+      text: "Geen standaard pakket waar jij je omheen moet wringen. De app volgt hoe jij al werkt.",
     },
     {
       title: "Snel een eerste versie",
-      text: "We starten met de kern. Je kunt testen in de praktijk in plaats van maanden te wachten op ‘af’.",
+      text: "We beginnen met de kern. Je kunt hem gebruiken, in plaats van maanden te wachten tot alles ‘af’ is.",
     },
     {
       title: "Eén app, elk apparaat",
-      text: "Als progressive web app werkt het op telefoon, tablet en desktop. Altijd up-to-date, zonder store-updates.",
+      text: "Werkt op telefoon, tablet en desktop. Altijd de laatste versie, zonder App Store gedoe.",
     },
   ],
   forWhom: [
-    "MKB dat repetitief werk wil digitaliseren",
+    "Bedrijven die hetzelfde werk steeds opnieuw doen",
     "Teams die Excel, papier of losse tools willen vervangen",
-    "Bedrijven die klanten of leveranciers een portaal willen geven",
+    "Bedrijven die klanten of leveranciers een eigen inlog willen geven",
   ],
 } as const;
 
 export const about = {
   title: "Wie we zijn",
   intro:
-    "JR Intelligence is een compacte studio. We bouwen webshops en apps voor Nederlandse bedrijven die iets eigens willen — niet nóg een template.",
+    "JR Intelligence is een klein team. We bouwen webshops en apps voor Nederlandse bedrijven. Geen templates, gewoon iets dat bij jouw bedrijf past.",
   body: [
-    "We houden van rustig ontwerp, heldere teksten en techniek die je niet in de weg zit. Geen dikke teams, geen eindeloze overleggen. Wel korte lijnen, een vaste prijs en een product waar je zelf mee verder kunt.",
-    "We zitten nog aan het begin: geen opgeblazen portfolio, wel de aandacht die een eerste reeks opdrachtgevers verdient. Als we niet de juiste partij zijn, zeggen we dat ook.",
+    "We maken rustige sites en apps. Geen groot team, geen eindeloze overleggen. Je hebt direct contact met ons, je weet wat het kost, en je kunt het zelf bijhouden.",
+    "We zijn nog klein. Geen groot portfolio, wel de tijd voor jou. Als we niet de juiste partij zijn, zeggen we dat gewoon.",
   ],
   howWeWork: [
     {
       title: "Eén aanspreekpunt",
-      text: "Je praat met de mensen die ontwerpen en bouwen. Vragen blijven niet hangen in een accountlaag.",
+      text: "Je praat met wie het bouwt. Geen extra laag ertussen.",
     },
     {
-      title: "Eerst scope, dan code",
-      text: "We schrijven op wat live gaat, wat het kost en wanneer. Daarna bouwen. Geen moving target.",
+      title: "Eerst afspreken, dan bouwen",
+      text: "We schrijven op wat live gaat, wat het kost en wanneer. Daarna bouwen we.",
     },
     {
-      title: "Opleveren om zelf verder te kunnen",
-      text: "CMS, toegang, korte handleiding. Je bent niet afhankelijk van ons voor een tekstwijziging.",
+      title: "Je kunt het zelf bijhouden",
+      text: "Je krijgt toegang en een korte uitleg. Voor een tekstwijziging hoef je niet bij ons aan te kloppen.",
     },
   ],
   weDont: [
@@ -436,7 +437,7 @@ export const about = {
   values: [
     {
       title: "Overzichtelijk",
-      text: "Strakke interfaces, weinig ruis. Bezoekers en gebruikers moeten meteen weten wat ze moeten doen.",
+      text: "Bezoekers zien meteen wat ze moeten doen. Geen drukke pagina’s.",
     },
     {
       title: "Eerlijk over prijs",
@@ -444,36 +445,55 @@ export const about = {
     },
     {
       title: "Dichtbij",
-      text: "Je praat met de mensen die het bouwen. Vragen gaan niet verloren in een ticket-systeem.",
+      text: "Je praat met wie het bouwt. Vragen verdwijnen niet in een ticketsysteem.",
     },
   ],
 } as const;
 
 export const offertePage = {
   kicker: "Offerte",
-  title: "Vraag een gerichte prijs aan",
+  title: "Vraag een prijs aan",
   intro:
-    "Kort wat je wilt bouwen, wanneer en in welke bandbreedte. Geen intake van twintig pagina’s. We reageren binnen één werkdag.",
+    "Vertel kort wat je wilt bouwen. Kies een pakket als je dat al weet. We reageren binnen 1 werkdag.",
 } as const;
 
 export const contactPage = {
   kicker: "Contact",
   title: "Stel een vraag",
   intro:
-    "Twijfel je nog, of wil je eerst sparren? Mail of gebruik het formulier. Voor een prijsvoorstel is de offertepagina scherper.",
+    "Twijfel je nog, of wil je eerst even praten? Mail of gebruik het formulier. Voor een prijs is de offertepagina handiger.",
 } as const;
 
 export const ervaringenPage = {
   kicker: "Ervaringen",
-  title: "Wat opdrachtgevers teruggeven",
+  title: "Wat klanten zeggen",
   intro:
-    "Reviews via JR Intelligence. Geen Google-widget, geen ingekochte sterren. De kaarten zijn bewust herkenbaar, de bron is van ons.",
+    "Reviews via ons. Geen Google-widget, geen gekochte sterren.",
   badge: "Reviews via JR Intelligence",
 } as const;
 
 export const faqPage = {
   kicker: "FAQ",
-  title: "Antwoorden, zonder omwegen",
+  title: "Veelgestelde vragen",
   intro:
-    "Prijzen, doorlooptijd, onderhoud en eigenaarschap. Staat je vraag er niet bij, stuur een bericht. We reageren binnen één werkdag.",
+    "Prijzen, doorlooptijd, onderhoud en van wie de shop is. Staat je vraag er niet bij, stuur een bericht. We reageren binnen 1 werkdag.",
+} as const;
+
+export const homeCopy = {
+  servicesTitle: "Webshop of app, verder niets",
+  servicesIntro: "We bouwen webshops en apps. Niks anders. Daardoor blijft de prijs duidelijk en heb je direct contact met ons.",
+  webshopCard:
+    "Een eigen shop: producten, checkout, beheer en een ontwerp dat bij je merk past.",
+  appCard:
+    "Een app die past bij hoe jij werkt. Eerst een versie die je kunt gebruiken, daarna bouwen we verder.",
+  maintenanceTitle: "Shop live. Daarna houden we hem bij, als je dat wilt.",
+  processTitle: "Van eerste gesprek tot live",
+  processIntro:
+    "Vijf stappen. Je weet steeds wat er gebeurt, wat het kost en wanneer het klaar is.",
+  footerBlurb: "Webshops en apps op maat. Geen ingewikkeld gedoe.",
+  ctaTitle: "Klaar om te starten?",
+  ctaText: "Vertel kort wat je wilt bouwen. Binnen 1 werkdag hoor je van ons.",
+  pricingTitle: "Je weet vooraf wat het kost",
+  pricingIntro:
+    "Geen uurtje-factuurtje. Je krijgt een vaste prijs voordat we beginnen. Dit zijn de startprijzen.",
 } as const;

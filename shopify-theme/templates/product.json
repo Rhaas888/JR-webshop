@@ -1,6 +1,6 @@
 {
   "sections": {
-    "main": { "type": "main-empty", "settings": {} }
+    "main": { "type": "main-product", "settings": {} }
   },
   "order": ["main"]
 }

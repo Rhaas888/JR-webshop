@@ -10,7 +10,7 @@ export function SiteFooter() {
             <span className="font-semibold">JR</span> Intelligence
           </p>
           <p className="mt-3 max-w-xs text-sm leading-6 text-muted-foreground">
-            Webshops en apps op maat voor Nederlandse bedrijven. Strak, overzichtelijk, zonder ruis.
+            Webshops en apps op maat. Geen ingewikkeld gedoe.
           </p>
         </div>
         {footerGroups.map((group) => (
@@ -19,7 +19,7 @@ export function SiteFooter() {
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
               {group.links.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="hover:text-foreground">
+                  <Link href={link.href} className="transition-colors hover:text-foreground">
                     {link.label}
                   </Link>
                 </li>
@@ -31,17 +31,17 @@ export function SiteFooter() {
           <p className="text-sm font-medium">Contact</p>
           <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
             <li>
-              <a href={`mailto:${company.email}`} className="hover:text-foreground">
+              <a href={`mailto:${company.email}`} className="transition-colors hover:text-foreground">
                 {company.email}
               </a>
             </li>
             <li>
-              <Link href="/offerte" className="hover:text-foreground">
+              <Link href="/offerte" className="transition-colors hover:text-foreground">
                 Offerte aanvragen
               </Link>
             </li>
             <li>
-              <Link href="/privacy" className="hover:text-foreground">
+              <Link href="/privacy" className="transition-colors hover:text-foreground">
                 Privacy
               </Link>
             </li>
@@ -53,7 +53,7 @@ export function SiteFooter() {
           <p>© {new Date().getFullYear()} {company.name}</p>
           <div className="flex flex-wrap gap-x-4 gap-y-1">
             {extraNavLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="hover:text-foreground">
+              <Link key={link.href} href={link.href} className="transition-colors hover:text-foreground">
                 {link.label}
               </Link>
             ))}

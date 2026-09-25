@@ -113,6 +113,16 @@
   }
 }
 
+@keyframes jrBentoFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
 .jr-ticker-track {
   animation: jr-ticker 42s linear infinite;
 }
@@ -128,5 +138,34 @@
 
   .jr-ticker-track {
     animation: none;
+  }
+}
+
+.jr-nav-link {
+  position: relative;
+}
+
+.jr-nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.jr-nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jr-nav-link::after,
+  .jr-nav-link:hover::after {
+    transform: none;
+    transition: none;
   }
 }

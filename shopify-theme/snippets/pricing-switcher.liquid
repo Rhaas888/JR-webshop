@@ -1,0 +1,328 @@
+{%- assign active = default_dienst | default: 'webshop' -%}
+{%- if request.query_parameters.dienst == 'app' or request.query_parameters.dienst == 'onderhoud' or request.query_parameters.dienst == 'webshop' -%}
+  {%- assign active = request.query_parameters.dienst -%}
+{%- endif -%}
+{%- capture app_href -%}{% render 'app-url' %}{%- endcapture -%}
+{%- assign app_href = app_href | strip -%}
+
+<div class="jr-switcher{% if hide_tabs %} jr-switcher--solo{% endif %}" id="prijzen-kiezer" data-pricing-switcher data-active="{{ active }}">
+  {%- unless show_heading == false -%}
+    <div class="jr-heading">
+      <p class="jr-kicker">Prijzen</p>
+      <h2>Kies een dienst. Daarna een pakket.</h2>
+      <p>Webshop, app of onderhoud. Je wisselt hier. Onder elke keuze zie je wat erin zit, wat extra is, en hoe je een offerte vraagt.</p>
+    </div>
+  {%- endunless -%}
+
+  {%- unless hide_tabs -%}
+  <div class="jr-switcher__tabs" role="tablist" aria-label="Kies een dienst">
+    <button type="button" class="jr-switcher__tab{% if active == 'webshop' %} is-active{% endif %}" role="tab" id="prijzen-tab-webshop" data-dienst="webshop" aria-controls="prijzen-panel-webshop" aria-selected="{% if active == 'webshop' %}true{% else %}false{% endif %}">Webshop</button>
+    <button type="button" class="jr-switcher__tab{% if active == 'app' %} is-active{% endif %}" role="tab" id="prijzen-tab-app" data-dienst="app" aria-controls="prijzen-panel-app" aria-selected="{% if active == 'app' %}true{% else %}false{% endif %}">App</button>
+    <button type="button" class="jr-switcher__tab{% if active == 'onderhoud' %} is-active{% endif %}" role="tab" id="prijzen-tab-onderhoud" data-dienst="onderhoud" aria-controls="prijzen-panel-onderhoud" aria-selected="{% if active == 'onderhoud' %}true{% else %}false{% endif %}">Onderhoud</button>
+  </div>
+  {%- endunless -%}
+
+  <div class="jr-switcher__panel{% if active == 'webshop' %} is-active{% endif %}" id="prijzen-panel-webshop" role="tabpanel" data-panel="webshop" aria-labelledby="prijzen-tab-webshop"{% unless active == 'webshop' %} hidden{% endunless %}>
+    <p class="jr-switcher__intro">
+      Een shop die klaar is om te verkopen. Kies hoe groot je wilt beginnen. De prijs hangt af van producten, extra talen en koppelingen.
+      <a class="jr-link" href="/pages/webshop-laten-bouwen">Meer over webshop</a>.
+    </p>
+    <div class="jr-pack-grid">
+      <article class="jr-pack">
+        <p class="jr-pack__kicker">Webshop</p>
+        <h3>Start</h3>
+        <p class="jr-pack__price">€499 <span>eenmalig</span></p>
+        <p>Een eigen shop. Producten, checkout en een ontwerp dat bij je merk past.</p>
+        <ul>
+          <li>Ontwerp op maat, geen template</li>
+          <li>Tot 30 producten</li>
+          <li>Checkout en iDEAL</li>
+          <li>Je past zelf producten en teksten aan</li>
+          <li>Werkt op telefoon, tablet en desktop</li>
+          <li>We zetten hem live en laten kort zien hoe het werkt</li>
+        </ul>
+        <a class="jr-btn jr-btn--primary" href="{% render 'offerte-url', query: 'interesse=webshop&pakket=start' %}">Kies Start</a>
+      </article>
+      <article class="jr-pack jr-pack--featured">
+        <p class="jr-pack__badge">Meest gekozen</p>
+        <h3>Groei</h3>
+        <p class="jr-pack__price">vanaf €1.499 <span>eenmalig</span></p>
+        <p>Meer producten, extra taal en verzending erbij.</p>
+        <ul>
+          <li>Alles uit Start</li>
+          <li>Onbeperkt producten</li>
+          <li>Extra taal</li>
+          <li>Verzendkoppeling</li>
+          <li>Reviews op de shop</li>
+          <li>Hulp bij de eerste producten</li>
+        </ul>
+        <a class="jr-btn jr-btn--light" href="{% render 'offerte-url', query: 'interesse=webshop&pakket=groei' %}">Kies Groei</a>
+      </article>
+      <article class="jr-pack">
+        <p class="jr-pack__kicker">Webshop</p>
+        <h3>Op maat</h3>
+        <p class="jr-pack__price">Offerte <span>vaste prijs vooraf</span></p>
+        <p>Koppelingen, extra merken, of een grotere shop.</p>
+        <ul>
+          <li>Alles uit Groei</li>
+          <li>Koppeling met boekhouding of voorraad</li>
+          <li>Extra merken of shops</li>
+          <li>Extra betaalmethoden</li>
+          <li>We plannen het samen</li>
+          <li>Je weet vooraf wat het kost</li>
+        </ul>
+        <a class="jr-btn jr-btn--primary" href="{% render 'offerte-url', query: 'interesse=webshop&pakket=maatwerk' %}">Vraag een prijs aan</a>
+      </article>
+    </div>
+    <div class="jr-compare">
+      <div class="jr-compare__head">
+        <h3>Wat zit erin</h3>
+        <p>Zelfde drie pakketten, naast elkaar. Zo zie je snel het verschil.</p>
+      </div>
+      <div class="jr-compare__scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Onderdeel</th>
+              <th>Start<span>€499</span></th>
+              <th>Groei<span>vanaf €1.499</span></th>
+              <th>Op maat<span>Offerte</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th>Ontwerp op maat</th><td class="is-yes">Ja</td><td class="is-yes">Ja</td><td class="is-yes">Ja</td></tr>
+            <tr><th>Aantal producten</th><td>Tot 30</td><td>Onbeperkt</td><td>Onbeperkt</td></tr>
+            <tr><th>Checkout en iDEAL</th><td class="is-yes">Ja</td><td class="is-yes">Ja</td><td class="is-yes">Ja</td></tr>
+            <tr><th>Zelf producten beheren</th><td class="is-yes">Ja</td><td class="is-yes">Ja</td><td class="is-yes">Ja</td></tr>
+            <tr><th>Extra taal</th><td class="is-no">Nee</td><td class="is-yes">Ja</td><td class="is-yes">Ja</td></tr>
+            <tr><th>Verzendkoppeling</th><td>Basis</td><td class="is-yes">Ja</td><td class="is-yes">Ja</td></tr>
+            <tr><th>Boekhouding of voorraad</th><td class="is-no">Nee</td><td class="is-no">Nee</td><td class="is-yes">Ja</td></tr>
+            <tr><th>Meerdere merken</th><td class="is-no">Nee</td><td class="is-no">Nee</td><td class="is-yes">Ja</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="jr-switcher__faq">
+      <h3>Vragen over deze prijzen</h3>
+      <div class="jr-faq-list">
+        <details>
+          <summary><span>Wat kost een webshop? <span class="jr-faq-open">+</span><span class="jr-faq-close">−</span></span></summary>
+          <p>Start begint bij €499. Groei vanaf €1.499. Heb je koppelingen of extra merken nodig, dan maken we een vaste prijs voordat we beginnen.</p>
+        </details>
+        <details>
+          <summary><span>Waar hangt de prijs van af? <span class="jr-faq-open">+</span><span class="jr-faq-close">−</span></span></summary>
+          <p>Van hoeveel producten je hebt, of je een extra taal wilt, en of we moeten koppelen met boekhouding, voorraad of verzending. Extra’s zetten we in de offerte. Geen verrassingen achteraf.</p>
+        </details>
+        <details>
+          <summary><span>Zit onderhoud in de bouwprijs? <span class="jr-faq-open">+</span><span class="jr-faq-close">−</span></span></summary>
+          <p>De eerste weken na live wel. Kleine fixes horen erbij. Daarna kun je zelf verder, of een maandpakket nemen. Dat is nooit verplicht.</p>
+        </details>
+        <details>
+          <summary><span>Kan ik later omhoog? <span class="jr-faq-open">+</span><span class="jr-faq-close">−</span></span></summary>
+          <p>Ja. We beginnen met wat je nu nodig hebt. Extra’s kunnen later, met een nieuwe vaste prijs.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <div class="jr-switcher__panel{% if active == 'app' %} is-active{% endif %}" id="prijzen-panel-app" role="tabpanel" data-panel="app" aria-labelledby="prijzen-tab-app"{% unless active == 'app' %} hidden{% endunless %}>
+    <p class="jr-switcher__intro">
+      Een app die past bij hoe jij werkt. Eerst een versie die je kunt gebruiken, daarna bouwen we verder als dat nodig is.
+      <a class="jr-link" href="{{ app_href }}">Meer over app</a>.
+    </p>
+    <div class="jr-pack-grid">
+      <article class="jr-pack">
+        <p class="jr-pack__kicker">App</p>
+        <h3>Start</h3>
+        <p class="jr-pack__price">€999 <span>eenmalig</span></p>
+        <p>De kern van je proces. Een eerste versie die je écht kunt gebruiken.</p>
+        <ul>
+          <li>Eerst een gesprek, dan een duidelijk plan</li>
+          <li>De kern van je proces</li>
+          <li>Werkt op telefoon, tablet en desktop</li>
+          <li>Een testversie voor jou en je team</li>
+          <li>Korte uitleg bij live</li>
+          <li>Daarna kunnen we verder bouwen</li>
+        </ul>
+        <a class="jr-btn jr-btn--primary" href="{% render 'offerte-url', query: 'interesse=app&pakket=start' %}">Kies Start</a>
+      </article>
+      <article class="jr-pack jr-pack--featured">
+        <p class="jr-pack__badge">Meest gekozen</p>
+        <h3>Groei</h3>
+        <p class="jr-pack__price">vanaf €1.999 <span>eenmalig</span></p>
+        <p>Meer schermen, rollen, en een app die het team dagelijks gebruikt.</p>
+        <ul>
+          <li>Alles uit Start</li>
+          <li>Extra schermen en rollen</li>
+          <li>Inloggen voor je team of klanten</li>
+          <li>Meldingen</li>
+          <li>We bouwen door op wat je gebruikt</li>
+          <li>Je kijkt tussendoor mee</li>
+        </ul>
+        <a class="jr-btn jr-btn--light" href="{% render 'offerte-url', query: 'interesse=app&pakket=groei' %}">Kies Groei</a>
+      </article>
+      <article class="jr-pack">
+        <p class="jr-pack__kicker">App</p>
+        <h3>Op maat</h3>
+        <p class="jr-pack__price">Offerte <span>vaste prijs vooraf</span></p>
+        <p>Koppelingen, App Store, of een grotere app.</p>
+        <ul>
+          <li>Alles uit Groei</li>
+          <li>Koppeling met je huidige software</li>
+          <li>App Store of Play Store, als je dat wilt</li>
+          <li>Meer gebruikers en rechten</li>
+          <li>We plannen het samen</li>
+          <li>Je weet vooraf wat het kost</li>
+        </ul>
+        <a class="jr-btn jr-btn--primary" href="{% render 'offerte-url', query: 'interesse=app&pakket=maatwerk' %}">Vraag een prijs aan</a>
+      </article>
+    </div>
+    <div class="jr-compare">
+      <div class="jr-compare__head">
+        <h3>Wat zit erin</h3>
+        <p>Zelfde drie pakketten, naast elkaar. Zo zie je snel het verschil.</p>
+      </div>
+      <div class="jr-compare__scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Onderdeel</th>
+              <th>Start<span>€999</span></th>
+              <th>Groei<span>vanaf €1.999</span></th>
+              <th>Op maat<span>Offerte</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th>Eerste versie die je kunt gebruiken</th><td class="is-yes">Ja</td><td class="is-yes">Ja</td><td class="is-yes">Ja</td></tr>
+            <tr><th>Werkt op telefoon, tablet en desktop</th><td class="is-yes">Ja</td><td class="is-yes">Ja</td><td class="is-yes">Ja</td></tr>
+            <tr><th>Testversie voor je team</th><td class="is-yes">Ja</td><td class="is-yes">Ja</td><td class="is-yes">Ja</td></tr>
+            <tr><th>Extra schermen en rollen</th><td class="is-no">Nee</td><td class="is-yes">Ja</td><td class="is-yes">Ja</td></tr>
+            <tr><th>Inloggen voor klanten</th><td class="is-no">Nee</td><td class="is-yes">Ja</td><td class="is-yes">Ja</td></tr>
+            <tr><th>Koppeling met je software</th><td class="is-no">Nee</td><td>Basis</td><td class="is-yes">Ja</td></tr>
+            <tr><th>App Store of Play Store</th><td class="is-no">Nee</td><td class="is-no">Nee</td><td class="is-yes">Ja</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="jr-switcher__faq">
+      <h3>Vragen over deze prijzen</h3>
+      <div class="jr-faq-list">
+        <details>
+          <summary><span>Wat kost een app? <span class="jr-faq-open">+</span><span class="jr-faq-close">−</span></span></summary>
+          <p>Start begint bij €999. Dat is een eerste versie die je kunt gebruiken. Groei vanaf €1.999. Koppelingen of de stores rekenen we apart, vooraf.</p>
+        </details>
+        <details>
+          <summary><span>Waar hangt de prijs van af? <span class="jr-faq-open">+</span><span class="jr-faq-close">−</span></span></summary>
+          <p>Van hoeveel de app moet doen, wie er inlogt, en of we moeten koppelen met software die je al hebt. We beginnen vaak klein, zodat je niet te veel koopt.</p>
+        </details>
+        <details>
+          <summary><span>Krijg ik een app in de stores? <span class="jr-faq-open">+</span><span class="jr-faq-close">−</span></span></summary>
+          <p>Standaard bouwen we een web-app. Die werkt in de browser, op telefoon en desktop. Wil je wél in de App Store of Play Store, dan nemen we dat als extra mee.</p>
+        </details>
+        <details>
+          <summary><span>Wat als ik later meer wil? <span class="jr-faq-open">+</span><span class="jr-faq-close">−</span></span></summary>
+          <p>Dan bouwen we door. Eerst de kern, daarna wat je écht gebruikt. Elke ronde krijgt een vaste prijs.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <div class="jr-switcher__panel{% if active == 'onderhoud' %} is-active{% endif %}" id="prijzen-panel-onderhoud" role="tabpanel" data-panel="onderhoud" aria-labelledby="prijzen-tab-onderhoud"{% unless active == 'onderhoud' %} hidden{% endunless %}>
+    <p class="jr-switcher__intro">
+      Als je shop of app live is, kun je zelf verder. Wil je dat wij updates en kleine wijzigingen doen? Dan kies je een vast bedrag per maand. Niet verplicht.
+      <a class="jr-link" href="/pages/onderhoud">Meer over onderhoud</a>.
+    </p>
+    <div class="jr-pack-grid">
+      <article class="jr-pack">
+        <p class="jr-pack__kicker">Onderhoud</p>
+        <h3>Professional</h3>
+        <p class="jr-pack__price">€49 <span>per maand</span></p>
+        <p>Updates, backups en we houden de shop bij.</p>
+        <ul>
+          <li>Updates van platform en plugins</li>
+          <li>Dagelijkse backups</li>
+          <li>We houden in de gaten of de shop online blijft</li>
+          <li>Beveiliging en SSL</li>
+          <li>Eén contactmoment per maand</li>
+        </ul>
+        <a class="jr-btn jr-btn--primary" href="{% render 'offerte-url', query: 'interesse=onderhoud&pakket=professional' %}">Kies Professional</a>
+      </article>
+      <article class="jr-pack jr-pack--featured">
+        <p class="jr-pack__badge">Meest gekozen</p>
+        <h3>Plus</h3>
+        <p class="jr-pack__price">€99 <span>per maand</span></p>
+        <p>Onderhoud plus ruimte voor kleine aanpassingen.</p>
+        <ul>
+          <li>Alles uit Professional</li>
+          <li>2 uur kleine wijzigingen per maand</li>
+          <li>Maandelijks kort rapport</li>
+          <li>Voorrang op vragen</li>
+          <li>Hulp bij content of producten</li>
+        </ul>
+        <a class="jr-btn jr-btn--light" href="{% render 'offerte-url', query: 'interesse=onderhoud&pakket=plus' %}">Kies Plus</a>
+      </article>
+      <article class="jr-pack">
+        <p class="jr-pack__kicker">Onderhoud</p>
+        <h3>Care</h3>
+        <p class="jr-pack__price">€199 <span>per maand</span></p>
+        <p>Als je vaker wilt bijsturen, zonder elke keer een nieuwe offerte.</p>
+        <ul>
+          <li>Alles uit Plus</li>
+          <li>6 uur per maand inbegrepen</li>
+          <li>Voorrang bij storingen</li>
+          <li>Kwartaalgesprek over wat beter kan</li>
+          <li>Ruimte in de planning om verder te bouwen</li>
+        </ul>
+        <a class="jr-btn jr-btn--primary" href="{% render 'offerte-url', query: 'interesse=onderhoud&pakket=care' %}">Kies Care</a>
+      </article>
+    </div>
+    <div class="jr-compare">
+      <div class="jr-compare__head">
+        <h3>Wat zit erin</h3>
+        <p>Zelfde drie pakketten, naast elkaar. Zo zie je snel het verschil.</p>
+      </div>
+      <div class="jr-compare__scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Onderdeel</th>
+              <th>Professional<span>€49</span></th>
+              <th>Plus<span>€99</span></th>
+              <th>Care<span>€199</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th>Updates en backups</th><td class="is-yes">Ja</td><td class="is-yes">Ja</td><td class="is-yes">Ja</td></tr>
+            <tr><th>Shop online houden</th><td class="is-yes">Ja</td><td class="is-yes">Ja</td><td class="is-yes">Ja</td></tr>
+            <tr><th>Wijzigingen per maand</th><td class="is-no">Nee</td><td>2 uur</td><td>6 uur</td></tr>
+            <tr><th>Kort rapport</th><td class="is-no">Nee</td><td class="is-yes">Ja</td><td class="is-yes">Ja</td></tr>
+            <tr><th>Voorrang bij vragen</th><td class="is-no">Nee</td><td class="is-yes">Ja</td><td class="is-yes">Ja</td></tr>
+            <tr><th>Voorrang bij storingen</th><td class="is-no">Nee</td><td class="is-no">Nee</td><td class="is-yes">Ja</td></tr>
+            <tr><th>Maandelijks opzegbaar</th><td class="is-yes">Ja</td><td class="is-yes">Ja</td><td class="is-yes">Ja</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="jr-switcher__faq">
+      <h3>Vragen over deze prijzen</h3>
+      <div class="jr-faq-list">
+        <details>
+          <summary><span>Wat kost onderhoud? <span class="jr-faq-open">+</span><span class="jr-faq-close">−</span></span></summary>
+          <p>Professional €49, Plus €99, Care €199 per maand. Je kunt elke maand stoppen. Geen jaarcontract.</p>
+        </details>
+        <details>
+          <summary><span>Moet ik onderhoud nemen? <span class="jr-faq-open">+</span><span class="jr-faq-close">−</span></span></summary>
+          <p>Nee. Na live kun je zelf verder. Onderhoud is er als je wilt dat wij het bijhouden.</p>
+        </details>
+        <details>
+          <summary><span>Wat als ik geen pakket neem? <span class="jr-faq-open">+</span><span class="jr-faq-close">−</span></span></summary>
+          <p>Dan beheer je zelf, of je mailt ons voor los werk. Dat kan.</p>
+        </details>
+        <details>
+          <summary><span>Kan ik later wisselen? <span class="jr-faq-open">+</span><span class="jr-faq-close">−</span></span></summary>
+          <p>Ja. Omhoog, omlaag of stoppen. Maandelijks.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</div>

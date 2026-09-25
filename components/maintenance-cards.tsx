@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { maintenance } from "@/lib/content";
 import { cn } from "@/lib/utils";
+import { hoverBtn, hoverCard, hoverCardFeatured, brandFill, brandFillOnDark } from "@/lib/ui";
 
 export function MaintenanceCards({
   ctaHref = "/offerte",
@@ -15,8 +16,8 @@ export function MaintenanceCards({
           className={cn(
             "flex flex-col rounded-3xl border p-7 sm:p-8",
             pack.featured
-              ? "border-forest bg-forest text-white shadow-[0_18px_40px_rgba(27,61,47,0.18)]"
-              : "border-black/8 bg-white",
+              ? cn("border-forest bg-forest text-white shadow-[0_18px_40px_rgba(27,61,47,0.18)]", hoverCardFeatured)
+              : cn("border-black/8 bg-white", hoverCard),
           )}
         >
           {pack.featured ? (
@@ -50,10 +51,9 @@ export function MaintenanceCards({
           <Link
             href={`${ctaHref}?interesse=onderhoud&pakket=${pack.id}`}
             className={cn(
-              "mt-8 inline-flex h-11 items-center justify-center rounded-2xl px-5 text-sm font-medium transition-colors",
-              pack.featured
-                ? "bg-white text-forest hover:bg-neutral-100"
-                : "bg-foreground text-background hover:bg-neutral-800",
+              "mt-8 inline-flex h-11 items-center justify-center rounded-2xl px-5 text-sm font-medium",
+              hoverBtn,
+              pack.featured ? brandFillOnDark : brandFill,
             )}
           >
             {pack.cta}

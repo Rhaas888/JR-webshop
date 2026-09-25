@@ -2,49 +2,62 @@ import Image from "next/image";
 import Link from "next/link";
 import { CtaBand } from "@/components/cta-band";
 import { Faq } from "@/components/faq";
-import { LogoTicker } from "@/components/logo-ticker";
-import { MaintenanceTeaser } from "@/components/maintenance-teaser";
+import { PricingSwitcher } from "@/components/pricing-switcher";
 import { Process } from "@/components/process";
 import { ReviewsTeaser } from "@/components/reviews/reviews-board";
 import { Section, SectionHeading } from "@/components/section";
 import { ShowcaseHero } from "@/components/showcase-hero";
 import { TrustStrip } from "@/components/trust-strip";
+import { WorkBento } from "@/components/work-bento";
 import { about, prices } from "@/lib/content";
+import { hoverBtn, hoverCard, brandFill } from "@/lib/ui";
+import { cn } from "@/lib/utils";
 
 export default function HomePage() {
   return (
     <>
-      <ShowcaseHero />
+      <ShowcaseHero
+        primaryHref="/webshop-laten-bouwen"
+        primaryLabel="Webshop"
+        secondaryHref="/app-laten-maken"
+        secondaryLabel="App"
+        secondaryFilled
+        tertiaryHref="/prijzen?dienst=automatisatie"
+        tertiaryLabel="Automatisatie"
+      />
+      <WorkBento />
       <TrustStrip />
-      <LogoTicker />
 
       <Section>
         <SectionHeading
           kicker="Diensten"
           title="Webshop of app, verder niets"
-          description="We bouwen alleen webshops en apps. Daardoor blijft het ontwerp helder, de prijs duidelijk en de lijnen kort."
+          description="We bouwen webshops en apps. Niks anders. Daardoor blijft de prijs duidelijk en heb je direct contact met ons."
         />
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
           <ServiceCard
             title="Webshop laten bouwen"
             price={prices.webshop.label}
-            text="Een eigen shop die vertrouwen wekt: producten, checkout, beheer en een ontwerp dat bij je merk past."
-            href="/webshop-laten-bouwen"
+            text="Een eigen shop: producten, checkout, beheer en een ontwerp dat bij je merk past."
+            href="/prijzen?dienst=webshop"
             image="/images/shop-still.png"
             imageAlt="Productstilte voor een rustige webshop"
           />
           <ServiceCard
             title="App laten maken"
             price={prices.app.label}
-            text="Software die aansluit op jullie processen. Eerst een werkende versie, daarna verder bouwen waar het waarde heeft."
-            href="/app-laten-maken"
+            text="Een app die past bij hoe jij werkt. Eerst een versie die je kunt gebruiken, daarna bouwen we verder."
+            href="/prijzen?dienst=app"
             image="/images/app-desk.png"
             imageAlt="Tablet met een overzichtelijk dashboard"
           />
         </div>
       </Section>
 
-      <MaintenanceTeaser />
+      <Section tone="muted">
+        <PricingSwitcher heading tone="muted" />
+      </Section>
+
       <Process />
       <ReviewsTeaser />
 
@@ -66,7 +79,7 @@ export default function HomePage() {
             ))}
             <Link
               href="/over-ons"
-              className="mt-6 inline-flex text-sm font-medium text-forest underline underline-offset-4"
+              className="mt-6 inline-flex text-sm font-medium text-forest underline underline-offset-4 transition-colors hover:text-foreground"
             >
               Meer over JR Intelligence
             </Link>
@@ -96,14 +109,14 @@ function ServiceCard({
   imageAlt: string;
 }) {
   return (
-    <article className="flex flex-col overflow-hidden rounded-3xl border border-black/8">
-      <div className="relative aspect-[4/3]">
+    <article className={cn("group flex flex-col overflow-hidden rounded-3xl border border-black/8 bg-white", hoverCard)}>
+      <div className="relative aspect-[4/3] overflow-hidden">
         <Image
           src={image}
           alt={imageAlt}
           fill
           quality={100}
-          className="object-cover"
+          className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.06] motion-reduce:group-hover:scale-100"
           sizes="(min-width: 1024px) 520px, 100vw"
         />
       </div>
@@ -113,9 +126,13 @@ function ServiceCard({
         <p className="mt-4 flex-1 text-base font-medium leading-7 text-foreground">{text}</p>
         <Link
           href={href}
-          className="mt-8 inline-flex h-11 items-center justify-center rounded-2xl bg-foreground px-5 text-sm font-medium text-background transition-colors hover:bg-neutral-800"
+          className={cn(
+            "mt-8 inline-flex h-11 items-center justify-center rounded-2xl px-5 text-sm font-medium",
+            brandFill,
+            hoverBtn,
+          )}
         >
-          Bekijk deze dienst
+          Bekijk prijzen
         </Link>
       </div>
     </article>

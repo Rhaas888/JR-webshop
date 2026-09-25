@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { included, prices } from "@/lib/content";
 import { Section, SectionHeading } from "@/components/section";
+import { hoverBtn, hoverCard } from "@/lib/ui";
+import { cn } from "@/lib/utils";
 
 export function PricingTable({
   tone = "muted",
@@ -11,8 +13,8 @@ export function PricingTable({
     <Section tone={tone}>
       <SectionHeading
         kicker="Prijzen"
-        title="Duidelijke vanaf-prijzen, offerte op maat"
-        description="Geen uurtje-factuurtje. Je krijgt een vaste prijs voordat we beginnen. Onderstaande bedragen zijn het startpunt."
+        title="Je weet vooraf wat het kost"
+        description="Geen uurtje-factuurtje. Je krijgt een vaste prijs voordat we beginnen. Dit zijn de startprijzen."
       />
       <div className="mt-12 grid gap-6 lg:grid-cols-2">
         <PriceCard
@@ -45,7 +47,7 @@ export function PricingTable({
         <ul className="mt-4 grid gap-2 text-base font-medium text-foreground sm:grid-cols-2">
           {included.extra.map((item) => (
             <li key={item} className="flex gap-2">
-              <span aria-hidden="true">—</span>
+              <span className="mt-2 size-1.5 shrink-0 rounded-full bg-forest" aria-hidden="true" />
               <span>{item}</span>
             </li>
           ))}
@@ -69,7 +71,7 @@ function PriceCard({
   href: string;
 }) {
   return (
-    <article className="flex flex-col rounded-3xl border border-black/8 bg-white p-8">
+    <article className={cn("flex flex-col rounded-3xl border border-black/8 bg-white p-8", hoverCard)}>
       <p className="text-lg font-semibold text-foreground">{title}</p>
       <p className="mt-3 text-3xl font-semibold tracking-tight">{price}</p>
       <p className="mt-3 text-base font-medium leading-7 text-foreground">{summary}</p>
@@ -83,7 +85,10 @@ function PriceCard({
       </ul>
       <Link
         href={href}
-        className="mt-8 inline-flex h-11 items-center justify-center rounded-2xl border border-black/10 text-sm font-medium transition-colors hover:bg-neutral-50"
+        className={cn(
+          "mt-8 inline-flex h-11 items-center justify-center rounded-2xl border border-black/10 text-sm font-medium hover:bg-[#059b60] hover:text-white hover:border-[#059b60]",
+          hoverBtn,
+        )}
       >
         Meer over {title.toLowerCase()}
       </Link>

@@ -1,0 +1,93 @@
+<section class="jr-section">
+  <div class="jr-container jr-product">
+    <div class="jr-product__media">
+      {%- if product.featured_image -%}
+        <img
+          src="{{ product.featured_image | image_url: width: 1200 }}"
+          alt="{{ product.featured_image.alt | escape }}"
+          width="1200"
+          height="1200"
+        >
+      {%- else -%}
+        {{ 'product-1' | placeholder_svg_tag: 'jr-product__placeholder' }}
+      {%- endif -%}
+      {%- if product.images.size > 1 -%}
+        <div class="jr-product__thumbs">
+          {%- for image in product.images -%}
+            <a href="{{ image | image_url: width: 1200 }}">
+              <img
+                src="{{ image | image_url: width: 200 }}"
+                alt="{{ image.alt | escape }}"
+                width="80"
+                height="80"
+                loading="lazy"
+              >
+            </a>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="jr-product__info">
+      <p class="jr-kicker">{{ product.vendor }}</p>
+      <h1 class="jr-title">{{ product.title }}</h1>
+      <p class="jr-product__price">{{ product.selected_or_first_available_variant.price | money }}</p>
+      {%- if product.description != blank -%}
+        <div class="jr-prose">{{ product.description }}</div>
+      {%- endif -%}
+
+      {% form 'product', product, class: 'jr-product__form' %}
+        {%- if product.has_only_default_variant -%}
+          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+        {%- else -%}
+          <div class="jr-field">
+            <label for="Variant-{{ section.id }}">Variant</label>
+            <select id="Variant-{{ section.id }}" name="id">
+              {%- for variant in product.variants -%}
+                <option
+                  value="{{ variant.id }}"
+                  {% if variant == product.selected_or_first_available_variant %}selected{% endif %}
+                  {% unless variant.available %}disabled{% endunless %}
+                >
+                  {{ variant.title }} — {{ variant.price | money }}
+                  {%- unless variant.available %} (uitverkocht){% endunless %}
+                </option>
+              {%- endfor -%}
+            </select>
+          </div>
+        {%- endif -%}
+
+        <div class="jr-field">
+          <label for="Quantity-{{ section.id }}">Aantal</label>
+          <input
+            id="Quantity-{{ section.id }}"
+            type="number"
+            name="quantity"
+            value="1"
+            min="1"
+          >
+        </div>
+
+        <button
+          type="submit"
+          name="add"
+          class="jr-btn jr-btn--primary jr-btn--full"
+          {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %}
+        >
+          {%- if product.selected_or_first_available_variant.available -%}
+            In winkelwagen
+          {%- else -%}
+            Uitverkocht
+          {%- endif -%}
+        </button>
+      {% endform %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product",
+  "settings": []
+}
+{% endschema %}

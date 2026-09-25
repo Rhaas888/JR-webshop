@@ -1,6 +1,6 @@
 {
   "sections": {
-    "main": { "type": "page-privacy", "settings": {} }
+    "main": { "type": "page-default", "settings": {} }
   },
   "order": ["main"]
 }

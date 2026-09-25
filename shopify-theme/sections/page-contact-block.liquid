@@ -1,15 +1,11 @@
-<section class="jr-section jr-section--muted">
-  <div class="jr-container">
-    <div class="jr-contact-grid">
-      {% render 'section-heading',
-        kicker: section.settings.kicker,
-        title: section.settings.title,
-        description: section.settings.description
-      %}
-      {% render 'contact-form', default_interest: section.settings.interest %}
-    </div>
-  </div>
-</section>
+{%- unless page.handle contains 'offerte' -%}
+  {% render 'page-contact-block',
+    kicker: section.settings.kicker,
+    title: section.settings.title,
+    description: section.settings.description,
+    interest: section.settings.interest
+  %}
+{%- endunless -%}
 
 {% schema %}
 {
@@ -21,7 +17,7 @@
       "type": "textarea",
       "id": "description",
       "label": "Tekst",
-      "default": "Geen lang intake-document. Een paar zinnen is genoeg. We reageren binnen 1 werkdag."
+      "default": "Een paar zinnen is genoeg. Binnen 1 werkdag hoor je van ons."
     },
     {
       "type": "select",
@@ -30,6 +26,7 @@
       "options": [
         { "value": "webshop", "label": "Webshop" },
         { "value": "app", "label": "App" },
+        { "value": "onderhoud", "label": "Onderhoud" },
         { "value": "anders", "label": "Anders" }
       ],
       "default": "webshop"

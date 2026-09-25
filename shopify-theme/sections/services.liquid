@@ -3,20 +3,30 @@
     {% render 'section-heading',
       kicker: 'Diensten',
       title: 'Webshop of app, verder niets',
-      description: 'We bouwen alleen webshops en apps. Daardoor blijft het ontwerp helder, de prijs duidelijk en de lijnen kort.'
+      description: 'We bouwen webshops en apps. Niks anders. Daardoor blijft de prijs duidelijk en heb je direct contact met ons.'
     %}
     <div class="jr-cards jr-cards--2">
-      <article class="jr-card">
-        <h3>Webshop laten bouwen</h3>
-        <p class="jr-card__price">vanaf €499</p>
-        <p>Een eigen shop die vertrouwen wekt: producten, checkout, beheer en een ontwerp dat bij je merk past.</p>
-        <a class="jr-btn jr-btn--primary" href="/pages/webshop-laten-bouwen">Bekijk deze dienst</a>
+      <article class="jr-card jr-card--media">
+        <div class="jr-card__media">
+          <img src="{{ 'shop-still.png' | asset_url }}" alt="Productstilte voor een rustige webshop" width="800" height="600">
+        </div>
+        <div class="jr-card__body">
+          <h3>Webshop laten bouwen</h3>
+          <p class="jr-card__price">vanaf €499</p>
+          <p>Een eigen shop: producten, checkout, beheer en een ontwerp dat bij je merk past.</p>
+          <a class="jr-btn jr-btn--primary" href="/pages/prijzen?dienst=webshop">Bekijk prijzen</a>
+        </div>
       </article>
-      <article class="jr-card">
-        <h3>App laten maken</h3>
-        <p class="jr-card__price">vanaf €999</p>
-        <p>Software die aansluit op jullie processen. Eerst een werkende versie, daarna verder bouwen waar het waarde heeft.</p>
-        <a class="jr-btn jr-btn--primary" href="/pages/app-laten-maken">Bekijk deze dienst</a>
+      <article class="jr-card jr-card--media">
+        <div class="jr-card__media">
+          <img src="{{ 'app-desk.png' | asset_url }}" alt="Tablet met een overzichtelijk dashboard" width="800" height="600">
+        </div>
+        <div class="jr-card__body">
+          <h3>App laten maken</h3>
+          <p class="jr-card__price">vanaf €999</p>
+          <p>Een app die past bij hoe jij werkt. Eerst een versie die je kunt gebruiken, daarna bouwen we verder.</p>
+          <a class="jr-btn jr-btn--primary" href="/pages/prijzen?dienst=app">Bekijk prijzen</a>
+        </div>
       </article>
     </div>
   </div>

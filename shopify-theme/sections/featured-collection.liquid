@@ -1,0 +1,39 @@
+{%- assign featured = section.settings.collection -%}
+{%- if featured == blank -%}
+  {%- assign featured = collections.all -%}
+{%- endif -%}
+
+{%- if featured != blank and featured.products_count > 0 -%}
+<section class="jr-section">
+  <div class="jr-container">
+    {% render 'section-heading',
+      kicker: 'Shop',
+      title: section.settings.title,
+      description: section.settings.description
+    %}
+    <div class="jr-product-grid">
+      {%- for product in featured.products limit: section.settings.limit -%}
+        {% render 'product-card', product: product %}
+      {%- endfor -%}
+    </div>
+    <a class="jr-btn jr-btn--ghost" href="{{ featured.url }}">Bekijk de shop</a>
+  </div>
+</section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Uitgelichte collectie",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Titel", "default": "Onze producten" },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Tekst",
+      "default": "Overzichtelijk, strak, klaar om te bestellen."
+    },
+    { "type": "collection", "id": "collection", "label": "Collectie" },
+    { "type": "range", "id": "limit", "min": 3, "max": 12, "step": 1, "label": "Aantal producten", "default": 8 }
+  ]
+}
+{% endschema %}

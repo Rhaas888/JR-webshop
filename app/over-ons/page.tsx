@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { CtaBand } from "@/components/cta-band";
+import { Expect } from "@/components/expect";
 import { PageIntro } from "@/components/page-intro";
 import { Container, Section } from "@/components/section";
 import { about, company } from "@/lib/content";
@@ -9,7 +10,7 @@ import { about, company } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Over ons",
   description:
-    "JR Intelligence is een compacte studio. We bouwen webshops en apps voor Nederlandse bedrijven die iets eigens willen.",
+    "JR Intelligence is een klein team. We bouwen webshops en apps voor Nederlandse bedrijven. Geen templates.",
 };
 
 export default function OverOnsPage() {
@@ -38,21 +39,15 @@ export default function OverOnsPage() {
             <p key={paragraph}>{paragraph}</p>
           ))}
         </div>
-        <div className="mt-14 grid gap-6 sm:grid-cols-3">
-          {about.values.map((value) => (
-            <article key={value.title} className="rounded-3xl border border-black/8 p-6">
-              <h2 className="text-lg font-semibold tracking-tight">{value.title}</h2>
-              <p className="mt-3 text-base font-medium leading-7 text-foreground">{value.text}</p>
-            </article>
-          ))}
-        </div>
       </Section>
+
+      <Expect />
 
       <Section tone="muted">
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div>
             <p className="text-sm font-semibold tracking-wide text-forest">Hoe we werken</p>
-            <h2 className="mt-2 text-3xl font-semibold tracking-tight">Kort, vast, opleveren</h2>
+            <h2 className="mt-2 text-3xl font-semibold tracking-tight">Zo werken we</h2>
             <div className="mt-8 space-y-6">
               {about.howWeWork.map((item) => (
                 <div key={item.title}>
@@ -78,7 +73,7 @@ export default function OverOnsPage() {
       <Section>
         <p className="text-sm font-semibold tracking-wide text-forest">Wat we niet doen</p>
         <h2 className="mt-2 max-w-xl text-3xl font-semibold tracking-tight">
-          Duidelijkheid voorkomt verkeerde verwachtingen
+          Dit doen we niet
         </h2>
         <ul className="mt-8 grid gap-3 text-base font-medium text-foreground sm:grid-cols-2">
           {about.weDont.map((item) => (

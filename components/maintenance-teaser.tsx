@@ -3,6 +3,8 @@ import Link from "next/link";
 import { maintenance } from "@/lib/content";
 import { Section } from "@/components/section";
 import { RevealHeading } from "@/components/reveal-heading";
+import { hoverBtn, brandFill } from "@/lib/ui";
+import { cn } from "@/lib/utils";
 
 export function MaintenanceTeaser() {
   return (
@@ -22,7 +24,7 @@ export function MaintenanceTeaser() {
           <p className="text-sm font-semibold tracking-wide text-forest">{maintenance.kicker}</p>
           <RevealHeading>
             <h2 className="mt-2 text-3xl font-semibold tracking-tight text-pretty sm:text-4xl">
-              Shop live. Daarna houden we hem bij — als je dat wilt.
+              Shop live. Daarna houden we hem bij, als je dat wilt.
             </h2>
           </RevealHeading>
           <p className="mt-4 text-lg font-medium leading-8 text-foreground">
@@ -41,7 +43,11 @@ export function MaintenanceTeaser() {
           </ul>
           <Link
             href="/onderhoud"
-            className="mt-8 inline-flex h-11 items-center justify-center rounded-2xl bg-foreground px-5 text-sm font-medium text-background transition-colors hover:bg-neutral-800"
+            className={cn(
+              "mt-8 inline-flex h-11 items-center justify-center rounded-2xl px-5 text-sm font-medium",
+              brandFill,
+              hoverBtn,
+            )}
           >
             Bekijk onderhoud
           </Link>

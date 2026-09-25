@@ -1,0 +1,7 @@
+{%- if pages['app-laten-maken'].title != blank -%}
+  {{- pages['app-laten-maken'].url -}}
+{%- elsif pages['app-laten-bouwen'].title != blank -%}
+  {{- pages['app-laten-bouwen'].url -}}
+{%- else -%}
+  /pages/app-laten-bouwen
+{%- endif -%}

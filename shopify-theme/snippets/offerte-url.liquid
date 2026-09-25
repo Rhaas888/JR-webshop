@@ -1,0 +1,14 @@
+{%- if pages.offerte.url != blank -%}
+  {%- assign offerte_href = pages.offerte.url -%}
+{%- else -%}
+  {%- assign offerte_href = '/pages/offerte' -%}
+{%- endif -%}
+{%- if query != blank -%}
+  {%- if offerte_href contains '?' -%}
+    {{- offerte_href -}}&{{- query -}}
+  {%- else -%}
+    {{- offerte_href -}}?{{- query -}}
+  {%- endif -%}
+{%- else -%}
+  {{- offerte_href -}}
+{%- endif -%}

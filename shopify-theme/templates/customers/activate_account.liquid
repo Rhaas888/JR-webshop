@@ -1,0 +1,16 @@
+<section class="jr-section">
+  <div class="jr-container" style="max-width: 28rem;">
+    <h1 class="jr-title">Account activeren</h1>
+    {% form 'activate_customer_password', class: 'jr-form' %}
+      <div class="jr-field">
+        <label for="ActivatePassword">Wachtwoord</label>
+        <input id="ActivatePassword" type="password" name="customer[password]" required>
+      </div>
+      <div class="jr-field">
+        <label for="ActivatePasswordConfirm">Bevestig wachtwoord</label>
+        <input id="ActivatePasswordConfirm" type="password" name="customer[password_confirmation]" required>
+      </div>
+      <button type="submit" class="jr-btn jr-btn--primary jr-btn--full">Activeren</button>
+    {% endform %}
+  </div>
+</section>

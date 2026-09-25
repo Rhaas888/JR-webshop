@@ -1,6 +1,7 @@
 {%- assign interest_default = default_interest | default: 'webshop' -%}
+{%- assign variant = form_variant | default: 'contact' -%}
 
-<div data-contact-form>
+<div data-contact-form data-form-variant="{{ variant }}"{% if variant == 'offerte' %} id="offerte-form"{% endif %}>
 {% form 'contact', class: 'jr-form' %}
   {%- if form.posted_successfully? -%}
     <div class="jr-success">
@@ -13,6 +14,8 @@
         {{ form.errors | default_errors }}
       </div>
     {%- endif -%}
+
+    <input type="hidden" name="contact[formulier]" value="{% if variant == 'offerte' %}Offerte{% else %}Vraag{% endif %}">
 
     <div class="jr-form-grid">
       <div class="jr-field">
@@ -35,23 +38,83 @@
 
     <div class="jr-field jr-field--full">
       <label for="ContactInterest">Interesse</label>
-      <select id="ContactInterest" name="contact[interesse]">
+      <select id="ContactInterest" name="contact[interesse]" data-interest-select>
         <option value="webshop"{% if interest_default == 'webshop' %} selected{% endif %}>Webshop laten bouwen</option>
         <option value="app"{% if interest_default == 'app' %} selected{% endif %}>App laten maken</option>
+        <option value="onderhoud"{% if interest_default == 'onderhoud' %} selected{% endif %}>Onderhoud</option>
+        <option value="automatisatie"{% if interest_default == 'automatisatie' %} selected{% endif %}>Automatisatie</option>
         <option value="anders"{% if interest_default == 'anders' %} selected{% endif %}>Iets anders</option>
       </select>
     </div>
 
+    {%- if variant == 'offerte' -%}
+      <div class="jr-field jr-field--full" data-package-field hidden>
+        <label for="ContactPackage">Pakket</label>
+        <select id="ContactPackage" name="contact[pakket]" data-package-select>
+          <option value="">Nog niet gekozen</option>
+        </select>
+      </div>
+    {%- endif -%}
+
+    {%- if variant == 'offerte' -%}
+      <div class="jr-form-grid">
+        <div class="jr-field">
+          <label for="ContactBudget">Budget</label>
+          <select id="ContactBudget" name="contact[budget]">
+            <option value="Tot €500">Tot €500</option>
+            <option value="€500 tot €1.500">€500 tot €1.500</option>
+            <option value="€1.500 tot €5.000">€1.500 tot €5.000</option>
+            <option value="Nog niet bekend" selected>Nog niet bekend</option>
+          </select>
+        </div>
+        <div class="jr-field">
+          <label for="ContactTimeline">Planning</label>
+          <select id="ContactTimeline" name="contact[planning]">
+            <option value="Zo snel mogelijk">Zo snel mogelijk</option>
+            <option value="Over 1 tot 2 maanden">Over 1 tot 2 maanden</option>
+            <option value="Over 3 maanden of later">Over 3 maanden of later</option>
+            <option value="Nog niet bekend" selected>Nog niet bekend</option>
+          </select>
+        </div>
+      </div>
+    {%- endif -%}
+
     <div class="jr-field jr-field--full">
       <label for="ContactBody">Bericht</label>
-      <textarea id="ContactBody" name="contact[body]" rows="6" minlength="10" required placeholder="Wat wil je laten bouwen?">{{ form.body }}</textarea>
+      <textarea id="ContactBody" name="contact[body]" rows="6" minlength="10" required placeholder="{% if variant == 'offerte' %}Wat wil je laten bouwen, en voor wie?{% else %}Waar kunnen we je mee helpen?{% endif %}">{{ form.body }}</textarea>
     </div>
 
-    <button type="submit" class="jr-btn jr-btn--primary jr-btn--full">Versturen</button>
+    <button type="submit" class="jr-btn jr-btn--primary jr-btn--full">{% if variant == 'offerte' %}Offerte aanvragen{% else %}Versturen{% endif %}</button>
     <p class="jr-form-note">
       We gebruiken je gegevens alleen om te reageren. Zie onze
       <a href="/pages/privacy">privacyverklaring</a>.
     </p>
   {%- endif -%}
 {% endform %}
+{%- if variant == 'offerte' -%}
+  <script type="application/json" data-package-options>
+    {
+      "webshop": [
+        { "id": "start", "name": "Start", "price": "€499" },
+        { "id": "groei", "name": "Groei", "price": "vanaf €1.499" },
+        { "id": "maatwerk", "name": "Op maat", "price": "Offerte" }
+      ],
+      "app": [
+        { "id": "start", "name": "Start", "price": "€999" },
+        { "id": "groei", "name": "Groei", "price": "vanaf €1.999" },
+        { "id": "maatwerk", "name": "Op maat", "price": "Offerte" }
+      ],
+      "onderhoud": [
+        { "id": "professional", "name": "Professional", "price": "€49" },
+        { "id": "plus", "name": "Plus", "price": "€99" },
+        { "id": "care", "name": "Care", "price": "€199" }
+      ],
+      "automatisatie": [
+        { "id": "start", "name": "Start", "price": "Offerte" },
+        { "id": "groei", "name": "Groei", "price": "Offerte" },
+        { "id": "maatwerk", "name": "Op maat", "price": "Offerte" }
+      ]
+    }
+  </script>
+{%- endif -%}
 </div>
