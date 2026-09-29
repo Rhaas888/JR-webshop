@@ -4,7 +4,38 @@
   },
   "header": {
     "navigation": "Hoofdmenu",
-    "cart": "Winkelwagen"
+    "home": "Home",
+    "services": "Diensten",
+    "about": "Over ons",
+    "contact": "Contact",
+    "start": "Start vandaag",
+    "open_menu": "Menu openen",
+    "close_menu": "Menu sluiten"
+  },
+  "banner": {
+    "dashboard": "Dashboard",
+    "orders": "Orders",
+    "products": "Producten",
+    "customers": "Klanten",
+    "marketing": "Marketing",
+    "settings": "Instellingen",
+    "search": "Zoek producten, orders, klanten...",
+    "total": "Totaal bestellingen",
+    "revenue": "Omzet",
+    "popular": "Populaire producten",
+    "recent": "Recente orders",
+    "tee": "T-shirt Classic",
+    "hoodie": "Hoodie Premium",
+    "sneaker": "Sneakers Urban",
+    "cap": "Cap Essential",
+    "processed": "Verwerkt",
+    "shipped": "Verzonden",
+    "collection": "New collection",
+    "collection_text": "Premium basics, made for everyday.",
+    "shop_now": "Shop now",
+    "nav_home": "Home",
+    "nav_categories": "Categorieën",
+    "nav_profile": "Profiel"
   },
   "footer": {
     "copyright": "© {{ year }} {{ shop }}"

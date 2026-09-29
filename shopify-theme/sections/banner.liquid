@@ -1,42 +1,249 @@
-<section class="v2-banner{% if section.settings.image != blank %} v2-banner--has-image{% endif %}">
-  {% if section.settings.image != blank %}
-    <div class="v2-banner__image" aria-hidden="true">
-      {{
-        section.settings.image
-        | image_url: width: 2400
-        | image_tag: loading: 'eager', widths: '750, 1100, 1500, 2000, 2400', sizes: '100vw'
-      }}
+{%- liquid
+  assign primary_link = section.settings.primary_link
+  assign secondary_link = section.settings.secondary_link
+  if primary_link == blank
+    assign primary_link = '/pages/contact'
+  endif
+  if secondary_link == blank
+    assign secondary_link = '/pages/diensten'
+  endif
+-%}
+
+<section class="v2-hero">
+  <div class="v2-hero__inner page-width">
+    <div class="v2-hero__copy">
+      <p class="v2-hero__eyebrow">{{ section.settings.eyebrow }}</p>
+      <h1>
+        {%- if section.settings.heading == 'Webshop, app of automatisering voor jouw bedrijf' -%}
+          Webshop, app of<br>
+          automatisering voor<br>
+          jouw bedrijf
+        {%- else -%}
+          {{ section.settings.heading }}
+        {%- endif -%}
+      </h1>
+      <div class="v2-hero__text">
+        {%- if section.settings.text contains 'Wij bouwen digitale oplossingen die werken.' -%}
+          <p>Wij bouwen digitale oplossingen die werken.<br>Van een professionele webshop tot een slimme app<br>of automatisering van je processen.</p>
+        {%- else -%}
+          {{ section.settings.text }}
+        {%- endif -%}
+      </div>
+      <div class="v2-hero__actions">
+        <a class="v2-btn v2-btn--solid" href="{{ primary_link }}">
+          {{ section.settings.primary_label }}
+          <span aria-hidden="true">→</span>
+        </a>
+        <a class="v2-btn v2-btn--line" href="{{ secondary_link }}">
+          {{ section.settings.secondary_label }}
+        </a>
+      </div>
     </div>
-  {% endif %}
 
-  <div class="v2-banner__content page-width">
-    {% if section.settings.eyebrow != blank %}
-      <p class="v2-banner__eyebrow">{{ section.settings.eyebrow }}</p>
-    {% endif %}
+    <div class="v2-stage" aria-hidden="true">
+      <svg class="v2-curves" viewBox="0 0 760 640" fill="none">
+        <path d="M30 470C120 390 170 300 210 150" stroke="#9ed9c0" stroke-width="1.6"/>
+        <path d="M520 20C620 70 690 150 740 280" stroke="#9ed9c0" stroke-width="1.6"/>
+      </svg>
 
-    <h1>{{ section.settings.heading }}</h1>
+      <div class="v2-laptop">
+        <div class="v2-laptop__lid">
+          <span class="v2-laptop__cam"></span>
+          <div class="v2-screen">
+            <aside class="v2-side">
+              <span class="v2-side__logo">JR</span>
+              <span class="is-on">
+                <svg viewBox="0 0 16 16"><rect x="2" y="2" width="5" height="5" rx="1"/><rect x="9" y="2" width="5" height="5" rx="1"/><rect x="2" y="9" width="5" height="5" rx="1"/><rect x="9" y="9" width="5" height="5" rx="1"/></svg>
+                {{ 'banner.dashboard' | t }}
+              </span>
+              <span>
+                <svg viewBox="0 0 16 16"><path d="M3 4.5h10l-.8 8.2a1 1 0 0 1-1 .8H4.8a1 1 0 0 1-1-.8L3 4.5Z"/><path d="M6 4.4V3.4A2 2 0 0 1 8 1.5a2 2 0 0 1 2 1.9v1"/></svg>
+                {{ 'banner.orders' | t }}
+              </span>
+              <span>
+                <svg viewBox="0 0 16 16"><path d="M2.5 5.5 8 2.5l5.5 3v6L8 14.5l-5.5-3v-6Z"/><path d="M2.8 5.6 8 8.4l5.2-2.8M8 8.4V14"/></svg>
+                {{ 'banner.products' | t }}
+              </span>
+              <span>
+                <svg viewBox="0 0 16 16"><circle cx="8" cy="5.2" r="2.2"/><path d="M3.4 13.2c.7-2.4 2.4-3.6 4.6-3.6s3.9 1.2 4.6 3.6"/></svg>
+                {{ 'banner.customers' | t }}
+              </span>
+              <span>
+                <svg viewBox="0 0 16 16"><path d="M2.5 12.5 6 8.2l2.2 2.1L13.5 3.5"/><path d="M10 3.5h3.5V7"/></svg>
+                {{ 'banner.marketing' | t }}
+              </span>
+              <span>
+                <svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="2.1"/><path d="M8 1.8v1.6M8 12.6v1.6M1.8 8h1.6M12.6 8h1.6M3.4 3.4l1.1 1.1M11.5 11.5l1.1 1.1M12.6 3.4l-1.1 1.1M4.5 11.5l-1.1 1.1"/></svg>
+                {{ 'banner.settings' | t }}
+              </span>
+            </aside>
 
-    {% if section.settings.text != blank %}
-      <div class="v2-banner__text">{{ section.settings.text }}</div>
-    {% endif %}
+            <div class="v2-main">
+              <div class="v2-topbar">
+                <div class="v2-search">
+                  <svg viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.2"/><path d="M10.2 10.2 13.5 13.5"/></svg>
+                  <span>{{ 'banner.search' | t }}</span>
+                </div>
+                <div class="v2-topbar__tools">
+                  <svg viewBox="0 0 16 16"><path d="M4 6.5a4 4 0 0 1 8 0c0 3 1 3.6 1 3.6H3S4 9.5 4 6.5Z"/><path d="M6.6 12.2a1.5 1.5 0 0 0 2.8 0"/></svg>
+                  <i></i>
+                </div>
+              </div>
 
-    {% if section.settings.button_label != blank and section.settings.button_link != blank %}
-      <a class="v2-banner__button" href="{{ section.settings.button_link }}">
-        {{ section.settings.button_label }}
-      </a>
-    {% endif %}
+              <div class="v2-main__head">{{ 'banner.products' | t }}</div>
+
+              <div class="v2-stats">
+                <article>
+                  <small>{{ 'banner.total' | t }}</small>
+                  <b>1.248</b>
+                  <em>+12%</em>
+                </article>
+                <article>
+                  <small>{{ 'banner.revenue' | t }}</small>
+                  <b>€ 12.480</b>
+                  <em>+18%</em>
+                </article>
+                <article>
+                  <small>{{ 'banner.customers' | t }}</small>
+                  <b>892</b>
+                  <em>+5%</em>
+                </article>
+                <article class="v2-chart">
+                  <small>{{ 'banner.revenue' | t }}</small>
+                  <svg viewBox="0 0 140 52" preserveAspectRatio="none">
+                    <path d="M1 40C18 38 28 30 44 27C62 23 72 16 90 13C108 10 120 7 139 3V52H1Z" fill="rgba(8,146,79,0.14)"/>
+                    <path d="M1 40C18 38 28 30 44 27C62 23 72 16 90 13C108 10 120 7 139 3" stroke="#08924f" stroke-width="2" fill="none"/>
+                  </svg>
+                </article>
+              </div>
+
+              <div class="v2-split">
+                <div>
+                  <p>{{ 'banner.popular' | t }}</p>
+                  <div class="v2-products">
+                    <article>
+                      <span class="v2-shot">
+                        <svg viewBox="0 0 64 64"><path fill="#1b1d22" d="M24 18c1.6 3.2 5.2 5.2 8 5.2s6.4-2 8-5.2l7.2 2.6-2.8 9.2-5.2-1.8v24H25.8v-24l-5.2 1.8-2.8-9.2L24 18Z"/></svg>
+                      </span>
+                      <b>{{ 'banner.tee' | t }}</b>
+                      <small>€ 29,95</small>
+                    </article>
+                    <article>
+                      <span class="v2-shot">
+                        <svg viewBox="0 0 64 64"><path fill="#1b1d22" d="M22 24c0-6 4-9 10-9s10 3 10 9v2c4 1 8 3 9 6l-4 8-5-2v20H22V38l-5 2-4-8c1-3 5-5 9-6v-2Z"/><path fill="#2a2d33" d="M26 18c1.4 3 4 5 6 5s4.6-2 6-5c-2 1.2-4 1.6-6 1.6s-4-.4-6-1.6Z"/></svg>
+                      </span>
+                      <b>{{ 'banner.hoodie' | t }}</b>
+                      <small>€ 49,95</small>
+                    </article>
+                    <article>
+                      <span class="v2-shot">
+                        <svg viewBox="0 0 64 64"><path fill="#f4f5f7" d="M14 38c6-8 12-12 22-12 8 0 12 2 16 6l-2 8H16l-2-2Z"/><path fill="#fff" stroke="#d5d8de" d="M16 36c5-7 11-10 20-10 7 0 11 2 15 5l-3 7H17l-1-2Z"/><path fill="#e6e8ed" d="M12 42h42c1 3 1 5-1 6H14c-2-1-2-3-2-6Z"/><path stroke="#c5c9d1" d="M24 34c2 2 4 3 8 3"/></svg>
+                      </span>
+                      <b>{{ 'banner.sneaker' | t }}</b>
+                      <small>€ 89,95</small>
+                    </article>
+                    <article>
+                      <span class="v2-shot">
+                        <svg viewBox="0 0 64 64"><path fill="#1b1d22" d="M18 34c1-12 7-18 14-18s13 6 14 18H18Z"/><path fill="#111317" d="M16 34h34c2 1 4 4 8 6-6 1-10 0-12-2H18c-2 2-6 3-12 2 4-2 6-5 10-6Z"/></svg>
+                      </span>
+                      <b>{{ 'banner.cap' | t }}</b>
+                      <small>€ 24,95</small>
+                    </article>
+                  </div>
+                </div>
+                <div>
+                  <p>{{ 'banner.recent' | t }}</p>
+                  <ul class="v2-orders">
+                    <li><span>#10234</span><em>{{ 'banner.processed' | t }}</em></li>
+                    <li><span>#10233</span><em>{{ 'banner.processed' | t }}</em></li>
+                    <li><span>#10232</span><em class="is-sent">{{ 'banner.shipped' | t }}</em></li>
+                    <li><span>#10231</span><em>{{ 'banner.processed' | t }}</em></li>
+                    <li><span>#10230</span><em class="is-sent">{{ 'banner.shipped' | t }}</em></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="v2-laptop__deck"></div>
+      </div>
+
+      <div class="v2-phone">
+        <div class="v2-phone__screen">
+          <div class="v2-phone__status">
+            <b>9:41</b>
+            <span></span>
+          </div>
+          <span class="v2-phone__island"></span>
+          <div class="v2-phone__bar">
+            <strong>JR</strong>
+            <span>
+              <svg viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.2"/><path d="m10.2 10.2 3.3 3.3"/></svg>
+              <svg viewBox="0 0 16 16"><path d="M3 4.5h10l-.8 8.2a1 1 0 0 1-1 .8H4.8a1 1 0 0 1-1-.8L3 4.5Z"/><path d="M6 4.4V3.4A2 2 0 0 1 8 1.5a2 2 0 0 1 2 1.9v1"/></svg>
+            </span>
+          </div>
+          <div class="v2-phone__hero">
+            <svg class="v2-phone__photo" viewBox="0 0 320 420" preserveAspectRatio="xMidYMid slice">
+              <rect width="320" height="420" fill="#9aa3ab"/>
+              <rect x="0" y="70" width="78" height="350" fill="#7e878f"/>
+              <rect x="86" y="130" width="52" height="290" fill="#8b949c"/>
+              <rect x="214" y="48" width="106" height="372" fill="#6d767e"/>
+              <rect x="18" y="100" width="16" height="14" fill="#c5ccd2" opacity=".35"/>
+              <rect x="18" y="128" width="16" height="14" fill="#c5ccd2" opacity=".35"/>
+              <rect x="236" y="80" width="18" height="16" fill="#c5ccd2" opacity=".28"/>
+              <rect x="262" y="80" width="18" height="16" fill="#c5ccd2" opacity=".28"/>
+              <rect x="236" y="110" width="18" height="16" fill="#c5ccd2" opacity=".28"/>
+              <ellipse cx="176" cy="148" rx="26" ry="30" fill="#3a312b"/>
+              <path fill="#14161a" d="M118 400c6-78 16-132 26-156 8-18 20-28 32-28s24 10 32 28c10 24 20 78 26 156H118Z"/>
+              <path fill="#0e1013" d="M132 214c8-24 28-36 48-28 10 4 16 2 22-8-18-16-52-20-78 8 2 10 4 18 8 28Z"/>
+            </svg>
+            <div class="v2-phone__hero-copy">
+              <strong>{{ 'banner.collection' | t }}</strong>
+              <small>{{ 'banner.collection_text' | t }}</small>
+              <em>{{ 'banner.shop_now' | t }}</em>
+            </div>
+          </div>
+          <p>{{ 'banner.popular' | t }}</p>
+          <div class="v2-phone__grid">
+            <article>
+              <span class="v2-shot">
+                <svg viewBox="0 0 64 64"><path fill="#1b1d22" d="M24 18c1.6 3.2 5.2 5.2 8 5.2s6.4-2 8-5.2l7.2 2.6-2.8 9.2-5.2-1.8v24H25.8v-24l-5.2 1.8-2.8-9.2L24 18Z"/></svg>
+              </span>
+              <small>€ 29,95</small>
+            </article>
+            <article>
+              <span class="v2-shot">
+                <svg viewBox="0 0 64 64"><path fill="#1b1d22" d="M22 24c0-6 4-9 10-9s10 3 10 9v2c4 1 8 3 9 6l-4 8-5-2v20H22V38l-5 2-4-8c1-3 5-5 9-6v-2Z"/></svg>
+              </span>
+              <small>€ 49,95</small>
+            </article>
+          </div>
+          <nav class="v2-phone__tabs">
+            <span class="is-on">
+              <svg viewBox="0 0 16 16"><path d="M2.5 7.2 8 2.8l5.5 4.4V13a1 1 0 0 1-1 1h-3.2V9.6H6.7V14H3.5a1 1 0 0 1-1-1V7.2Z"/></svg>
+              {{ 'banner.nav_home' | t }}
+            </span>
+            <span>
+              <svg viewBox="0 0 16 16"><rect x="2.2" y="2.2" width="4.8" height="4.8" rx="1"/><rect x="9" y="2.2" width="4.8" height="4.8" rx="1"/><rect x="2.2" y="9" width="4.8" height="4.8" rx="1"/><rect x="9" y="9" width="4.8" height="4.8" rx="1"/></svg>
+              {{ 'banner.nav_categories' | t }}
+            </span>
+            <span>
+              <svg viewBox="0 0 16 16"><circle cx="8" cy="5.2" r="2.2"/><path d="M3.2 13.4c.8-2.5 2.5-3.7 4.8-3.7s4 1.2 4.8 3.7"/></svg>
+              {{ 'banner.nav_profile' | t }}
+            </span>
+          </nav>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
+
+<div class="v2-scrollpad" aria-hidden="true"></div>
 
 {% schema %}
 {
   "name": "Banner",
   "settings": [
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Afbeelding"
-    },
     {
       "type": "text",
       "id": "eyebrow",
@@ -47,23 +254,35 @@
       "type": "text",
       "id": "heading",
       "label": "Titel",
-      "default": "Nieuwe webshop"
+      "default": "Webshop, app of automatisering voor jouw bedrijf"
     },
     {
       "type": "richtext",
       "id": "text",
       "label": "Tekst",
-      "default": "<p>We bouwen deze webshop stap voor stap.</p>"
+      "default": "<p>Wij bouwen digitale oplossingen die werken. Van een professionele webshop tot een slimme app of automatisering van je processen.</p>"
     },
     {
       "type": "text",
-      "id": "button_label",
-      "label": "Knoptekst"
+      "id": "primary_label",
+      "label": "Primaire knop",
+      "default": "Start vandaag"
     },
     {
       "type": "url",
-      "id": "button_link",
-      "label": "Knoplink"
+      "id": "primary_link",
+      "label": "Primaire link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_label",
+      "label": "Tweede knop",
+      "default": "Bekijk onze diensten"
+    },
+    {
+      "type": "url",
+      "id": "secondary_link",
+      "label": "Tweede link"
     }
   ],
   "presets": [

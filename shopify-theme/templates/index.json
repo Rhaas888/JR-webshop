@@ -4,10 +4,10 @@
       "type": "banner",
       "settings": {
         "eyebrow": "JR Intelligence",
-        "heading": "Nieuwe webshop",
-        "text": "<p>We bouwen deze webshop stap voor stap.</p>",
-        "button_label": "",
-        "button_link": ""
+        "heading": "Webshop, app of automatisering voor jouw bedrijf",
+        "text": "<p>Wij bouwen digitale oplossingen die werken. Van een professionele webshop tot een slimme app of automatisering van je processen.</p>",
+        "primary_label": "Start vandaag",
+        "secondary_label": "Bekijk onze diensten"
       }
     }
   },
