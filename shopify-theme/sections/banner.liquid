@@ -1,0 +1,75 @@
+<section class="v2-banner{% if section.settings.image != blank %} v2-banner--has-image{% endif %}">
+  {% if section.settings.image != blank %}
+    <div class="v2-banner__image" aria-hidden="true">
+      {{
+        section.settings.image
+        | image_url: width: 2400
+        | image_tag: loading: 'eager', widths: '750, 1100, 1500, 2000, 2400', sizes: '100vw'
+      }}
+    </div>
+  {% endif %}
+
+  <div class="v2-banner__content page-width">
+    {% if section.settings.eyebrow != blank %}
+      <p class="v2-banner__eyebrow">{{ section.settings.eyebrow }}</p>
+    {% endif %}
+
+    <h1>{{ section.settings.heading }}</h1>
+
+    {% if section.settings.text != blank %}
+      <div class="v2-banner__text">{{ section.settings.text }}</div>
+    {% endif %}
+
+    {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+      <a class="v2-banner__button" href="{{ section.settings.button_link }}">
+        {{ section.settings.button_label }}
+      </a>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Afbeelding"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Kleine tekst",
+      "default": "JR Intelligence"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Titel",
+      "default": "Nieuwe webshop"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Tekst",
+      "default": "<p>We bouwen deze webshop stap voor stap.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Knoptekst"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Knoplink"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner"
+    }
+  ]
+}
+{% endschema %}

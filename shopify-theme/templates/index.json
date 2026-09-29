@@ -1,46 +1,17 @@
 {
   "sections": {
-    "hero": {
-      "type": "hero",
+    "banner": {
+      "type": "banner",
       "settings": {
-        "kicker": "",
-        "title": "Webshop of app op maat voor jouw bedrijf",
-        "highlight": "op maat",
-        "description": "Wij bouwen overzichtelijke webshops en apps die passen bij hoe jullie werken. Strak ontwerp, heldere prijzen, korte lijnen.",
-        "primary_label": "Offerte aanvragen",
-        "primary_link": "/pages/contact",
-        "proof": ""
-      }
-    },
-    "services": {
-      "type": "services",
-      "settings": {}
-    },
-    "process": {
-      "type": "process",
-      "settings": {}
-    },
-    "pricing": {
-      "type": "pricing",
-      "settings": {
-        "muted": true
-      }
-    },
-    "about": {
-      "type": "about-teaser",
-      "settings": {}
-    },
-    "faq": {
-      "type": "faq",
-      "settings": {}
-    },
-    "cta": {
-      "type": "cta-band",
-      "settings": {
-        "title": "Klaar om te starten?",
-        "text": "Vertel kort wat je wilt bouwen. We reageren binnen één werkdag met een voorstel of een paar scherpe vragen."
+        "eyebrow": "JR Intelligence",
+        "heading": "Nieuwe webshop",
+        "text": "<p>We bouwen deze webshop stap voor stap.</p>",
+        "button_label": "",
+        "button_link": ""
       }
     }
   },
-  "order": ["hero", "services", "process", "pricing", "about", "faq", "cta"]
+  "order": [
+    "banner"
+  ]
 }
