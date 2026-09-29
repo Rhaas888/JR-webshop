@@ -15,6 +15,7 @@
   --page: #f8f8f8;
   --header: 76px;
   --max: 1220px;
+  --logo-row: 2.6cm;
 }
 
 *,
@@ -803,8 +804,86 @@ button {
   color: var(--green);
 }
 
-.v2-scrollpad {
-  height: 80vh;
+.logo-slider {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  height: var(--logo-row);
+  padding-left: max(28px, calc((100% - var(--max)) / 2));
+}
+
+.logo-slider__label {
+  display: flex;
+  align-items: center;
+  height: 1.5cm;
+  padding-right: 0.7cm;
+  border-right: 1px solid #e4e4e4;
+  color: #1c1e22;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.logo-slider__viewport {
+  overflow: hidden;
+  height: 100%;
+  padding-left: 0.85cm;
+  mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 1.6cm), transparent);
+}
+
+.logo-slider__track {
+  display: flex;
+  width: max-content;
+  height: 100%;
+  animation: logo-slider 46s linear infinite;
+}
+
+.logo-slider:hover .logo-slider__track,
+.logo-slider:focus-within .logo-slider__track {
+  animation-play-state: paused;
+}
+
+.logo-slider__set {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 1.8cm;
+  padding-right: 1.8cm;
+}
+
+.logo-slider__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.8cm;
+  color: #2a2c31;
+}
+
+.logo-slider__item img,
+.logo-slider__item svg {
+  display: block;
+  height: 1.7cm;
+  width: auto;
+  max-width: 4.6cm;
+  object-fit: contain;
+}
+
+.logo-slider__item a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+@keyframes logo-slider {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .site-footer {
@@ -837,7 +916,7 @@ button {
 
   .v2-hero__inner {
     grid-template-columns: minmax(520px, 0.92fr) minmax(560px, 1.08fr);
-    min-height: calc(100vh - var(--header) - 28px);
+    min-height: calc(100vh - var(--header) - var(--logo-row));
     gap: 20px;
   }
 }
@@ -845,6 +924,25 @@ button {
 @media (max-width: 1079px) {
   .page-width {
     width: min(100% - 32px, var(--max));
+  }
+
+  .logo-slider {
+    height: auto;
+    grid-template-columns: 1fr;
+    gap: 0.35cm;
+    padding-bottom: 0.45cm;
+  }
+
+  .logo-slider__label {
+    height: auto;
+    margin-left: 16px;
+    padding-right: 0;
+    border-right: 0;
+    font-size: 10px;
+  }
+
+  .logo-slider__viewport {
+    height: 2.2cm;
   }
 
   .v2-hero {
@@ -885,5 +983,17 @@ button {
   .site-menu__panel,
   .site-menu__backdrop {
     transition: none;
+  }
+
+  .logo-slider__track {
+    animation: none;
+  }
+
+  .logo-slider__set[aria-hidden="true"] {
+    display: none;
+  }
+
+  .logo-slider__viewport {
+    overflow-x: auto;
   }
 }
