@@ -37,6 +37,18 @@
     "nav_categories": "Categorieën",
     "nav_profile": "Profiel"
   },
+  "partner": {
+    "products": "Producten",
+    "orders": "Orders",
+    "collection": "Collectie",
+    "bag": "Stadstas",
+    "backpack": "Rugzak",
+    "weekend": "Weekendtas",
+    "new_collection": "Nieuwe collectie",
+    "bags_line": "Tassen voor elke dag.",
+    "view": "Bekijk diensten",
+    "contact": "Neem contact op"
+  },
   "footer": {
     "copyright": "© {{ year }} {{ shop }}"
   },

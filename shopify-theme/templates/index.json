@@ -35,10 +35,37 @@
         "logo_7",
         "logo_8"
       ]
+    },
+    "partner": {
+      "type": "partner",
+      "settings": {
+        "eyebrow": "Onze klanten",
+        "word_custom": "maatwerk",
+        "line_one": "partner voor meer",
+        "word_auto": "automatisering,",
+        "word_smart": "slimme",
+        "line_two": "apps en krachtige",
+        "line_three": "webshops",
+        "text": "<p>Wij bouwen digitale oplossingen die werken. Van een professionele webshop tot een slimme app of automatisering van je processen.</p>",
+        "chip": "Webshops",
+        "card_one_title": "Alles op maat gebouwd.",
+        "card_one_text": "Voor jouw bakkerij, werkplaats of kantoor.",
+        "point_one": "Webshops",
+        "point_two": "Apps",
+        "point_three": "Automatiseringen",
+        "card_two_title": "100% Maatwerk",
+        "quote": "Binnen enkele weken hadden we een app en alles naadloos gekoppeld. Prachtig resultaat.",
+        "quote_by": "Bakkerij de Jong",
+        "card_three_title": "360° Ondersteuning",
+        "card_three_text": "Van strategie en ontwikkeling tot hosting. Wij regelen alles van A tot Z.",
+        "place_label": "Actief vanuit",
+        "place": "Amsterdam"
+      }
     }
   },
   "order": [
     "banner",
-    "logo_slider"
+    "logo_slider",
+    "partner"
   ]
 }
