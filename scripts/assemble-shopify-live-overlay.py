@@ -34,7 +34,6 @@ ASSET_FILES = (
     "logo-jr.png",
     "logo-jr-black.png",
     "diensten-webshops.png",
-    "diensten-automatisering.png",
     "diensten-apps.png",
 )
 

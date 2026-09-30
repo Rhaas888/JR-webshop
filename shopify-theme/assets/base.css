@@ -1221,6 +1221,142 @@ button {
   height: auto;
 }
 
+.v2-services__card--flow {
+  grid-template-columns: minmax(0, 0.82fr) minmax(188px, 1.28fr);
+}
+
+.v2-flow {
+  position: relative;
+  width: 100%;
+  padding-left: 22px;
+}
+
+.v2-flow__list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.v2-flow__list::before {
+  content: "";
+  position: absolute;
+  top: 31px;
+  bottom: 31px;
+  left: -16px;
+  width: 2px;
+  border-radius: 2px;
+  background: #5ec99a;
+}
+
+.v2-flow__item {
+  position: relative;
+}
+
+.v2-flow__item::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -16px;
+  width: 16px;
+  height: 16px;
+  border-color: #5ec99a;
+  border-style: solid;
+  border-width: 0 0 2px 2px;
+  border-bottom-left-radius: 8px;
+  transform: translateY(-100%);
+}
+
+.v2-flow__item:nth-child(2)::before {
+  width: 16px;
+  height: 0;
+  border: 0;
+  border-top: 2px solid #5ec99a;
+  border-radius: 0;
+  transform: none;
+}
+
+.v2-flow__item:last-child::before {
+  border-width: 2px 0 0 2px;
+  border-radius: 0;
+  border-top-left-radius: 8px;
+  transform: none;
+}
+
+.v2-flow__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 62px;
+  padding: 8px 12px 8px 8px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(28, 42, 52, 0.08);
+}
+
+.v2-flow__mark {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+}
+
+.v2-flow__mark--gpt {
+  border-radius: 11px;
+  background: #10a37f;
+}
+
+.v2-flow__mark--gpt svg {
+  width: 24px;
+  height: 24px;
+  fill: #fff;
+}
+
+.v2-flow__mark--zap svg,
+.v2-flow__mark--sheet svg {
+  display: block;
+}
+
+.v2-flow__mark--zap svg {
+  width: 32px;
+  height: 32px;
+}
+
+.v2-flow__mark--sheet svg {
+  width: 26px;
+  height: 32px;
+}
+
+.v2-flow__copy {
+  min-width: 0;
+}
+
+.v2-flow__copy strong,
+.v2-flow__copy small {
+  display: block;
+}
+
+.v2-flow__copy strong {
+  color: #1c1f24;
+  font-size: 13.5px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+.v2-flow__copy small {
+  margin-top: 2px;
+  color: #9aa1a9;
+  font-size: 11.5px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
 .v2-services a:focus-visible {
   outline: 2px solid #09a363;
   outline-offset: 3px;
@@ -1412,9 +1548,14 @@ button {
     margin-top: 8px;
   }
 
-  .v2-services__art img {
+  .v2-services__art img,
+  .v2-services__art .v2-flow {
     width: min(100%, 280px);
     margin-left: auto;
+  }
+
+  .v2-services__card--flow {
+    grid-template-columns: 1fr;
   }
 }
 
