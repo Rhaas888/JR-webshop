@@ -31,16 +31,14 @@ jobs:
         with:
           node-version: 20
 
-      - name: Assemble live theme
-        run: python3 scripts/assemble-shopify-live-overlay.py
-
       - name: Install Shopify CLI
         run: npm install -g @shopify/cli
 
-      - name: Upload theme
+      - name: Remove the old homepage template
         env:
           SHOPIFY_FLAG_FORCE: "1"
         run: |
+          python3 scripts/assemble-shopify-live-overlay.py --skip-homepage
           shopify theme push \
             --json \
             --allow-live \
@@ -48,4 +46,22 @@ jobs:
             --path shopify-live-overlay \
             --theme "${{ secrets.SHOPIFY_THEME_ID }}" \
             --store "${{ secrets.SHOPIFY_FLAG_STORE }}" \
-            --password "${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}"
+            --password "${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}" \
+            | tee /tmp/theme-push-clear.txt
+          python3 scripts/check-theme-push.py /tmp/theme-push-clear.txt
+
+      - name: Upload the new homepage
+        env:
+          SHOPIFY_FLAG_FORCE: "1"
+        run: |
+          cp shopify-theme/templates/index.json shopify-live-overlay/templates/index.json
+          shopify theme push \
+            --json \
+            --allow-live \
+            --ignore UPLOAD.txt \
+            --path shopify-live-overlay \
+            --theme "${{ secrets.SHOPIFY_THEME_ID }}" \
+            --store "${{ secrets.SHOPIFY_FLAG_STORE }}" \
+            --password "${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}" \
+            | tee /tmp/theme-push-home.txt
+          python3 scripts/check-theme-push.py /tmp/theme-push-home.txt

@@ -7,6 +7,7 @@ This overlay keeps that theme and replaces only the homepage with the V2 design.
 
 from __future__ import annotations
 
+import argparse
 import json
 import shutil
 import subprocess
@@ -123,7 +124,27 @@ def merge_locale(base: object, overlay: object) -> object:
     return overlay
 
 
+def patch_support_url() -> None:
+    schema_path = OUT / "config" / "settings_schema.json"
+    schema = json.loads(schema_path.read_text())
+    for block in schema:
+        if not isinstance(block, dict):
+            continue
+        support = block.get("theme_support_url")
+        if isinstance(support, str) and support.startswith("mailto:"):
+            block["theme_support_url"] = "https://jr-intelligence.com"
+    schema_path.write_text(json.dumps(schema, ensure_ascii=False, indent=2) + "\n")
+
+
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--skip-homepage",
+        action="store_true",
+        help="Leave the homepage template out so Shopify can delete the old index.liquid first.",
+    )
+    args = parser.parse_args()
+
     ref = git_ref()
     extract_main_theme(ref)
 
@@ -143,7 +164,8 @@ def main() -> None:
     for name in ASSET_FILES:
         shutil.copy2(V2 / "assets" / name, OUT / "assets" / name)
 
-    shutil.copy2(V2 / "templates" / "index.json", OUT / "templates" / "index.json")
+    if not args.skip_homepage:
+        shutil.copy2(V2 / "templates" / "index.json", OUT / "templates" / "index.json")
 
     v2_layout = (V2 / "layout" / "theme.liquid").read_text()
     v2_layout = v2_layout.replace("{% section 'header' %}", "{% render 'header-v2' %}")
@@ -157,8 +179,13 @@ def main() -> None:
     locale_path.write_text(
         json.dumps(merge_locale(current, incoming), ensure_ascii=False, indent=2) + "\n"
     )
+    patch_support_url()
 
-    missing = [path for path in REQUIRED if not (OUT / path).exists()]
+    required = REQUIRED
+    if args.skip_homepage:
+        required = tuple(path for path in REQUIRED if path != "templates/index.json")
+
+    missing = [path for path in required if not (OUT / path).exists()]
     if missing:
         raise SystemExit("Live overlay is incomplete:\n" + "\n".join(missing))
 
