@@ -22,6 +22,7 @@ SECTION_FILES = (
     "banner.liquid",
     "logo-slider.liquid",
     "partner.liquid",
+    "services.liquid",
 )
 
 ASSET_FILES = (
@@ -32,6 +33,9 @@ ASSET_FILES = (
     "inter-latin.woff2",
     "logo-jr.png",
     "logo-jr-black.png",
+    "diensten-webshops.png",
+    "diensten-automatisering.png",
+    "diensten-apps.png",
 )
 
 REQUIRED = (
@@ -46,6 +50,8 @@ REQUIRED = (
     "sections/main-product.liquid",
     "sections/main-cart.liquid",
     "sections/banner.liquid",
+    "sections/services.liquid",
+    "assets/diensten-webshops.png",
     "snippets/header-v2.liquid",
     "snippets/footer-v2.liquid",
     "snippets/logo-mark.liquid",

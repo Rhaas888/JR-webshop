@@ -61,11 +61,31 @@
         "place_label": "Actief vanuit",
         "place": "Amsterdam"
       }
+    },
+    "services": {
+      "type": "services",
+      "settings": {
+        "eyebrow": "Onze diensten",
+        "heading": "Alles voor online groei en lokale vindbaarheid",
+        "text": "<p>Wij bouwen en ontwikkelen digitale oplossingen die jouw bedrijf helpen groeien. Van websites en webshops tot automatiseringen en krachtige apps.</p>",
+        "button_label": "Ontdek hoe we je helpen",
+        "more_label": "Meer informatie",
+        "card_one_kicker": "Websites & webshops",
+        "card_one_title": "Websites en webshops laten maken",
+        "card_one_text": "Een snelle, professionele website of webshop die goed vindbaar is en bezoekers overtuigt om contact op te nemen.",
+        "card_two_kicker": "Automatiseringen",
+        "card_two_title": "Processen slimmer maken",
+        "card_two_text": "Wij automatiseren terugkerende taken en koppelen je systemen, zodat je tijd bespaart en efficiënter kunt werken.",
+        "card_three_kicker": "Apps",
+        "card_three_title": "Slimme apps op maat",
+        "card_three_text": "Van idee tot app in de store. Wij bouwen gebruiksvriendelijke en schaalbare apps die perfect aansluiten op jouw doelen."
+      }
     }
   },
   "order": [
     "banner",
     "logo_slider",
-    "partner"
+    "partner",
+    "services"
   ]
 }
