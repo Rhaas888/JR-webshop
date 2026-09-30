@@ -29,7 +29,6 @@ ASSET_FILES = (
     "base.css",
     "header.js",
     "banner-devices.png",
-    "partner-devices.png",
     "inter-latin.woff2",
     "logo-jr.png",
     "logo-jr-black.png",
@@ -53,6 +52,7 @@ REQUIRED = (
     "snippets/footer-v2.liquid",
     "snippets/logo-mark.liquid",
     "snippets/v2-chair.liquid",
+    "snippets/v2-jacket.liquid",
     "assets/base.css",
     "assets/jr.css",
 )
@@ -165,6 +165,7 @@ def main() -> None:
     (OUT / "snippets" / "footer-v2.liquid").write_text(footer)
     shutil.copy2(V2 / "snippets" / "logo-mark.liquid", OUT / "snippets" / "logo-mark.liquid")
     shutil.copy2(V2 / "snippets" / "v2-chair.liquid", OUT / "snippets" / "v2-chair.liquid")
+    shutil.copy2(V2 / "snippets" / "v2-jacket.liquid", OUT / "snippets" / "v2-jacket.liquid")
 
     for name in ASSET_FILES:
         shutil.copy2(V2 / "assets" / name, OUT / "assets" / name)

@@ -40,13 +40,51 @@
         </a>
 
         <div class="v2-partner__stage" aria-hidden="true">
-          <img
-            class="v2-partner__devices"
-            src="{{ 'partner-devices.png' | asset_url }}"
-            alt=""
-            width="281"
-            height="160"
-          >
+          <div class="v2-pair">
+            <div class="v2-pair__laptop">
+              <div class="v2-pair__lid">
+                <i class="v2-pair__cam"></i>
+                <div class="v2-pair__screen">
+                  <div class="v2-admin">
+                    <aside class="v2-admin__side">
+                      <b></b>
+                      <i></i>
+                      <i class="is-on"></i>
+                      <i></i>
+                      <i></i>
+                    </aside>
+                    <div class="v2-admin__main">
+                      <div class="v2-admin__note">
+                        <span></span>
+                        <span></span>
+                      </div>
+                      <div class="v2-admin__grid">
+                        <span>{% render 'v2-jacket' %}</span>
+                        <span>{% render 'v2-jacket' %}</span>
+                        <span>{% render 'v2-jacket' %}</span>
+                        <span>{% render 'v2-jacket' %}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="v2-pair__phone">
+              <i class="v2-pair__island"></i>
+              <div class="v2-pair__phone-screen">
+                <div class="v2-storefront">
+                  <p>9:41</p>
+                  <div class="v2-storefront__hero">
+                    {% render 'v2-jacket' %}
+                  </div>
+                  <div class="v2-storefront__row">
+                    <span>{% render 'v2-jacket' %}</span>
+                    <span>{% render 'v2-jacket' %}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="v2-partner__sheet">
