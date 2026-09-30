@@ -6,8 +6,9 @@ Een schone Shopify-theme voor de nieuwe JR Intelligence-webshop.
 
 - De oude webshop staat veilig op `main` in de bestaande repository.
 - V2 staat los op de branch `cursor/jrwebshop-v2-a69a`.
-- Er is bewust geen automatische live-deploy ingesteld.
-- Werk eerst met een niet-gepubliceerde Shopify-theme.
+- Een push van deze branch zet de nieuwe homepage live op de bestaande Shopify-theme.
+- Producten, winkelwagen, account en de bestaande pagina's blijven staan.
+- Publiceer de losse V2-theme pas wanneer de volledige webshop klaar is.
 
 ## Samenwerken
 

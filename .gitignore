@@ -4,3 +4,5 @@ node_modules
 *.log
 .env
 .env.*
+shopify-live-overlay/
+shopify-theme/index.html
