@@ -188,6 +188,72 @@
         "review_4",
         "review_5"
       ]
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {
+        "heading": "Veelgestelde vragen",
+        "text": "Alles wat je wilt weten over samenwerken met ons."
+      },
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Wat doet JR Intelligence als online marketingbureau?",
+            "answer": "We bouwen websites, webshops en apps, en helpen je gevonden te worden. Je hebt direct contact met ons."
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Kan ik bij JR Intelligence een website laten maken?",
+            "answer": "Ja. We bouwen een site die past bij jouw bedrijf. Geen standaard template."
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Kan ik ook een webshop laten maken?",
+            "answer": "Ja. Een webshop op maat, zodat jij zelf producten kunt toevoegen."
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "Hoe helpt SEO mijn bedrijf lokaal beter vindbaar te maken?",
+            "answer": "Je komt vaker naar voren als mensen in de buurt zoeken naar wat jij doet."
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "question": "Kan ik Google Ads en social media advertenties laten doen?",
+            "answer": "Ja. We zetten de campagnes op en houden ze bij, zodat je ziet wat het oplevert."
+          }
+        },
+        "q6": {
+          "type": "question",
+          "settings": {
+            "question": "Kan ik short-form video's laten maken voor social media?",
+            "answer": "Ja. Korte video's voor Instagram, TikTok en YouTube."
+          }
+        },
+        "q7": {
+          "type": "question",
+          "settings": {
+            "question": "Hoe ziet een samenwerking met JR Intelligence eruit?",
+            "answer": "Je spreekt met ons, we bouwen het, en jij houdt zelf de toegang."
+          }
+        },
+        "q8": {
+          "type": "question",
+          "settings": {
+            "question": "Wat kost online marketing of een nieuwe website?",
+            "answer": "Je hoort vooraf wat het kost. Geen verrassing achteraf."
+          }
+        }
+      },
+      "block_order": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8"]
     }
   },
   "order": [
@@ -197,6 +263,7 @@
     "services",
     "marketing",
     "ribbon",
-    "reviews"
+    "reviews",
+    "faq"
   ]
 }

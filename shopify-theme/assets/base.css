@@ -37,6 +37,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+::selection {
+  background: var(--green-dark);
+  color: #fff;
+}
+
 body.menu-open {
   overflow: hidden;
 }
@@ -3021,6 +3026,96 @@ button {
   color: #fff;
 }
 
+.v2-faq {
+  background: #fff;
+  padding: 36px 0 96px;
+}
+
+.v2-faq__head {
+  text-align: center;
+}
+
+.v2-faq__head h2 {
+  margin: 0;
+  color: #111;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 650;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.v2-faq__head p {
+  max-width: 460px;
+  margin: 14px auto 0;
+  color: #8d9298;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.v2-faq__list {
+  display: grid;
+  gap: 12px;
+  width: min(100%, 980px);
+  margin: 36px auto 0;
+}
+
+.v2-faq__item {
+  border-radius: 18px;
+  background: #eceae6;
+  padding: 18px 18px 18px 26px;
+}
+
+.v2-faq__item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  color: #17191c;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+  list-style: none;
+  cursor: pointer;
+}
+
+.v2-faq__item summary::-webkit-details-marker {
+  display: none;
+}
+
+.v2-faq__plus {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  flex: none;
+  place-items: center;
+  border-radius: 999px;
+  background: #fff;
+  color: #161616;
+}
+
+.v2-faq__plus svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+}
+
+.v2-faq__item[open] .v2-faq__plus {
+  color: var(--green);
+}
+
+.v2-faq__item p {
+  max-width: 68ch;
+  margin: 14px 62px 6px 0;
+  color: #3a3d42;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
 @media (max-width: 860px) {
   .v2-market { padding: 64px 0 80px; }
   .v2-market__curve--right { display: none; }
@@ -3043,6 +3138,10 @@ button {
   .v2-reviews__summary,
   .v2-reviews__card { min-height: 0; }
   .v2-reviews__score strong { font-size: 60px; }
+  .v2-faq { padding: 24px 0 72px; }
+  .v2-faq__item { padding: 16px; }
+  .v2-faq__item summary { font-size: 16px; }
+  .v2-faq__item p { margin-right: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
