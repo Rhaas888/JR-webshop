@@ -1711,6 +1711,12 @@ button {
   margin-left: auto;
 }
 
+.v2-services__art .v2-services__phone {
+  width: min(100%, 320px);
+  height: auto;
+  margin-left: auto;
+}
+
 .v2-shop {
   position: relative;
   width: 100%;
