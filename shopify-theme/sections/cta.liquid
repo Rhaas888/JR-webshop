@@ -1,0 +1,81 @@
+<section class="v2-cta">
+  <svg class="v2-cta__curve v2-cta__curve--right" viewBox="0 0 240 150" fill="none" aria-hidden="true">
+    <path d="M8 28C70 8 150 36 232 138" stroke="#9ed9c0" stroke-width="1.6"/>
+  </svg>
+  <svg class="v2-cta__curve v2-cta__curve--left" viewBox="0 0 150 180" fill="none" aria-hidden="true">
+    <path d="M130 12C48 48 18 110 78 168" stroke="#9ed9c0" stroke-width="1.6"/>
+  </svg>
+
+  <div class="page-width">
+    <div class="v2-cta__card">
+      <svg class="v2-cta__line" viewBox="0 0 280 180" fill="none" aria-hidden="true">
+        <path d="M20 150C70 40 150 18 270 36" stroke="#9ed9c0" stroke-width="1.6"/>
+      </svg>
+
+      <div class="v2-cta__copy">
+        <p class="v2-cta__trust">
+          Vertrouwd door <b>250+</b> merken
+          <span class="v2-avas" aria-hidden="true">
+            <i class="v2-ava v2-ava--a"></i>
+            <i class="v2-ava v2-ava--b"></i>
+            <i class="v2-ava v2-ava--c"></i>
+          </span>
+        </p>
+        <h2>Klaar om lokaal beter gevonden te worden en online te groeien?</h2>
+        <p class="v2-cta__lead">Vertel ons waar je naartoe wilt. Dan laten we jouw website, webshop, SEO, short-form content en campagnes samenwerken in één helder groeiplan.</p>
+        <a class="v2-cta__btn" href="{{ section.settings.button_link | default: '/pages/contact' }}">
+          {{ section.settings.button_label }}
+          <span aria-hidden="true">
+            <svg viewBox="0 0 16 16"><path d="M4.2 11.8 12 4M7 4h5v5"/></svg>
+          </span>
+        </a>
+      </div>
+
+      <div class="v2-cta__pc" aria-hidden="true">
+        <div class="v2-cta__laptop">
+          <div class="v2-cta__lid">
+            <div class="v2-cta__bezel">
+              <i class="v2-cta__cam"></i>
+              <div class="v2-cta__screen">
+                <div class="v2-cta__ui">
+                  <header></header>
+                  <p></p>
+                  <p></p>
+                  <div>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="v2-cta__base"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Kennismaking",
+  "settings": [
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Knop",
+      "default": "Plan een kennismaking"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Knoplink"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Kennismaking"
+    }
+  ]
+}
+{% endschema %}

@@ -254,6 +254,12 @@
         }
       },
       "block_order": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8"]
+    },
+    "cta": {
+      "type": "cta",
+      "settings": {
+        "button_label": "Plan een kennismaking"
+      }
     }
   },
   "order": [
@@ -264,6 +270,7 @@
     "marketing",
     "ribbon",
     "reviews",
-    "faq"
+    "faq",
+    "cta"
   ]
 }
