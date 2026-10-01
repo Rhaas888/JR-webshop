@@ -63,7 +63,6 @@
     "partner": {
       "type": "partner",
       "settings": {
-        "eyebrow": "Onze klanten",
         "word_custom": "maatwerk",
         "line_one": "partner voor meer",
         "word_auto": "automatisering,",
