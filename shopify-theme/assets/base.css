@@ -1705,6 +1705,12 @@ button {
   height: auto;
 }
 
+.v2-services__art .v2-services__shot {
+  width: min(100%, 420px);
+  height: auto;
+  margin-left: auto;
+}
+
 .v2-shop {
   position: relative;
   width: 100%;
