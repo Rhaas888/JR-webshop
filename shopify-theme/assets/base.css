@@ -3475,6 +3475,7 @@ button {
   border-radius: 999px;
   background: #fff;
   color: #161616;
+  transition: background-color 0.35s ease, color 0.35s ease;
 }
 
 .v2-faq__plus svg {
@@ -3486,13 +3487,19 @@ button {
   stroke-linecap: round;
 }
 
+.v2-faq__plus svg path {
+  transform-box: view-box;
+  transform-origin: center;
+  transition: transform 0.35s ease;
+}
+
 .v2-faq__item[open] .v2-faq__plus {
   background: var(--green);
   color: #fff;
 }
 
 .v2-faq__item[open] .v2-faq__plus svg path:first-child {
-  display: none;
+  transform: rotate(90deg);
 }
 
 .v2-faq__item p {
@@ -3820,6 +3827,11 @@ button {
 
   .v2-breathe {
     animation: none;
+  }
+
+  .v2-faq__plus,
+  .v2-faq__plus svg path {
+    transition: none;
   }
 }
 
