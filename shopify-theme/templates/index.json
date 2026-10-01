@@ -105,21 +105,20 @@
         "card_three_text": "Van idee tot app in de store. Wij bouwen gebruiksvriendelijke en schaalbare apps die perfect aansluiten op jouw doelen."
       }
     },
-    "growth": {
-      "type": "growth",
+    "marketing": {
+      "type": "marketing",
       "settings": {
-        "eyebrow": "Online groei",
+        "eyebrow": "Online marketing",
         "heading": "Meer bereik, meer klanten en meetbare online groei",
-        "text": "<p>Als jouw full-service online marketingpartner combineren we creativiteit, techniek en data voor een aanpak die bij jouw bedrijf past en zichtbaar resultaat oplevert.</p>",
-        "more_label": "Meer informatie",
+        "text": "Als jouw full-service online marketingpartner combineren we creativiteit, techniek en data voor een aanpak die bij jouw bedrijf past en zichtbaar resultaat oplevert.",
         "card_one_title": "Google Ads",
         "card_one_text": "Bereik mensen die actief naar jouw aanbod zoeken met doelgerichte campagnes, sterke advertenties en continue optimalisatie.",
-        "card_two_title": "Automatiseringen",
-        "card_two_text": "Bespaart tijd en werk door slimme automatiseringen. We koppelen tools, systemen en processen zodat alles vanzelf gaat.",
-        "card_three_title": "Apps op maat",
-        "card_three_text": "Van idee tot een gebruiksvriendelijke en krachtige app. Wij ontwikkelen apps die perfect aansluiten op jouw doelen en doelgroep.",
-        "card_four_title": "Websites & Webshops laten maken",
-        "card_four_text": "Een snelle, professionele website of webshop die goed vindbaar is en bezoekers overtuigt om contact op te nemen of te kopen."
+        "card_two_title": "Short-form videocontent",
+        "card_two_text": "Val op met korte, krachtige video's voor Instagram, TikTok en YouTube die bereik, herkenning en interactie vergroten.",
+        "card_three_title": "Social media advertenties",
+        "card_three_text": "Zet Meta en andere sociale kanalen slim in om jouw doelgroep te bereiken, leads te verzamelen en verkopen te stimuleren.",
+        "card_four_title": "Full-service groeistrategie",
+        "card_four_text": "Verbind je website, SEO, content en paid advertising in één meetbare aanpak die past bij jouw doelen en groeifase."
       }
     }
   },
@@ -128,6 +127,6 @@
     "logo_slider",
     "partner",
     "services",
-    "growth"
+    "marketing"
   ]
 }
