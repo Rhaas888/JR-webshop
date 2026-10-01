@@ -3416,6 +3416,13 @@ button {
   height: 170px;
 }
 
+@media (min-width: 861px) {
+  .v2-cta > .page-width {
+    width: calc(100% - 32px);
+    max-width: none;
+  }
+}
+
 .v2-cta__card {
   position: relative;
   z-index: 1;
