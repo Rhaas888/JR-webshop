@@ -13,7 +13,7 @@
     "logo_slider": {
       "type": "logo-slider",
       "settings": {
-        "label": "Onze klanten"
+        "label": "Onze klanten:"
       },
       "blocks": {
         "logo_1": {
