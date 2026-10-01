@@ -2529,6 +2529,11 @@ button {
   line-height: 1.02;
 }
 
+.v2-market h2 b {
+  color: #09a363;
+  font-weight: inherit;
+}
+
 .v2-market__lead {
   max-width: 640px;
   margin: 18px auto 0;
