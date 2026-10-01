@@ -3378,7 +3378,8 @@ button {
 }
 
 .v2-faq__item[open] .v2-faq__plus {
-  color: var(--green);
+  background: var(--green);
+  color: #fff;
 }
 
 .v2-faq__item p {
