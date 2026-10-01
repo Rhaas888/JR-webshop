@@ -1237,7 +1237,7 @@ button {
   width: min(100% - 72px, 1320px);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(500px, 1.7fr) repeat(3, minmax(0, 0.92fr));
+  grid-template-columns: minmax(500px, 1.7fr) repeat(2, minmax(0, 0.92fr));
   column-gap: 36px;
   align-items: start;
   padding: 40px 0 22px;
