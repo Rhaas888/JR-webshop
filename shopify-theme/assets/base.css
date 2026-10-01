@@ -3382,6 +3382,10 @@ button {
   color: #fff;
 }
 
+.v2-faq__item[open] .v2-faq__plus svg path:first-child {
+  display: none;
+}
+
 .v2-faq__item p {
   max-width: 68ch;
   margin: 14px 62px 6px 0;
