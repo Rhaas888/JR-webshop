@@ -2100,14 +2100,16 @@ button {
 }
 
 .v2-flow__mark--gpt {
+  overflow: hidden;
   border-radius: 11px;
-  background: #10a37f;
+  background: #0ea982;
 }
 
-.v2-flow__mark--gpt svg {
-  width: 24px;
-  height: 24px;
-  fill: #fff;
+.v2-flow__mark.v2-flow__mark--gpt img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .v2-flow__mark--zap svg,
