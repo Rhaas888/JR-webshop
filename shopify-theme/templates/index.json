@@ -120,6 +120,10 @@
         "card_four_title": "Full-service groeistrategie",
         "card_four_text": "Verbind je website, SEO, content en paid advertising in één meetbare aanpak die past bij jouw doelen en groeifase."
       }
+    },
+    "ribbon": {
+      "type": "ribbon",
+      "settings": {}
     }
   },
   "order": [
@@ -127,6 +131,7 @@
     "logo_slider",
     "partner",
     "services",
-    "marketing"
+    "marketing",
+    "ribbon"
   ]
 }
