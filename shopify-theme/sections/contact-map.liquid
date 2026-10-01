@@ -1,0 +1,58 @@
+<section class="main-page page-width contact-page">
+  <h1>{{ page.title }}</h1>
+
+  {%- if page.content != blank -%}
+    <div class="contact-page__body">
+      {{ page.content }}
+    </div>
+  {%- endif -%}
+
+  {%- liquid
+    assign map_address = section.settings.address
+    if map_address == blank
+      assign map_address = 'Leeghwaterstraat 25, 2811 DT Reeuwijk'
+    endif
+    assign map_lat = '52.039319'
+    assign map_lng = '4.714218'
+    assign map_zoom = '16'
+  -%}
+
+  <div class="contact-map" id="kaart">
+    <div class="contact-map__frame">
+      <iframe
+        title="Kaart van {{ map_address | escape }}"
+        src="https://maps.google.com/maps?hl=nl&amp;ll={{ map_lat }},{{ map_lng }}&amp;z={{ map_zoom }}&amp;t=m&amp;output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+      <span class="contact-map__pin" aria-hidden="true">
+        <svg viewBox="0 0 32 44" width="32" height="44">
+          <path fill="#08924f" d="M16 0C7.16 0 0 7.16 0 16c0 11.2 16 28 16 28s16-16.8 16-28C32 7.16 24.84 0 16 0z"/>
+          <circle cx="16" cy="15.5" r="6.2" fill="#fff"/>
+        </svg>
+      </span>
+      <a
+        class="contact-map__open"
+        href="https://www.google.com/maps/search/?api=1&amp;query={{ map_address | url_encode }}"
+        target="_blank"
+        rel="noopener"
+        aria-label="Open {{ map_address | escape }} in Google Maps"
+      ></a>
+    </div>
+    <p class="contact-map__address">{{ map_address }}</p>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contactkaart",
+  "settings": [
+    {
+      "type": "text",
+      "id": "address",
+      "label": "Adres",
+      "default": "Leeghwaterstraat 25, 2811 DT Reeuwijk"
+    }
+  ]
+}
+{% endschema %}
