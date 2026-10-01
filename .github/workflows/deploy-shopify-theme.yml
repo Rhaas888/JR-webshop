@@ -6,7 +6,6 @@ on:
       - cursor/jrwebshop-v2-a69a
     paths:
       - "shopify-theme/**"
-      - "scripts/assemble-shopify-live-overlay.py"
       - ".github/workflows/deploy-shopify-theme.yml"
   workflow_dispatch:
 
@@ -19,13 +18,10 @@ permissions:
 
 jobs:
   deploy:
-    name: Push the V2 homepage onto the live theme
+    name: Push the new theme live
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Fetch the current live theme
-        run: git fetch origin main --depth=1
 
       - uses: actions/setup-node@v4
         with:
@@ -34,32 +30,35 @@ jobs:
       - name: Install Shopify CLI
         run: npm install -g @shopify/cli
 
-      - name: Remove the old homepage template
+      - name: Remove the old shop files
         env:
           SHOPIFY_FLAG_FORCE: "1"
         run: |
-          python3 scripts/assemble-shopify-live-overlay.py --skip-homepage
+          rm -rf shopify-live-theme
+          mkdir -p shopify-live-theme
+          rsync -a --exclude index.html shopify-theme/ shopify-live-theme/
+          rm -f shopify-live-theme/templates/index.json
           shopify theme push \
             --json \
             --allow-live \
             --ignore UPLOAD.txt \
-            --path shopify-live-overlay \
+            --path shopify-live-theme \
             --theme "${{ secrets.SHOPIFY_THEME_ID }}" \
             --store "${{ secrets.SHOPIFY_FLAG_STORE }}" \
             --password "${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}" \
             | tee /tmp/theme-push-clear.txt
           python3 scripts/check-theme-push.py /tmp/theme-push-clear.txt
 
-      - name: Upload the new homepage
+      - name: Upload the homepage
         env:
           SHOPIFY_FLAG_FORCE: "1"
         run: |
-          cp shopify-theme/templates/index.json shopify-live-overlay/templates/index.json
+          cp shopify-theme/templates/index.json shopify-live-theme/templates/index.json
           shopify theme push \
             --json \
             --allow-live \
             --ignore UPLOAD.txt \
-            --path shopify-live-overlay \
+            --path shopify-live-theme \
             --theme "${{ secrets.SHOPIFY_THEME_ID }}" \
             --store "${{ secrets.SHOPIFY_FLAG_STORE }}" \
             --password "${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}" \

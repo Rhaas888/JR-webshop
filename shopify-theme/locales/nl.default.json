@@ -54,7 +54,7 @@
   },
   "not_found": {
     "title": "Pagina niet gevonden",
-    "text": "Deze pagina bestaat niet meer of is verplaatst.",
+    "text": "Deze pagina is er nog niet.",
     "link": "Terug naar home"
   }
 }

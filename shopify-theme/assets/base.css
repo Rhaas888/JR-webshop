@@ -1868,6 +1868,36 @@ button {
   outline-offset: 3px;
 }
 
+.not-found,
+.main-page {
+  padding: 72px 0 96px;
+}
+
+.not-found h1,
+.main-page h1 {
+  margin: 0;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.not-found p,
+.main-page p {
+  max-width: 36rem;
+  margin: 14px 0 0;
+  color: #5c6570;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.not-found a {
+  display: inline-flex;
+  margin-top: 22px;
+  color: var(--green);
+  font-weight: 650;
+}
+
 @media (min-width: 1080px) {
   .site-header__inner {
     grid-template-columns: 1fr auto 1fr;
