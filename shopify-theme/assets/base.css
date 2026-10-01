@@ -3147,6 +3147,10 @@ button {
   color: #fff;
 }
 
+.v2-reviews__summary.is-hidden {
+  display: none;
+}
+
 .v2-reviews__card {
   background: #fff;
   color: #17191c;

@@ -14,8 +14,7 @@
     </header>
 
     <div class="v2-reviews__board">
-      <div class="v2-reviews__list" data-review-list>
-        <article class="v2-reviews__summary">
+      <article class="v2-reviews__summary" data-review-summary>
           <p class="v2-reviews__brand">
             {% render 'google-mark' %}
             Google Reviews
@@ -37,8 +36,9 @@
               <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.2 11.8 12 4M7 4h5v5"/></svg>
             </span>
           {%- endif -%}
-        </article>
+      </article>
 
+      <div class="v2-reviews__list" data-review-list>
         {%- for block in section.blocks -%}
           <article class="v2-reviews__card" {{ block.shopify_attributes }}>
             <div class="v2-reviews__top">
@@ -68,16 +68,29 @@
     var root = document.getElementById('reviews-{{ section.id }}');
     if (!root) return;
     var list = root.querySelector('[data-review-list]');
+    var summary = root.querySelector('[data-review-summary]');
     if (!list) return;
+    var index = 0;
+    var total = list.children.length;
+
+    function showPage() {
+      if (!summary) return;
+      var first = index === 0;
+      summary.classList.toggle('is-hidden', !first);
+      summary.setAttribute('aria-hidden', first ? 'false' : 'true');
+    }
 
     function shift(forward) {
       var cards = list.children;
       if (cards.length < 2) return;
       if (forward) {
         list.appendChild(cards[0]);
+        index = (index + 1) % total;
       } else {
         list.insertBefore(cards[cards.length - 1], cards[0]);
+        index = (index + total - 1) % total;
       }
+      showPage();
     }
 
     root.querySelector('[data-prev]').addEventListener('click', function () {
