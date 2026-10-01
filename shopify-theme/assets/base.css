@@ -358,10 +358,10 @@ button {
   height: 1.5cm;
   padding-right: 0.7cm;
   border-right: 1px solid #e4e4e4;
-  color: #1c1e22;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
+  color: var(--green);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   white-space: nowrap;
 }
@@ -2240,7 +2240,7 @@ button {
     margin-left: 16px;
     padding-right: 0;
     border-right: 0;
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .logo-slider__viewport {
