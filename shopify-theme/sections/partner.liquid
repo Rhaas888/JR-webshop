@@ -92,6 +92,9 @@
             <p>{{ section.settings.card_one_text }}</p>
             <ul>
               <li>{{ section.settings.point_one }}</li>
+              {%- if section.settings.point_four != blank -%}
+                <li>{{ section.settings.point_four }}</li>
+              {%- endif -%}
               <li>{{ section.settings.point_two }}</li>
               <li>{{ section.settings.point_three }}</li>
             </ul>
@@ -170,8 +173,9 @@
     { "type": "text", "id": "card_one_title", "label": "Kaart 1 titel", "default": "Alles op maat gebouwd." },
     { "type": "text", "id": "card_one_text", "label": "Kaart 1 tekst", "default": "Voor jouw bakkerij, werkplaats of kantoor." },
     { "type": "text", "id": "point_one", "label": "Punt 1", "default": "Webshops" },
-    { "type": "text", "id": "point_two", "label": "Punt 2", "default": "Apps" },
-    { "type": "text", "id": "point_three", "label": "Punt 3", "default": "Automatiseringen" },
+    { "type": "text", "id": "point_four", "label": "Punt 2", "default": "Websites" },
+    { "type": "text", "id": "point_two", "label": "Punt 3", "default": "Apps" },
+    { "type": "text", "id": "point_three", "label": "Punt 4", "default": "Automatiseringen" },
     { "type": "url", "id": "services_link", "label": "Link naar diensten" },
     { "type": "text", "id": "card_two_title", "label": "Kaart 2 titel", "default": "100% Maatwerk" },
     { "type": "textarea", "id": "quote", "label": "Citaat", "default": "Binnen enkele weken hadden we een app en alles naadloos gekoppeld. Prachtig resultaat." },
