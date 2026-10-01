@@ -124,6 +124,70 @@
     "ribbon": {
       "type": "ribbon",
       "settings": {}
+    },
+    "reviews": {
+      "type": "reviews",
+      "settings": {
+        "heading": "Wat klanten over JR Intelligence zeggen",
+        "text": "Lees waarom klanten graag met ons werken.",
+        "score": "5,0",
+        "score_note": "Gebaseerd op Google-beoordelingen",
+        "button_label": "Bekijk alle reviews"
+      },
+      "blocks": {
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "quote": "Binnen een paar weken stond onze webshop online. Helder, en hij doet precies wat we nodig hebben.",
+            "name": "Bakkerij de Jong",
+            "initials": "BJ",
+            "date": "maart 2026"
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "quote": "Fijn samenwerken. Korte lijnen, en de app maakt onze planning een stuk rustiger.",
+            "name": "Studio Noord",
+            "initials": "SN",
+            "date": "januari 2026"
+          }
+        },
+        "review_3": {
+          "type": "review",
+          "settings": {
+            "quote": "Onze bestellingen en voorraad lopen nu samen. Scheelt elke week een hoop overtikken.",
+            "name": "Atelier Lindev",
+            "initials": "AL",
+            "date": "november 2025"
+          }
+        },
+        "review_4": {
+          "type": "review",
+          "settings": {
+            "quote": "Goede webshop en vriendelijk contact. We snappen zelf hoe we producten aanpassen.",
+            "name": "Petra H.",
+            "initials": "PH",
+            "date": "september 2025"
+          }
+        },
+        "review_5": {
+          "type": "review",
+          "settings": {
+            "quote": "Voor twee klanten een website laten maken. Netjes opgeleverd, en we houden hem zelf bij.",
+            "name": "Mark de Wit",
+            "initials": "MW",
+            "date": "juni 2025"
+          }
+        }
+      },
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3",
+        "review_4",
+        "review_5"
+      ]
     }
   },
   "order": [
@@ -132,6 +196,7 @@
     "partner",
     "services",
     "marketing",
-    "ribbon"
+    "ribbon",
+    "reviews"
   ]
 }
