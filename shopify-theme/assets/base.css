@@ -2707,8 +2707,8 @@ button {
 
 .v2-ribbon {
   position: relative;
-  height: 148px;
-  margin-top: -12px;
+  height: 286px;
+  margin-top: 8px;
   overflow: hidden;
   background: #fff;
 }
@@ -2719,35 +2719,30 @@ button {
   display: flex;
   align-items: center;
   width: 116%;
-  height: 54px;
+  height: 128px;
   overflow: hidden;
 }
 
 .v2-ribbon__band--dark {
-  top: 18px;
+  top: 12px;
   z-index: 2;
   background: #111;
   color: #fff;
-  transform: rotate(-1.25deg);
+  transform: rotate(-1.35deg);
 }
 
 .v2-ribbon__band--green {
-  top: 64px;
+  top: 118px;
   z-index: 1;
   background: var(--green);
   color: #111;
-  transform: rotate(-1.25deg);
+  transform: rotate(-1.35deg);
 }
 
 .v2-ribbon__track {
   display: flex;
   width: max-content;
-  animation: v2-ribbon 42s linear infinite;
-}
-
-.v2-ribbon__track--reverse {
-  animation-duration: 48s;
-  animation-direction: reverse;
+  transform: translateX(-4%);
 }
 
 .v2-ribbon__set {
@@ -2758,40 +2753,35 @@ button {
 .v2-ribbon__item {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  padding: 0 26px;
+  gap: 16px;
+  padding: 0 34px;
   font-family: Inter, ui-sans-serif, system-ui, sans-serif;
-  font-size: 22px;
+  font-size: 64px;
   font-weight: 500;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   line-height: 1;
   white-space: nowrap;
 }
 
 .v2-ribbon__mark {
   display: inline-flex;
-  margin-right: 4px;
+  margin-right: 8px;
 }
 
 .v2-ribbon__mark svg {
-  width: 13px;
-  height: 13px;
+  width: 22px;
+  height: 22px;
   fill: currentColor;
 }
 
 .v2-ribbon__item svg {
-  width: 15px;
-  height: 15px;
+  width: 28px;
+  height: 28px;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.6;
   stroke-linecap: round;
   stroke-linejoin: round;
-}
-
-@keyframes v2-ribbon {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
 }
 
 .v2-reviews {
@@ -3041,11 +3031,13 @@ button {
   .v2-shot,
   .v2-social,
   .v2-radar { transform: scale(0.84); }
-  .v2-ribbon { height: 150px; margin-top: 0; }
-  .v2-ribbon__band { height: 50px; }
-  .v2-ribbon__band--dark { top: 14px; }
-  .v2-ribbon__band--green { top: 52px; }
-  .v2-ribbon__item { padding: 0 16px; font-size: 16px; }
+  .v2-ribbon { height: 176px; margin-top: 0; }
+  .v2-ribbon__band { height: 76px; }
+  .v2-ribbon__band--dark { top: 8px; }
+  .v2-ribbon__band--green { top: 72px; }
+  .v2-ribbon__item { padding: 0 18px; font-size: 30px; gap: 10px; }
+  .v2-ribbon__mark svg { width: 14px; height: 14px; }
+  .v2-ribbon__item svg { width: 16px; height: 16px; }
   .v2-reviews { padding: 12px 0 64px; }
   .v2-reviews__board { grid-template-columns: 1fr; }
   .v2-reviews__summary,
@@ -3064,8 +3056,7 @@ button {
     transition: none;
   }
 
-  .logo-slider__track,
-  .v2-ribbon__track {
+  .logo-slider__track {
     animation: none;
   }
 
