@@ -3300,8 +3300,35 @@ button {
 }
 
 .v2-faq {
+  position: relative;
+  overflow: hidden;
   background: #fff;
   padding: 36px 0 96px;
+}
+
+.v2-faq__curve {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.v2-faq__curve--right {
+  top: 18px;
+  right: max(8px, calc((100% - var(--max)) / 2 - 36px));
+  width: 210px;
+  height: 132px;
+}
+
+.v2-faq__curve--left {
+  bottom: 16px;
+  left: max(4px, calc((100% - var(--max)) / 2 - 48px));
+  width: 140px;
+  height: 168px;
+}
+
+.v2-faq > .page-width {
+  position: relative;
+  z-index: 1;
 }
 
 .v2-faq__head {
