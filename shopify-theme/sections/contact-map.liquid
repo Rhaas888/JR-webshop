@@ -50,7 +50,55 @@
       </div>
       <p>Een website, webshop, app of automatisering. Vertel kort wat je wilt. We horen graag van je.</p>
 
-      {%- form 'contact', id: 'ContactForm' -%}
+      {%- form 'contact', id: 'CallbackForm', class: 'contact-call' -%}
+        {%- if form.posted_successfully? -%}
+          <p class="contact-call__done">Top. We bellen je zo terug.</p>
+        {%- else -%}
+          <label class="contact-call__ask" for="CallbackPhone">Zullen we je even bellen?</label>
+          {%- if form.errors -%}
+            <div class="contact-form__errors">
+              {{ form.errors | default_errors }}
+            </div>
+          {%- endif -%}
+          <input type="hidden" name="contact[email]" value="info@jr-intelligence.com">
+          <input type="hidden" name="contact[onderwerp]" value="Terugbellen">
+          <input type="hidden" name="contact[body]" value="Graag terugbellen.">
+          <div class="contact-call__pill">
+            <label class="contact-call__code">
+              <span class="contact-call__flag" aria-hidden="true">
+                <svg viewBox="0 0 18 12">
+                  <rect width="18" height="4" fill="#ae1c28"/>
+                  <rect y="4" width="18" height="4" fill="#fff"/>
+                  <rect y="8" width="18" height="4" fill="#21468b"/>
+                </svg>
+              </span>
+              <select name="contact[landcode]" aria-label="Landcode">
+                <option value="+31">+31</option>
+              </select>
+              <svg class="contact-call__chev" viewBox="0 0 10 6" aria-hidden="true">
+                <path d="M1 1.2 5 4.8 9 1.2"/>
+              </svg>
+            </label>
+            <input
+              id="CallbackPhone"
+              type="tel"
+              name="contact[phone]"
+              inputmode="tel"
+              autocomplete="tel-national"
+              placeholder="6 12345678"
+              required
+            >
+          </div>
+          <button type="submit">
+            Bel ons nu terug
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M4.5 11.5 11.5 4.5M7.2 4.5h4.3V8.8"/>
+            </svg>
+          </button>
+        {%- endif -%}
+      {%- endform -%}
+
+      {%- form 'contact', id: 'ContactForm', class: 'contact-form__fields' -%}
         {%- if form.posted_successfully? -%}
           <p class="contact-form__done">Verstuurd. We reageren zo snel mogelijk.</p>
         {%- else -%}
