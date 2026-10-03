@@ -12,7 +12,7 @@
   --ink: #121418;
   --muted: #7c8188;
   --line: #e7eaee;
-  --page: #f8f8f8;
+  --page: #ffffff;
   --header: 76px;
   --max: 1220px;
   --logo-row: 2.6cm;
@@ -253,6 +253,7 @@ button {
 
 .v2-hero {
   padding: 18px 0 8px;
+  background: #fff;
 }
 
 .v2-hero__inner {
@@ -350,6 +351,7 @@ button {
   align-items: center;
   height: var(--logo-row);
   padding-left: max(28px, calc((100% - var(--max)) / 2));
+  background: #fff;
 }
 
 .logo-slider__label {
@@ -430,6 +432,7 @@ button {
   position: relative;
   padding: 28px 0 20px;
   overflow: hidden;
+  background: #fff;
 }
 
 .v2-partner__curve {
@@ -499,7 +502,7 @@ button {
   padding: 26px 24px 22px;
   border: 1px solid #e6ebed;
   border-radius: 24px;
-  background: #f0f4f5;
+  background: #f5f5f5;
 }
 
 .v2-partner__card h3 {
@@ -1509,6 +1512,7 @@ button {
   position: relative;
   padding: 28px 0 96px;
   overflow: hidden;
+  background: #fff;
 }
 
 .v2-services__curve {
@@ -3000,7 +3004,7 @@ button {
   margin-top: 28px;
   padding: 12px;
   border-radius: 28px;
-  background: #f3f4f1;
+  background: #f5f5f5;
 }
 
 .v2-reviews__list {
@@ -3246,7 +3250,7 @@ button {
 
 .v2-faq__item {
   border-radius: 18px;
-  background: #eceae6;
+  background: #f5f5f5;
   padding: 16px 16px 16px 22px;
   box-shadow: inset 3px 0 0 #059b60;
 }
@@ -3347,7 +3351,7 @@ button {
   margin: 8px auto 0;
   padding: 48px 36px 44px;
   border-radius: 28px;
-  background: #f1f5f6;
+  background: #f5f5f5;
   text-align: center;
 }
 
