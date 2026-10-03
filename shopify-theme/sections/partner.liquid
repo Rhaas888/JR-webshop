@@ -87,8 +87,22 @@
           <img src="{{ 'partner-face-2.png' | asset_url }}" alt="" width="80" height="80">
         </div>
         <p class="v2-partner__by">- {{ section.settings.quote_by }}</p>
+        <div class="v2-partner__google">
+          <p class="v2-partner__google-brand">
+            {% render 'google-mark' %}
+            Google Reviews
+          </p>
+          <p class="v2-partner__google-score">
+            <strong>5,0</strong>
+            <span>/ 5</span>
+          </p>
+          <div class="v2-partner__google-meta">
+            {% render 'review-stars' %}
+          </div>
+          <p class="v2-partner__google-note">Gebaseerd op Google-beoordelingen</p>
+        </div>
         <a class="v2-btn v2-btn--solid v2-partner__reviews" href="#reviews">
-          Bekijk de reviews
+          Bekijk alle reviews
           <span aria-hidden="true">→</span>
         </a>
       </article>

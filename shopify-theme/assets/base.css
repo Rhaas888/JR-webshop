@@ -614,9 +614,74 @@ button {
   font-size: 16px;
 }
 
+.v2-partner__google {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 2px 12px;
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: var(--green);
+  color: #fff;
+}
+
+.v2-partner__google-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.v2-partner__google .v2-reviews__g {
+  width: 16px;
+  height: 16px;
+}
+
+.v2-partner__google-score {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin: 0;
+  line-height: 1;
+}
+
+.v2-partner__google-score strong {
+  font-size: 26px;
+  font-weight: 650;
+  letter-spacing: -0.04em;
+}
+
+.v2-partner__google-score span {
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+.v2-partner__google-meta {
+  grid-column: 1 / -1;
+  display: flex;
+  margin-top: 4px;
+}
+
+.v2-partner__google-note {
+  grid-column: 1 / -1;
+  margin: 2px 0 0;
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.v2-partner__google .v2-reviews__stars svg {
+  width: 13px;
+  height: 13px;
+  fill: #fff;
+}
+
 .v2-partner__reviews {
   align-self: flex-start;
-  margin-top: auto;
+  margin-top: 14px;
   padding: 0 22px;
 }
 
@@ -2717,6 +2782,10 @@ button {
   .v2-partner__cards {
     grid-template-columns: 1.22fr 0.9fr 0.95fr;
     align-items: stretch;
+  }
+
+  .v2-partner__google {
+    margin-top: auto;
   }
 
   .v2-partner h2 span {
