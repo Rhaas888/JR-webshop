@@ -1510,7 +1510,7 @@ button {
 
 .v2-services {
   position: relative;
-  padding: 28px 0 96px;
+  padding: 88px 0 112px;
   overflow: hidden;
   background: #fff;
 }
@@ -1613,20 +1613,22 @@ button {
 .v2-services__cards {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px;
-  margin-top: 34px;
+  gap: 36px;
+  margin-top: 64px;
 }
 
 .v2-services__card {
   display: grid;
-  grid-template-columns: minmax(0, 1.28fr) minmax(118px, 0.78fr);
+  grid-template-columns: 1fr;
+  align-content: start;
   align-items: stretch;
-  gap: 8px;
-  min-height: 250px;
-  padding: 22px 10px 18px 22px;
-  border-radius: 22px;
+  gap: 28px;
+  min-height: 0;
+  padding: 32px 28px 28px;
+  border: 1px solid #e6ebed;
+  border-radius: 24px;
   background: #f1f5f6;
-  box-shadow: 0 10px 30px rgba(20, 28, 32, 0.045);
+  box-shadow: 0 10px 30px rgba(20, 28, 32, 0.04);
 }
 
 .v2-services__copy {
@@ -1661,12 +1663,12 @@ button {
 }
 
 .v2-services__card h3 {
-  margin: 6px 0 8px;
+  margin: 8px 0 12px;
   color: #16181c;
-  font-size: 19px;
+  font-size: 22px;
   font-weight: 800;
   letter-spacing: -0.034em;
-  line-height: 1.12;
+  line-height: 1.15;
 }
 
 .v2-services__card h3 span {
@@ -1684,8 +1686,8 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin-top: auto;
-  padding-top: 16px;
+  margin-top: 22px;
+  padding-top: 0;
   color: #09a363;
   font-size: 14.5px;
   font-weight: 600;
@@ -1698,9 +1700,11 @@ button {
 
 .v2-services__art {
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  align-items: flex-end;
+  justify-content: center;
   min-width: 0;
+  min-height: 196px;
+  margin-top: 8px;
 }
 
 .v2-services__art img {
@@ -1710,15 +1714,17 @@ button {
 }
 
 .v2-services__art .v2-services__shot {
-  width: min(100%, 420px);
+  width: min(100%, 340px);
   height: auto;
-  margin-left: auto;
+  margin: 0 auto;
 }
 
 .v2-services__art .v2-services__phone {
-  width: min(100%, 320px);
+  width: auto;
+  max-width: min(100%, 196px);
+  max-height: 250px;
   height: auto;
-  margin-left: auto;
+  margin: 0 auto;
 }
 
 .v2-shop {
@@ -2018,7 +2024,7 @@ button {
 }
 
 .v2-services__card--flow {
-  grid-template-columns: minmax(0, 0.82fr) minmax(188px, 1.28fr);
+  grid-template-columns: 1fr;
 }
 
 .v2-flow {
@@ -2307,7 +2313,18 @@ button {
 
   .v2-services__cards {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px;
     align-items: stretch;
+  }
+
+  .v2-services__card,
+  .v2-services__card--flow {
+    grid-template-columns: 1fr;
+    height: 100%;
+  }
+
+  .v2-services__art {
+    margin-top: auto;
   }
 }
 
@@ -2410,7 +2427,7 @@ button {
   }
 
   .v2-services {
-    padding-top: 36px;
+    padding: 56px 0 80px;
   }
 
   .v2-services h2 span {
@@ -2431,27 +2448,47 @@ button {
     display: none;
   }
 
-  .v2-services__card {
-    grid-template-columns: minmax(0, 1fr) minmax(140px, 0.8fr);
+  .v2-services__cards {
+    gap: 28px;
+    margin-top: 48px;
+  }
+
+  .v2-services__card,
+  .v2-services__card--flow {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 720px) {
+  .v2-services__cards {
+    gap: 40px;
+  }
+
   .v2-services__card {
     grid-template-columns: 1fr;
-    padding: 22px;
+    padding: 28px 22px 24px;
+    gap: 32px;
   }
 
   .v2-services__art {
-    justify-content: flex-end;
-    margin-top: 8px;
+    justify-content: center;
+    min-height: 0;
+    margin-top: 12px;
   }
 
-  .v2-services__art img,
+  .v2-services__art .v2-services__shot,
   .v2-services__art .v2-flow,
   .v2-services__art .v2-shop {
-    width: min(100%, 280px);
+    width: min(100%, 300px);
     margin-left: auto;
+    margin-right: auto;
+  }
+
+  .v2-services__art .v2-services__phone {
+    width: auto;
+    max-width: min(100%, 180px);
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .v2-services__card--flow {
