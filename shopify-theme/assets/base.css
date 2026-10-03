@@ -2524,6 +2524,11 @@ button {
     max-width: none;
   }
 
+  .v2-hero h1 {
+    max-width: none;
+    font-size: clamp(50px, 4.55vw, 68px);
+  }
+
   .v2-hero__text {
     margin-top: 26px;
     font-size: 19px;
