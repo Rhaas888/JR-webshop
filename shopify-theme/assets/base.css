@@ -2548,44 +2548,48 @@ button {
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  width: min(100%, 1080px);
-  margin: 36px auto 0;
+  gap: 22px;
+  width: min(100%, 1180px);
+  margin: 40px auto 0;
 }
 
 .v2-market__card {
   position: relative;
   z-index: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 18px 22px 24px;
-  border-radius: 22px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+  align-items: center;
+  min-height: 292px;
+  padding: 28px 16px 28px 32px;
+  border-radius: 24px;
   background: #f5f5f5;
 }
 
 .v2-market__stage {
+  order: 2;
   display: grid;
   place-items: center;
-  height: 148px;
+  height: 230px;
 }
 
 .v2-market__body {
-  text-align: center;
+  order: 1;
+  text-align: left;
 }
 
 .v2-market__body h3 {
   margin: 0;
   color: #000;
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 750;
   letter-spacing: -0.035em;
 }
 
 .v2-market__body p {
-  max-width: 340px;
-  margin: 8px auto 0;
+  max-width: 250px;
+  margin: 10px 0 0;
   color: #555;
-  font-size: 15px;
+  font-size: 15.5px;
   line-height: 1.45;
 }
 
@@ -2606,27 +2610,44 @@ button {
 }
 
 .v2-fit__board,
-.v2-talk__wrap,
 .v2-list,
-.v2-path {
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
+.v2-list__float {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
+}
+
+.v2-fit {
+  position: relative;
+  width: 280px;
+  height: 176px;
 }
 
 .v2-fit__board {
+  position: absolute;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  width: 168px;
-  padding: 14px;
-  border-radius: 16px;
+  gap: 10px;
+  width: 196px;
+  padding: 16px;
+  border-radius: 18px;
   background: #fff;
+}
+
+.v2-fit__board--back {
+  top: 8px;
+  left: 0;
+}
+
+.v2-fit__board--front {
+  right: 0;
+  bottom: 0;
+  width: 210px;
 }
 
 .v2-fit__bar,
 .v2-fit__split i {
   display: block;
-  height: 14px;
-  border-radius: 7px;
+  height: 16px;
+  border-radius: 8px;
   background: #f5f5f5;
 }
 
@@ -2639,16 +2660,14 @@ button {
 }
 
 .v2-fit__bar--green {
-  width: 46%;
+  width: 54%;
   background: #059b60;
 }
 
 .v2-talk__wrap {
   position: relative;
-  width: 176px;
-  height: 92px;
-  background: transparent;
-  box-shadow: none;
+  width: 250px;
+  height: 148px;
 }
 
 .v2-talk__bubble {
@@ -2656,15 +2675,15 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 5px;
-  border-radius: 16px;
+  gap: 7px;
+  border-radius: 20px;
   background: #fff;
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
 }
 
 .v2-talk__bubble i {
   display: block;
-  height: 5px;
+  height: 7px;
   border-radius: 99px;
   background: #f5f5f5;
 }
@@ -2672,10 +2691,10 @@ button {
 .v2-talk__bubble--them {
   top: 0;
   left: 0;
-  width: 118px;
-  height: 42px;
-  padding: 0 14px;
-  border-bottom-left-radius: 5px;
+  width: 168px;
+  height: 64px;
+  padding: 0 18px;
+  border-bottom-left-radius: 6px;
 }
 
 .v2-talk__bubble--them i:first-child { width: 78%; }
@@ -2685,10 +2704,10 @@ button {
   right: 0;
   bottom: 0;
   align-items: flex-end;
-  width: 104px;
-  height: 38px;
-  padding: 0 14px;
-  border-bottom-right-radius: 5px;
+  width: 150px;
+  height: 58px;
+  padding: 0 18px;
+  border-bottom-right-radius: 6px;
 }
 
 .v2-talk__bubble--us i {
@@ -2696,14 +2715,23 @@ button {
   background: #059b60;
 }
 
+.v2-listwrap {
+  position: relative;
+  width: 250px;
+  height: 150px;
+}
+
 .v2-list {
+  position: absolute;
+  top: 18px;
+  left: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  width: 176px;
+  gap: 14px;
+  width: 210px;
   margin: 0;
-  padding: 14px 16px;
-  border-radius: 16px;
+  padding: 18px 18px;
+  border-radius: 18px;
   background: #fff;
   list-style: none;
 }
@@ -2714,12 +2742,43 @@ button {
   gap: 10px;
 }
 
+.v2-list__float {
+  position: absolute;
+  top: 0;
+  right: 8px;
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.v2-list__float i {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #059b60;
+}
+
+.v2-list__float i::before {
+  content: "";
+  width: 9px;
+  height: 5px;
+  margin-top: -1px;
+  border-bottom: 1.5px solid #fff;
+  border-left: 1.5px solid #fff;
+  transform: rotate(-45deg);
+}
+
 .v2-list i {
   display: grid;
   flex: none;
   place-items: center;
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background: #059b60;
 }
@@ -2736,14 +2795,14 @@ button {
 
 .v2-list span {
   display: block;
-  height: 6px;
+  height: 8px;
   border-radius: 99px;
   background: #f5f5f5;
 }
 
-.v2-list li:nth-child(1) span { width: 92px; }
-.v2-list li:nth-child(2) span { width: 74px; }
-.v2-list li:nth-child(3) span { width: 108px; }
+.v2-list li:nth-child(1) span { width: 118px; }
+.v2-list li:nth-child(2) span { width: 92px; }
+.v2-list li:nth-child(3) span { width: 132px; }
 
 .v2-path {
   display: flex;
@@ -2758,24 +2817,24 @@ button {
 
 .v2-path li {
   position: relative;
-  padding: 8px 12px;
+  padding: 12px 16px;
   border-radius: 999px;
   background: #fff;
   color: #000;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: -0.02em;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
 }
 
-.v2-path li + li { margin-left: 18px; }
+.v2-path li + li { margin-left: 22px; }
 
 .v2-path li + li::before {
   content: "";
   position: absolute;
   top: 50%;
-  left: -18px;
-  width: 18px;
+  left: -22px;
+  width: 22px;
   height: 1.5px;
   background: #059b60;
 }
@@ -3297,9 +3356,16 @@ button {
 @media (max-width: 860px) {
   .v2-market { padding: 56px 0 64px; }
   .v2-market__curve { display: none; }
-  .v2-market__grid { grid-template-columns: 1fr; width: min(100%, 440px); gap: 16px; }
-  .v2-market__card { padding: 16px 18px 22px; }
-  .v2-market__stage { height: 128px; }
+  .v2-market__grid { grid-template-columns: 1fr; width: 100%; gap: 16px; }
+  .v2-market__card {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    padding: 22px 18px 26px;
+  }
+  .v2-market__stage { order: 0; height: 210px; }
+  .v2-market__body { order: 0; text-align: center; }
+  .v2-market__body p { margin-right: auto; margin-left: auto; }
   .v2-ribbon { height: 176px; margin-top: 0; }
   .v2-ribbon__band { height: 76px; }
   .v2-ribbon__band--dark { top: 8px; }

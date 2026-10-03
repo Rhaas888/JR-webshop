@@ -23,10 +23,15 @@
       <article class="v2-market__card">
         <div class="v2-market__stage" aria-hidden="true">
           <div class="v2-fit">
-            <div class="v2-fit__board v2-breathe" style="--d: 0s">
+            <div class="v2-fit__board v2-fit__board--back v2-breathe" style="--d: 0s">
               <span class="v2-fit__bar"></span>
               <span class="v2-fit__split"><i></i><i></i></span>
+              <span class="v2-fit__bar"></span>
+            </div>
+            <div class="v2-fit__board v2-fit__board--front v2-breathe" style="--d: .8s">
               <span class="v2-fit__bar v2-fit__bar--green"></span>
+              <span class="v2-fit__split"><i></i><i></i></span>
+              <span class="v2-fit__bar"></span>
             </div>
           </div>
         </div>
@@ -39,9 +44,9 @@
       <article class="v2-market__card">
         <div class="v2-market__stage" aria-hidden="true">
           <div class="v2-talk">
-            <div class="v2-talk__wrap v2-breathe" style="--d: .6s">
-              <span class="v2-talk__bubble v2-talk__bubble--them"><i></i><i></i></span>
-              <span class="v2-talk__bubble v2-talk__bubble--us"><i></i></span>
+            <div class="v2-talk__wrap">
+              <span class="v2-talk__bubble v2-talk__bubble--them v2-breathe" style="--d: 0s"><i></i><i></i></span>
+              <span class="v2-talk__bubble v2-talk__bubble--us v2-breathe" style="--d: .7s"><i></i></span>
             </div>
           </div>
         </div>
@@ -53,11 +58,14 @@
 
       <article class="v2-market__card">
         <div class="v2-market__stage" aria-hidden="true">
-          <ul class="v2-list v2-breathe" style="--d: .3s">
-            <li><i></i><span></span></li>
-            <li><i></i><span></span></li>
-            <li><i></i><span></span></li>
-          </ul>
+          <div class="v2-listwrap">
+            <ul class="v2-list v2-breathe" style="--d: .2s">
+              <li><i></i><span></span></li>
+              <li><i></i><span></span></li>
+              <li><i></i><span></span></li>
+            </ul>
+            <span class="v2-list__float v2-breathe" style="--d: 1s"><i></i></span>
+          </div>
         </div>
         <div class="v2-market__body">
           <h3>{{ section.settings.card_three_title }}</h3>
@@ -67,10 +75,10 @@
 
       <article class="v2-market__card">
         <div class="v2-market__stage" aria-hidden="true">
-          <ol class="v2-path v2-breathe" style="--d: .9s">
-            <li>Idee</li>
-            <li>Bouwen</li>
-            <li>Live</li>
+          <ol class="v2-path">
+            <li class="v2-breathe" style="--d: 0s">Idee</li>
+            <li class="v2-breathe" style="--d: .45s">Bouwen</li>
+            <li class="v2-breathe" style="--d: .9s">Live</li>
           </ol>
         </div>
         <div class="v2-market__body">
