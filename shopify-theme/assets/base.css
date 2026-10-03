@@ -265,11 +265,16 @@ button {
 .v2-hero h1 {
   margin: 0;
   max-width: 12em;
-  color: #14171b;
-  font-size: clamp(44px, 5.4vw, 58px);
+  color: #000;
+  font-size: clamp(36px, 4.4vw, 54px);
   font-weight: 800;
   letter-spacing: -0.048em;
   line-height: 1.02;
+}
+
+.v2-hero h1 b {
+  color: #059b60;
+  font-weight: inherit;
 }
 
 .v2-hero__text {
@@ -469,11 +474,11 @@ button {
 .v2-partner h2 {
   max-width: 100%;
   margin: 0;
-  color: #14171b;
-  font-size: clamp(32px, 3.2vw, 46px);
+  color: #000;
+  font-size: clamp(36px, 4.4vw, 54px);
   font-weight: 800;
-  letter-spacing: -0.046em;
-  line-height: 1.04;
+  letter-spacing: -0.048em;
+  line-height: 1.02;
 }
 
 .v2-partner h2 span {
@@ -481,7 +486,7 @@ button {
 }
 
 .v2-partner h2 b {
-  color: #09a363;
+  color: #059b60;
   font-weight: inherit;
 }
 
@@ -1596,11 +1601,11 @@ button {
 
 .v2-services h2 {
   margin: 0;
-  color: #14171b;
-  font-size: clamp(34px, 4vw, 48px);
+  color: #000;
+  font-size: clamp(36px, 4.4vw, 54px);
   font-weight: 800;
-  letter-spacing: -0.045em;
-  line-height: 1.05;
+  letter-spacing: -0.048em;
+  line-height: 1.02;
 }
 
 .v2-services h2 span {
@@ -1608,7 +1613,7 @@ button {
 }
 
 .v2-services h2 b {
-  color: #09a363;
+  color: #059b60;
   font-weight: inherit;
 }
 
@@ -2333,10 +2338,6 @@ button {
     max-width: none;
   }
 
-  .v2-hero h1 {
-    font-size: clamp(60px, 4.6vw, 76px);
-  }
-
   .v2-hero__text {
     margin-top: 26px;
     font-size: 19px;
@@ -2347,16 +2348,8 @@ button {
     align-items: stretch;
   }
 
-  .v2-partner h2 {
-    font-size: 46px;
-  }
-
   .v2-partner h2 span {
     white-space: nowrap;
-  }
-
-  .v2-services h2 {
-    font-size: 48px;
   }
 
   .v2-services h2 span {
@@ -2406,10 +2399,6 @@ button {
 
   .v2-hero {
     padding-top: 28px;
-  }
-
-  .v2-partner h2 {
-    font-size: 34px;
   }
 
   .v2-partner h2 span {
@@ -3027,12 +3016,17 @@ button {
 
 .v2-reviews__head h2 {
   margin: 0;
-  color: #111;
+  color: #000;
   font-family: Inter, ui-sans-serif, system-ui, sans-serif;
-  font-size: clamp(36px, 4.6vw, 60px);
-  font-weight: 700;
-  letter-spacing: -0.035em;
-  line-height: 1.05;
+  font-size: clamp(36px, 4.4vw, 54px);
+  font-weight: 800;
+  letter-spacing: -0.048em;
+  line-height: 1.02;
+}
+
+.v2-reviews__head h2 b {
+  color: #059b60;
+  font-weight: inherit;
 }
 
 .v2-reviews__head p {
@@ -3446,12 +3440,17 @@ button {
 
 .v2-cta__card h2 {
   margin: 0;
-  color: #14171b;
+  color: #000;
   font-family: Inter, ui-sans-serif, system-ui, sans-serif;
-  font-size: clamp(32px, 4vw, 44px);
+  font-size: clamp(36px, 4.4vw, 54px);
   font-weight: 800;
-  letter-spacing: -0.045em;
-  line-height: 1.08;
+  letter-spacing: -0.048em;
+  line-height: 1.02;
+}
+
+.v2-cta__card h2 b {
+  color: #059b60;
+  font-weight: inherit;
 }
 
 .v2-cta__lead {

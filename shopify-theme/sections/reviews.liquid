@@ -1,7 +1,13 @@
 <section class="v2-reviews" id="reviews-{{ section.id }}" data-reviews>
   <div class="v2-reviews__inner page-width">
     <header class="v2-reviews__head">
-      <h2>{{ section.settings.heading }}</h2>
+      <h2>
+        {%- if section.settings.heading == 'Wat klanten over JR Intelligence zeggen' -%}
+          Wat klanten over <b>JR Intelligence</b> zeggen
+        {%- else -%}
+          {{ section.settings.heading }}
+        {%- endif -%}
+      </h2>
       <p>{{ section.settings.text }}</p>
       <div class="v2-reviews__nav">
         <button type="button" data-prev aria-label="Vorige reviews">
