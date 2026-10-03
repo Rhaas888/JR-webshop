@@ -596,12 +596,13 @@ button {
   margin-top: 22px;
 }
 
-.v2-partner__faces svg {
+.v2-partner__faces img {
   width: 40px;
   height: 40px;
   margin-right: -10px;
-  border: 2px solid #f0f4f5;
+  border: 2px solid #f5f5f5;
   border-radius: 50%;
+  object-fit: cover;
   background: #efe6dc;
 }
 
