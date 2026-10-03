@@ -1,4 +1,4 @@
-<section class="v2-reviews" id="reviews-{{ section.id }}" data-reviews>
+<section class="v2-reviews" id="reviews" data-reviews>
   <div class="v2-reviews__inner page-width">
     <header class="v2-reviews__head">
       <h2>
@@ -71,7 +71,7 @@
 
 <script>
   (function () {
-    var root = document.getElementById('reviews-{{ section.id }}');
+    var root = document.getElementById('reviews');
     if (!root) return;
     var list = root.querySelector('[data-review-list]');
     var summary = root.querySelector('[data-review-summary]');

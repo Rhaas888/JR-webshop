@@ -609,6 +609,12 @@ button {
   font-size: 14px;
 }
 
+.v2-partner__reviews {
+  align-self: flex-start;
+  margin-top: auto;
+  padding-top: 22px;
+}
+
 .v2-partner__place {
   display: flex;
   align-items: center;
@@ -3189,6 +3195,7 @@ button {
 .v2-reviews {
   background: #fff;
   padding: 28px 0 88px;
+  scroll-margin-top: calc(var(--header) + 12px);
 }
 
 .v2-reviews__head {
