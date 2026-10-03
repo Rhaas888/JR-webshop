@@ -2513,6 +2513,11 @@ button {
     display: block;
   }
 
+  .logo-slider {
+    margin-top: 18px;
+    margin-bottom: 18px;
+  }
+
   .v2-hero__inner {
     grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
     align-items: start;
