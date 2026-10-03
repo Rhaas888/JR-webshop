@@ -343,6 +343,8 @@ button {
 }
 
 .v2-devices {
+  position: relative;
+  z-index: 1;
   display: block;
   width: 100%;
   height: auto;
