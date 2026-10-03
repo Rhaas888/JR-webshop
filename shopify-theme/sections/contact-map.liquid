@@ -17,29 +17,86 @@
     assign map_zoom = '16'
   -%}
 
-  <div class="contact-map" id="kaart">
-    <div class="contact-map__frame">
-      <iframe
-        title="Kaart van {{ map_address | escape }}"
-        src="https://maps.google.com/maps?hl=nl&amp;ll={{ map_lat }},{{ map_lng }}&amp;z={{ map_zoom }}&amp;t=m&amp;output=embed"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
-      <span class="contact-map__pin" aria-hidden="true">
-        <svg viewBox="0 0 32 44" width="32" height="44">
-          <path fill="#08924f" d="M16 0C7.16 0 0 7.16 0 16c0 11.2 16 28 16 28s16-16.8 16-28C32 7.16 24.84 0 16 0z"/>
-          <circle cx="16" cy="15.5" r="6.2" fill="#fff"/>
-        </svg>
-      </span>
-      <a
-        class="contact-map__open"
-        href="https://www.google.com/maps/search/?api=1&amp;query={{ map_address | url_encode }}"
-        target="_blank"
-        rel="noopener"
-        aria-label="Open {{ map_address | escape }} in Google Maps"
-      ></a>
+  <div class="contact-page__grid">
+    <div class="contact-map" id="kaart">
+      <div class="contact-map__frame">
+        <iframe
+          title="Kaart van {{ map_address | escape }}"
+          src="https://maps.google.com/maps?hl=nl&amp;ll={{ map_lat }},{{ map_lng }}&amp;z={{ map_zoom }}&amp;t=m&amp;output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+        <span class="contact-map__pin" aria-hidden="true">
+          <svg viewBox="0 0 32 44" width="32" height="44">
+            <path fill="#08924f" d="M16 0C7.16 0 0 7.16 0 16c0 11.2 16 28 16 28s16-16.8 16-28C32 7.16 24.84 0 16 0z"/>
+            <circle cx="16" cy="15.5" r="6.2" fill="#fff"/>
+          </svg>
+        </span>
+        <a
+          class="contact-map__open"
+          href="https://www.google.com/maps/search/?api=1&amp;query={{ map_address | url_encode }}"
+          target="_blank"
+          rel="noopener"
+          aria-label="Open {{ map_address | escape }} in Google Maps"
+        ></a>
+      </div>
+      <p class="contact-map__address">{{ map_address }}</p>
     </div>
-    <p class="contact-map__address">{{ map_address }}</p>
+
+    <div class="contact-form">
+      <div class="contact-form__head">
+        <h2>Stuur een bericht</h2>
+        <svg class="contact-form__art" viewBox="0 0 220 120" fill="none" aria-hidden="true">
+          <path d="M8 78C48 96 78 28 118 46C150 60 168 92 214 58" stroke="#059B60" stroke-width="1.6" stroke-linecap="round"/>
+          <circle cx="28" cy="74" r="10" fill="#fff"/>
+          <circle cx="118" cy="40" r="12" fill="#fff"/>
+          <circle cx="196" cy="62" r="9" fill="#fff"/>
+          <rect x="86" y="48" width="58" height="36" rx="4" fill="#fff"/>
+          <path d="M90 76h50" stroke="#000" stroke-width="3"/>
+          <rect x="154" y="28" width="22" height="38" rx="4" fill="#059B60"/>
+          <rect x="157" y="33" width="16" height="24" rx="1.5" fill="#fff"/>
+        </svg>
+      </div>
+      <p>Een website, webshop, app of automatisering. Vertel kort wat je wilt. We horen graag van je.</p>
+
+      {%- form 'contact', id: 'ContactForm' -%}
+        {%- if form.posted_successfully? -%}
+          <p class="contact-form__done">Verstuurd. We reageren zo snel mogelijk.</p>
+        {%- else -%}
+          {%- if form.errors -%}
+            <div class="contact-form__errors">
+              {{ form.errors | default_errors }}
+            </div>
+          {%- endif -%}
+
+          <label class="contact-form__label" for="ContactName">Naam</label>
+          <div class="contact-form__row">
+            <input id="ContactName" type="text" name="contact[voornaam]" autocomplete="given-name" placeholder="Voornaam" required>
+            <input type="text" name="contact[achternaam]" autocomplete="family-name" placeholder="Achternaam" required>
+          </div>
+
+          <label class="contact-form__label" for="ContactEmail">E-mail</label>
+          <input id="ContactEmail" type="email" name="contact[email]" autocomplete="email" placeholder="E-mailadres" required>
+
+          <label class="contact-form__label" for="ContactPhone">Telefoon</label>
+          <input id="ContactPhone" type="tel" name="contact[phone]" autocomplete="tel" placeholder="06 12345678">
+
+          <label class="contact-form__label" for="ContactSubject">Onderwerp</label>
+          <select id="ContactSubject" name="contact[onderwerp]">
+            <option value="Website">Website</option>
+            <option value="Webshop">Webshop</option>
+            <option value="App">App</option>
+            <option value="Automatisering">Automatisering</option>
+            <option value="Anders">Anders</option>
+          </select>
+
+          <label class="contact-form__label" for="ContactBody">Bericht</label>
+          <textarea id="ContactBody" name="contact[body]" rows="5" placeholder="Waar kunnen we je mee helpen?" required></textarea>
+
+          <button type="submit">Verstuur <span aria-hidden="true">→</span></button>
+        {%- endif -%}
+      {%- endform -%}
+    </div>
   </div>
 </section>
 
