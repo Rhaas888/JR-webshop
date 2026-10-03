@@ -2708,12 +2708,8 @@ button {
   }
 
   .v2-services h2 span {
-    display: inline;
+    display: block;
     white-space: normal;
-  }
-
-  .v2-services h2 span::after {
-    content: " ";
   }
 
   .v2-services__lead br,
