@@ -1,46 +1,276 @@
 {
   "sections": {
-    "hero": {
-      "type": "hero",
+    "banner": {
+      "type": "banner",
       "settings": {
-        "kicker": "",
-        "title": "Webshop of app op maat voor jouw bedrijf",
-        "highlight": "op maat",
-        "description": "Wij bouwen overzichtelijke webshops en apps die passen bij hoe jullie werken. Strak ontwerp, heldere prijzen, korte lijnen.",
-        "primary_label": "Offerte aanvragen",
-        "primary_link": "/pages/contact",
-        "proof": ""
+        "eyebrow": "JR Intelligence",
+        "heading": "Webshop, website, app of automatisering voor jouw bedrijf",
+        "text": "<p>Wij bouwen digitale oplossingen die werken. Van een professionele webshop tot een slimme app of automatisering van je processen.</p>",
+        "primary_label": "Start vandaag",
+        "secondary_label": "Bekijk onze diensten"
+      }
+    },
+    "logo_slider": {
+      "type": "logo-slider",
+      "settings": {
+        "label": "Onze klanten:"
+      },
+      "blocks": {
+        "logo_1": {
+          "type": "logo",
+          "settings": {}
+        },
+        "logo_2": {
+          "type": "logo",
+          "settings": {}
+        },
+        "logo_3": {
+          "type": "logo",
+          "settings": {}
+        },
+        "logo_4": {
+          "type": "logo",
+          "settings": {}
+        },
+        "logo_5": {
+          "type": "logo",
+          "settings": {}
+        },
+        "logo_6": {
+          "type": "logo",
+          "settings": {}
+        },
+        "logo_7": {
+          "type": "logo",
+          "settings": {}
+        },
+        "logo_8": {
+          "type": "logo",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "logo_1",
+        "logo_2",
+        "logo_3",
+        "logo_4",
+        "logo_5",
+        "logo_6",
+        "logo_7",
+        "logo_8"
+      ]
+    },
+    "partner": {
+      "type": "partner",
+      "settings": {
+        "word_custom": "maatwerk",
+        "line_one": "partner voor meer",
+        "word_auto": "automatisering,",
+        "word_smart": "slimme",
+        "line_two": "apps en krachtige",
+        "line_three": "webshops",
+        "text": "<p>Wij bouwen digitale oplossingen die werken. Van een professionele webshop tot een slimme app of automatisering van je processen.</p>",
+        "chip": "Webshops",
+        "card_one_title": "Alles op maat gebouwd.",
+        "card_one_text": "Voor jouw bakkerij, werkplaats of kantoor.",
+        "point_one": "Webshops",
+        "point_four": "Websites",
+        "point_two": "Apps",
+        "point_three": "Automatiseringen",
+        "card_two_title": "Onze klanten",
+        "quote": "Binnen een maand hadden we een super mooie webshop, inclusief een eigen chatbot! Super mooi resultaat.",
+        "quote_by": "webshop Glow-Amsterdam",
+        "card_three_title": "360° Ondersteuning",
+        "card_three_text": "Van strategie en ontwikkeling tot hosting. Wij regelen alles van A tot Z.",
+        "place_label": "Actief vanuit",
+        "place": "Reeuwijk"
       }
     },
     "services": {
       "type": "services",
-      "settings": {}
-    },
-    "process": {
-      "type": "process",
-      "settings": {}
-    },
-    "pricing": {
-      "type": "pricing",
       "settings": {
-        "muted": true
+        "eyebrow": "Onze diensten",
+        "heading": "Alles voor de online groei van jouw bedrijf",
+        "text": "<p>Wij ontwikkelen digitale oplossingen die jouw bedrijf laten groeien. We tillen je processen naar een hoger niveau en denken mee in elke stap van het traject.</p>",
+        "button_label": "Ontdek hoe we je helpen",
+        "more_label": "Meer informatie",
+        "card_one_kicker": "Websites & webshops",
+        "card_one_title": "Websites en webshops laten maken",
+        "card_one_text": "Een snelle, professionele website of webshop die goed vindbaar is en bezoekers overtuigt om contact op te nemen.",
+        "card_two_kicker": "Automatiseringen",
+        "card_two_title": "Processen slimmer maken",
+        "card_two_text": "Wij automatiseren terugkerende taken en koppelen je systemen, zodat je tijd bespaart en efficiënter kunt werken.",
+        "card_three_kicker": "Apps",
+        "card_three_title": "Slimme apps op maat",
+        "card_three_text": "Van idee tot app in de store. Wij bouwen gebruiksvriendelijke en schaalbare apps die perfect aansluiten op jouw doelen."
       }
     },
-    "about": {
-      "type": "about-teaser",
+    "marketing": {
+      "type": "marketing",
+      "settings": {
+        "eyebrow": "Online marketing",
+        "heading": "Meer bereik, meer klanten en meetbare online groei",
+        "text": "Als jouw full-service online marketingpartner combineren we creativiteit, techniek en data voor een aanpak die bij jouw bedrijf past en zichtbaar resultaat oplevert.",
+        "card_one_title": "100% maatwerk",
+        "card_one_text": "We bouwen het zoals jij het nodig hebt. Geen standaardpakket.",
+        "card_two_title": "Persoonlijk contact",
+        "card_two_text": "Je spreekt direct met ons. Geen loket ertussen.",
+        "card_three_title": "Minder handmatig werk",
+        "card_three_text": "Taken die je nu zelf doet, laten we voor je lopen.",
+        "card_four_title": "Van idee tot realisatie",
+        "card_four_text": "Van het eerste idee tot iets dat live staat."
+      }
+    },
+    "ribbon": {
+      "type": "ribbon",
       "settings": {}
+    },
+    "reviews": {
+      "type": "reviews",
+      "settings": {
+        "heading": "Wat klanten over JR Intelligence zeggen",
+        "text": "Lees waarom klanten graag met ons werken.",
+        "score": "5,0",
+        "score_note": "Gebaseerd op Google-beoordelingen",
+        "button_label": "Bekijk alle reviews"
+      },
+      "blocks": {
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "quote": "Binnen een paar weken stond onze webshop online. Helder, en hij doet precies wat we nodig hebben.",
+            "name": "Bakkerij de Jong",
+            "initials": "BJ",
+            "date": "maart 2026"
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "quote": "Fijn samenwerken. Korte lijnen, en de app maakt onze planning een stuk rustiger.",
+            "name": "Studio Noord",
+            "initials": "SN",
+            "date": "januari 2026"
+          }
+        },
+        "review_3": {
+          "type": "review",
+          "settings": {
+            "quote": "Onze bestellingen en voorraad lopen nu samen. Scheelt elke week een hoop overtikken.",
+            "name": "Atelier Lindev",
+            "initials": "AL",
+            "date": "november 2025"
+          }
+        },
+        "review_4": {
+          "type": "review",
+          "settings": {
+            "quote": "Goede webshop en vriendelijk contact. We snappen zelf hoe we producten aanpassen.",
+            "name": "Petra H.",
+            "initials": "PH",
+            "date": "september 2025"
+          }
+        },
+        "review_5": {
+          "type": "review",
+          "settings": {
+            "quote": "Voor twee klanten een website laten maken. Netjes opgeleverd, en we houden hem zelf bij.",
+            "name": "Mark de Wit",
+            "initials": "MW",
+            "date": "juni 2025"
+          }
+        }
+      },
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3",
+        "review_4",
+        "review_5"
+      ]
     },
     "faq": {
       "type": "faq",
-      "settings": {}
+      "settings": {
+        "heading": "Veelgestelde vragen",
+        "text": "Alles wat je wilt weten over samenwerken met ons."
+      },
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Wat gebeurt er nadat mijn website, webshop of app is opgeleverd?",
+            "answer": "Na de oplevering heb je 30 dagen om nog aanpassingen door te geven. Daarna kun je ervoor kiezen om het onderhoud door ons te laten doen."
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Wat kost het onderhoud na de oplevering?",
+            "answer": "Dat hangt af van wat er onderhouden moet worden. We bespreken vooraf wat je nodig hebt en welke kosten daarbij horen. Zo weet je waar je aan toe bent."
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Kan ik na de oplevering zelf dingen aanpassen?",
+            "answer": "Ja. Je houdt zelf toegang tot je website of webshop en kunt onderdelen die daarvoor geschikt zijn zelf aanpassen."
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "Wat als ik na de oplevering toch nog iets aangepast wil hebben?",
+            "answer": "Binnen de eerste 30 dagen kun je nog aanpassingen doorgeven. Daarna kunnen extra wijzigingen gewoon worden uitgevoerd, waarbij we vooraf aangeven wat dit kost."
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "question": "Van wie is mijn website, webshop of app na oplevering?",
+            "answer": "Je houdt zelf de toegang tot je digitale omgeving. We zorgen ervoor dat je niet afhankelijk bent van ons om bij je eigen website, webshop of app te kunnen."
+          }
+        },
+        "q6": {
+          "type": "question",
+          "settings": {
+            "question": "Kunnen jullie een automatisering later nog aanpassen of uitbreiden?",
+            "answer": "Ja. Als je bedrijf verandert of je een nieuw proces wilt automatiseren, kunnen we bestaande automatiseringen aanpassen of uitbreiden."
+          }
+        },
+        "q7": {
+          "type": "question",
+          "settings": {
+            "question": "Wat als mijn idee tijdens het bouwen verandert?",
+            "answer": "Dat kan gebeuren. We houden tijdens het proces contact en bespreken wijzigingen eerst met je. Zo kunnen we samen bepalen wat er aangepast moet worden en wat dat eventueel betekent voor de planning of kosten."
+          }
+        },
+        "q8": {
+          "type": "question",
+          "settings": {
+            "question": "Hoe weet ik vooraf wat het gaat kosten?",
+            "answer": "Vooraf bespreken we wat er gemaakt moet worden en wat de kosten zijn. Je weet dus voordat we beginnen waar je aan toe bent."
+          }
+        }
+      },
+      "block_order": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8"]
     },
     "cta": {
-      "type": "cta-band",
+      "type": "cta",
       "settings": {
-        "title": "Klaar om te starten?",
-        "text": "Vertel kort wat je wilt bouwen. We reageren binnen één werkdag met een voorstel of een paar scherpe vragen."
+        "button_label": "Plan een kennismaking"
       }
     }
   },
-  "order": ["hero", "services", "process", "pricing", "about", "faq", "cta"]
+  "order": [
+    "banner",
+    "logo_slider",
+    "partner",
+    "services",
+    "marketing",
+    "ribbon",
+    "reviews",
+    "faq",
+    "cta"
+  ]
 }

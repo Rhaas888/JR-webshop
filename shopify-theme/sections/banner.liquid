@@ -1,0 +1,110 @@
+{%- liquid
+  assign primary_link = section.settings.primary_link
+  assign secondary_link = section.settings.secondary_link
+  if primary_link == blank
+    assign primary_link = '/pages/contact'
+  endif
+  if secondary_link == blank
+    assign secondary_link = '/pages/diensten'
+  endif
+-%}
+
+<section class="v2-hero">
+  <div class="v2-hero__inner page-width">
+    <div class="v2-hero__copy">
+      <h1>
+        {%- if section.settings.heading == 'Webshop, website, app of automatisering voor jouw bedrijf' -%}
+          <b>Webshop</b>, <b>website</b>,<br>
+          <b>app</b> of automatisering<br>
+          voor jouw bedrijf
+        {%- else -%}
+          {{ section.settings.heading }}
+        {%- endif -%}
+      </h1>
+      <div class="v2-hero__text">
+        {%- if section.settings.text contains 'Wij bouwen digitale oplossingen die werken.' -%}
+          <p>Wij bouwen digitale oplossingen die werken.<br>Van een professionele webshop tot een slimme app<br>of automatisering van je processen.</p>
+        {%- else -%}
+          {{ section.settings.text }}
+        {%- endif -%}
+      </div>
+      <div class="v2-hero__actions">
+        <a class="v2-btn v2-btn--solid" href="{{ primary_link }}">
+          {{ section.settings.primary_label }}
+          <span aria-hidden="true">→</span>
+        </a>
+        <a class="v2-btn v2-btn--line" href="{{ secondary_link }}">
+          {{ section.settings.secondary_label }}
+        </a>
+      </div>
+    </div>
+
+    <div class="v2-stage" aria-hidden="true">
+      <div class="v2-devices-wrap">
+        <svg class="v2-hero__line" viewBox="0 0 1460 870" fill="none" aria-hidden="true">
+          <path d="M520 230C800 50 1040 6 1180 48C1290 80 1235 108 1145 92" stroke="#059b60" stroke-width="1.75" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+        </svg>
+        <img
+          class="v2-devices"
+          src="{{ 'banner-devices.png' | asset_url }}"
+          alt=""
+          width="1460"
+          height="870"
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Kleine tekst",
+      "default": "JR Intelligence"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Titel",
+      "default": "Webshop, website, app of automatisering voor jouw bedrijf"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Tekst",
+      "default": "<p>Wij bouwen digitale oplossingen die werken. Van een professionele webshop tot een slimme app of automatisering van je processen.</p>"
+    },
+    {
+      "type": "text",
+      "id": "primary_label",
+      "label": "Primaire knop",
+      "default": "Start vandaag"
+    },
+    {
+      "type": "url",
+      "id": "primary_link",
+      "label": "Primaire link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_label",
+      "label": "Tweede knop",
+      "default": "Bekijk onze diensten"
+    },
+    {
+      "type": "url",
+      "id": "secondary_link",
+      "label": "Tweede link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner"
+    }
+  ]
+}
+{% endschema %}

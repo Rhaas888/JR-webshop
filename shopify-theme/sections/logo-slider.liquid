@@ -1,0 +1,94 @@
+<section class="logo-slider" aria-label="{{ section.settings.label | escape }}">
+  <p class="logo-slider__label">{{ section.settings.label }}</p>
+  <div class="logo-slider__viewport">
+    <div class="logo-slider__track">
+      {%- for pass in (1..2) -%}
+        <div class="logo-slider__set"{% if pass == 2 %} aria-hidden="true"{% endif %}>
+          {%- if section.blocks.size > 0 -%}
+            {%- for block in section.blocks -%}
+              <div class="logo-slider__item" {{ block.shopify_attributes }}>
+                {%- if block.settings.link != blank -%}
+                  <a href="{{ block.settings.link }}">
+                {%- endif -%}
+                {%- if block.settings.image != blank -%}
+                  {%- assign logo_alt = block.settings.image.alt | default: block.settings.name -%}
+                  <img
+                    src="{{ block.settings.image | image_url: width: 400 }}"
+                    alt="{{ logo_alt | escape }}"
+                    width="{{ block.settings.image.width }}"
+                    height="{{ block.settings.image.height }}"
+                  >
+                {%- else -%}
+                  {%- assign mark = forloop.index0 | modulo: 8 -%}
+                  {% render 'logo-mark', index: mark %}
+                {%- endif -%}
+                {%- if block.settings.link != blank -%}
+                  </a>
+                {%- endif -%}
+              </div>
+            {%- endfor -%}
+          {%- else -%}
+            {%- for mark in (0..7) -%}
+              <div class="logo-slider__item">
+                {% render 'logo-mark', index: mark %}
+              </div>
+            {%- endfor -%}
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Logo slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "Onze klanten:"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Logo"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Naam",
+          "info": "Wordt gebruikt als alt-tekst. Tot je een logo uploadt, staat er een voorbeeld."
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Logo slider",
+      "blocks": [
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" }
+      ]
+    }
+  ]
+}
+{% endschema %}

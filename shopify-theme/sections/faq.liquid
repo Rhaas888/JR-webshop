@@ -1,44 +1,76 @@
-<section class="jr-section">
-  <div class="jr-container">
-    <div class="jr-faq-grid">
-      {% render 'section-heading',
-        kicker: 'Vragen',
-        title: 'Veelgestelde vragen',
-        description: 'Kort en concreet. Staat je vraag er niet bij? Stuur een bericht, we reageren binnen één werkdag.'
-      %}
-      <div class="jr-faq-list">
-        <details>
-          <summary><span>Hoeveel kost een webshop of app? <span class="jr-faq-open">+</span><span class="jr-faq-close">−</span></span></summary>
-          <p>Een webshop start vanaf €499, een app vanaf €999. De uiteindelijke prijs hangt af van koppelingen, aantal schermen en hoe uniek het proces is. We geven altijd een vaste prijs voordat we beginnen.</p>
+<section class="v2-faq">
+  <svg class="v2-faq__curve v2-faq__curve--right" viewBox="0 0 240 150" fill="none" aria-hidden="true">
+    <path d="M8 28C70 8 150 36 232 138" stroke="#059B60" stroke-width="1.5"/>
+  </svg>
+  <svg class="v2-faq__curve v2-faq__curve--left" viewBox="0 0 150 180" fill="none" aria-hidden="true">
+    <path d="M130 12C48 48 18 110 78 168" stroke="#059B60" stroke-width="1.5"/>
+  </svg>
+  <div class="page-width">
+    <header class="v2-faq__head">
+      <h2>
+        {%- if section.settings.heading == 'Veelgestelde vragen' -%}
+          Veelgestelde <b>vragen</b>
+        {%- else -%}
+          {{ section.settings.heading }}
+        {%- endif -%}
+      </h2>
+      <p>{{ section.settings.text }}</p>
+    </header>
+    <div class="v2-faq__list">
+      {%- for block in section.blocks -%}
+        <details class="v2-faq__item" {{ block.shopify_attributes }}>
+          <summary>
+            <span>{{ block.settings.question }}</span>
+            <span class="v2-faq__plus" aria-hidden="true">
+              <svg viewBox="0 0 16 16"><path d="M8 3.2v9.6"/><path d="M3.2 8h9.6"/></svg>
+            </span>
+          </summary>
+          <p>{{ block.settings.answer }}</p>
         </details>
-        <details>
-          <summary><span>Hoe lang duurt het? <span class="jr-faq-open">+</span><span class="jr-faq-close">−</span></span></summary>
-          <p>Een overzichtelijke webshop staat vaak in 3 tot 6 weken live. Een eerste versie van een app in 4 tot 8 weken. Grotere koppelingen vragen meer tijd; dat spreken we vooraf af.</p>
-        </details>
-        <details>
-          <summary><span>Krijg ik een native app in de stores? <span class="jr-faq-open">+</span><span class="jr-faq-close">−</span></span></summary>
-          <p>Standaard bouwen we een web-app of PWA: één versie, op telefoon, tablet en desktop, zonder store-gedoe. Wil je wél in de App Store of Play Store, dan nemen we dat als extra mee.</p>
-        </details>
-        <details>
-          <summary><span>Kan ik het zelf beheren? <span class="jr-faq-open">+</span><span class="jr-faq-close">−</span></span></summary>
-          <p>Ja. Webshops leveren we op met een duidelijk CMS. Apps krijgen de schermen en rollen die jullie nodig hebben. Geen technische kennis vereist voor dagelijks gebruik.</p>
-        </details>
-        <details>
-          <summary><span>Werken jullie met templates? <span class="jr-faq-open">+</span><span class="jr-faq-close">−</span></span></summary>
-          <p>Nee. We ontwerpen en bouwen op maat, zodat het product bij jullie merk en processen past. Dat houdt de code schoon en de ervaring overzichtelijk.</p>
-        </details>
-        <details>
-          <summary><span>Wat is mijn rol als opdrachtgever? <span class="jr-faq-open">+</span><span class="jr-faq-close">−</span></span></summary>
-          <p>Jij levert de kennis van je bedrijf. Wij nemen de techniek en het ontwerp. We vragen je op vaste momenten mee te kijken en te testen, zodat we snel kunnen bijsturen.</p>
-        </details>
-      </div>
+      {%- endfor -%}
     </div>
   </div>
 </section>
 
 {% schema %}
 {
-  "name": "FAQ",
-  "settings": []
+  "name": "Veelgestelde vragen",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Kop",
+      "default": "Veelgestelde vragen"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Tekst",
+      "default": "Alles wat je wilt weten over samenwerken met ons."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Vraag",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Vraag"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Antwoord"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Veelgestelde vragen"
+    }
+  ]
 }
 {% endschema %}

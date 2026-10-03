@@ -1,6 +1,11 @@
 {
   "sections": {
-    "main": { "type": "page-contact", "settings": {} }
+    "main": {
+      "type": "contact-map",
+      "settings": {}
+    }
   },
-  "order": ["main"]
+  "order": [
+    "main"
+  ]
 }
