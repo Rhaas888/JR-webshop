@@ -2,13 +2,6 @@
   var header = document.querySelector("[data-header]");
   if (!header) return;
 
-  var onScroll = function () {
-    header.classList.toggle("is-scrolled", window.scrollY > 8);
-  };
-
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
-
   var button = document.querySelector("[data-menu-toggle]");
   var menu = document.querySelector("[data-menu]");
   if (!button || !menu) return;
