@@ -2974,6 +2974,15 @@ button {
   color: #fff;
 }
 
+.v2-reviews__nav button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.v2-reviews__nav button:disabled:hover {
+  background: var(--ink);
+}
+
 .v2-reviews__nav svg {
   width: 16px;
   height: 16px;
@@ -3012,7 +3021,8 @@ button {
   color: #fff;
 }
 
-.v2-reviews__summary.is-hidden {
+.v2-reviews__summary.is-hidden,
+.v2-reviews__card.is-hidden {
   display: none;
 }
 

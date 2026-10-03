@@ -69,36 +69,38 @@
     if (!root) return;
     var list = root.querySelector('[data-review-list]');
     var summary = root.querySelector('[data-review-summary]');
-    if (!list) return;
-    var index = 0;
-    var total = list.children.length;
+    var prev = root.querySelector('[data-prev]');
+    var next = root.querySelector('[data-next]');
+    if (!list || !prev || !next) return;
+    var cards = Array.prototype.slice.call(list.children);
+    var page = 0;
+    var last = cards.length > 2 ? 1 : 0;
 
-    function showPage() {
-      if (!summary) return;
-      var first = index === 0;
-      summary.classList.toggle('is-hidden', !first);
-      summary.setAttribute('aria-hidden', first ? 'false' : 'true');
-    }
-
-    function shift(forward) {
-      var cards = list.children;
-      if (cards.length < 2) return;
-      if (forward) {
-        list.appendChild(cards[0]);
-        index = (index + 1) % total;
-      } else {
-        list.insertBefore(cards[cards.length - 1], cards[0]);
-        index = (index + total - 1) % total;
+    function render() {
+      var first = page === 0;
+      if (summary) {
+        summary.classList.toggle('is-hidden', !first);
+        summary.setAttribute('aria-hidden', first ? 'false' : 'true');
       }
-      showPage();
+      cards.forEach(function (card, i) {
+        var visible = first ? i < 2 : i >= 2;
+        card.classList.toggle('is-hidden', !visible);
+      });
+      prev.disabled = page === 0;
+      next.disabled = page === last;
     }
 
-    root.querySelector('[data-prev]').addEventListener('click', function () {
-      shift(false);
+    prev.addEventListener('click', function () {
+      if (page === 0) return;
+      page -= 1;
+      render();
     });
-    root.querySelector('[data-next]').addEventListener('click', function () {
-      shift(true);
+    next.addEventListener('click', function () {
+      if (page === last) return;
+      page += 1;
+      render();
     });
+    render();
   })();
 </script>
 
