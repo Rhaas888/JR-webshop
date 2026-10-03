@@ -244,11 +244,15 @@ button {
 }
 
 .v2-hero {
-  padding: 18px 0 8px;
+  position: relative;
+  padding: 28px 0 8px;
+  overflow: hidden;
   background: #fff;
 }
 
 .v2-hero__inner {
+  position: relative;
+  z-index: 1;
   display: grid;
   align-items: center;
   gap: 28px;
@@ -340,8 +344,10 @@ button {
 }
 
 .v2-hero__line {
+  display: none;
   position: absolute;
   inset: 0;
+  z-index: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
@@ -2286,11 +2292,19 @@ button {
     display: none;
   }
 
+  .v2-hero {
+    padding: 72px 0 88px;
+  }
+
+  .v2-hero__line {
+    display: block;
+  }
+
   .v2-hero__inner {
-    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
-    align-items: center;
-    min-height: calc(100vh - var(--header) - var(--logo-row));
-    gap: 28px;
+    grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+    align-items: start;
+    min-height: 0;
+    gap: 36px;
   }
 
   .v2-hero__copy {
