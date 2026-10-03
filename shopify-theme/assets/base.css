@@ -3220,6 +3220,11 @@ button {
   line-height: 1.05;
 }
 
+.v2-faq__head h2 b {
+  color: #059b60;
+  font-weight: inherit;
+}
+
 .v2-faq__head p {
   max-width: 460px;
   margin: 14px auto 0;
@@ -3230,15 +3235,20 @@ button {
 
 .v2-faq__list {
   display: grid;
-  gap: 12px;
-  width: min(100%, 980px);
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, auto);
+  grid-auto-flow: column;
+  align-items: stretch;
+  gap: 14px 16px;
+  width: 100%;
   margin: 36px auto 0;
 }
 
 .v2-faq__item {
   border-radius: 18px;
   background: #eceae6;
-  padding: 18px 18px 18px 26px;
+  padding: 16px 16px 16px 22px;
+  box-shadow: inset 3px 0 0 #059b60;
 }
 
 .v2-faq__item summary {
@@ -3389,6 +3399,11 @@ button {
   .v2-reviews__card { min-height: 0; }
   .v2-reviews__score strong { font-size: 60px; }
   .v2-faq { padding: 24px 0 72px; }
+  .v2-faq__list {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    grid-auto-flow: row;
+  }
   .v2-faq__item { padding: 16px; }
   .v2-faq__item summary { font-size: 16px; }
   .v2-faq__item p { margin-right: 0; }

@@ -199,57 +199,57 @@
         "q1": {
           "type": "question",
           "settings": {
-            "question": "Wat doet JR Intelligence als online marketingbureau?",
-            "answer": "We bouwen websites, webshops en apps, en helpen je gevonden te worden. Je hebt direct contact met ons."
+            "question": "Wat gebeurt er nadat mijn website, webshop of app is opgeleverd?",
+            "answer": "Na de oplevering heb je 30 dagen om nog aanpassingen door te geven. Daarna kun je ervoor kiezen om het onderhoud door ons te laten doen."
           }
         },
         "q2": {
           "type": "question",
           "settings": {
-            "question": "Kan ik bij JR Intelligence een website laten maken?",
-            "answer": "Ja. We bouwen een site die past bij jouw bedrijf. Geen standaard template."
+            "question": "Wat kost het onderhoud na de oplevering?",
+            "answer": "Dat hangt af van wat er onderhouden moet worden. We bespreken vooraf wat je nodig hebt en welke kosten daarbij horen. Zo weet je waar je aan toe bent."
           }
         },
         "q3": {
           "type": "question",
           "settings": {
-            "question": "Kan ik ook een webshop laten maken?",
-            "answer": "Ja. Een webshop op maat, zodat jij zelf producten kunt toevoegen."
+            "question": "Kan ik na de oplevering zelf dingen aanpassen?",
+            "answer": "Ja. Je houdt zelf toegang tot je website of webshop en kunt onderdelen die daarvoor geschikt zijn zelf aanpassen."
           }
         },
         "q4": {
           "type": "question",
           "settings": {
-            "question": "Hoe helpt SEO mijn bedrijf lokaal beter vindbaar te maken?",
-            "answer": "Je komt vaker naar voren als mensen in de buurt zoeken naar wat jij doet."
+            "question": "Wat als ik na de oplevering toch nog iets aangepast wil hebben?",
+            "answer": "Binnen de eerste 30 dagen kun je nog aanpassingen doorgeven. Daarna kunnen extra wijzigingen gewoon worden uitgevoerd, waarbij we vooraf aangeven wat dit kost."
           }
         },
         "q5": {
           "type": "question",
           "settings": {
-            "question": "Kan ik Google Ads en social media advertenties laten doen?",
-            "answer": "Ja. We zetten de campagnes op en houden ze bij, zodat je ziet wat het oplevert."
+            "question": "Van wie is mijn website, webshop of app na oplevering?",
+            "answer": "Je houdt zelf de toegang tot je digitale omgeving. We zorgen ervoor dat je niet afhankelijk bent van ons om bij je eigen website, webshop of app te kunnen."
           }
         },
         "q6": {
           "type": "question",
           "settings": {
-            "question": "Kan ik short-form video's laten maken voor social media?",
-            "answer": "Ja. Korte video's voor Instagram, TikTok en YouTube."
+            "question": "Kunnen jullie een automatisering later nog aanpassen of uitbreiden?",
+            "answer": "Ja. Als je bedrijf verandert of je een nieuw proces wilt automatiseren, kunnen we bestaande automatiseringen aanpassen of uitbreiden."
           }
         },
         "q7": {
           "type": "question",
           "settings": {
-            "question": "Hoe ziet een samenwerking met JR Intelligence eruit?",
-            "answer": "Je spreekt met ons, we bouwen het, en jij houdt zelf de toegang."
+            "question": "Wat als mijn idee tijdens het bouwen verandert?",
+            "answer": "Dat kan gebeuren. We houden tijdens het proces contact en bespreken wijzigingen eerst met je. Zo kunnen we samen bepalen wat er aangepast moet worden en wat dat eventueel betekent voor de planning of kosten."
           }
         },
         "q8": {
           "type": "question",
           "settings": {
-            "question": "Wat kost online marketing of een nieuwe website?",
-            "answer": "Je hoort vooraf wat het kost. Geen verrassing achteraf."
+            "question": "Hoe weet ik vooraf wat het gaat kosten?",
+            "answer": "Vooraf bespreken we wat er gemaakt moet worden en wat de kosten zijn. Je weet dus voordat we beginnen waar je aan toe bent."
           }
         }
       },
