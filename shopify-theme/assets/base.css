@@ -479,6 +479,7 @@ button {
   font-weight: 800;
   letter-spacing: -0.048em;
   line-height: 1.02;
+  text-align: center;
 }
 
 .v2-partner h2 span {
@@ -492,10 +493,11 @@ button {
 
 .v2-partner__lead {
   max-width: 460px;
-  margin-top: 22px;
+  margin: 22px auto 0;
   color: #8b9198;
   font-size: 16px;
   line-height: 1.55;
+  text-align: center;
 }
 
 .v2-partner__lead p {
