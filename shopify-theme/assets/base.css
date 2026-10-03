@@ -255,35 +255,26 @@ button {
 }
 
 .v2-hero__copy {
-  max-width: 560px;
-}
-
-.v2-hero__eyebrow {
-  margin: 0 0 22px;
-  color: var(--green);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  max-width: 640px;
 }
 
 .v2-hero h1 {
   margin: 0;
-  max-width: 640px;
+  max-width: 12em;
   color: #14171b;
-  font-size: clamp(40px, 3.45vw, 54px);
+  font-size: clamp(44px, 5.4vw, 58px);
   font-weight: 800;
   letter-spacing: -0.048em;
   line-height: 1.02;
 }
 
 .v2-hero__text {
-  max-width: 470px;
+  max-width: 34em;
   margin-top: 22px;
   color: #8a8f96;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.55;
 }
 
 .v2-hero__text p {
@@ -293,8 +284,14 @@ button {
 .v2-hero__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 30px;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.v2-hero .v2-btn {
+  height: 52px;
+  padding: 0 22px;
+  font-size: 16px;
 }
 
 .v2-btn {
@@ -2290,9 +2287,23 @@ button {
   }
 
   .v2-hero__inner {
-    grid-template-columns: minmax(520px, 0.92fr) minmax(560px, 1.08fr);
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+    align-items: center;
     min-height: calc(100vh - var(--header) - var(--logo-row));
-    gap: 20px;
+    gap: 28px;
+  }
+
+  .v2-hero__copy {
+    max-width: none;
+  }
+
+  .v2-hero h1 {
+    font-size: clamp(60px, 4.6vw, 76px);
+  }
+
+  .v2-hero__text {
+    margin-top: 26px;
+    font-size: 19px;
   }
 
   .v2-partner__cards {
