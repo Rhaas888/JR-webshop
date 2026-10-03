@@ -32,57 +32,25 @@
     </div>
 
     <div class="v2-partner__cards">
-      <article class="v2-partner__card v2-partner__card--shop">
+      <article class="v2-partner__card v2-partner__card--shop" data-shop-video>
         <a class="v2-partner__chip" href="{{ services_link }}">
           <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 4.5h10l-.8 8.2a1 1 0 0 1-1 .8H4.8a1 1 0 0 1-1-.8L3 4.5Z"/><path d="M6 4.4V3.4A2 2 0 0 1 8 1.5a2 2 0 0 1 2 1.9v1"/></svg>
           {{ section.settings.chip }}
         </a>
 
-        <div class="v2-partner__stage" aria-hidden="true">
-          <div class="v2-pair">
-            <div class="v2-pair__laptop">
-              <div class="v2-pair__lid">
-                <i class="v2-pair__cam"></i>
-                <div class="v2-pair__screen">
-                  <div class="v2-admin">
-                    <aside class="v2-admin__side">
-                      <b></b>
-                      <i></i>
-                      <i class="is-on"></i>
-                      <i></i>
-                      <i></i>
-                    </aside>
-                    <div class="v2-admin__main">
-                      <div class="v2-admin__note">
-                        <span></span>
-                        <span></span>
-                      </div>
-                      <div class="v2-admin__grid">
-                        <span>{% render 'v2-jacket' %}</span>
-                        <span>{% render 'v2-jacket' %}</span>
-                        <span>{% render 'v2-jacket' %}</span>
-                        <span>{% render 'v2-jacket' %}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="v2-pair__phone">
-              <i class="v2-pair__island"></i>
-              <div class="v2-pair__phone-screen">
-                <div class="v2-storefront">
-                  <p>9:41</p>
-                  <div class="v2-storefront__hero">
-                    {% render 'v2-jacket' %}
-                  </div>
-                  <div class="v2-storefront__row">
-                    <span>{% render 'v2-jacket' %}</span>
-                    <span>{% render 'v2-jacket' %}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div class="v2-partner__stage">
+          <div class="v2-pair v2-pair--video">
+            <video
+              class="v2-pair__video"
+              src="https://cdn.shopify.com/videos/c/o/v/46e08d0a9456438b8ae564047fb88fd2.mp4"
+              muted
+              loop
+              playsinline
+              preload="auto"
+              crossorigin="anonymous"
+              aria-hidden="true"
+            ></video>
+            <canvas class="v2-pair__canvas" aria-hidden="true"></canvas>
           </div>
         </div>
 
@@ -152,6 +120,8 @@
     </div>
   </div>
 </section>
+
+<script src="{{ 'partner-video.js' | asset_url }}" defer></script>
 
 {% schema %}
 {

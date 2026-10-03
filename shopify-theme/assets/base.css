@@ -718,6 +718,28 @@ button {
   aspect-ratio: 281 / 168;
 }
 
+.v2-pair--video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.v2-pair__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.v2-pair__canvas {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .v2-pair__laptop {
   position: absolute;
   top: 8%;
