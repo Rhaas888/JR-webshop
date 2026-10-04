@@ -55,7 +55,18 @@
             </div>
             <p class="v2-reviews__quote">“{{ block.settings.quote }}”</p>
             <div class="v2-reviews__foot">
-              <span class="v2-reviews__avatar" aria-hidden="true">{{ block.settings.initials }}</span>
+              {%- if block.settings.name == 'GLOW Amsterdam' -%}
+                <span class="v2-reviews__avatar v2-reviews__avatar--logo" aria-hidden="true">
+                  <img
+                    src="{{ 'review-glow.png' | asset_url }}"
+                    alt=""
+                    width="320"
+                    height="320"
+                  >
+                </span>
+              {%- else -%}
+                <span class="v2-reviews__avatar" aria-hidden="true">{{ block.settings.initials }}</span>
+              {%- endif -%}
               <p>
                 <strong>{{ block.settings.name }}</strong>
                 <small>{{ block.settings.date }}</small>

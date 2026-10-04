@@ -3910,14 +3910,27 @@ button {
 
 .v2-reviews__avatar {
   display: grid;
-  width: 42px;
-  height: 42px;
+  width: 48px;
+  height: 48px;
   place-items: center;
+  overflow: hidden;
   border-radius: 999px;
   background: var(--green);
   color: #fff;
   font-size: 15px;
   font-weight: 700;
+}
+
+.v2-reviews__avatar--logo {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.v2-reviews__avatar--logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .v2-reviews__foot p {
