@@ -15,7 +15,7 @@
   --page: #ffffff;
   --header: 76px;
   --max: 1880px;
-  --logo-row: 3.2cm;
+  --logo-row: 2.6cm;
 }
 
 *,
@@ -387,43 +387,30 @@ button {
   overflow: hidden;
   height: 100%;
   padding-left: 0.85cm;
-  -webkit-mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 2.4cm), transparent);
-  mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 2.4cm), transparent);
 }
 
 .logo-slider__track {
   display: flex;
+  align-items: center;
   width: max-content;
   height: 100%;
-}
-
-.logo-slider__set {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  gap: 0.7cm;
-  padding-right: 0.7cm;
+  gap: 1.8cm;
 }
 
 .logo-slider__item {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 2.15cm;
-  padding: 0 26px;
-  border: 1px solid rgba(20, 23, 27, 0.06);
-  border-radius: 18px;
-  background: #fff;
-  box-shadow: 0 1px 2px rgba(20, 23, 27, 0.04);
+  height: 1.8cm;
   color: #2a2c31;
 }
 
 .logo-slider__item img,
 .logo-slider__item svg {
   display: block;
-  height: 1.35cm;
+  height: 1.7cm;
   width: auto;
-  max-width: 5.2cm;
+  max-width: 5.6cm;
   object-fit: contain;
 }
 
@@ -435,8 +422,7 @@ button {
 
 @media (min-width: 1080px) {
   .logo-slider__track {
-    animation: logo-slider 56s linear infinite;
-    will-change: transform;
+    animation: logo-slider 72s ease-in-out infinite;
   }
 
   .logo-slider:hover .logo-slider__track,
@@ -446,12 +432,18 @@ button {
 }
 
 @keyframes logo-slider {
-  from {
+  0%,
+  18% {
     transform: translateX(0);
   }
 
-  to {
-    transform: translateX(-50%);
+  50%,
+  68% {
+    transform: translateX(6.5cm);
+  }
+
+  100% {
+    transform: translateX(0);
   }
 }
 
@@ -2825,27 +2817,13 @@ button {
   }
 
   .logo-slider__viewport {
-    height: 2.6cm;
-    -webkit-mask-image: none;
-    mask-image: none;
+    height: 2.2cm;
   }
 
   .logo-slider__track {
     animation: none;
     width: auto;
-  }
-
-  .logo-slider__set[aria-hidden="true"] {
-    display: none;
-  }
-
-  .logo-slider__set {
-    gap: 0.45cm;
-    padding-right: 16px;
-  }
-
-  .logo-slider__item:nth-child(n + 3) {
-    display: none;
+    gap: 1.2cm;
   }
 
   .v2-hero {
@@ -4228,10 +4206,6 @@ button {
 
   .logo-slider__track {
     animation: none;
-  }
-
-  .logo-slider__set[aria-hidden="true"] {
-    display: none;
   }
 
   .logo-slider__viewport {

@@ -2,28 +2,22 @@
   <p class="logo-slider__label">{{ section.settings.label }}</p>
   <div class="logo-slider__viewport">
     <div class="logo-slider__track">
-      {%- for pass in (1..2) -%}
-        <div class="logo-slider__set"{% if pass == 2 %} aria-hidden="true"{% endif %}>
-          {%- for copy in (1..3) -%}
-            <div class="logo-slider__item">
-              <img
-                src="{{ 'logo-blanc.png' | asset_url }}"
-                alt="{% if pass == 1 and copy == 1 %}BLANC{% endif %}"
-                width="991"
-                height="336"
-              >
-            </div>
-            <div class="logo-slider__item">
-              <img
-                src="{{ 'logo-glow.png' | asset_url }}"
-                alt="{% if pass == 1 and copy == 1 %}GLOW Amsterdam{% endif %}"
-                width="589"
-                height="248"
-              >
-            </div>
-          {%- endfor -%}
-        </div>
-      {%- endfor -%}
+      <div class="logo-slider__item">
+        <img
+          src="{{ 'logo-blanc.png' | asset_url }}"
+          alt="BLANC"
+          width="991"
+          height="336"
+        >
+      </div>
+      <div class="logo-slider__item">
+        <img
+          src="{{ 'logo-glow.png' | asset_url }}"
+          alt="GLOW Amsterdam"
+          width="589"
+          height="248"
+        >
+      </div>
     </div>
   </div>
 </section>
