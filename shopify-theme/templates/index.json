@@ -14,51 +14,7 @@
       "type": "logo-slider",
       "settings": {
         "label": "Onze klanten:"
-      },
-      "blocks": {
-        "logo_1": {
-          "type": "logo",
-          "settings": {}
-        },
-        "logo_2": {
-          "type": "logo",
-          "settings": {}
-        },
-        "logo_3": {
-          "type": "logo",
-          "settings": {}
-        },
-        "logo_4": {
-          "type": "logo",
-          "settings": {}
-        },
-        "logo_5": {
-          "type": "logo",
-          "settings": {}
-        },
-        "logo_6": {
-          "type": "logo",
-          "settings": {}
-        },
-        "logo_7": {
-          "type": "logo",
-          "settings": {}
-        },
-        "logo_8": {
-          "type": "logo",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "logo_1",
-        "logo_2",
-        "logo_3",
-        "logo_4",
-        "logo_5",
-        "logo_6",
-        "logo_7",
-        "logo_8"
-      ]
+      }
     },
     "partner": {
       "type": "partner",
