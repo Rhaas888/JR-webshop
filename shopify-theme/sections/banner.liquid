@@ -41,15 +41,19 @@
 
     <div class="v2-stage" aria-hidden="true">
       <div class="v2-devices-wrap">
-        <svg class="v2-hero__line" viewBox="0 0 1460 870" fill="none" aria-hidden="true">
+        <svg class="v2-hero__line" viewBox="0 0 1552 1192" fill="none" aria-hidden="true">
           <path d="M520 230C800 50 1040 6 1180 48C1290 80 1235 108 1145 92" stroke="#059b60" stroke-width="1.75" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
         </svg>
         <img
           class="v2-devices"
           src="{{ 'banner-devices.png' | asset_url }}"
+          srcset="{{ 'banner-devices.png' | asset_url }} 1552w"
+          sizes="(min-width: 1080px) 920px, 100vw"
           alt=""
-          width="1460"
-          height="870"
+          width="1552"
+          height="1192"
+          decoding="async"
+          fetchpriority="high"
         >
       </div>
     </div>
