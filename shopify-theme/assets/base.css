@@ -786,34 +786,6 @@ button {
   overflow: hidden;
 }
 
-.v2-partner__chip {
-  position: absolute;
-  z-index: 4;
-  top: 18px;
-  right: 18px;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  height: 34px;
-  padding: 0 14px;
-  border-radius: 999px;
-  background: #09a363;
-  color: #fff;
-  font-size: 15px;
-  font-weight: 700;
-}
-
-.v2-partner__chip svg {
-  width: 14px;
-  height: 14px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.v2-partner__chip:hover,
 .v2-partner__go:hover {
   background: #078554;
 }
