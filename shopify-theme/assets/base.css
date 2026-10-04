@@ -2981,13 +2981,6 @@ button {
   height: 310px;
 }
 
-.v2-market__curve--left {
-  bottom: -28px;
-  left: -64px;
-  width: 170px;
-  height: 270px;
-}
-
 .v2-market__inner {
   position: relative;
   z-index: 1;
@@ -3684,26 +3677,6 @@ button {
   padding: 36px 0 96px;
 }
 
-.v2-faq__curve {
-  position: absolute;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.v2-faq__curve--right {
-  top: 18px;
-  right: max(8px, calc((100% - var(--max)) / 2 - 36px));
-  width: 210px;
-  height: 132px;
-}
-
-.v2-faq__curve--left {
-  bottom: 16px;
-  left: max(4px, calc((100% - var(--max)) / 2 - 48px));
-  width: 140px;
-  height: 168px;
-}
-
 .v2-faq > .page-width {
   position: relative;
   z-index: 1;
@@ -3823,26 +3796,6 @@ button {
   padding: 12px 0 88px;
 }
 
-.v2-cta__curve {
-  position: absolute;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.v2-cta__curve--right {
-  top: 8px;
-  right: max(0px, calc((100% - var(--max)) / 2 - 40px));
-  width: 220px;
-  height: 140px;
-}
-
-.v2-cta__curve--left {
-  bottom: 18px;
-  left: max(0px, calc((100% - var(--max)) / 2 - 70px));
-  width: 150px;
-  height: 170px;
-}
-
 .v2-cta__card {
   position: relative;
   z-index: 1;
@@ -3916,7 +3869,6 @@ button {
   .v2-faq__item summary { font-size: 18px; }
   .v2-faq__item p { margin-right: 0; }
   .v2-cta { padding-bottom: 64px; }
-  .v2-cta__curve--right { display: none; }
   .v2-cta__card { padding: 32px 22px; }
 }
 
