@@ -55,7 +55,16 @@
             </div>
             <p class="v2-reviews__quote">“{{ block.settings.quote }}”</p>
             <div class="v2-reviews__foot">
-              {%- if block.settings.name == 'GLOW Amsterdam' -%}
+              {%- if block.settings.name == 'BLANC The Label' -%}
+                <span class="v2-reviews__avatar v2-reviews__avatar--logo" aria-hidden="true">
+                  <img
+                    src="{{ 'review-blanc.png' | asset_url }}"
+                    alt=""
+                    width="320"
+                    height="320"
+                  >
+                </span>
+              {%- elsif block.settings.name == 'GLOW Amsterdam' -%}
                 <span class="v2-reviews__avatar v2-reviews__avatar--logo" aria-hidden="true">
                   <img
                     src="{{ 'review-glow.png' | asset_url }}"
