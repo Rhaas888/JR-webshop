@@ -366,7 +366,7 @@ button {
   align-items: center;
   height: var(--logo-row);
   padding-left: max(28px, calc((100% - var(--max)) / 2));
-  background: #f1f5f6;
+  background: #fff;
 }
 
 .logo-slider__label {
