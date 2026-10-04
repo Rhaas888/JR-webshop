@@ -15,7 +15,7 @@
   --page: #ffffff;
   --header: 76px;
   --max: 1880px;
-  --logo-row: 2.6cm;
+  --logo-row: 3.2cm;
 }
 
 *,
@@ -387,30 +387,42 @@ button {
   overflow: hidden;
   height: 100%;
   padding-left: 0.85cm;
+  -webkit-mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 2.4cm), transparent);
+  mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 2.4cm), transparent);
+}
+
+.logo-slider__track {
+  display: flex;
+  width: max-content;
+  height: 100%;
 }
 
 .logo-slider__set {
   display: flex;
   align-items: center;
   height: 100%;
-  gap: 1.8cm;
-  padding-right: 0.85cm;
+  gap: 0.7cm;
+  padding-right: 0.7cm;
 }
 
 .logo-slider__item {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 1.8cm;
+  height: 2.1cm;
+  padding: 0 22px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  background: #f5f5f5;
   color: #2a2c31;
 }
 
 .logo-slider__item img,
 .logo-slider__item svg {
   display: block;
-  height: 1.7cm;
+  height: 1.35cm;
   width: auto;
-  max-width: 5.6cm;
+  max-width: 5.2cm;
   object-fit: contain;
 }
 
@@ -418,6 +430,27 @@ button {
   display: flex;
   align-items: center;
   height: 100%;
+}
+
+@media (min-width: 1080px) {
+  .logo-slider__track {
+    animation: logo-slider 78s linear infinite;
+  }
+
+  .logo-slider:hover .logo-slider__track,
+  .logo-slider:focus-within .logo-slider__track {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes logo-slider {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .v2-partner {
@@ -2790,7 +2823,27 @@ button {
   }
 
   .logo-slider__viewport {
-    height: 2.2cm;
+    height: 2.6cm;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .logo-slider__track {
+    animation: none;
+    width: auto;
+  }
+
+  .logo-slider__set[aria-hidden="true"] {
+    display: none;
+  }
+
+  .logo-slider__set {
+    gap: 0.45cm;
+    padding-right: 16px;
+  }
+
+  .logo-slider__item:nth-child(n + 3) {
+    display: none;
   }
 
   .v2-hero {
@@ -4169,6 +4222,14 @@ button {
   .site-menu__panel,
   .site-menu__backdrop {
     transition: none;
+  }
+
+  .logo-slider__track {
+    animation: none;
+  }
+
+  .logo-slider__set[aria-hidden="true"] {
+    display: none;
   }
 
   .logo-slider__viewport {
