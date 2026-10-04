@@ -366,7 +366,7 @@ button {
   align-items: center;
   height: var(--logo-row);
   padding-left: max(28px, calc((100% - var(--max)) / 2));
-  background: #fff;
+  background: #f1f5f6;
 }
 
 .logo-slider__label {
@@ -409,11 +409,12 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 2.1cm;
-  padding: 0 22px;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: 16px;
-  background: #f5f5f5;
+  height: 2.15cm;
+  padding: 0 26px;
+  border: 1px solid rgba(20, 23, 27, 0.06);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(20, 23, 27, 0.04);
   color: #2a2c31;
 }
 
@@ -434,7 +435,8 @@ button {
 
 @media (min-width: 1080px) {
   .logo-slider__track {
-    animation: logo-slider 78s linear infinite;
+    animation: logo-slider 56s linear infinite;
+    will-change: transform;
   }
 
   .logo-slider:hover .logo-slider__track,
@@ -2811,12 +2813,12 @@ button {
     height: auto;
     grid-template-columns: 1fr;
     gap: 0.35cm;
-    padding-bottom: 0.45cm;
+    padding: 0.45cm 16px 0.55cm;
   }
 
   .logo-slider__label {
     height: auto;
-    margin-left: 16px;
+    margin-left: 0;
     padding-right: 0;
     border-right: 0;
     font-size: 14px;
