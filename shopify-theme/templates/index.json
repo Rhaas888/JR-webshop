@@ -107,17 +107,17 @@
     "marketing": {
       "type": "marketing",
       "settings": {
-        "eyebrow": "Online marketing",
-        "heading": "Meer bereik, meer klanten en meetbare online groei",
-        "text": "Als jouw full-service online marketingpartner combineren we creativiteit, techniek en data voor een aanpak die bij jouw bedrijf past en zichtbaar resultaat oplevert.",
-        "card_one_title": "100% maatwerk",
-        "card_one_text": "We bouwen het zoals jij het nodig hebt. Geen standaardpakket.",
-        "card_two_title": "Persoonlijk contact",
-        "card_two_text": "Je spreekt direct met ons. Geen loket ertussen.",
-        "card_three_title": "Minder handmatig werk",
-        "card_three_text": "Taken die je nu zelf doet, laten we voor je lopen.",
-        "card_four_title": "Van idee tot realisatie",
-        "card_four_text": "Van het eerste idee tot iets dat live staat."
+        "eyebrow": "Waarom JR Intelligence",
+        "heading": "Digitale oplossingen, zonder onnodig gedoe.",
+        "text": "Van het eerste idee tot een oplossing die gewoon werkt.",
+        "card_one_title": "Persoonlijk contact",
+        "card_one_text": "Je spreekt direct met ons. Geen tussenpersonen of ingewikkelde communicatie.",
+        "card_two_title": "Van idee tot realisatie",
+        "card_two_text": "Van het eerste idee tot iets dat daadwerkelijk werkt. We bouwen het samen stap voor stap op.",
+        "card_three_title": "Jij houdt de controle",
+        "card_three_text": "Na oplevering heb je zelf toegang tot je website, webshop of app.",
+        "card_four_title": "Slimmer geregeld",
+        "card_four_text": "We kijken waar je nu onnodig tijd aan kwijt bent en wat slimmer of automatisch kan."
       }
     },
     "ribbon": {

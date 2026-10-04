@@ -3,9 +3,8 @@
     <header class="v2-market__head">
       <p class="v2-market__eyebrow"><i></i>{{ section.settings.eyebrow }}</p>
       <h2>
-        {%- if section.settings.heading == 'Meer bereik, meer klanten en meetbare online groei' -%}
-          Meer <b>bereik</b>, meer <b>klanten</b> en<br>
-          <b>meetbare online groei</b>
+        {%- if section.settings.heading == 'Digitale oplossingen, zonder onnodig gedoe.' -%}
+          Digitale oplossingen, zonder onnodig <b>gedoe</b>.
         {%- else -%}
           {{ section.settings.heading }}
         {%- endif -%}
@@ -17,19 +16,13 @@
       <svg class="v2-market__curve v2-market__curve--right" viewBox="0 0 220 360" fill="none" aria-hidden="true">
         <path d="M24 18C110 34 176 108 188 214C198 302 142 346 36 332" stroke="#059B60" stroke-width="1.5"/>
       </svg>
+
       <article class="v2-market__card">
         <div class="v2-market__stage" aria-hidden="true">
-          <div class="v2-fit">
-            <div class="v2-fit__board v2-fit__board--back v2-breathe" style="--d: 0s">
-              <span class="v2-fit__bar"></span>
-              <span class="v2-fit__split"><i></i><i></i></span>
-              <span class="v2-fit__bar"></span>
-            </div>
-            <div class="v2-fit__board v2-fit__board--front v2-breathe" style="--d: .8s">
-              <span class="v2-fit__bar v2-fit__bar--green"></span>
-              <span class="v2-fit__split"><i></i><i></i></span>
-              <span class="v2-fit__bar"></span>
-            </div>
+          <div class="v2-chat v2-market__motion">
+            <p class="v2-chat__top"><b>JR</b> JR Intelligence</p>
+            <p class="v2-chat__msg v2-chat__msg--in">Kunnen we dit ook automatiseren?</p>
+            <p class="v2-chat__msg v2-chat__msg--out">Ja, dat kunnen we regelen.<i class="v2-chat__caret"></i></p>
           </div>
         </div>
         <div class="v2-market__body">
@@ -40,10 +33,27 @@
 
       <article class="v2-market__card">
         <div class="v2-market__stage" aria-hidden="true">
-          <div class="v2-talk">
-            <div class="v2-talk__wrap">
-              <span class="v2-talk__bubble v2-talk__bubble--them v2-breathe" style="--d: 0s"><i></i><i></i></span>
-              <span class="v2-talk__bubble v2-talk__bubble--us v2-breathe" style="--d: .7s"><i></i></span>
+          <div class="v2-build v2-market__motion">
+            <p class="v2-build__code">&lt;Button&gt;Bestellen&lt;/Button&gt;</p>
+            <div class="v2-build__screen">
+              <div class="v2-build__nav">
+                <i></i>
+                <span>Shop</span>
+                <span>Nieuw</span>
+              </div>
+              <div class="v2-build__grid">
+                <div class="v2-build__item">
+                  <i><b class="is-flat"></b></i>
+                  <p><span>Jas</span><em>€ 89</em></p>
+                  <strong>Bestellen</strong>
+                </div>
+                <div class="v2-build__item">
+                  <i><b></b></i>
+                  <p><span>Tas</span><em>€ 64</em></p>
+                  <strong>Bestellen</strong>
+                </div>
+              </div>
+              <span class="v2-build__live"><i></i>Live</span>
             </div>
           </div>
         </div>
@@ -55,13 +65,20 @@
 
       <article class="v2-market__card">
         <div class="v2-market__stage" aria-hidden="true">
-          <div class="v2-listwrap">
-            <ul class="v2-list v2-breathe" style="--d: .2s">
-              <li><i></i><span></span></li>
-              <li><i></i><span></span></li>
-              <li><i></i><span></span></li>
+          <div class="v2-dash v2-market__motion">
+            <ul class="v2-dash__side">
+              <li>Producten</li>
+              <li>Bestellingen</li>
+              <li>Pagina's</li>
+              <li>Instellingen</li>
             </ul>
-            <span class="v2-list__float v2-breathe" style="--d: 1s"><i></i></span>
+            <div class="v2-dash__main">
+              <p class="v2-dash__row"><i></i><span>Jas</span><b>€ 89</b></p>
+              <p class="v2-dash__row v2-dash__row--pick"><i></i><span>Tas</span><b>€ 64</b></p>
+              <p class="v2-dash__save">Opgeslagen</p>
+            </div>
+            <span class="v2-dash__check"></span>
+            <span class="v2-dash__cursor"></span>
           </div>
         </div>
         <div class="v2-market__body">
@@ -72,10 +89,12 @@
 
       <article class="v2-market__card">
         <div class="v2-market__stage" aria-hidden="true">
-          <ol class="v2-path">
-            <li class="v2-breathe" style="--d: 0s">Idee</li>
-            <li class="v2-breathe" style="--d: .45s">Bouwen</li>
-            <li class="v2-breathe" style="--d: .9s">Live</li>
+          <ol class="v2-steps v2-market__motion">
+            <li><span>Nieuwe bestelling</span></li>
+            <li><span>Automatisch verwerkt</span></li>
+            <li><span>Klant ontvangt bevestiging</span></li>
+            <li><span>CRM bijgewerkt</span></li>
+            <i class="v2-steps__dot"></i>
           </ol>
         </div>
         <div class="v2-market__body">
@@ -89,78 +108,78 @@
 
 {% schema %}
 {
-  "name": "Online marketing",
+  "name": "Samenwerken",
   "settings": [
     {
       "type": "text",
       "id": "eyebrow",
       "label": "Label",
-      "default": "Online marketing"
+      "default": "Waarom JR Intelligence"
     },
     {
       "type": "text",
       "id": "heading",
       "label": "Titel",
-      "default": "Meer bereik, meer klanten en meetbare online groei"
+      "default": "Digitale oplossingen, zonder onnodig gedoe."
     },
     {
       "type": "textarea",
       "id": "text",
       "label": "Tekst",
-      "default": "Als jouw full-service online marketingpartner combineren we creativiteit, techniek en data voor een aanpak die bij jouw bedrijf past en zichtbaar resultaat oplevert."
+      "default": "Van het eerste idee tot een oplossing die gewoon werkt."
     },
     {
       "type": "text",
       "id": "card_one_title",
       "label": "Kaart 1 titel",
-      "default": "100% maatwerk"
+      "default": "Persoonlijk contact"
     },
     {
       "type": "textarea",
       "id": "card_one_text",
       "label": "Kaart 1 tekst",
-      "default": "We bouwen het zoals jij het nodig hebt. Geen standaardpakket."
+      "default": "Je spreekt direct met ons. Geen tussenpersonen of ingewikkelde communicatie."
     },
     {
       "type": "text",
       "id": "card_two_title",
       "label": "Kaart 2 titel",
-      "default": "Persoonlijk contact"
+      "default": "Van idee tot realisatie"
     },
     {
       "type": "textarea",
       "id": "card_two_text",
       "label": "Kaart 2 tekst",
-      "default": "Je spreekt direct met ons. Geen loket ertussen."
+      "default": "Van het eerste idee tot iets dat daadwerkelijk werkt. We bouwen het samen stap voor stap op."
     },
     {
       "type": "text",
       "id": "card_three_title",
       "label": "Kaart 3 titel",
-      "default": "Minder handmatig werk"
+      "default": "Jij houdt de controle"
     },
     {
       "type": "textarea",
       "id": "card_three_text",
       "label": "Kaart 3 tekst",
-      "default": "Taken die je nu zelf doet, laten we voor je lopen."
+      "default": "Na oplevering heb je zelf toegang tot je website, webshop of app."
     },
     {
       "type": "text",
       "id": "card_four_title",
       "label": "Kaart 4 titel",
-      "default": "Van idee tot realisatie"
+      "default": "Slimmer geregeld"
     },
     {
       "type": "textarea",
       "id": "card_four_text",
       "label": "Kaart 4 tekst",
-      "default": "Van het eerste idee tot iets dat live staat."
+      "default": "We kijken waar je nu onnodig tijd aan kwijt bent en wat slimmer of automatisch kan."
     }
   ],
   "presets": [
     {
-      "name": "Online marketing"
+      "name": "Samenwerken"
     }
   ]
 }
