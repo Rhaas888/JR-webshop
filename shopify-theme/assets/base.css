@@ -1847,6 +1847,13 @@ button {
   margin: 0 auto;
 }
 
+.v2-services__art .v2-services__devices {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
 .v2-shop {
   position: relative;
   width: 100%;
