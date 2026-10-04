@@ -9,14 +9,16 @@
         {%- endif -%}
       </h2>
       <p>{{ section.settings.text }}</p>
-      <div class="v2-reviews__nav">
-        <button type="button" data-prev aria-label="Vorige reviews">
-          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3.5 5.5 8 10 12.5"/></svg>
-        </button>
-        <button type="button" data-next aria-label="Volgende reviews">
-          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3.5 10.5 8 6 12.5"/></svg>
-        </button>
-      </div>
+      {%- if section.blocks.size > 2 -%}
+        <div class="v2-reviews__nav">
+          <button type="button" data-prev aria-label="Vorige reviews">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3.5 5.5 8 10 12.5"/></svg>
+          </button>
+          <button type="button" data-next aria-label="Volgende reviews">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3.5 10.5 8 6 12.5"/></svg>
+          </button>
+        </div>
+      {%- endif -%}
     </header>
 
     <div class="v2-reviews__board">
@@ -69,6 +71,7 @@
   </div>
 </section>
 
+{%- if section.blocks.size > 2 -%}
 <script>
   (function () {
     var root = document.getElementById('reviews');
@@ -109,6 +112,7 @@
     render();
   })();
 </script>
+{%- endif -%}
 
 {% schema %}
 {
