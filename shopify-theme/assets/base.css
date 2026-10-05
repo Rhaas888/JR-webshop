@@ -420,32 +420,6 @@ button {
   height: 100%;
 }
 
-@media (min-width: 1080px) {
-  .logo-slider__track {
-    animation: logo-slider 72s ease-in-out infinite;
-  }
-
-  .logo-slider:hover .logo-slider__track,
-  .logo-slider:focus-within .logo-slider__track {
-    animation-play-state: paused;
-  }
-}
-
-@keyframes logo-slider {
-  0%,
-  18% {
-    transform: translateX(0);
-  }
-
-  50%,
-  68% {
-    transform: translateX(6.5cm);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
-}
 
 .v2-partner {
   position: relative;
@@ -2832,7 +2806,6 @@ button {
   }
 
   .logo-slider__track {
-    animation: none;
     width: auto;
     gap: 1.2cm;
   }
@@ -4213,14 +4186,6 @@ button {
   .site-menu__panel,
   .site-menu__backdrop {
     transition: none;
-  }
-
-  .logo-slider__track {
-    animation: none;
-  }
-
-  .logo-slider__viewport {
-    overflow: hidden;
   }
 
   .v2-market__motion,
