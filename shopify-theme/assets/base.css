@@ -2742,10 +2742,10 @@ button {
   }
 
   .v2-hero__inner {
-    grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
-    align-items: start;
+    grid-template-columns: minmax(0, 1.28fr) minmax(420px, 0.86fr);
+    align-items: center;
     min-height: 0;
-    gap: 36px;
+    gap: 28px;
   }
 
   .v2-hero__copy {
@@ -2754,12 +2754,23 @@ button {
 
   .v2-hero h1 {
     max-width: none;
-    font-size: clamp(50px, 4.55vw, 68px);
+    font-size: clamp(56px, 5.15vw, 80px);
   }
 
   .v2-hero__text {
-    margin-top: 26px;
-    font-size: 21px;
+    max-width: 28em;
+    margin-top: 28px;
+    font-size: 22px;
+  }
+
+  .v2-hero .v2-btn {
+    height: 54px;
+    padding: 0 24px;
+    font-size: 19px;
+  }
+
+  .v2-devices-wrap {
+    width: min(100%, 820px);
   }
 
   .v2-partner__cards {
