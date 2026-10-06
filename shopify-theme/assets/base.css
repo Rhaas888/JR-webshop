@@ -3478,6 +3478,16 @@ button {
     align-items: stretch;
   }
 
+  .v2-partner__client {
+    width: 56px;
+    height: 56px;
+    flex-basis: 56px;
+  }
+
+  .v2-partner__client img {
+    padding: 5px;
+  }
+
   .v2-partner__google {
     margin-top: auto;
   }
