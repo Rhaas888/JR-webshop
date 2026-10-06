@@ -43,26 +43,26 @@
       .replace(/>/g, "&gt;")
       .replace(
         /(".*?")/g,
-        '<span class="v2-code__str">$1</span>'
+        '<span class="v2-scene-code__str">$1</span>'
       )
       .replace(
         /\b(const|function)\b/g,
-        '<span class="v2-code__kw">$1</span>'
+        '<span class="v2-scene-code__kw">$1</span>'
       )
       .replace(
         /\b(createShop|addProduct|render|header|hero|grid|build)\b/g,
-        '<span class="v2-code__fn">$1</span>'
+        '<span class="v2-scene-code__fn">$1</span>'
       )
-      .replace(/\b(\d+)\b/g, '<span class="v2-code__num">$1</span>');
+      .replace(/\b(\d+)\b/g, '<span class="v2-scene-code__num">$1</span>');
   }
 
   function typeLine(text) {
     return new Promise(function (resolve) {
       var row = document.createElement("div");
-      row.className = "v2-code__line";
+      row.className = "v2-scene-code__line";
       var written = document.createElement("span");
       var cursor = document.createElement("span");
-      cursor.className = "v2-code__cursor";
+      cursor.className = "v2-scene-code__cursor";
       row.appendChild(written);
       row.appendChild(cursor);
       body.appendChild(row);
