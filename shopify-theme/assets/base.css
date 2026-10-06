@@ -2635,6 +2635,26 @@ button {
   font-weight: 700;
 }
 
+.contact-form__done.is-error,
+.contact-call__done.is-error,
+.site-footer__status.is-error {
+  color: #c43d3d;
+}
+
+.jr-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.site-footer__status {
+  margin: 0 0 10px;
+  color: #8fd4b8;
+  font-size: 14px;
+}
+
 .contact-form__errors {
   margin-top: 14px;
   color: #fff;

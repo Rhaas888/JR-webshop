@@ -35,8 +35,13 @@
         </li>
       </ul>
 
-      <form class="site-footer__call" action="/pages/contact" method="get">
+      <form class="site-footer__call" data-jr-contact="callback">
         <label class="site-footer__ask" for="FooterPhone">Zullen we je even bellen?</label>
+        <p class="site-footer__status" data-jr-status hidden></p>
+        <p class="jr-hp" aria-hidden="true">
+          <label for="FooterCompany">Bedrijfswebsite</label>
+          <input id="FooterCompany" type="text" name="company_url" tabindex="-1" autocomplete="off">
+        </p>
         <div class="site-footer__pill">
           <label class="site-footer__code">
             <span class="site-footer__flag" aria-hidden="true">
@@ -46,7 +51,7 @@
                 <rect y="8" width="18" height="4" fill="#21468b"/>
               </svg>
             </span>
-            <select name="code" aria-label="Landcode">
+            <select name="landcode" aria-label="Landcode">
               <option value="+31">+31</option>
             </select>
             <svg class="site-footer__chev" viewBox="0 0 10 6" aria-hidden="true">
@@ -60,6 +65,7 @@
             inputmode="tel"
             autocomplete="tel-national"
             placeholder="6 12345678"
+            required
           >
           <button type="submit">
             Bel ons nu terug

@@ -50,91 +50,80 @@
       </div>
       <p>Een website, webshop, app of automatisering. Vertel kort wat je wilt. We horen graag van je.</p>
 
-      {%- form 'contact', id: 'CallbackForm', class: 'contact-call' -%}
-        {%- if form.posted_successfully? -%}
-          <p class="contact-call__done">Top. We bellen je zo terug.</p>
-        {%- else -%}
-          <label class="contact-call__ask" for="CallbackPhone">Zullen we je even bellen?</label>
-          {%- if form.errors -%}
-            <div class="contact-form__errors">
-              {{ form.errors | default_errors }}
-            </div>
-          {%- endif -%}
-          <input type="hidden" name="contact[email]" value="info@jr-intelligence.com">
-          <input type="hidden" name="contact[onderwerp]" value="Terugbellen">
-          <input type="hidden" name="contact[body]" value="Graag terugbellen.">
-          <div class="contact-call__pill">
-            <label class="contact-call__code">
-              <span class="contact-call__flag" aria-hidden="true">
-                <svg viewBox="0 0 18 12">
-                  <rect width="18" height="4" fill="#ae1c28"/>
-                  <rect y="4" width="18" height="4" fill="#fff"/>
-                  <rect y="8" width="18" height="4" fill="#21468b"/>
-                </svg>
-              </span>
-              <select name="contact[landcode]" aria-label="Landcode">
-                <option value="+31">+31</option>
-              </select>
-              <svg class="contact-call__chev" viewBox="0 0 10 6" aria-hidden="true">
-                <path d="M1 1.2 5 4.8 9 1.2"/>
+      <form id="CallbackForm" class="contact-call" data-jr-contact="callback">
+        <p class="contact-call__done" data-jr-status hidden></p>
+        <label class="contact-call__ask" for="CallbackPhone">Zullen we je even bellen?</label>
+        <p class="jr-hp" aria-hidden="true">
+          <label for="CallbackCompany">Bedrijfswebsite</label>
+          <input id="CallbackCompany" type="text" name="company_url" tabindex="-1" autocomplete="off">
+        </p>
+        <div class="contact-call__pill">
+          <label class="contact-call__code">
+            <span class="contact-call__flag" aria-hidden="true">
+              <svg viewBox="0 0 18 12">
+                <rect width="18" height="4" fill="#ae1c28"/>
+                <rect y="4" width="18" height="4" fill="#fff"/>
+                <rect y="8" width="18" height="4" fill="#21468b"/>
               </svg>
-            </label>
-            <input
-              id="CallbackPhone"
-              type="tel"
-              name="contact[phone]"
-              inputmode="tel"
-              autocomplete="tel-national"
-              placeholder="6 12345678"
-              required
-            >
-          </div>
-          <button type="submit">
-            Bel ons nu terug
-            <svg viewBox="0 0 16 16" aria-hidden="true">
-              <path d="M4.5 11.5 11.5 4.5M7.2 4.5h4.3V8.8"/>
+            </span>
+            <select name="landcode" aria-label="Landcode">
+              <option value="+31">+31</option>
+            </select>
+            <svg class="contact-call__chev" viewBox="0 0 10 6" aria-hidden="true">
+              <path d="M1 1.2 5 4.8 9 1.2"/>
             </svg>
-          </button>
-        {%- endif -%}
-      {%- endform -%}
+          </label>
+          <input
+            id="CallbackPhone"
+            type="tel"
+            name="phone"
+            inputmode="tel"
+            autocomplete="tel-national"
+            placeholder="6 12345678"
+            required
+          >
+        </div>
+        <button type="submit">
+          Bel ons nu terug
+          <svg viewBox="0 0 16 16" aria-hidden="true">
+            <path d="M4.5 11.5 11.5 4.5M7.2 4.5h4.3V8.8"/>
+          </svg>
+        </button>
+      </form>
 
-      {%- form 'contact', id: 'ContactForm', class: 'contact-form__fields' -%}
-        {%- if form.posted_successfully? -%}
-          <p class="contact-form__done">Verstuurd. We reageren zo snel mogelijk.</p>
-        {%- else -%}
-          {%- if form.errors -%}
-            <div class="contact-form__errors">
-              {{ form.errors | default_errors }}
-            </div>
-          {%- endif -%}
+      <form id="ContactForm" class="contact-form__fields" data-jr-contact="form">
+        <p class="contact-form__done" data-jr-status hidden></p>
+        <p class="jr-hp" aria-hidden="true">
+          <label for="ContactCompany">Bedrijfswebsite</label>
+          <input id="ContactCompany" type="text" name="company_url" tabindex="-1" autocomplete="off">
+        </p>
 
-          <label class="contact-form__label" for="ContactName">Naam</label>
-          <div class="contact-form__row">
-            <input id="ContactName" type="text" name="contact[voornaam]" autocomplete="given-name" placeholder="Voornaam" required>
-            <input type="text" name="contact[achternaam]" autocomplete="family-name" placeholder="Achternaam" required>
-          </div>
+        <label class="contact-form__label" for="ContactName">Naam</label>
+        <div class="contact-form__row">
+          <input id="ContactName" type="text" name="voornaam" autocomplete="given-name" placeholder="Voornaam" required>
+          <input type="text" name="achternaam" autocomplete="family-name" placeholder="Achternaam" required>
+        </div>
 
-          <label class="contact-form__label" for="ContactEmail">E-mail</label>
-          <input id="ContactEmail" type="email" name="contact[email]" autocomplete="email" placeholder="E-mailadres" required>
+        <label class="contact-form__label" for="ContactEmail">E-mail</label>
+        <input id="ContactEmail" type="email" name="email" autocomplete="email" placeholder="E-mailadres" required>
 
-          <label class="contact-form__label" for="ContactPhone">Telefoon</label>
-          <input id="ContactPhone" type="tel" name="contact[phone]" autocomplete="tel" placeholder="06 12345678">
+        <label class="contact-form__label" for="ContactPhone">Telefoon</label>
+        <input id="ContactPhone" type="tel" name="phone" autocomplete="tel" placeholder="06 12345678">
 
-          <label class="contact-form__label" for="ContactSubject">Onderwerp</label>
-          <select id="ContactSubject" name="contact[onderwerp]">
-            <option value="Website">Website</option>
-            <option value="Webshop">Webshop</option>
-            <option value="App">App</option>
-            <option value="Automatisering">Automatisering</option>
-            <option value="Anders">Anders</option>
-          </select>
+        <label class="contact-form__label" for="ContactSubject">Onderwerp</label>
+        <select id="ContactSubject" name="onderwerp">
+          <option value="Website">Website</option>
+          <option value="Webshop">Webshop</option>
+          <option value="App">App</option>
+          <option value="Automatisering">Automatisering</option>
+          <option value="Anders">Anders</option>
+        </select>
 
-          <label class="contact-form__label" for="ContactBody">Bericht</label>
-          <textarea id="ContactBody" name="contact[body]" rows="5" placeholder="Waar kunnen we je mee helpen?" required></textarea>
+        <label class="contact-form__label" for="ContactBody">Bericht</label>
+        <textarea id="ContactBody" name="body" rows="5" placeholder="Waar kunnen we je mee helpen?" required></textarea>
 
-          <button type="submit">Verstuur <span aria-hidden="true">→</span></button>
-        {%- endif -%}
-      {%- endform -%}
+        <button type="submit">Verstuur <span aria-hidden="true">→</span></button>
+      </form>
     </div>
   </div>
 </section>
