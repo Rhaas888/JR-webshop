@@ -1,0 +1,21 @@
+{% render 'about-page',
+  hero_image: section.settings.hero_image,
+  rik_image: section.settings.rik_image,
+  julius_image: section.settings.julius_image,
+  work_image: section.settings.work_image
+%}
+
+{% schema %}
+{
+  "name": "Over ons",
+  "settings": [
+    { "type": "image_picker", "id": "hero_image", "label": "Hero foto" },
+    { "type": "image_picker", "id": "rik_image", "label": "Foto Rik" },
+    { "type": "image_picker", "id": "julius_image", "label": "Foto Julius" },
+    { "type": "image_picker", "id": "work_image", "label": "Aanpak visual" }
+  ],
+  "presets": [
+    { "name": "Over ons" }
+  ]
+}
+{% endschema %}

@@ -1,5 +1,7 @@
 {%- if page.handle == 'offerte' -%}
   {% render 'contact-page', view_setting: 'offerte' %}
+{%- elsif page.handle == 'over-ons' -%}
+  {% render 'about-page' %}
 {%- else -%}
   <section class="main-page page-width">
     <h1>{{ page.title }}</h1>

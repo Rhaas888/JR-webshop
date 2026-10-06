@@ -5035,3 +5035,268 @@ button {
     justify-content: center;
   }
 }
+
+.v2-about {
+  padding: 28px 0 72px;
+  background: #fff;
+}
+
+.v2-about__eyebrow {
+  margin: 0 0 12px;
+  color: #09a363;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.v2-about h1,
+.v2-about h2 {
+  margin: 0;
+  color: #111;
+  font-weight: 800;
+  letter-spacing: -0.048em;
+  line-height: 1.05;
+}
+
+.v2-about h1 {
+  max-width: 11em;
+  font-size: clamp(34px, 4.4vw, 56px);
+}
+
+.v2-about h1 b,
+.v2-about h2 b {
+  color: #059b60;
+  font-weight: inherit;
+}
+
+.v2-about h2 {
+  font-size: clamp(30px, 3.6vw, 44px);
+}
+
+.v2-about__copy p {
+  max-width: 36em;
+  margin: 14px 0 0;
+  color: #8a9098;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.v2-about__lead {
+  max-width: 34em;
+}
+
+.v2-about__hero,
+.v2-about__story,
+.v2-about__work {
+  display: grid;
+  gap: 28px;
+}
+
+.v2-about__hero {
+  padding: 12px 0 36px;
+  align-items: center;
+}
+
+.v2-about__band {
+  padding: 36px 0;
+  background: #f6f7f9;
+}
+
+.v2-about__people {
+  padding: 48px 0;
+  background: #f3f5f7;
+}
+
+.v2-about__people-inner {
+  display: grid;
+  gap: 18px;
+}
+
+.v2-about__work {
+  padding: 56px 0 8px;
+  align-items: center;
+}
+
+.v2-about__media {
+  overflow: hidden;
+  background: #e7ebef;
+}
+
+.v2-about__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.v2-about__media--hero {
+  min-height: 240px;
+  aspect-ratio: 16 / 11;
+  border-radius: 22px;
+}
+
+.v2-about__media--work {
+  min-height: 220px;
+  aspect-ratio: 16 / 10;
+  border-radius: 24px;
+}
+
+.v2-about__media--person {
+  width: 88px;
+  height: 88px;
+  flex: 0 0 88px;
+  border-radius: 16px;
+}
+
+.v2-about__steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 16px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.v2-about__steps li {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.v2-about__steps b {
+  color: #1c1e22;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.v2-about__dot {
+  display: grid;
+  width: 56px;
+  height: 56px;
+  place-items: center;
+  border: 1.5px solid #cfe8db;
+  border-radius: 999px;
+  background: #fff;
+  color: #059b60;
+}
+
+.v2-about__dot svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.v2-about__dot--jr {
+  border-color: #059b60;
+  background: #059b60;
+}
+
+.v2-about__dot--jr img {
+  width: 28px;
+  height: auto;
+}
+
+.v2-about__card {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 18px;
+  border: 1px solid #e6eaee;
+  border-radius: 22px;
+  background: #fff;
+}
+
+.v2-about__card h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 750;
+  letter-spacing: -0.03em;
+}
+
+.v2-about__role {
+  margin: 4px 0 0;
+  color: #8a9098;
+  font-size: 14px;
+  font-weight: 550;
+}
+
+.v2-about__card p:last-child {
+  margin: 10px 0 0;
+  color: #7c848c;
+  font-size: 14.5px;
+  line-height: 1.5;
+}
+
+@media (min-width: 1080px) {
+  .v2-about {
+    padding: 56px 0 96px;
+  }
+
+  .v2-about__hero,
+  .v2-about__story,
+  .v2-about__work {
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    gap: 48px 56px;
+    align-items: center;
+  }
+
+  .v2-about__hero {
+    padding: 8px 0 48px;
+  }
+
+  .v2-about__band {
+    padding: 56px 0;
+  }
+
+  .v2-about__people {
+    padding: 64px 0;
+  }
+
+  .v2-about__people-inner {
+    grid-template-columns: minmax(0, 0.86fr) minmax(0, 1fr) minmax(0, 1fr);
+    gap: 22px;
+    align-items: center;
+  }
+
+  .v2-about__work {
+    padding: 72px 0 12px;
+  }
+
+  .v2-about h1 {
+    font-size: clamp(48px, 4.6vw, 64px);
+  }
+
+  .v2-about__copy p {
+    font-size: 18px;
+  }
+
+  .v2-about__media--hero {
+    min-height: 340px;
+  }
+
+  .v2-about__steps {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+  }
+
+  .v2-about__steps::before {
+    content: "";
+    position: absolute;
+    top: 28px;
+    left: 12%;
+    right: 12%;
+    height: 1px;
+    background: #cfe8db;
+  }
+}
+
