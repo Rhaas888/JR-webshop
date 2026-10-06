@@ -93,7 +93,7 @@
   async function play() {
     running = true;
     while (running && document.body.contains(root)) {
-      root.classList.remove("is-shop");
+      root.classList.remove("is-shop", "is-measure", "is-scroll");
       body.replaceChildren();
       await wait(220);
       var n = 0;
@@ -104,8 +104,12 @@
       }
       await wait(420);
       root.classList.add("is-shop");
-      await wait(5600);
-      root.classList.remove("is-shop");
+      await wait(780);
+      root.classList.add("is-measure");
+      await wait(2100);
+      root.classList.add("is-scroll");
+      await wait(4600);
+      root.classList.remove("is-shop", "is-measure", "is-scroll");
       await wait(700);
     }
   }

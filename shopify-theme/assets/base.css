@@ -537,6 +537,7 @@ button {
   color: #1c1e22;
   font-size: clamp(8px, 1vw, 12px);
   font-weight: 650;
+  z-index: 2;
 }
 
 .v2-scene-shop__bar strong {
@@ -563,20 +564,56 @@ button {
   text-align: center;
 }
 
+.v2-scene-shop__view {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.v2-scene-shop__page {
+  transform: translateY(0);
+  transition: transform 2.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.v2-scene.is-scroll .v2-scene-shop__page {
+  transform: translateY(-46%);
+}
+
 .v2-scene-shop__hero {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  gap: 8px;
-  min-height: 0;
-  flex: 1.1 1 auto;
+  min-height: 118px;
   margin: 8px 10px 0;
-  padding: 12px 14px;
+  overflow: hidden;
   border-radius: 10px;
-  background:
-    radial-gradient(circle at 88% 20%, rgba(255, 255, 255, 0.22), transparent 36%),
-    linear-gradient(135deg, #059b60 0%, #087a4c 100%);
   color: #fff;
+}
+
+.v2-scene-shop__hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.v2-scene-shop__hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8, 18, 14, 0.08) 0%, rgba(5, 155, 96, 0.55) 100%);
+}
+
+.v2-scene-shop__hero div {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 14px;
 }
 
 .v2-scene-shop__hero p {
@@ -624,20 +661,211 @@ button {
 }
 
 .v2-scene-shop__photo {
-  height: clamp(36px, 7vw, 72px);
+  height: clamp(48px, 8.4vw, 92px);
+  overflow: hidden;
   border-radius: 6px;
+  background: #e8ece9;
 }
 
-.v2-scene-shop__photo--jas {
-  background: linear-gradient(160deg, #1c1e22 0%, #059b60 120%);
+.v2-scene-shop__photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.v2-scene-shop__photo--tas {
-  background: linear-gradient(160deg, #c4a574 0%, #7a4e2d 100%);
+.v2-scene-shop__more {
+  padding: 0 10px 18px;
 }
 
-.v2-scene-shop__photo--shirt {
-  background: linear-gradient(160deg, #e8ece9 0%, #059b60 140%);
+.v2-scene-shop__more > p {
+  margin: 2px 0 8px;
+  color: #14171b;
+  font-size: clamp(10px, 1.2vw, 14px);
+  font-weight: 750;
+}
+
+.v2-scene-shop__more .v2-scene-shop__grid {
+  padding: 0;
+}
+
+.v2-scene-guides {
+  position: absolute;
+  inset: 34px 0 0;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.v2-scene.is-measure .v2-scene-guides {
+  opacity: 1;
+}
+
+.v2-scene.is-scroll .v2-scene-guides {
+  opacity: 0;
+}
+
+.v2-scene-ruler {
+  position: absolute;
+  background: rgba(12, 18, 16, 0.88);
+  color: #9cf0c8;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 8px;
+  overflow: hidden;
+}
+
+.v2-scene-ruler--x {
+  top: 0;
+  left: 18px;
+  right: 0;
+  height: 18px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0 8px 2px;
+  transform: scaleX(0);
+  transform-origin: left center;
+  background-image: repeating-linear-gradient(
+    90deg,
+    #059b60 0 1px,
+    transparent 1px 7px
+  );
+}
+
+.v2-scene-ruler--y {
+  top: 18px;
+  left: 0;
+  bottom: 0;
+  width: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px 0;
+  text-align: center;
+  transform: scaleY(0);
+  transform-origin: center top;
+  background-image: repeating-linear-gradient(
+    180deg,
+    #059b60 0 1px,
+    transparent 1px 7px
+  );
+}
+
+.v2-scene.is-measure .v2-scene-ruler--x {
+  transform: scaleX(1);
+  transition: transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.v2-scene.is-measure .v2-scene-ruler--y {
+  transform: scaleY(1);
+  transition: transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) 0.12s;
+}
+
+.v2-scene-tape {
+  position: absolute;
+  overflow: hidden;
+}
+
+.v2-scene-tape b {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #e8ff57 0 8px,
+      #c8e046 8px 16px
+    );
+  box-shadow: inset 0 0 0 1px rgba(16, 19, 26, 0.18);
+}
+
+.v2-scene-tape--v b {
+  background:
+    repeating-linear-gradient(
+      180deg,
+      #e8ff57 0 8px,
+      #c8e046 8px 16px
+    );
+}
+
+.v2-scene-tape em {
+  position: absolute;
+  padding: 1px 5px;
+  border-radius: 99px;
+  background: #059b60;
+  color: #fff;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.v2-scene-tape--h {
+  top: 42%;
+  left: 28px;
+  width: 0;
+  height: 16px;
+}
+
+.v2-scene-tape--h em {
+  top: -18px;
+  right: 0;
+}
+
+.v2-scene-tape--v {
+  top: 28px;
+  left: 46%;
+  width: 16px;
+  height: 0;
+}
+
+.v2-scene-tape--v em {
+  left: 20px;
+  bottom: 0;
+}
+
+.v2-scene.is-measure .v2-scene-tape--h {
+  width: 64%;
+  transition: width 1.15s cubic-bezier(0.22, 0.61, 0.36, 1) 0.28s;
+}
+
+.v2-scene.is-measure .v2-scene-tape--v {
+  height: 48%;
+  transition: height 1.15s cubic-bezier(0.22, 0.61, 0.36, 1) 0.42s;
+}
+
+.v2-scene-line {
+  position: absolute;
+  background: rgba(5, 155, 96, 0.55);
+}
+
+.v2-scene-line--h {
+  top: 42%;
+  left: 18px;
+  right: 0;
+  height: 1px;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.v2-scene-line--v {
+  top: 18px;
+  bottom: 0;
+  left: 46%;
+  width: 1px;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+.v2-scene.is-measure .v2-scene-line--h {
+  transform: scaleX(1);
+  transition: transform 0.7s ease 0.2s;
+}
+
+.v2-scene.is-measure .v2-scene-line--v {
+  transform: scaleY(1);
+  transition: transform 0.7s ease 0.32s;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -652,6 +880,10 @@ button {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+
+  .v2-scene-guides {
+    display: none;
   }
 }
 
@@ -3180,7 +3412,7 @@ button {
   }
 
   .v2-hero__line {
-    display: block;
+    display: none;
   }
 
   .logo-slider {
@@ -3189,14 +3421,26 @@ button {
   }
 
   .v2-hero__inner {
-    grid-template-columns: minmax(0, 1.28fr) minmax(420px, 0.86fr);
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.1fr) minmax(36px, 0.28fr);
     align-items: center;
     min-height: 0;
-    gap: 28px;
+    gap: 28px 36px;
   }
 
   .v2-hero__copy {
     max-width: none;
+    grid-column: 1;
+  }
+
+  .v2-stage {
+    grid-column: 2;
+  }
+
+  .v2-devices-wrap {
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .v2-hero h1 {
@@ -3214,11 +3458,6 @@ button {
     height: 54px;
     padding: 0 24px;
     font-size: 19px;
-  }
-
-  .v2-devices-wrap {
-    width: 100%;
-    max-width: 820px;
   }
 
   .v2-partner__cards {
