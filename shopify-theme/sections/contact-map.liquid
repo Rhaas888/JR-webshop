@@ -75,20 +75,16 @@
         >
       </div>
 
-      <nav class="contact-form__choices{% if view == 'landing' %} contact-form__choices--big{% endif %}" aria-label="Wat wil je doen">
-        <a
-          class="contact-form__choice contact-form__choice--green{% if view == 'vraag' %} is-active{% endif %}"
-          href="{{ vraag_url }}"
-        >
-          Ik heb een vraag
-        </a>
-        <a
-          class="contact-form__choice contact-form__choice--light{% if view == 'offerte' %} is-active{% endif %}"
-          href="{{ offerte_url }}"
-        >
-          Ik wil een offerte
-        </a>
-      </nav>
+      {%- if view == 'landing' -%}
+        <nav class="contact-form__choices contact-form__choices--big" aria-label="Wat wil je doen">
+          <a class="contact-form__choice contact-form__choice--green" href="{{ vraag_url }}">
+            Ik heb een vraag
+          </a>
+          <a class="contact-form__choice contact-form__choice--light" href="{{ offerte_url }}">
+            Ik wil een offerte
+          </a>
+        </nav>
+      {%- endif -%}
 
       {%- if view == 'vraag' -%}
         <form id="CallbackForm" class="contact-call" data-jr-contact="callback">
