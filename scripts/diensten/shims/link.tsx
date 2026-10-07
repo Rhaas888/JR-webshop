@@ -7,6 +7,7 @@ const routes: Record<string, string> = {
   "/diensten/website": "/pages/diensten-website",
   "/diensten/app": "/pages/diensten-app",
   "/diensten/automatisering": "/pages/diensten-automatisering",
+  "/builder": "/pages/diensten-bouwer",
 }
 
 function mapHref(href: string) {

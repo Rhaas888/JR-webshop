@@ -101,6 +101,7 @@ const inputCss = `
 @source "${source}/lib";
 @source "${here}/shims";
 @source "${here}/entry.tsx";
+@source "${here}/overview.tsx";
 @theme {
   --color-brand: #16a34a;
   --color-brand-dark: #128a3e;
@@ -199,7 +200,7 @@ const css = fs.readFileSync(path.join(themeAssets, "diensten-app.css"), "utf8")
 for (const name of ["hero-in", "drift-glow", "shop-page", "aura-scene", "checkout-reel", "bg-brand"]) {
   if (!css.includes(name)) throw new Error(`CSS mist ${name}`)
 }
-for (const phrase of ["Webshop bouwen", "Open de bouwer", "Vraag een offerte"]) {
+for (const phrase of ["Webshop bouwen", "Open de bouwer", "Vraag een offerte", "Automatisering bouwen", "Zet het scherm in elkaar"]) {
   if (!js.includes(phrase)) throw new Error(`Bundle mist ${phrase}`)
 }
 if (assetPattern.test("")) void assetPattern

@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "diensten": {
+      "type": "diensten-page",
+      "settings": {
+        "slug": "bouwer"
+      }
+    }
+  },
+  "order": ["diensten"]
+}

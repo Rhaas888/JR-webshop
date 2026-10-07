@@ -5491,7 +5491,8 @@ button {
   overflow-y: auto;
 }
 
-.site-menu__label {
+.site-menu__label,
+.site-menu__panel a.site-menu__label {
   margin: 8px 0 0;
   color: #16a34a;
   font-size: 12px;
@@ -5518,6 +5519,13 @@ button {
 @media (min-width: 1080px) {
   .site-services__panel {
     display: block;
+  }
+
+  .site-services__grid {
+    width: min(1120px, calc(100vw - clamp(56px, 5.5vw, 112px)));
+    max-width: none;
+    transform-origin: top center;
+    transform: scale(max(1, min(calc((100vw - clamp(56px, 5.5vw, 112px)) / 1120px), calc(1880px / 1120px))));
   }
 }
 

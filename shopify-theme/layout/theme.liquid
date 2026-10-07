@@ -10,6 +10,10 @@
     <title>
       {%- if page.handle == 'offerte' -%}
         Offerte · {{ shop.name }}
+      {%- elsif page.handle == 'diensten' -%}
+        Diensten · {{ shop.name }}
+      {%- elsif page.handle == 'diensten-bouwer' -%}
+        App bouwer · {{ shop.name }}
       {%- elsif page.handle == 'diensten-webshop' -%}
         Webshop bouwen · {{ shop.name }}
       {%- elsif page.handle == 'diensten-website' -%}

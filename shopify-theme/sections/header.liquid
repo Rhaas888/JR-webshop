@@ -19,16 +19,16 @@
 
     <nav class="site-header__nav" aria-label="{{ 'header.navigation' | t }}">
       <a href="{{ routes.root_url }}" {% if request.page_type == 'index' %}aria-current="page"{% endif %}>{{ 'header.home' | t }}</a>
-      <button
+      <a
         class="site-services__toggle"
-        type="button"
+        href="/pages/diensten"
         data-services-toggle
         aria-expanded="false"
         aria-controls="ServicesMenu"
-        {% if page.handle == 'diensten-webshop' or page.handle == 'diensten-website' or page.handle == 'diensten-app' or page.handle == 'diensten-automatisering' %}aria-current="page"{% endif %}
+        {% if page.handle == 'diensten' or page.handle == 'diensten-bouwer' or page.handle == 'diensten-webshop' or page.handle == 'diensten-website' or page.handle == 'diensten-app' or page.handle == 'diensten-automatisering' %}aria-current="page"{% endif %}
       >
         {{ 'header.services' | t }}
-      </button>
+      </a>
       <a href="/pages/over-ons"{% if page.handle == 'over-ons' %} aria-current="page"{% endif %}>{{ 'header.about' | t }}</a>
       <a href="/pages/contact">{{ 'header.contact' | t }}</a>
     </nav>
@@ -62,7 +62,7 @@
   <button class="site-menu__backdrop" type="button" data-menu-close aria-label="{{ 'header.close_menu' | t }}"></button>
   <nav class="site-menu__panel" aria-label="{{ 'header.navigation' | t }}">
     <a href="{{ routes.root_url }}" data-menu-close>{{ 'header.home' | t }}</a>
-    <p class="site-menu__label">{{ 'header.services' | t }}</p>
+    <a class="site-menu__label" href="/pages/diensten" data-menu-close{% if page.handle == 'diensten' %} aria-current="page"{% endif %}>{{ 'header.services' | t }}</a>
     {% render 'diensten-links', mode: 'menu' %}
     <a href="/pages/over-ons" data-menu-close{% if page.handle == 'over-ons' %} aria-current="page"{% endif %}>{{ 'header.about' | t }}</a>
     <a href="/pages/contact" data-menu-close>{{ 'header.contact' | t }}</a>
