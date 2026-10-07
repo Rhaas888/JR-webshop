@@ -6,7 +6,7 @@
   if (!(body instanceof HTMLElement)) return;
 
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    root.classList.add("is-shop");
+    root.classList.add("is-measure", "is-frames", "is-slide", "is-shop");
     return;
   }
 
@@ -16,7 +16,7 @@
     '  color: "#059b60",',
     "});",
     "",
-    'shop.addProduct("Linnen jas", 89);',
+    'shop.addProduct("Leren jas", 129);',
     'shop.addProduct("Leren tas", 64);',
     "",
     "function render(page) {",
@@ -93,7 +93,7 @@
   async function play() {
     running = true;
     while (running && document.body.contains(root)) {
-      root.classList.remove("is-shop", "is-measure", "is-scroll");
+      root.classList.remove("is-shop", "is-measure", "is-frames", "is-slide", "is-scroll");
       body.replaceChildren();
       await wait(220);
       var n = 0;
@@ -103,13 +103,17 @@
         await wait(LINES[n - 1] ? 70 : 40);
       }
       await wait(420);
-      root.classList.add("is-shop");
-      await wait(780);
       root.classList.add("is-measure");
-      await wait(2100);
+      await wait(1700);
+      root.classList.add("is-frames");
+      await wait(720);
+      root.classList.add("is-slide");
+      await wait(980);
+      root.classList.add("is-shop");
+      await wait(1400);
       root.classList.add("is-scroll");
-      await wait(4600);
-      root.classList.remove("is-shop", "is-measure", "is-scroll");
+      await wait(3800);
+      root.classList.remove("is-shop", "is-measure", "is-frames", "is-slide", "is-scroll");
       await wait(700);
     }
   }
