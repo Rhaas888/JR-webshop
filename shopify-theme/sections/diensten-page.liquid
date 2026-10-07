@@ -1,0 +1,24 @@
+{{ 'diensten-app.css' | asset_url | stylesheet_tag }}
+<div class="jr-diensten" data-diensten data-slug="{{ section.settings.slug | escape }}"></div>
+{% render 'diensten-assets' %}
+<script src="{{ 'diensten-app.js' | asset_url }}"></script>
+
+{% schema %}
+{
+  "name": "Dienst",
+  "settings": [
+    {
+      "type": "select",
+      "id": "slug",
+      "label": "Dienst",
+      "options": [
+        { "value": "webshop", "label": "Webshop bouwen" },
+        { "value": "website", "label": "Website bouwen" },
+        { "value": "app", "label": "App bouwen" },
+        { "value": "automatisering", "label": "Automatisering" }
+      ],
+      "default": "webshop"
+    }
+  ]
+}
+{% endschema %}
