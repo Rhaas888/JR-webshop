@@ -3418,7 +3418,10 @@ button {
   }
 
   .v2-hero {
-    padding: 72px 0 88px;
+    container-type: inline-size;
+    display: flex;
+    justify-content: center;
+    padding: 64px 32px 80px;
   }
 
   .v2-hero__line {
@@ -3430,41 +3433,44 @@ button {
     margin-bottom: 18px;
   }
 
-  .v2-hero__inner {
-    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.38fr);
+  .v2-hero__inner.page-width {
+    width: 1280px;
+    max-width: none;
+    margin-inline: 0;
+    display: grid;
+    grid-template-columns: 460px 680px;
+    justify-content: space-between;
     align-items: center;
     min-height: 0;
-    gap: 28px 0;
+    gap: 0;
+    zoom: min(1, calc(100cqi / 1280));
   }
 
   .v2-hero__copy {
     max-width: none;
-    grid-column: 1;
+    width: 460px;
   }
 
   .v2-stage {
-    grid-column: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 680px;
+    display: block;
   }
 
   .v2-devices-wrap {
-    width: 100%;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 680px;
+    max-width: none;
+    margin: 0;
   }
 
   .v2-hero h1 {
     max-width: none;
-    font-size: clamp(56px, 5.15vw, 80px);
+    font-size: 64px;
   }
 
   .v2-hero__text {
-    max-width: 28em;
-    margin-top: 28px;
-    font-size: 22px;
+    max-width: none;
+    margin-top: 24px;
+    font-size: 20px;
   }
 
   .v2-hero .v2-btn {
