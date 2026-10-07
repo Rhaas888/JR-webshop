@@ -3421,6 +3421,7 @@ button {
     container-type: inline-size;
     display: flex;
     justify-content: center;
+    overflow-x: hidden;
     padding: 64px 32px 80px;
   }
 
@@ -3436,6 +3437,8 @@ button {
   .v2-hero__inner.page-width {
     width: 1280px;
     max-width: none;
+    min-width: 1280px;
+    flex: 0 0 1280px;
     margin-inline: 0;
     display: grid;
     grid-template-columns: 460px 680px;
@@ -3443,7 +3446,7 @@ button {
     align-items: center;
     min-height: 0;
     gap: 0;
-    zoom: min(1, calc(100cqi / 1280));
+    zoom: min(1, calc(100cqi / 1280px));
   }
 
   .v2-hero__copy {
