@@ -1,0 +1,31 @@
+---
+name: grilling
+description: Grill the user relentlessly about a plan, decision, or idea. Use when the user wants to stress-test their thinking, or uses any 'grill' trigger phrases.
+---
+
+Interview the user relentlessly until you reach a shared understanding. Map this as a design tree: each decision opens up new dependent decisions. Work this tree down in rounds.
+
+In each round:
+
+- Find the frontier of the design tree — all decisions whose dependencies have been resolved.
+- For each one, formulate a question and your recommended answer.
+- Number the questions so the user can easily refer to them.
+- Ask all frontier questions at once. Group them logically if there are many.
+- Once the user answers, resolve those decisions and find the new frontier.
+- If an answer opens up new questions, add them to the tree.
+- If an answer invalidates earlier assumptions, prune and rebuild.
+- Don't speculate on facts you can check. Check the facts first, then only ask the user if it's a decision, preference, or something you can't verify.
+
+Format each round clearly:
+
+❓ **Q1** - [Topic]: [Question with context]
+➡️ [Your recommended answer]
+
+---
+
+❓ **Q2** - [Topic]: [Question with context]
+➡️ [Your recommended answer]
+
+Keep going until all leaves of the design tree are resolved. When you're done, you should have a complete, unambiguous specification with no open questions.
+
+Do not write any code or take any action until you're done grilling the user and they've confirmed the design.

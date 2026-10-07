@@ -1,0 +1,130 @@
+{%- liquid
+  assign hero_image = hero_image | default: nil
+  assign rik_image = rik_image | default: nil
+  assign julius_image = julius_image | default: nil
+  assign work_image = work_image | default: nil
+-%}
+
+<section class="v2-about">
+  <div class="v2-about__hero page-width">
+    <div class="v2-about__copy">
+      <p class="v2-about__eyebrow">Over JR Intelligence</p>
+      <h1>Achter JR Intelligence zitten gewoon <b>twee mensen.</b></h1>
+      <p class="v2-about__lead">We bouwen <b>websites</b>, <b>webshops</b>, <b>apps</b> en <b>automatiseringen</b> voor bedrijven die dingen slimmer willen aanpakken. <b>Persoonlijk contact</b> staat bij ons voorop.</p>
+    </div>
+    <div class="v2-about__media v2-about__media--hero"{% if hero_image == blank %} aria-hidden="true"{% endif %}>
+      {%- if hero_image != blank -%}
+        <img
+          src="{{ hero_image | image_url: width: 1600 }}"
+          alt="Rik en Julius van JR Intelligence"
+          width="{{ hero_image.width }}"
+          height="{{ hero_image.height }}"
+        >
+      {%- endif -%}
+    </div>
+  </div>
+
+  <div class="v2-about__band">
+    <div class="v2-about__story page-width">
+      <div class="v2-about__copy">
+        <p class="v2-about__eyebrow">Ons verhaal</p>
+        <h2>Hoe het <b>begon.</b></h2>
+        <p>JR Intelligence is ontstaan vanuit een simpele interesse: hoe technologie bedrijven <b>slimmer</b> kan laten werken.</p>
+        <p>We zijn twee jongens van 18 die begonnen met <b>AI</b>. In het begin waren we vooral bezig met ontdekken wat er allemaal mogelijk was. We testten verschillende AI-modellen, probeerden nieuwe tools uit en gingen steeds verder in wat we ermee konden maken.</p>
+        <p>Na verloop van tijd wilden we meer dan alleen AI gebruiken. We wilden er echt iets mee bouwen. Zo zijn we ons gaan richten op <b>websites</b>, <b>webshops</b>, <b>apps</b> en <b>automatiseringen</b>.</p>
+        <p>We proberen bewust niet alles te doen. We richten ons op de dingen waar we goed in zijn en die we ook echt leuk vinden om te maken.</p>
+        <p>Wat ons uiteindelijk het meeste aanspreekt, is <b>mensen helpen</b>. Een idee van iemand uitwerken, een probleem oplossen of een proces slimmer maken en vervolgens zien dat het daadwerkelijk werkt. Die combinatie van mensen helpen en digitale oplossingen bedenken is precies wat ons zo enthousiast maakt over <b>JR Intelligence</b>.</p>
+      </div>
+      <ol class="v2-about__steps">
+        <li>
+          <span class="v2-about__dot" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 1 3.6 10.8c-.7.5-1.1 1.2-1.2 2.2H9.6c-.1-1-.5-1.7-1.2-2.2A6 6 0 0 1 12 3Z"/></svg>
+          </span>
+          <b>Idee</b>
+        </li>
+        <li>
+          <span class="v2-about__dot" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="m8 8-4 4 4 4M16 8l4 4-4 4"/></svg>
+          </span>
+          <b>Eerste projecten</b>
+        </li>
+        <li>
+          <span class="v2-about__dot v2-about__dot--jr" aria-hidden="true">
+            <img src="{{ 'logo-jr-mark.png' | asset_url }}" alt="" width="40" height="26">
+          </span>
+          <b>JR Intelligence</b>
+        </li>
+        <li>
+          <span class="v2-about__dot" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3.5v4M16 3.5v4M4 10h16"/></svg>
+          </span>
+          <b>Vandaag</b>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="v2-about__people">
+    <div class="v2-about__people-inner page-width">
+      <div class="v2-about__copy">
+        <p class="v2-about__eyebrow">De mensen</p>
+        <h2>De mensen achter <b>JR Intelligence.</b></h2>
+        <p>Wij zijn twee 18-jarige jongens die groot fan zijn van <b>coderen</b>, het bedenken van slimme oplossingen voor bedrijven en het <b>bouwen</b> ervan.</p>
+      </div>
+
+      <article class="v2-about__card">
+        <div class="v2-about__media v2-about__media--person"{% if rik_image == blank %} aria-hidden="true"{% endif %}>
+          {%- if rik_image != blank -%}
+            <img
+              src="{{ rik_image | image_url: width: 400 }}"
+              alt="Rik de Haas"
+              width="{{ rik_image.width }}"
+              height="{{ rik_image.height }}"
+            >
+          {%- endif -%}
+        </div>
+        <div>
+          <h3>Rik de Haas</h3>
+          <p class="v2-about__role">Co-founder &amp; Development</p>
+          <p>Houdt zich vooral bezig met de technische kant, <b>websites</b>, <b>automatiseringen</b> en het uitwerken van nieuwe ideeën.</p>
+        </div>
+      </article>
+
+      <article class="v2-about__card">
+        <div class="v2-about__media v2-about__media--person"{% if julius_image == blank %} aria-hidden="true"{% endif %}>
+          {%- if julius_image != blank -%}
+            <img
+              src="{{ julius_image | image_url: width: 400 }}"
+              alt="Julius van Schagen"
+              width="{{ julius_image.width }}"
+              height="{{ julius_image.height }}"
+            >
+          {%- endif -%}
+        </div>
+        <div>
+          <h3>Julius van Schagen</h3>
+          <p class="v2-about__role">Co-founder &amp; Design</p>
+          <p>Is vooral bezig met het <b>design</b>, de gebruikerservaring en het <b>contact</b> met klanten. Samen zorgen we dat alles klopt.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="v2-about__work page-width">
+    <div class="v2-about__copy">
+      <p class="v2-about__eyebrow">Onze aanpak</p>
+      <h2>Van idee naar iets dat <b>werkt.</b></h2>
+      <p>We nemen je mee in het proces. Van de eerste schets tot een <b>werkend product</b>. Stap voor stap, duidelijk en zonder gedoe.</p>
+    </div>
+    <div class="v2-about__media v2-about__media--work"{% if work_image == blank %} aria-hidden="true"{% endif %}>
+      {%- if work_image != blank -%}
+        <img
+          src="{{ work_image | image_url: width: 1600 }}"
+          alt=""
+          width="{{ work_image.width }}"
+          height="{{ work_image.height }}"
+        >
+      {%- endif -%}
+    </div>
+  </div>
+</section>

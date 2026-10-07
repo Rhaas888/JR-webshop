@@ -1,10 +1,9 @@
 {
   "sections": {
-    "main": { "type": "page-over-ons", "settings": {} },
-    "cta": {
-      "type": "cta-band",
-      "settings": { "title": "Zin om kennis te maken?" }
+    "about": {
+      "type": "about",
+      "settings": {}
     }
   },
-  "order": ["main", "cta"]
+  "order": ["about"]
 }

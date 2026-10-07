@@ -1,22 +1,190 @@
-<section class="jr-section">
-  <div class="jr-container">
-    {% render 'section-heading',
-      kicker: 'Diensten',
-      title: 'Webshop of app, verder niets',
-      description: 'We bouwen alleen webshops en apps. Daardoor blijft het ontwerp helder, de prijs duidelijk en de lijnen kort.'
-    %}
-    <div class="jr-cards jr-cards--2">
-      <article class="jr-card">
-        <h3>Webshop laten bouwen</h3>
-        <p class="jr-card__price">vanaf €499</p>
-        <p>Een eigen shop die vertrouwen wekt: producten, checkout, beheer en een ontwerp dat bij je merk past.</p>
-        <a class="jr-btn jr-btn--primary" href="/pages/webshop-laten-bouwen">Bekijk deze dienst</a>
+{%- liquid
+  assign help_link = section.settings.help_link
+  assign websites_link = section.settings.websites_link
+  assign automation_link = section.settings.automation_link
+  assign apps_link = section.settings.apps_link
+  if help_link == blank
+    assign help_link = '/pages/contact'
+  endif
+  if websites_link == blank
+    assign websites_link = '/pages/webshop-laten-bouwen'
+  endif
+  if automation_link == blank
+    assign automation_link = '/pages/contact'
+  endif
+  if apps_link == blank
+    assign apps_link = '/pages/app-laten-bouwen'
+  endif
+-%}
+
+<section class="v2-services">
+  <svg class="v2-services__curve v2-services__curve--right" viewBox="0 0 240 150" fill="none" aria-hidden="true">
+    <path d="M8 28C70 8 150 36 232 138" stroke="#9ed9c0" stroke-width="1.6"/>
+  </svg>
+  <svg class="v2-services__curve v2-services__curve--left" viewBox="0 0 150 180" fill="none" aria-hidden="true">
+    <path d="M130 12C48 48 18 110 78 168" stroke="#9ed9c0" stroke-width="1.6"/>
+  </svg>
+
+  <div class="v2-services__inner page-width">
+    <div class="v2-services__intro">
+      <p class="v2-services__eyebrow"><span></span>{{ section.settings.eyebrow }}</p>
+      <h2>
+        {%- if section.settings.heading == 'Alles voor de online groei van jouw bedrijf' -%}
+          <span>Alles voor de <b>online groei</b></span>
+          <span>van <b>jouw bedrijf</b></span>
+        {%- else -%}
+          {{ section.settings.heading }}
+        {%- endif -%}
+      </h2>
+      <div class="v2-services__lead">
+        {%- if section.settings.text contains 'Wij ontwikkelen digitale oplossingen die jouw bedrijf laten groeien.' -%}
+          <p>Wij ontwikkelen digitale oplossingen die jouw bedrijf laten groeien. <br>We tillen je processen naar een hoger niveau <br>en denken mee in elke stap van het traject.</p>
+        {%- else -%}
+          {{ section.settings.text }}
+        {%- endif -%}
+      </div>
+      <a class="v2-btn v2-services__cta" href="{{ help_link }}">
+        {{ section.settings.button_label }}
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <div class="v2-services__cards">
+      <article class="v2-services__card">
+        <div class="v2-services__copy">
+          <span class="v2-services__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <rect x="3" y="4.5" width="18" height="12" rx="2"/>
+              <path d="M8 19.5h8M12 16.5v3"/>
+            </svg>
+          </span>
+          <p class="v2-services__kicker">{{ section.settings.card_one_kicker }}</p>
+          <h3>
+            {%- if section.settings.card_one_title == 'Websites en webshops laten maken' -%}
+              <span>Websites en</span>
+              <span>webshops laten maken</span>
+            {%- else -%}
+              {{ section.settings.card_one_title }}
+            {%- endif -%}
+          </h3>
+          <p class="v2-services__text">{{ section.settings.card_one_text }}</p>
+          <a class="v2-services__more" href="{{ websites_link }}">
+            {{ section.settings.more_label }}
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+        <div class="v2-services__art" aria-hidden="true">
+          <img
+            class="v2-services__phone"
+            src="{{ 'diensten-webshop.png' | asset_url }}"
+            alt=""
+            width="539"
+            height="936"
+          >
+        </div>
       </article>
-      <article class="jr-card">
-        <h3>App laten maken</h3>
-        <p class="jr-card__price">vanaf €999</p>
-        <p>Software die aansluit op jullie processen. Eerst een werkende versie, daarna verder bouwen waar het waarde heeft.</p>
-        <a class="jr-btn jr-btn--primary" href="/pages/app-laten-maken">Bekijk deze dienst</a>
+
+      <article class="v2-services__card v2-services__card--flow">
+        <div class="v2-services__copy">
+          <span class="v2-services__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M10.1 2.4h3.8l.5 2.1c.7.2 1.3.5 1.9.9l2-.9 2.7 2.7-1 2c.4.6.7 1.2.9 1.9l2.1.5v3.8l-2.1.5c-.2.7-.5 1.3-.9 1.9l1 2-2.7 2.7-2-.9c-.6.4-1.2.7-1.9.9l-.5 2.1h-3.8l-.5-2.1a7 7 0 0 1-1.9-.9l-2 .9-2.7-2.7 1-2a7 7 0 0 1-.9-1.9l-2.1-.5V9.6l2.1-.5c.2-.7.5-1.3.9-1.9l-1-2 2.7-2.7 2 .9c.6-.4 1.2-.7 1.9-.9l.5-2.1Zm1.9 6.2a3.4 3.4 0 1 0 0 6.8 3.4 3.4 0 0 0 0-6.8Z"/>
+            </svg>
+          </span>
+          <p class="v2-services__kicker">{{ section.settings.card_two_kicker }}</p>
+          <h3>
+            {%- if section.settings.card_two_title == 'Processen slimmer maken' -%}
+              <span>Processen</span>
+              <span>slimmer maken</span>
+            {%- else -%}
+              {{ section.settings.card_two_title }}
+            {%- endif -%}
+          </h3>
+          <p class="v2-services__text">{{ section.settings.card_two_text }}</p>
+          <a class="v2-services__more" href="{{ automation_link }}">
+            {{ section.settings.more_label }}
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+        <div class="v2-services__art">
+          <div class="v2-flow" aria-hidden="true">
+            <ul class="v2-flow__list">
+              <li class="v2-flow__item">
+                <span class="v2-flow__mark v2-flow__mark--gpt">
+                  <img src="{{ 'chatgpt-mark.png' | asset_url }}" alt="" width="512" height="512">
+                </span>
+                <span class="v2-flow__copy">
+                  <strong>ChatGPT</strong>
+                  <small>AI &amp; content</small>
+                </span>
+              </li>
+              <li class="v2-flow__item">
+                <span class="v2-flow__mark v2-flow__mark--zap">
+                  <svg viewBox="0 0 32 32" aria-hidden="true">
+                    <g fill="#ff4f1a">
+                      <rect x="13.2" y="2.2" width="5.6" height="27.6" rx="2.8"/>
+                      <rect x="13.2" y="2.2" width="5.6" height="27.6" rx="2.8" transform="rotate(45 16 16)"/>
+                      <rect x="13.2" y="2.2" width="5.6" height="27.6" rx="2.8" transform="rotate(90 16 16)"/>
+                      <rect x="13.2" y="2.2" width="5.6" height="27.6" rx="2.8" transform="rotate(135 16 16)"/>
+                    </g>
+                  </svg>
+                </span>
+                <span class="v2-flow__copy">
+                  <strong>Zapier</strong>
+                  <small>Workflows</small>
+                </span>
+              </li>
+              <li class="v2-flow__item">
+                <span class="v2-flow__mark v2-flow__mark--sheet">
+                  <svg viewBox="0 0 40 50" aria-hidden="true">
+                    <path fill="#0f9d58" d="M7 2h18l12 12v30a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4z"/>
+                    <path fill="#c6ead3" d="M25 2v12h12z"/>
+                    <path fill="#fff" d="M10 22h20v18H10z"/>
+                    <path stroke="#0f9d58" stroke-width="1.35" d="M10 28h20M10 34h20M16.6 22v18M23.3 22v18"/>
+                  </svg>
+                </span>
+                <span class="v2-flow__copy">
+                  <strong>Google Sheets</strong>
+                  <small>Data &amp; rapporten</small>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="v2-services__card">
+        <div class="v2-services__copy">
+          <span class="v2-services__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <rect x="7" y="3" width="10" height="18" rx="2"/>
+              <path d="M11 17.5h2"/>
+            </svg>
+          </span>
+          <p class="v2-services__kicker">{{ section.settings.card_three_kicker }}</p>
+          <h3>
+            {%- if section.settings.card_three_title == 'Slimme apps op maat' -%}
+              <span>Slimme apps</span>
+              <span>op maat</span>
+            {%- else -%}
+              {{ section.settings.card_three_title }}
+            {%- endif -%}
+          </h3>
+          <p class="v2-services__text">{{ section.settings.card_three_text }}</p>
+          <a class="v2-services__more" href="{{ apps_link }}">
+            {{ section.settings.more_label }}
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+        <div class="v2-services__art" aria-hidden="true">
+          <img
+            class="v2-services__devices"
+            src="{{ 'diensten-apps.png' | asset_url }}"
+            alt=""
+            width="766"
+            height="601"
+          >
+        </div>
       </article>
     </div>
   </div>
@@ -25,6 +193,116 @@
 {% schema %}
 {
   "name": "Diensten",
-  "settings": []
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Label",
+      "default": "Onze diensten"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Kop",
+      "default": "Alles voor de online groei van jouw bedrijf"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Tekst",
+      "default": "<p>Wij ontwikkelen digitale oplossingen die jouw bedrijf laten groeien. We tillen je processen naar een hoger niveau en denken mee in elke stap van het traject.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Knop",
+      "default": "Ontdek hoe we je helpen"
+    },
+    {
+      "type": "url",
+      "id": "help_link",
+      "label": "Knop-link"
+    },
+    {
+      "type": "text",
+      "id": "more_label",
+      "label": "Kaartlink",
+      "default": "Meer informatie"
+    },
+    {
+      "type": "text",
+      "id": "card_one_kicker",
+      "label": "Kaart 1 label",
+      "default": "Websites & webshops"
+    },
+    {
+      "type": "text",
+      "id": "card_one_title",
+      "label": "Kaart 1 titel",
+      "default": "Websites en webshops laten maken"
+    },
+    {
+      "type": "textarea",
+      "id": "card_one_text",
+      "label": "Kaart 1 tekst",
+      "default": "Een snelle, professionele website of webshop die goed vindbaar is en bezoekers overtuigt om contact op te nemen."
+    },
+    {
+      "type": "url",
+      "id": "websites_link",
+      "label": "Kaart 1 link"
+    },
+    {
+      "type": "text",
+      "id": "card_two_kicker",
+      "label": "Kaart 2 label",
+      "default": "Automatiseringen"
+    },
+    {
+      "type": "text",
+      "id": "card_two_title",
+      "label": "Kaart 2 titel",
+      "default": "Processen slimmer maken"
+    },
+    {
+      "type": "textarea",
+      "id": "card_two_text",
+      "label": "Kaart 2 tekst",
+      "default": "Wij automatiseren terugkerende taken en koppelen je systemen, zodat je tijd bespaart en efficiënter kunt werken."
+    },
+    {
+      "type": "url",
+      "id": "automation_link",
+      "label": "Kaart 2 link"
+    },
+    {
+      "type": "text",
+      "id": "card_three_kicker",
+      "label": "Kaart 3 label",
+      "default": "Apps"
+    },
+    {
+      "type": "text",
+      "id": "card_three_title",
+      "label": "Kaart 3 titel",
+      "default": "Slimme apps op maat"
+    },
+    {
+      "type": "textarea",
+      "id": "card_three_text",
+      "label": "Kaart 3 tekst",
+      "default": "Van idee tot app in de store. Wij bouwen gebruiksvriendelijke en schaalbare apps die perfect aansluiten op jouw doelen."
+    },
+    {
+      "type": "url",
+      "id": "apps_link",
+      "label": "Kaart 3 link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Diensten"
+    }
+  ]
 }
 {% endschema %}

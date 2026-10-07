@@ -1,0 +1,27 @@
+{% render 'contact-page', view_setting: section.settings.view, map_address: section.settings.address %}
+
+{% schema %}
+{
+  "name": "Contactkaart",
+  "settings": [
+    {
+      "type": "select",
+      "id": "view",
+      "label": "Weergave",
+      "default": "auto",
+      "options": [
+        { "value": "auto", "label": "Automatisch" },
+        { "value": "landing", "label": "Knoppen" },
+        { "value": "vraag", "label": "Vraag" },
+        { "value": "offerte", "label": "Offerte" }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "address",
+      "label": "Adres",
+      "default": "Leeghwaterstraat 25, 2811 DT Reeuwijk"
+    }
+  ]
+}
+{% endschema %}

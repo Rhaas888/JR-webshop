@@ -1,0 +1,42 @@
+<section class="logo-slider" aria-label="{{ section.settings.label | escape }}">
+  <p class="logo-slider__label">{{ section.settings.label }}</p>
+  <div class="logo-slider__viewport">
+    <div class="logo-slider__track">
+      <div class="logo-slider__item">
+        <img
+          src="{{ 'logo-blanc.png' | asset_url }}"
+          alt="BLANC"
+          width="985"
+          height="331"
+        >
+      </div>
+      <div class="logo-slider__item">
+        <img
+          src="{{ 'logo-glow.png' | asset_url }}"
+          alt="GLOW Amsterdam"
+          width="578"
+          height="233"
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Logo slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "Onze klanten:"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Logo slider"
+    }
+  ]
+}
+{% endschema %}

@@ -1,28 +1,53 @@
 <!doctype html>
-<html lang="nl">
+<html lang="{{ request.locale.iso_code }}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>
-      {{ page_title }}
-      {%- unless page_title contains shop.name %} | {{ shop.name }}{% endunless -%}
-    </title>
-    {%- if page_description -%}
-      <meta name="description" content="{{ page_description | escape }}">
-    {%- endif -%}
     <link rel="canonical" href="{{ canonical_url }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ 'favicon.png' | asset_url }}">
+    <link rel="apple-touch-icon" href="{{ 'favicon.png' | asset_url }}">
+
+    <title>
+      {%- if page.handle == 'offerte' -%}
+        Offerte · {{ shop.name }}
+      {%- elsif page.handle == 'diensten' -%}
+        Diensten · {{ shop.name }}
+      {%- elsif page.handle == 'diensten-bouwer' -%}
+        App bouwer · {{ shop.name }}
+      {%- elsif page.handle == 'diensten-webshop' -%}
+        Webshop bouwen · {{ shop.name }}
+      {%- elsif page.handle == 'diensten-website' -%}
+        Website bouwen · {{ shop.name }}
+      {%- elsif page.handle == 'diensten-app' -%}
+        App bouwen · {{ shop.name }}
+      {%- elsif page.handle == 'diensten-automatisering' -%}
+        Automatisering · {{ shop.name }}
+      {%- else -%}
+        {{ page_title }}
+        {%- unless page_title contains shop.name %} · {{ shop.name }}{% endunless -%}
+      {%- endif -%}
+    </title>
+
+    {% if page_description %}
+      <meta name="description" content="{{ page_description | escape }}">
+    {% endif %}
+
+    {{ 'inter-latin.woff2' | asset_url | preload_tag: as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }}
+
     {{ content_for_header }}
-    {{ 'jr.css' | asset_url | stylesheet_tag }}
+    {{ 'base.css' | asset_url | stylesheet_tag }}
   </head>
-  <body class="jr-body template-{{ template.name }}">
+
+  <body>
+    <a class="skip-link" href="#MainContent">{{ 'accessibility.skip_to_content' | t }}</a>
+
     {% section 'header' %}
-    <main id="MainContent" class="jr-main">
+
+    <main id="MainContent" tabindex="-1">
       {{ content_for_layout }}
     </main>
+
     {% section 'footer' %}
-    <script src="{{ 'jr.js' | asset_url }}" defer></script>
+    <script src="{{ 'contact-dashboard.js' | asset_url }}" defer></script>
   </body>
 </html>
