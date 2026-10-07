@@ -199,7 +199,7 @@ const css = fs.readFileSync(path.join(themeAssets, "diensten-app.css"), "utf8")
 for (const name of ["hero-in", "drift-glow", "shop-page", "aura-scene", "checkout-reel", "bg-brand"]) {
   if (!css.includes(name)) throw new Error(`CSS mist ${name}`)
 }
-for (const phrase of ["Webshop bouwen", "Open de bouwer", "Neem contact op", "hallo@jrintelligence.nl"]) {
+for (const phrase of ["Webshop bouwen", "Open de bouwer", "Vraag een offerte"]) {
   if (!js.includes(phrase)) throw new Error(`Bundle mist ${phrase}`)
 }
 if (assetPattern.test("")) void assetPattern
