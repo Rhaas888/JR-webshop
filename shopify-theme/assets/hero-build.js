@@ -1,6 +1,7 @@
 (function () {
-  var root = document.querySelector("[data-jr-build]");
-  if (!root) return;
+  document.querySelectorAll("[data-jr-build]").forEach(function (root) {
+  if (root.getAttribute("data-jr-ready") === "1") return;
+  root.setAttribute("data-jr-ready", "1");
 
   var body = root.querySelector("[data-jr-lines]");
   if (!(body instanceof HTMLElement)) return;
@@ -119,4 +120,5 @@
   }
 
   play();
+  });
 })();

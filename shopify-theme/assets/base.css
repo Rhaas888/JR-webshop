@@ -5204,6 +5204,15 @@ button {
   border-radius: 24px;
 }
 
+.v2-about__computer {
+  min-width: 0;
+}
+
+.v2-about__computer .v2-devices-wrap {
+  width: min(100%, 560px);
+  margin-inline: auto;
+}
+
 .v2-about__media--person {
   width: 88px;
   height: 88px;
