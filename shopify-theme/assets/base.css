@@ -5126,8 +5126,8 @@ button {
 
 .v2-about__copy p b,
 .v2-about__card p b {
-  color: #059b60;
-  font-weight: 650;
+  color: inherit;
+  font-weight: inherit;
 }
 
 .v2-about h2 {
