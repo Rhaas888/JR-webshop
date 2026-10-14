@@ -12,13 +12,20 @@
       <h1>Achter JR Intelligence zitten gewoon <b>twee mensen.</b></h1>
       <p class="v2-about__lead">We bouwen <b>websites</b>, <b>webshops</b>, <b>apps</b> en <b>automatiseringen</b> voor bedrijven die dingen slimmer willen aanpakken. <b>Persoonlijk contact</b> staat bij ons voorop.</p>
     </div>
-    <div class="v2-about__media v2-about__media--hero"{% if hero_image == blank %} aria-hidden="true"{% endif %}>
+    <div class="v2-about__media v2-about__media--hero">
       {%- if hero_image != blank -%}
         <img
-          src="{{ hero_image | image_url: width: 1600 }}"
-          alt="Rik en Julius van JR Intelligence"
+          src="{{ hero_image | image_url: width: 1200 }}"
+          alt="Steiger bij zonsondergang"
           width="{{ hero_image.width }}"
           height="{{ hero_image.height }}"
+        >
+      {%- else -%}
+        <img
+          src="{{ 'about-hero.jpg' | asset_url }}"
+          alt="Steiger bij zonsondergang"
+          width="420"
+          height="237"
         >
       {%- endif -%}
     </div>

@@ -5191,8 +5191,10 @@ button {
 }
 
 .v2-about__media--hero {
-  min-height: 240px;
-  aspect-ratio: 16 / 11;
+  width: min(100%, 520px);
+  min-height: 0;
+  aspect-ratio: 16 / 9;
+  justify-self: center;
   border-radius: 22px;
 }
 
@@ -5341,7 +5343,8 @@ button {
   }
 
   .v2-about__media--hero {
-    min-height: 340px;
+    justify-self: end;
+    min-height: 0;
   }
 
   .v2-about__steps {
