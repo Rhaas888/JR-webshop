@@ -98,13 +98,20 @@
       </article>
 
       <article class="v2-about__card">
-        <div class="v2-about__media v2-about__media--person"{% if julius_image == blank %} aria-hidden="true"{% endif %}>
+        <div class="v2-about__media v2-about__media--person">
           {%- if julius_image != blank -%}
             <img
               src="{{ julius_image | image_url: width: 400 }}"
               alt="Julius van Schagen"
               width="{{ julius_image.width }}"
               height="{{ julius_image.height }}"
+            >
+          {%- else -%}
+            <img
+              src="{{ 'julius-van-schagen.jpg' | asset_url }}"
+              alt="Julius van Schagen"
+              width="640"
+              height="640"
             >
           {%- endif -%}
         </div>
