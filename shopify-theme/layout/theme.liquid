@@ -22,6 +22,8 @@
         App bouwen · {{ shop.name }}
       {%- elsif page.handle == 'diensten-automatisering' -%}
         Automatisering · {{ shop.name }}
+      {%- elsif page.handle == 'onderhoud' -%}
+        Onderhoud · {{ shop.name }}
       {%- else -%}
         {{ page_title }}
         {%- unless page_title contains shop.name %} · {{ shop.name }}{% endunless -%}
