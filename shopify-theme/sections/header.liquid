@@ -1,64 +1,79 @@
-<header class="jr-header" data-header>
-  <div class="jr-container jr-header__inner">
-    <a href="/" class="jr-logo">
+<header class="site-header" data-header>
+  <div class="site-header__inner page-width">
+    <a class="site-header__logo" href="{{ routes.root_url }}">
       <img
-        class="jr-logo__img jr-logo__img--light"
-        src="{{ 'logo-jr.png' | asset_url }}"
+        class="site-header__mark site-header__mark--dark"
+        src="{{ 'logo-jr-black.png' | asset_url }}"
         alt="JR Intelligence"
         width="146"
         height="73"
       >
       <img
-        class="jr-logo__img jr-logo__img--dark"
-        src="{{ 'logo-jr-black.png' | asset_url }}"
+        class="site-header__mark site-header__mark--light"
+        src="{{ 'logo-jr.png' | asset_url }}"
         alt=""
         width="146"
         height="73"
       >
     </a>
 
-    <nav class="jr-nav" aria-label="Hoofdmenu">
-      <a href="/pages/webshop-laten-bouwen">Webshop</a>
-      <a href="/pages/app-laten-maken">App</a>
-      <a href="/pages/prijzen">Prijzen</a>
-      <a href="/pages/over-ons">Over ons</a>
-      <a href="/pages/contact">Contact</a>
+    <nav class="site-header__nav" aria-label="{{ 'header.navigation' | t }}">
+      <a href="{{ routes.root_url }}" {% if request.page_type == 'index' %}aria-current="page"{% endif %}>{{ 'header.home' | t }}</a>
+      <a
+        class="site-services__toggle"
+        href="/pages/diensten"
+        data-services-toggle
+        aria-expanded="false"
+        aria-controls="ServicesMenu"
+        {% if page.handle == 'diensten' or page.handle == 'diensten-bouwer' or page.handle == 'diensten-webshop' or page.handle == 'diensten-website' or page.handle == 'diensten-app' or page.handle == 'diensten-automatisering' %}aria-current="page"{% endif %}
+      >
+        {{ 'header.services' | t }}
+      </a>
+      <a href="/pages/over-ons"{% if page.handle == 'over-ons' %} aria-current="page"{% endif %}>{{ 'header.about' | t }}</a>
+      <a href="/pages/contact">{{ 'header.contact' | t }}</a>
     </nav>
 
-    <div class="jr-header__actions">
-      <a class="jr-btn jr-btn--primary jr-header__cta" href="/pages/contact">Offerte aanvragen</a>
-      <button
-        type="button"
-        class="jr-menu-btn"
-        data-menu-toggle
-        aria-expanded="false"
-        aria-controls="MobileMenu"
-        aria-label="Menu openen"
-      >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
+    <a class="site-header__cta" href="/pages/contact">
+      {{ 'header.start' | t }}
+      <span aria-hidden="true">→</span>
+    </a>
+
+    <button
+      class="site-header__menu"
+      type="button"
+      data-menu-toggle
+      aria-expanded="false"
+      aria-controls="MobileMenu"
+      aria-label="{{ 'header.open_menu' | t }}"
+    >
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div class="site-services__panel" id="ServicesMenu" data-services-panel>
+    <div class="site-services__grid">
+      {% render 'diensten-links', mode: 'panel' %}
     </div>
   </div>
 </header>
 
-<div class="jr-drawer" id="MobileMenu" data-menu>
-  <div class="jr-drawer__backdrop" data-menu-close></div>
-  <div class="jr-drawer__panel">
-    <p class="jr-drawer__title">
-      <img src="{{ 'logo-jr-black.png' | asset_url }}" alt="JR Intelligence" width="146" height="73">
-    </p>
-    <nav aria-label="Mobiel menu">
-      <a href="/pages/webshop-laten-bouwen" data-menu-close>Webshop</a>
-      <a href="/pages/app-laten-maken" data-menu-close>App</a>
-      <a href="/pages/prijzen" data-menu-close>Prijzen</a>
-      <a href="/pages/over-ons" data-menu-close>Over ons</a>
-      <a href="/pages/contact" data-menu-close>Contact</a>
-      <a class="jr-btn jr-btn--primary" href="/pages/contact">Offerte aanvragen</a>
-    </nav>
-  </div>
+<div class="site-menu" id="MobileMenu" data-menu>
+  <button class="site-menu__backdrop" type="button" data-menu-close aria-label="{{ 'header.close_menu' | t }}"></button>
+  <nav class="site-menu__panel" aria-label="{{ 'header.navigation' | t }}">
+    <a href="{{ routes.root_url }}" data-menu-close>{{ 'header.home' | t }}</a>
+    <a class="site-menu__label" href="/pages/diensten" data-menu-close{% if page.handle == 'diensten' %} aria-current="page"{% endif %}>{{ 'header.services' | t }}</a>
+    {% render 'diensten-links', mode: 'menu' %}
+    <a href="/pages/over-ons" data-menu-close{% if page.handle == 'over-ons' %} aria-current="page"{% endif %}>{{ 'header.about' | t }}</a>
+    <a href="/pages/contact" data-menu-close>{{ 'header.contact' | t }}</a>
+    <a class="site-header__cta" href="/pages/contact" data-menu-close>
+      {{ 'header.start' | t }}
+      <span aria-hidden="true">→</span>
+    </a>
+  </nav>
 </div>
+
+<script src="{{ 'header.js' | asset_url }}" defer></script>
 
 {% schema %}
 {

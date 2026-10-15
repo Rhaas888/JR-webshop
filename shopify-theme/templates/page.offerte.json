@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "main": {
+      "type": "contact-map",
+      "settings": {
+        "view": "offerte",
+        "address": "Leeghwaterstraat 25, 2811 DT Reeuwijk"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

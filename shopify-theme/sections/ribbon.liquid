@@ -1,0 +1,55 @@
+<section class="v2-ribbon" aria-label="Websites, webshops, apps op maat, automatiseringen, minder handmatig werk, persoonlijk contact, van idee tot realisatie en 100% maatwerk">
+  <div class="v2-ribbon__band v2-ribbon__band--dark">
+    <div class="v2-ribbon__track">
+      {%- for pass in (1..2) -%}
+        <div class="v2-ribbon__set"{% if pass == 2 %} aria-hidden="true"{% endif %}>
+          {%- for copy in (1..2) -%}
+            <span class="v2-ribbon__item">Websites</span>
+            <span class="v2-ribbon__mark" aria-hidden="true">
+              <svg viewBox="0 0 16 16"><path d="M8 .6 9.15 6.2 14.9 8 9.15 9.8 8 15.4 6.85 9.8 1.1 8 6.85 6.2Z"/></svg>
+            </span>
+            <span class="v2-ribbon__item">Webshops</span>
+            <span class="v2-ribbon__mark" aria-hidden="true">
+              <svg viewBox="0 0 16 16"><path d="M8 .6 9.15 6.2 14.9 8 9.15 9.8 8 15.4 6.85 9.8 1.1 8 6.85 6.2Z"/></svg>
+            </span>
+            <span class="v2-ribbon__item">Apps op maat</span>
+            <span class="v2-ribbon__mark" aria-hidden="true">
+              <svg viewBox="0 0 16 16"><path d="M8 .6 9.15 6.2 14.9 8 9.15 9.8 8 15.4 6.85 9.8 1.1 8 6.85 6.2Z"/></svg>
+            </span>
+            <span class="v2-ribbon__item">Automatiseringen</span>
+            <span class="v2-ribbon__mark" aria-hidden="true">
+              <svg viewBox="0 0 16 16"><path d="M8 .6 9.15 6.2 14.9 8 9.15 9.8 8 15.4 6.85 9.8 1.1 8 6.85 6.2Z"/></svg>
+            </span>
+          {%- endfor -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+
+  <div class="v2-ribbon__band v2-ribbon__band--green">
+    <div class="v2-ribbon__track v2-ribbon__track--reverse">
+      {%- for pass in (1..2) -%}
+        <div class="v2-ribbon__set"{% if pass == 2 %} aria-hidden="true"{% endif %}>
+          {%- for copy in (1..3) -%}
+            <span class="v2-ribbon__item">Minder handmatig werk <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.2 11.8 12 4M7 4h5v5"/></svg></span>
+            <span class="v2-ribbon__item">Persoonlijk contact <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.2 11.8 12 4M7 4h5v5"/></svg></span>
+            <span class="v2-ribbon__item">Van idee tot realisatie <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.2 11.8 12 4M7 4h5v5"/></svg></span>
+            <span class="v2-ribbon__item">100% maatwerk <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.2 11.8 12 4M7 4h5v5"/></svg></span>
+          {%- endfor -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Dienstenlint",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Dienstenlint"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,211 @@
+<section class="v2-reviews" id="reviews" data-reviews>
+  <div class="v2-reviews__inner page-width">
+    <header class="v2-reviews__head">
+      <h2>
+        {%- if section.settings.heading == 'Wat klanten over JR Intelligence zeggen' -%}
+          Wat klanten over <b>JR Intelligence</b> zeggen
+        {%- else -%}
+          {{ section.settings.heading }}
+        {%- endif -%}
+      </h2>
+      <p>{{ section.settings.text }}</p>
+      {%- if section.blocks.size > 2 -%}
+        <div class="v2-reviews__nav">
+          <button type="button" data-prev aria-label="Vorige reviews">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3.5 5.5 8 10 12.5"/></svg>
+          </button>
+          <button type="button" data-next aria-label="Volgende reviews">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3.5 10.5 8 6 12.5"/></svg>
+          </button>
+        </div>
+      {%- endif -%}
+    </header>
+
+    <div class="v2-reviews__board">
+      <article class="v2-reviews__summary" data-review-summary>
+          <p class="v2-reviews__brand">
+            {% render 'google-mark' %}
+            Google Reviews
+          </p>
+          <p class="v2-reviews__score">
+            <strong>{{ section.settings.score }}</strong>
+            <span>/ 5</span>
+          </p>
+          {% render 'review-stars' %}
+          <p class="v2-reviews__note">{{ section.settings.score_note }}</p>
+          {%- if section.settings.button_link != blank -%}
+            <a class="v2-reviews__more" href="{{ section.settings.button_link }}">
+              {{ section.settings.button_label }}
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.2 11.8 12 4M7 4h5v5"/></svg>
+            </a>
+          {%- else -%}
+            <span class="v2-reviews__more">
+              {{ section.settings.button_label }}
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.2 11.8 12 4M7 4h5v5"/></svg>
+            </span>
+          {%- endif -%}
+      </article>
+
+      <div class="v2-reviews__list" data-review-list>
+        {%- for block in section.blocks -%}
+          <article class="v2-reviews__card" {{ block.shopify_attributes }}>
+            <div class="v2-reviews__top">
+              {% render 'review-stars' %}
+              {% render 'google-mark' %}
+            </div>
+            <p class="v2-reviews__quote">“{{ block.settings.quote }}”</p>
+            <div class="v2-reviews__foot">
+              {%- if block.settings.name == 'BLANC The Label' -%}
+                <span class="v2-reviews__avatar v2-reviews__avatar--logo" aria-hidden="true">
+                  <img
+                    src="{{ 'review-blanc.png' | asset_url }}"
+                    alt=""
+                    width="320"
+                    height="320"
+                  >
+                </span>
+              {%- elsif block.settings.name == 'GLOW Amsterdam' -%}
+                <span class="v2-reviews__avatar v2-reviews__avatar--logo" aria-hidden="true">
+                  <img
+                    src="{{ 'review-glow.png' | asset_url }}"
+                    alt=""
+                    width="320"
+                    height="320"
+                  >
+                </span>
+              {%- else -%}
+                <span class="v2-reviews__avatar" aria-hidden="true">{{ block.settings.initials }}</span>
+              {%- endif -%}
+              <p>
+                <strong>{{ block.settings.name }}</strong>
+                <small>{{ block.settings.date }}</small>
+              </p>
+              <span class="v2-reviews__go" aria-hidden="true">
+                <svg viewBox="0 0 16 16"><path d="M4.2 11.8 12 4M7 4h5v5"/></svg>
+              </span>
+            </div>
+          </article>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{%- if section.blocks.size > 2 -%}
+<script>
+  (function () {
+    var root = document.getElementById('reviews');
+    if (!root) return;
+    var list = root.querySelector('[data-review-list]');
+    var summary = root.querySelector('[data-review-summary]');
+    var prev = root.querySelector('[data-prev]');
+    var next = root.querySelector('[data-next]');
+    if (!list || !prev || !next) return;
+    var cards = Array.prototype.slice.call(list.children);
+    var page = 0;
+    var last = cards.length > 2 ? 1 : 0;
+
+    function render() {
+      var first = page === 0;
+      if (summary) {
+        summary.classList.toggle('is-hidden', !first);
+        summary.setAttribute('aria-hidden', first ? 'false' : 'true');
+      }
+      cards.forEach(function (card, i) {
+        var visible = first ? i < 2 : i >= 2;
+        card.classList.toggle('is-hidden', !visible);
+      });
+      prev.disabled = page === 0;
+      next.disabled = page === last;
+    }
+
+    prev.addEventListener('click', function () {
+      if (page === 0) return;
+      page -= 1;
+      render();
+    });
+    next.addEventListener('click', function () {
+      if (page === last) return;
+      page += 1;
+      render();
+    });
+    render();
+  })();
+</script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Reviews",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Kop",
+      "default": "Wat klanten over JR Intelligence zeggen"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Tekst",
+      "default": "Lees waarom klanten graag met ons werken."
+    },
+    {
+      "type": "text",
+      "id": "score",
+      "label": "Score",
+      "default": "5,0"
+    },
+    {
+      "type": "text",
+      "id": "score_note",
+      "label": "Score toelichting",
+      "default": "Gebaseerd op Google-beoordelingen"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Knop",
+      "default": "Bekijk alle reviews"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Knoplink"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Tekst"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Naam"
+        },
+        {
+          "type": "text",
+          "id": "initials",
+          "label": "Initialen"
+        },
+        {
+          "type": "text",
+          "id": "date",
+          "label": "Datum"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Reviews"
+    }
+  ]
+}
+{% endschema %}

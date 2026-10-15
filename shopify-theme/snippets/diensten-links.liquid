@@ -1,0 +1,26 @@
+{%- assign diensten_rows = "webshop///Webshop bouwen///Snelle webshops die prettig en overtuigend verkopen///diensten-webshop|website///Website bouwen///Professionele websites voor zichtbaarheid en groei///diensten-website|app///App bouwen///Apps voor de App Store en de Play Store///diensten-app|automatisering///Automatisering///Slimme koppelingen voor werk dat je al online doet///diensten-automatisering" | split: "|" -%}
+{%- for row in diensten_rows -%}
+  {%- assign parts = row | split: "///" -%}
+  {%- assign icon = parts[0] -%}
+  {%- assign title = parts[1] -%}
+  {%- assign text = parts[2] -%}
+  {%- assign handle = parts[3] -%}
+  {%- if mode == 'menu' -%}
+    <a class="site-menu__service" href="/pages/{{ handle }}" data-menu-close{% if page.handle == handle %} aria-current="page"{% endif %}>
+      <span class="site-services__icon">{% render 'service-icon', name: icon %}</span>
+      <span>
+        <span class="site-services__title">{{ title }}</span>
+        <span class="site-services__text">{{ text }}</span>
+      </span>
+    </a>
+  {%- else -%}
+    <a class="site-services__item" href="/pages/{{ handle }}"{% if page.handle == handle %} aria-current="page"{% endif %}>
+      <span class="site-services__icon">{% render 'service-icon', name: icon %}</span>
+      <span class="site-services__copy">
+        <span class="site-services__title">{{ title }}</span>
+        <span class="site-services__text">{{ text }}</span>
+      </span>
+      <span class="site-services__arrow">{% render 'service-icon', name: 'arrow' %}</span>
+    </a>
+  {%- endif -%}
+{%- endfor -%}

@@ -1,0 +1,181 @@
+{%- liquid
+  assign services_link = section.settings.services_link
+  assign contact_link = section.settings.contact_link
+  if services_link == blank
+    assign services_link = '/pages/diensten'
+  endif
+  if contact_link == blank
+    assign contact_link = '/pages/contact#kaart'
+  endif
+-%}
+
+<section class="v2-partner">
+  <svg class="v2-partner__curve v2-partner__curve--left" viewBox="0 0 160 240" fill="none" aria-hidden="true">
+    <path d="M20 230C70 180 130 120 70 8" stroke="#8fd4b8" stroke-width="1.6"/>
+  </svg>
+  <svg class="v2-partner__curve v2-partner__curve--right" viewBox="0 0 280 160" fill="none" aria-hidden="true">
+    <path d="M10 28C90 8 170 36 280 118" stroke="#8fd4b8" stroke-width="1.6"/>
+  </svg>
+
+  <div class="v2-partner__inner page-width">
+    <h2>
+      <span>Jouw <b>{{ section.settings.word_custom }}</b> {{ section.settings.line_one }}</span>
+      <span><b>{{ section.settings.word_auto }}</b> <b>{{ section.settings.word_smart }}</b> {{ section.settings.line_two }}</span>
+      <span>{{ section.settings.line_three }}</span>
+    </h2>
+    <div class="v2-partner__lead">
+      {%- if section.settings.text contains 'Wij bouwen digitale oplossingen die werken.' -%}
+        <p>Wij bouwen digitale oplossingen die werken. <br>Van een professionele webshop tot een slimme app <br>of automatisering van je processen.</p>
+      {%- else -%}
+        {{ section.settings.text }}
+      {%- endif -%}
+    </div>
+
+    <div class="v2-partner__cards">
+      <article class="v2-partner__card v2-partner__card--shop" data-shop-video>
+        <div class="v2-partner__stage">
+          <div class="v2-pair v2-pair--video">
+            <video
+              class="v2-pair__video"
+              src="https://cdn.shopify.com/videos/c/o/v/f2444db16d134509b47fab0f46b3c8ee.mp4"
+              muted
+              loop
+              autoplay
+              playsinline
+              preload="auto"
+              crossorigin="anonymous"
+              aria-hidden="true"
+            ></video>
+            <canvas class="v2-pair__canvas" aria-hidden="true"></canvas>
+          </div>
+        </div>
+
+        <div class="v2-partner__sheet">
+          <div>
+            <h3>{{ section.settings.card_one_title }}</h3>
+            <p>{{ section.settings.card_one_text }}</p>
+            <ul>
+              <li>{{ section.settings.point_one }}</li>
+              {%- if section.settings.point_four != blank -%}
+                <li>{{ section.settings.point_four }}</li>
+              {%- endif -%}
+              <li>{{ section.settings.point_two }}</li>
+              <li>{{ section.settings.point_three }}</li>
+            </ul>
+          </div>
+          <a class="v2-partner__go" href="{{ services_link }}" aria-label="{{ 'partner.view' | t }}">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="v2-partner__card">
+        <span class="v2-partner__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="9" cy="9" r="2.2"/><circle cx="15.2" cy="9.4" r="1.8"/><path d="M4.8 17.2c.6-2.2 2.2-3.4 4.2-3.4s3.6 1.2 4.2 3.4"/><path d="M13.2 14.2c1.4-.5 2.8-.2 3.8 1.2"/></svg>
+        </span>
+        <h3>{{ section.settings.card_two_title }}</h3>
+        <blockquote>
+          <p>“{{ section.settings.quote }}”</p>
+        </blockquote>
+        <div class="v2-partner__clients">
+          <span class="v2-partner__client">
+            <img src="{{ 'review-blanc.png' | asset_url }}" alt="BLANC" width="320" height="320">
+          </span>
+          <span class="v2-partner__client">
+            <img src="{{ 'review-glow.png' | asset_url }}" alt="GLOW Amsterdam" width="320" height="320">
+          </span>
+        </div>
+        <p class="v2-partner__by">Ondernemer: {{ section.settings.quote_by }}</p>
+        <div class="v2-partner__google">
+          <p class="v2-partner__google-brand">
+            {% render 'google-mark' %}
+            Google Reviews
+          </p>
+          <p class="v2-partner__google-score">
+            <strong>5,0</strong>
+            <span>/ 5</span>
+          </p>
+          <div class="v2-partner__google-meta">
+            {% render 'review-stars' %}
+          </div>
+          <p class="v2-partner__google-note">Gebaseerd op Google-beoordelingen</p>
+        </div>
+        <a class="v2-btn v2-btn--solid v2-partner__reviews" href="#reviews">
+          Bekijk alle reviews
+          <span aria-hidden="true">→</span>
+        </a>
+      </article>
+
+      <article class="v2-partner__card">
+        <span class="v2-partner__icon v2-partner__icon--round" aria-hidden="true">
+          <svg viewBox="0 0 52 52">
+            <path d="M31.32 9.64A17.2 17.2 0 1 1 20.68 9.64"/>
+            <path d="M20.66 11.18 25.92 7.94 19.76 8.42Z"/>
+          </svg>
+          <b>360°</b>
+        </span>
+        <h3>{{ section.settings.card_three_title }}</h3>
+        <p class="v2-partner__copy">
+          {%- if section.settings.card_three_text == 'Van strategie en ontwikkeling tot hosting. Wij regelen alles van A tot Z.' -%}
+            Van strategie en ontwikkeling <br>tot hosting. Wij regelen alles <br>van A tot Z.
+          {%- else -%}
+            {{ section.settings.card_three_text }}
+          {%- endif -%}
+        </p>
+        <div class="v2-partner__scene">
+          <img src="{{ 'reeuwijk.jpg' | asset_url }}" alt="Reeuwijk" width="817" height="545">
+          <a class="v2-partner__place" href="{{ contact_link }}" aria-label="{{ 'partner.contact' | t }}">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 14s4.5-4 4.5-7A4.5 4.5 0 0 0 8 2.5 4.5 4.5 0 0 0 3.5 7C3.5 10 8 14 8 14Z"/><circle cx="8" cy="7" r="1.4"/></svg>
+            <span>
+              <small>{{ section.settings.place_label }}</small>
+              <b>{{ section.settings.place }}</b>
+            </span>
+            <i aria-hidden="true">
+              <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </i>
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<script src="{{ 'partner-video.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Maatwerk",
+  "settings": [
+    { "type": "text", "id": "word_custom", "label": "Groen woord 1", "default": "maatwerk" },
+    { "type": "text", "id": "line_one", "label": "Regel 1", "default": "partner voor meer" },
+    { "type": "text", "id": "word_auto", "label": "Groen woord 2", "default": "automatisering," },
+    { "type": "text", "id": "word_smart", "label": "Groen woord 3", "default": "slimme" },
+    { "type": "text", "id": "line_two", "label": "Regel 2", "default": "apps en krachtige" },
+    { "type": "text", "id": "line_three", "label": "Regel 3", "default": "webshops" },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Tekst",
+      "default": "<p>Wij bouwen digitale oplossingen die werken. Van een professionele webshop tot een slimme app of automatisering van je processen.</p>"
+    },
+    { "type": "text", "id": "card_one_title", "label": "Kaart 1 titel", "default": "Alles op maat gebouwd." },
+    { "type": "text", "id": "card_one_text", "label": "Kaart 1 tekst", "default": "Voor jouw bakkerij, werkplaats of kantoor." },
+    { "type": "text", "id": "point_one", "label": "Punt 1", "default": "Webshops" },
+    { "type": "text", "id": "point_four", "label": "Punt 2", "default": "Websites" },
+    { "type": "text", "id": "point_two", "label": "Punt 3", "default": "Apps" },
+    { "type": "text", "id": "point_three", "label": "Punt 4", "default": "Automatiseringen" },
+    { "type": "url", "id": "services_link", "label": "Link naar diensten" },
+    { "type": "text", "id": "card_two_title", "label": "Kaart 2 titel", "default": "Onze klanten" },
+    { "type": "textarea", "id": "quote", "label": "Citaat", "default": "Binnen een maand hadden we een supermooie webshop, inclusief een eigen chatbot. Supermooi resultaat." },
+    { "type": "text", "id": "quote_by", "label": "Naam bij citaat", "default": "GLOW-Amsterdam" },
+    { "type": "text", "id": "card_three_title", "label": "Kaart 3 titel", "default": "360° Ondersteuning" },
+    { "type": "textarea", "id": "card_three_text", "label": "Kaart 3 tekst", "default": "Van strategie en ontwikkeling tot hosting. Wij regelen alles van A tot Z." },
+    { "type": "text", "id": "place_label", "label": "Plaats label", "default": "Actief vanuit" },
+    { "type": "text", "id": "place", "label": "Plaats", "default": "Reeuwijk" },
+    { "type": "url", "id": "contact_link", "label": "Link naar contact" }
+  ],
+  "presets": [
+    { "name": "Maatwerk" }
+  ]
+}
+{% endschema %}

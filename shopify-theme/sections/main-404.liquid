@@ -1,17 +1,12 @@
-<section class="jr-section jr-empty">
-  <div class="jr-container">
-    <p class="jr-kicker">404</p>
-    <h1 class="jr-title">Pagina niet gevonden</h1>
-    <p class="jr-lede">Deze URL bestaat niet. Kies een dienst of stuur ons een bericht.</p>
-    <div class="jr-hero__actions">
-      <a class="jr-btn jr-btn--primary" href="/">Naar home</a>
-      <a class="jr-btn jr-btn--ghost" href="/pages/contact">Contact</a>
-    </div>
-  </div>
+<section class="not-found page-width">
+  <h1>{{ 'not_found.title' | t }}</h1>
+  <p>{{ 'not_found.text' | t }}</p>
+  <a href="{{ routes.root_url }}">{{ 'not_found.link' | t }}</a>
 </section>
 
 {% schema %}
 {
-  "name": "404"
+  "name": "404",
+  "settings": []
 }
 {% endschema %}

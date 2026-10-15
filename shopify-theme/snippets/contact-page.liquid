@@ -1,0 +1,285 @@
+{%- liquid
+  assign view = view_setting
+  if view == blank
+    assign view = 'auto'
+  endif
+  if view == 'auto'
+    if page.handle == 'offerte'
+      assign view = 'offerte'
+    elsif page.handle == 'vraag'
+      assign view = 'vraag'
+    else
+      assign view = 'landing'
+    endif
+  endif
+
+  assign vraag_url = '/pages/contact?view=vraag'
+  assign offerte_url = '/pages/offerte'
+  if map_address == blank
+    assign map_address = 'Leeghwaterstraat 25, 2811 DT Reeuwijk'
+  endif
+  assign map_lat = '52.039319'
+  assign map_lng = '4.714218'
+  assign map_zoom = '16'
+-%}
+
+<section class="main-page page-width contact-page">
+  {%- if view == 'landing' -%}
+    <h1>{{ page.title }}</h1>
+    {%- if page.content != blank -%}
+      <div class="contact-page__body">
+        {{ page.content }}
+      </div>
+    {%- endif -%}
+  {%- endif -%}
+
+  <div class="contact-page__grid">
+    <div class="contact-map" id="kaart">
+      <div class="contact-map__frame">
+        <iframe
+          title="Kaart van {{ map_address | escape }}"
+          src="https://maps.google.com/maps?hl=nl&amp;ll={{ map_lat }},{{ map_lng }}&amp;z={{ map_zoom }}&amp;t=m&amp;output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+        <span class="contact-map__pin" aria-hidden="true">
+          <svg viewBox="0 0 32 44" width="32" height="44">
+            <path fill="#08924f" d="M16 0C7.16 0 0 7.16 0 16c0 11.2 16 28 16 28s16-16.8 16-28C32 7.16 24.84 0 16 0z"/>
+            <circle cx="16" cy="15.5" r="6.2" fill="#fff"/>
+          </svg>
+        </span>
+        <a
+          class="contact-map__open"
+          href="https://www.google.com/maps/search/?api=1&amp;query={{ map_address | url_encode }}"
+          target="_blank"
+          rel="noopener"
+          aria-label="Open {{ map_address | escape }} in Google Maps"
+        ></a>
+      </div>
+      <p class="contact-map__address">{{ map_address }}</p>
+    </div>
+
+    <div class="contact-form{% if view == 'landing' %} contact-form--landing{% endif %}">
+      <div class="contact-form__head">
+        {%- if view == 'vraag' -%}
+          <h2>Stuur een vraag</h2>
+        {%- elsif view == 'offerte' -%}
+          <h2>Vraag een offerte aan</h2>
+        {%- else -%}
+          <h2 class="visually-hidden">Contact</h2>
+        {%- endif -%}
+        <img
+          class="contact-form__mark{% if view == 'landing' %} contact-form__mark--solo{% endif %}"
+          src="{{ 'logo-jr-mark.png' | asset_url }}"
+          alt="JR"
+          width="82"
+          height="52"
+        >
+      </div>
+
+      {%- if view == 'landing' -%}
+        <nav class="contact-form__choices contact-form__choices--big" aria-label="Wat wil je doen">
+          <a class="contact-form__choice contact-form__choice--green" href="{{ vraag_url }}">
+            Ik heb een vraag
+          </a>
+          <a class="contact-form__choice contact-form__choice--light" href="{{ offerte_url }}">
+            Ik wil een offerte
+          </a>
+        </nav>
+      {%- endif -%}
+
+      {%- if view == 'vraag' -%}
+        <form id="CallbackForm" class="contact-call" data-jr-contact="callback">
+          <p class="contact-call__done" data-jr-status hidden></p>
+          <label class="contact-call__ask" for="CallbackPhone">Liever bellen?</label>
+          <p class="jr-hp" aria-hidden="true">
+            <label for="CallbackCompany">Bedrijfswebsite</label>
+            <input id="CallbackCompany" type="text" name="company_url" tabindex="-1" autocomplete="off">
+          </p>
+          <div class="contact-call__pill">
+            <label class="contact-call__code">
+              <span class="contact-call__flag" aria-hidden="true">
+                <svg viewBox="0 0 18 12">
+                  <rect width="18" height="4" fill="#ae1c28"/>
+                  <rect y="4" width="18" height="4" fill="#fff"/>
+                  <rect y="8" width="18" height="4" fill="#21468b"/>
+                </svg>
+              </span>
+              <select name="landcode" aria-label="Landcode">
+                <option value="+31">+31</option>
+              </select>
+              <svg class="contact-call__chev" viewBox="0 0 10 6" aria-hidden="true">
+                <path d="M1 1.2 5 4.8 9 1.2"/>
+              </svg>
+            </label>
+            <input
+              id="CallbackPhone"
+              type="tel"
+              name="phone"
+              inputmode="tel"
+              autocomplete="tel-national"
+              placeholder="6 12345678"
+              required
+            >
+          </div>
+          <button type="submit">
+            Bel mij zo snel mogelijk terug
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M4.5 11.5 11.5 4.5M7.2 4.5h4.3V8.8"/>
+            </svg>
+          </button>
+        </form>
+
+        <form id="ContactForm" class="contact-form__fields" data-jr-contact="form">
+          <p class="contact-form__done" data-jr-status hidden></p>
+          <p class="jr-hp" aria-hidden="true">
+            <label for="ContactCompany">Bedrijfswebsite</label>
+            <input id="ContactCompany" type="text" name="company_url" tabindex="-1" autocomplete="off">
+          </p>
+
+          <label class="contact-form__label" for="ContactName">Naam</label>
+          <div class="contact-form__row">
+            <input id="ContactName" type="text" name="voornaam" autocomplete="given-name" placeholder="Voornaam" required>
+            <input type="text" name="achternaam" autocomplete="family-name" placeholder="Achternaam" required>
+          </div>
+
+          <label class="contact-form__label" for="ContactEmail">E-mail</label>
+          <input id="ContactEmail" type="email" name="email" autocomplete="email" placeholder="E-mailadres" required>
+
+          <label class="contact-form__label" for="ContactPhone">Telefoon</label>
+          <input id="ContactPhone" type="tel" name="phone" autocomplete="tel" placeholder="06 12345678">
+
+          <label class="contact-form__label" for="ContactSubject">Onderwerp</label>
+          <select id="ContactSubject" name="onderwerp">
+            <option value="Website">Website</option>
+            <option value="Webshop">Webshop</option>
+            <option value="App">App</option>
+            <option value="Automatisering">Automatisering</option>
+            <option value="Anders">Anders</option>
+          </select>
+
+          <label class="contact-form__label" for="ContactBody">Bericht</label>
+          <textarea id="ContactBody" name="body" rows="5" placeholder="Waar kunnen we je mee helpen?" required></textarea>
+
+          <button type="submit">Stuur een vraag <span aria-hidden="true">→</span></button>
+        </form>
+      {%- endif -%}
+
+      {%- if view == 'offerte' -%}
+        <form id="QuoteForm" class="contact-form__fields" data-jr-contact="offerte">
+          <p class="contact-form__done" data-jr-status hidden></p>
+          <p class="jr-hp" aria-hidden="true">
+            <label for="QuoteTrap">Bedrijfswebsite</label>
+            <input id="QuoteTrap" type="text" name="company_url" tabindex="-1" autocomplete="off">
+          </p>
+
+          <label class="contact-form__label" for="QuoteFirst">Naam</label>
+          <div class="contact-form__row">
+            <input id="QuoteFirst" type="text" name="voornaam" autocomplete="given-name" placeholder="Voornaam" required>
+            <input type="text" name="achternaam" autocomplete="family-name" placeholder="Achternaam" required>
+          </div>
+
+          <label class="contact-form__label" for="QuoteEmail">E-mail</label>
+          <input id="QuoteEmail" type="email" name="email" autocomplete="email" placeholder="E-mailadres" required>
+
+          <label class="contact-form__label" for="QuotePhone">Telefoon</label>
+          <input id="QuotePhone" type="tel" name="phone" autocomplete="tel" placeholder="06 12345678" required>
+
+          <label class="contact-form__label" for="QuoteCompany">Bedrijfsnaam</label>
+          <input id="QuoteCompany" type="text" name="bedrijf" autocomplete="organization" placeholder="Naam van je bedrijf" required>
+
+          <label class="contact-form__label" for="QuoteWebsite">Website</label>
+          <input id="QuoteWebsite" type="text" name="website" autocomplete="url" placeholder="jouwbedrijf.nl">
+
+          <p class="contact-form__label" id="QuoteNeedLabel">Wat zoek je?</p>
+          <div class="contact-form__picks" role="group" aria-labelledby="QuoteNeedLabel">
+            <label class="contact-form__pick">
+              <input type="checkbox" name="zoek" value="Website">
+              <span>Website</span>
+            </label>
+            <label class="contact-form__pick">
+              <input type="checkbox" name="zoek" value="Webshop">
+              <span>Webshop</span>
+            </label>
+            <label class="contact-form__pick">
+              <input type="checkbox" name="zoek" value="App">
+              <span>App</span>
+            </label>
+            <label class="contact-form__pick">
+              <input type="checkbox" name="zoek" value="Automatisering">
+              <span>Automatisering</span>
+            </label>
+          </div>
+
+          <div data-jr-already-item="Website" hidden>
+            <p class="contact-form__label">Heb je al een website?</p>
+            <div class="contact-form__picks contact-form__picks--two">
+              <label class="contact-form__pick">
+                <input type="radio" name="al_website" value="ja">
+                <span>Ja</span>
+              </label>
+              <label class="contact-form__pick">
+                <input type="radio" name="al_website" value="nee">
+                <span>Nee</span>
+              </label>
+            </div>
+          </div>
+
+          <div data-jr-already-item="Webshop" hidden>
+            <p class="contact-form__label">Heb je al een webshop?</p>
+            <div class="contact-form__picks contact-form__picks--two">
+              <label class="contact-form__pick">
+                <input type="radio" name="al_webshop" value="ja">
+                <span>Ja</span>
+              </label>
+              <label class="contact-form__pick">
+                <input type="radio" name="al_webshop" value="nee">
+                <span>Nee</span>
+              </label>
+            </div>
+          </div>
+
+          <div data-jr-already-item="App" hidden>
+            <p class="contact-form__label">Heb je al een app?</p>
+            <div class="contact-form__picks contact-form__picks--two">
+              <label class="contact-form__pick">
+                <input type="radio" name="al_app" value="ja">
+                <span>Ja</span>
+              </label>
+              <label class="contact-form__pick">
+                <input type="radio" name="al_app" value="nee">
+                <span>Nee</span>
+              </label>
+            </div>
+          </div>
+
+          <div data-jr-already-item="Automatisering" hidden>
+            <p class="contact-form__label">Heb je al automatisering?</p>
+            <div class="contact-form__picks contact-form__picks--two">
+              <label class="contact-form__pick">
+                <input type="radio" name="al_automatisering" value="ja">
+                <span>Ja</span>
+              </label>
+              <label class="contact-form__pick">
+                <input type="radio" name="al_automatisering" value="nee">
+                <span>Nee</span>
+              </label>
+            </div>
+          </div>
+
+          <label class="contact-form__label" for="QuoteDoes">Wat doet je bedrijf?</label>
+          <textarea id="QuoteDoes" name="bedrijf_doet" rows="4" placeholder="Vertel kort wat je maakt of verkoopt." required></textarea>
+
+          <label class="contact-form__label" for="QuoteNeed">Wat moet het nieuwe gaan doen?</label>
+          <textarea id="QuoteNeed" name="moet_doen" rows="4" placeholder="Wat moet er klaarstaan als wij klaar zijn?" required></textarea>
+
+          <label class="contact-form__label" for="QuoteBody">Extra bericht</label>
+          <textarea id="QuoteBody" name="body" rows="4" placeholder="Nog iets dat we moeten weten?"></textarea>
+
+          <button type="submit">Vraag offerte aan <span aria-hidden="true">→</span></button>
+        </form>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
