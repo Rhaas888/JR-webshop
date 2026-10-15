@@ -1,5 +1,4 @@
 {%- liquid
-  assign hero_image = hero_image | default: nil
   assign rik_image = rik_image | default: nil
   assign julius_image = julius_image | default: nil
   assign work_image = work_image | default: nil
@@ -11,23 +10,6 @@
       <p class="v2-about__eyebrow">Over JR Intelligence</p>
       <h1>Achter JR Intelligence zitten gewoon <b>twee mensen.</b></h1>
       <p class="v2-about__lead">We bouwen <b>websites</b>, <b>webshops</b>, <b>apps</b> en <b>automatiseringen</b> voor bedrijven die dingen slimmer willen aanpakken. <b>Persoonlijk contact</b> staat bij ons voorop.</p>
-    </div>
-    <div class="v2-about__media v2-about__media--hero">
-      {%- if hero_image != blank -%}
-        <img
-          src="{{ hero_image | image_url: width: 1200 }}"
-          alt="Rik de Haas en Julius van Schagen"
-          width="{{ hero_image.width }}"
-          height="{{ hero_image.height }}"
-        >
-      {%- else -%}
-        <img
-          src="{{ 'about-hero.jpg' | asset_url }}"
-          alt="Rik de Haas en Julius van Schagen"
-          width="1600"
-          height="900"
-        >
-      {%- endif -%}
     </div>
   </div>
 

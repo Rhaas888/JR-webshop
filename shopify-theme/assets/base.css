@@ -5146,7 +5146,6 @@ button {
   max-width: 34em;
 }
 
-.v2-about__hero,
 .v2-about__story,
 .v2-about__work {
   display: grid;
@@ -5155,7 +5154,17 @@ button {
 
 .v2-about__hero {
   padding: 12px 0 36px;
-  align-items: center;
+  text-align: center;
+}
+
+.v2-about__hero .v2-about__copy {
+  max-width: 40em;
+  margin-inline: auto;
+}
+
+.v2-about__hero h1,
+.v2-about__hero .v2-about__copy p {
+  margin-inline: auto;
 }
 
 .v2-about__band {
@@ -5188,14 +5197,6 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.v2-about__media--hero {
-  width: min(100%, 520px);
-  min-height: 0;
-  aspect-ratio: 16 / 9;
-  justify-self: center;
-  border-radius: 22px;
 }
 
 .v2-about__media--work {
@@ -5313,7 +5314,6 @@ button {
     padding: 56px 0 96px;
   }
 
-  .v2-about__hero,
   .v2-about__story,
   .v2-about__work {
     grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
@@ -5349,11 +5349,6 @@ button {
 
   .v2-about__copy p {
     font-size: 18px;
-  }
-
-  .v2-about__media--hero {
-    justify-self: end;
-    min-height: 0;
   }
 
   .v2-about__steps {
